@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1056176794632",
+    "project_id": "buildnotifier-e5c6e",
+    "storage_bucket": "buildnotifier-e5c6e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056176794632:android:22832261346d8991a375bd",
+        "android_client_info": {
+          "package_name": "com.example.buildnotifier"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARu6RiMB2KroBEXdA746n_jIyl0Bt82aQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
