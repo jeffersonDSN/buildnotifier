@@ -1,4 +1,4 @@
-import '../repositories/abs_i_location_repositorie.dart';
+import 'package:buildnotifier/domain/repositories/abs_i_location_repositorie.dart';
 
 class LocationController {
   final AbsILocationRepositorie repositorie;

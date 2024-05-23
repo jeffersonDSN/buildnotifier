@@ -1,5 +1,5 @@
-import '../entities/user.dart';
-import '../repositories/abs_i_users_repositorie.dart';
+import 'package:buildnotifier/domain/entities/user.dart';
+import 'package:buildnotifier/domain/repositories/abs_i_users_repositorie.dart';
 
 class UsersController {
   final AbsIUsersRepositorie repositorie;

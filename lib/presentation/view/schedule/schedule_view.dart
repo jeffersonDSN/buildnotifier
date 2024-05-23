@@ -1,17 +1,17 @@
+import 'package:buildnotifier/domain/controllers/schedule_controller.dart';
+import 'package:buildnotifier/infrastructure/repositories/firestore/schedule_firestore_repositorie.dart';
+import 'package:buildnotifier/presentation/core/const/images_conts.dart';
+import 'package:buildnotifier/presentation/view/appointment/appointment_view.dart';
+import 'package:buildnotifier/presentation/view/appointment_schedule/appointment_schedule_view.dart';
+import 'package:buildnotifier/presentation/view/clients/list/clients_view.dart';
+import 'package:buildnotifier/presentation/view/schedule/schedule_bloc.dart';
 import 'package:buildnotifier/presentation/view/users/list/users_view.dart';
+import 'package:buildnotifier/theme/app_color.dart';
+import 'package:buildnotifier/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
-
-import '../../../domain/controllers/schedule_controller.dart';
-import '../../../infrastructure/repositories/firestore/schedule_firestore_repositorie.dart';
-import '../../../theme/app_sizes.dart';
-import '../../../theme/app_color.dart';
-import '../../core/const/images_conts.dart';
-import '../appointment/appointment_view.dart';
-import '../appointment_schedule/appointment_schedule_view.dart';
-import 'schedule_bloc.dart';
 
 class ScheduleView extends StatelessWidget {
   const ScheduleView({super.key});
@@ -72,7 +72,14 @@ class ScheduleView extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ClientsView(),
+                        ),
+                      );
+                    },
                     child: const ListTile(
                       leading: Icon(Icons.people_outline),
                       title: Text('Clients'),
