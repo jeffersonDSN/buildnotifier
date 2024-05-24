@@ -13,12 +13,9 @@ part 'appointment_schedule_state.dart';
 
 class AppointmentScheduleBloc
     extends Bloc<AppointmentScheduleEvent, AppointmentScheduleState> {
-  final ScheduleController controller;
-  final LocationController locationController;
-
   AppointmentScheduleBloc({
-    required this.controller,
-    required this.locationController,
+    required ScheduleController controller,
+    required LocationController locationController,
   }) : super(const AppointmentScheduleState.empty()) {
     on<AppointmentScheduleEvent>(
       (event, emit) {

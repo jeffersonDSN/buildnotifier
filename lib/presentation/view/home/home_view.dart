@@ -1,6 +1,7 @@
 import 'package:buildnotifier/presentation/view/clients/list/clients_view.dart';
 import 'package:buildnotifier/presentation/view/clock/clock_alert_dialog.dart';
 import 'package:buildnotifier/presentation/view/schedule/schedule_view.dart';
+import 'package:buildnotifier/presentation/view/time_card/time_card_view.dart';
 import 'package:buildnotifier/presentation/view/users/list/users_view.dart';
 import 'package:buildnotifier/theme/app_color.dart';
 import 'package:buildnotifier/theme/app_sizes.dart';
@@ -94,7 +95,7 @@ class HomeView extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(Sizes.padding16),
+        padding: const EdgeInsets.all(Sizes.size16),
         child: ListView(
           children: [
             const Text(
@@ -129,20 +130,26 @@ class HomeView extends StatelessWidget {
                 },
               ),
             ),
-            const Card(
+            Card(
               elevation: 2,
               child: ListTile(
-                leading: Icon(
+                leading: const Icon(
                   Icons.pending_actions_outlined,
                   color: AppColor.primaryColorSwatch,
                 ),
-                title: Text(
+                title: const Text(
                   'TimeCard',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                subtitle: Text('Monitor your work hours effortlessly'),
+                subtitle: const Text('Monitor your work hours effortlessly'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => TimeCardView()),
+                  );
+                },
               ),
             ),
             Card(

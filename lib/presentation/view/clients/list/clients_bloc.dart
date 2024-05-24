@@ -9,9 +9,9 @@ part 'clients_event.dart';
 part 'clients_state.dart';
 
 class ClientsBloc extends Bloc<ClientsEvent, ClientsState> {
-  final ClientsController controller;
-
-  ClientsBloc({required this.controller}) : super(const ClientsState.empty()) {
+  ClientsBloc({
+    required ClientsController controller,
+  }) : super(const ClientsState.empty()) {
     on<ClientsEvent>(
       (event, emit) async {
         await event.when(

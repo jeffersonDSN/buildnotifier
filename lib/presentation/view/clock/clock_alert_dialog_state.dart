@@ -8,9 +8,17 @@ class ClockAlertDialogState with _$ClockAlertDialogState {
     @Default(CrudType.create()) CrudType type,
     required TimeCard clock,
   }) = ClockAlertDialogStateloaded;
+
+  const factory ClockAlertDialogState.saving({
+    @Default(CrudType.create()) CrudType type,
+    required TimeCard clock,
+  }) = ClockAlertDialogStateSaving;
 }
 
 extension OnClockAlertDialogState on ClockAlertDialogState {
   ClockAlertDialogStateloaded get asLoaded =>
       this as ClockAlertDialogStateloaded;
+
+  ClockAlertDialogStateSaving get asSaving =>
+      this as ClockAlertDialogStateSaving;
 }

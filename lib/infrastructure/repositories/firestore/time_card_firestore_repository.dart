@@ -31,8 +31,10 @@ class TimeCardFireStoreRepository extends FireStoreRepository
 
   @override
   Future<List<TimeCard>> getAllByUserId(String userId) async {
-    var querySnapshot =
-        await collection.where('userId', isEqualTo: userId).get();
+    var querySnapshot = await collection
+        .where('userId', isEqualTo: userId)
+        .orderBy('start', descending: true)
+        .get();
 
     return querySnapshot.docs
         .map((DocumentSnapshot document) {
@@ -83,9 +85,11 @@ class TimeCardFireStoreRepository extends FireStoreRepository
       'start': clock.start,
       'startLatitude': clock.startLatitude,
       'startLongitude': clock.startLongitude,
+      'startLocation': clock.startLocation,
       'end': clock.end,
       'endLatitude': clock.endLatitude,
       'endLongitude': clock.endLongitude,
+      'endLocation': clock.endLocation,
     };
 
     await collection.add(schedule);
@@ -99,9 +103,11 @@ class TimeCardFireStoreRepository extends FireStoreRepository
       'start': clock.start,
       'startLatitude': clock.startLatitude,
       'startLongitude': clock.startLongitude,
+      'startLocation': clock.startLocation,
       'end': clock.end,
       'endLatitude': clock.endLatitude,
       'endLongitude': clock.endLongitude,
+      'endLocation': clock.endLocation,
     };
 
     await collection.doc(clock.id.toString()).update(schedule);

@@ -11,9 +11,11 @@ class TimeCard with _$TimeCard {
     DateTime? start,
     double? startLatitude,
     double? startLongitude,
+    String? startLocation,
     DateTime? end,
     double? endLatitude,
     double? endLongitude,
+    String? endLocation,
   }) = _TimeCard;
 
   factory TimeCard.fromJson(Map<String, Object?> json) =>

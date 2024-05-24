@@ -56,7 +56,7 @@ class ClientsView extends StatelessWidget {
                             ],
                           ),
                           trailing: SizedBox(
-                            width: Sizes.padding96,
+                            width: Sizes.size96,
                             child: Row(
                               children: [
                                 IconButton(

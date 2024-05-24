@@ -9,10 +9,8 @@ part 'schedule_state.dart';
 part 'schedule_event.dart';
 
 class ScheduleBloc extends Bloc<ScheduleEvent, ScheduleState> {
-  final ScheduleController controller;
-
   ScheduleBloc({
-    required this.controller,
+    required ScheduleController controller,
   }) : super(const ScheduleState.empty()) {
     on<ScheduleEvent>(
       (event, emit) async {

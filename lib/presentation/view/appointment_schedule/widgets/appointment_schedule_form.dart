@@ -272,7 +272,7 @@ class AppointmentScheduleForm extends StatelessWidget {
                               children: [
                                 Container(
                                   width: MediaQuery.sizeOf(context).width,
-                                  height: Sizes.padding56,
+                                  height: Sizes.size56,
                                   decoration: const BoxDecoration(
                                     borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(16.0),
@@ -292,7 +292,7 @@ class AppointmentScheduleForm extends StatelessWidget {
                                       children: [
                                         const Icon(
                                           Icons.badge_outlined,
-                                          size: Sizes.padding40,
+                                          size: Sizes.size40,
                                           color: AppColor.lightColor,
                                         ),
                                         const Expanded(
@@ -313,7 +313,7 @@ class AppointmentScheduleForm extends StatelessWidget {
                                           },
                                           icon: const Icon(
                                             Icons.cancel_outlined,
-                                            size: Sizes.padding40,
+                                            size: Sizes.size40,
                                             color: AppColor.lightColor,
                                           ),
                                         ),

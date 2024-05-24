@@ -21,8 +21,8 @@ class CardDateTimeButton extends StatelessWidget {
       onTap: onTap,
       child: Card(
         child: SizedBox(
-          width: Sizes.padding120,
-          height: Sizes.padding40,
+          width: Sizes.size120,
+          height: Sizes.size40,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

@@ -380,6 +380,7 @@ mixin _$ClockAlertDialogState {
     required TResult Function() empty,
     required TResult Function() loading,
     required TResult Function(CrudType type, TimeCard clock) loaded,
+    required TResult Function(CrudType type, TimeCard clock) saving,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -387,6 +388,7 @@ mixin _$ClockAlertDialogState {
     TResult? Function()? empty,
     TResult? Function()? loading,
     TResult? Function(CrudType type, TimeCard clock)? loaded,
+    TResult? Function(CrudType type, TimeCard clock)? saving,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -394,6 +396,7 @@ mixin _$ClockAlertDialogState {
     TResult Function()? empty,
     TResult Function()? loading,
     TResult Function(CrudType type, TimeCard clock)? loaded,
+    TResult Function(CrudType type, TimeCard clock)? saving,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -402,6 +405,7 @@ mixin _$ClockAlertDialogState {
     required TResult Function(ClockAlertDialogStateEmpty value) empty,
     required TResult Function(ClockAlertDialogStateLoading value) loading,
     required TResult Function(ClockAlertDialogStateloaded value) loaded,
+    required TResult Function(ClockAlertDialogStateSaving value) saving,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -409,6 +413,7 @@ mixin _$ClockAlertDialogState {
     TResult? Function(ClockAlertDialogStateEmpty value)? empty,
     TResult? Function(ClockAlertDialogStateLoading value)? loading,
     TResult? Function(ClockAlertDialogStateloaded value)? loaded,
+    TResult? Function(ClockAlertDialogStateSaving value)? saving,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -416,6 +421,7 @@ mixin _$ClockAlertDialogState {
     TResult Function(ClockAlertDialogStateEmpty value)? empty,
     TResult Function(ClockAlertDialogStateLoading value)? loading,
     TResult Function(ClockAlertDialogStateloaded value)? loaded,
+    TResult Function(ClockAlertDialogStateSaving value)? saving,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -485,6 +491,7 @@ class _$ClockAlertDialogStateEmptyImpl implements ClockAlertDialogStateEmpty {
     required TResult Function() empty,
     required TResult Function() loading,
     required TResult Function(CrudType type, TimeCard clock) loaded,
+    required TResult Function(CrudType type, TimeCard clock) saving,
   }) {
     return empty();
   }
@@ -495,6 +502,7 @@ class _$ClockAlertDialogStateEmptyImpl implements ClockAlertDialogStateEmpty {
     TResult? Function()? empty,
     TResult? Function()? loading,
     TResult? Function(CrudType type, TimeCard clock)? loaded,
+    TResult? Function(CrudType type, TimeCard clock)? saving,
   }) {
     return empty?.call();
   }
@@ -505,6 +513,7 @@ class _$ClockAlertDialogStateEmptyImpl implements ClockAlertDialogStateEmpty {
     TResult Function()? empty,
     TResult Function()? loading,
     TResult Function(CrudType type, TimeCard clock)? loaded,
+    TResult Function(CrudType type, TimeCard clock)? saving,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -519,6 +528,7 @@ class _$ClockAlertDialogStateEmptyImpl implements ClockAlertDialogStateEmpty {
     required TResult Function(ClockAlertDialogStateEmpty value) empty,
     required TResult Function(ClockAlertDialogStateLoading value) loading,
     required TResult Function(ClockAlertDialogStateloaded value) loaded,
+    required TResult Function(ClockAlertDialogStateSaving value) saving,
   }) {
     return empty(this);
   }
@@ -529,6 +539,7 @@ class _$ClockAlertDialogStateEmptyImpl implements ClockAlertDialogStateEmpty {
     TResult? Function(ClockAlertDialogStateEmpty value)? empty,
     TResult? Function(ClockAlertDialogStateLoading value)? loading,
     TResult? Function(ClockAlertDialogStateloaded value)? loaded,
+    TResult? Function(ClockAlertDialogStateSaving value)? saving,
   }) {
     return empty?.call(this);
   }
@@ -539,6 +550,7 @@ class _$ClockAlertDialogStateEmptyImpl implements ClockAlertDialogStateEmpty {
     TResult Function(ClockAlertDialogStateEmpty value)? empty,
     TResult Function(ClockAlertDialogStateLoading value)? loading,
     TResult Function(ClockAlertDialogStateloaded value)? loaded,
+    TResult Function(ClockAlertDialogStateSaving value)? saving,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -598,6 +610,7 @@ class _$ClockAlertDialogStateLoadingImpl
     required TResult Function() empty,
     required TResult Function() loading,
     required TResult Function(CrudType type, TimeCard clock) loaded,
+    required TResult Function(CrudType type, TimeCard clock) saving,
   }) {
     return loading();
   }
@@ -608,6 +621,7 @@ class _$ClockAlertDialogStateLoadingImpl
     TResult? Function()? empty,
     TResult? Function()? loading,
     TResult? Function(CrudType type, TimeCard clock)? loaded,
+    TResult? Function(CrudType type, TimeCard clock)? saving,
   }) {
     return loading?.call();
   }
@@ -618,6 +632,7 @@ class _$ClockAlertDialogStateLoadingImpl
     TResult Function()? empty,
     TResult Function()? loading,
     TResult Function(CrudType type, TimeCard clock)? loaded,
+    TResult Function(CrudType type, TimeCard clock)? saving,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -632,6 +647,7 @@ class _$ClockAlertDialogStateLoadingImpl
     required TResult Function(ClockAlertDialogStateEmpty value) empty,
     required TResult Function(ClockAlertDialogStateLoading value) loading,
     required TResult Function(ClockAlertDialogStateloaded value) loaded,
+    required TResult Function(ClockAlertDialogStateSaving value) saving,
   }) {
     return loading(this);
   }
@@ -642,6 +658,7 @@ class _$ClockAlertDialogStateLoadingImpl
     TResult? Function(ClockAlertDialogStateEmpty value)? empty,
     TResult? Function(ClockAlertDialogStateLoading value)? loading,
     TResult? Function(ClockAlertDialogStateloaded value)? loaded,
+    TResult? Function(ClockAlertDialogStateSaving value)? saving,
   }) {
     return loading?.call(this);
   }
@@ -652,6 +669,7 @@ class _$ClockAlertDialogStateLoadingImpl
     TResult Function(ClockAlertDialogStateEmpty value)? empty,
     TResult Function(ClockAlertDialogStateLoading value)? loading,
     TResult Function(ClockAlertDialogStateloaded value)? loaded,
+    TResult Function(ClockAlertDialogStateSaving value)? saving,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -766,6 +784,7 @@ class _$ClockAlertDialogStateloadedImpl implements ClockAlertDialogStateloaded {
     required TResult Function() empty,
     required TResult Function() loading,
     required TResult Function(CrudType type, TimeCard clock) loaded,
+    required TResult Function(CrudType type, TimeCard clock) saving,
   }) {
     return loaded(type, clock);
   }
@@ -776,6 +795,7 @@ class _$ClockAlertDialogStateloadedImpl implements ClockAlertDialogStateloaded {
     TResult? Function()? empty,
     TResult? Function()? loading,
     TResult? Function(CrudType type, TimeCard clock)? loaded,
+    TResult? Function(CrudType type, TimeCard clock)? saving,
   }) {
     return loaded?.call(type, clock);
   }
@@ -786,6 +806,7 @@ class _$ClockAlertDialogStateloadedImpl implements ClockAlertDialogStateloaded {
     TResult Function()? empty,
     TResult Function()? loading,
     TResult Function(CrudType type, TimeCard clock)? loaded,
+    TResult Function(CrudType type, TimeCard clock)? saving,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -800,6 +821,7 @@ class _$ClockAlertDialogStateloadedImpl implements ClockAlertDialogStateloaded {
     required TResult Function(ClockAlertDialogStateEmpty value) empty,
     required TResult Function(ClockAlertDialogStateLoading value) loading,
     required TResult Function(ClockAlertDialogStateloaded value) loaded,
+    required TResult Function(ClockAlertDialogStateSaving value) saving,
   }) {
     return loaded(this);
   }
@@ -810,6 +832,7 @@ class _$ClockAlertDialogStateloadedImpl implements ClockAlertDialogStateloaded {
     TResult? Function(ClockAlertDialogStateEmpty value)? empty,
     TResult? Function(ClockAlertDialogStateLoading value)? loading,
     TResult? Function(ClockAlertDialogStateloaded value)? loaded,
+    TResult? Function(ClockAlertDialogStateSaving value)? saving,
   }) {
     return loaded?.call(this);
   }
@@ -820,6 +843,7 @@ class _$ClockAlertDialogStateloadedImpl implements ClockAlertDialogStateloaded {
     TResult Function(ClockAlertDialogStateEmpty value)? empty,
     TResult Function(ClockAlertDialogStateLoading value)? loading,
     TResult Function(ClockAlertDialogStateloaded value)? loaded,
+    TResult Function(ClockAlertDialogStateSaving value)? saving,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -838,5 +862,186 @@ abstract class ClockAlertDialogStateloaded implements ClockAlertDialogState {
   TimeCard get clock;
   @JsonKey(ignore: true)
   _$$ClockAlertDialogStateloadedImplCopyWith<_$ClockAlertDialogStateloadedImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ClockAlertDialogStateSavingImplCopyWith<$Res> {
+  factory _$$ClockAlertDialogStateSavingImplCopyWith(
+          _$ClockAlertDialogStateSavingImpl value,
+          $Res Function(_$ClockAlertDialogStateSavingImpl) then) =
+      __$$ClockAlertDialogStateSavingImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({CrudType type, TimeCard clock});
+
+  $CrudTypeCopyWith<$Res> get type;
+  $TimeCardCopyWith<$Res> get clock;
+}
+
+/// @nodoc
+class __$$ClockAlertDialogStateSavingImplCopyWithImpl<$Res>
+    extends _$ClockAlertDialogStateCopyWithImpl<$Res,
+        _$ClockAlertDialogStateSavingImpl>
+    implements _$$ClockAlertDialogStateSavingImplCopyWith<$Res> {
+  __$$ClockAlertDialogStateSavingImplCopyWithImpl(
+      _$ClockAlertDialogStateSavingImpl _value,
+      $Res Function(_$ClockAlertDialogStateSavingImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+    Object? clock = null,
+  }) {
+    return _then(_$ClockAlertDialogStateSavingImpl(
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as CrudType,
+      clock: null == clock
+          ? _value.clock
+          : clock // ignore: cast_nullable_to_non_nullable
+              as TimeCard,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $CrudTypeCopyWith<$Res> get type {
+    return $CrudTypeCopyWith<$Res>(_value.type, (value) {
+      return _then(_value.copyWith(type: value));
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TimeCardCopyWith<$Res> get clock {
+    return $TimeCardCopyWith<$Res>(_value.clock, (value) {
+      return _then(_value.copyWith(clock: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$ClockAlertDialogStateSavingImpl implements ClockAlertDialogStateSaving {
+  const _$ClockAlertDialogStateSavingImpl(
+      {this.type = const CrudType.create(), required this.clock});
+
+  @override
+  @JsonKey()
+  final CrudType type;
+  @override
+  final TimeCard clock;
+
+  @override
+  String toString() {
+    return 'ClockAlertDialogState.saving(type: $type, clock: $clock)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ClockAlertDialogStateSavingImpl &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.clock, clock) || other.clock == clock));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, type, clock);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ClockAlertDialogStateSavingImplCopyWith<_$ClockAlertDialogStateSavingImpl>
+      get copyWith => __$$ClockAlertDialogStateSavingImplCopyWithImpl<
+          _$ClockAlertDialogStateSavingImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() empty,
+    required TResult Function() loading,
+    required TResult Function(CrudType type, TimeCard clock) loaded,
+    required TResult Function(CrudType type, TimeCard clock) saving,
+  }) {
+    return saving(type, clock);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? empty,
+    TResult? Function()? loading,
+    TResult? Function(CrudType type, TimeCard clock)? loaded,
+    TResult? Function(CrudType type, TimeCard clock)? saving,
+  }) {
+    return saving?.call(type, clock);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? empty,
+    TResult Function()? loading,
+    TResult Function(CrudType type, TimeCard clock)? loaded,
+    TResult Function(CrudType type, TimeCard clock)? saving,
+    required TResult orElse(),
+  }) {
+    if (saving != null) {
+      return saving(type, clock);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ClockAlertDialogStateEmpty value) empty,
+    required TResult Function(ClockAlertDialogStateLoading value) loading,
+    required TResult Function(ClockAlertDialogStateloaded value) loaded,
+    required TResult Function(ClockAlertDialogStateSaving value) saving,
+  }) {
+    return saving(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ClockAlertDialogStateEmpty value)? empty,
+    TResult? Function(ClockAlertDialogStateLoading value)? loading,
+    TResult? Function(ClockAlertDialogStateloaded value)? loaded,
+    TResult? Function(ClockAlertDialogStateSaving value)? saving,
+  }) {
+    return saving?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ClockAlertDialogStateEmpty value)? empty,
+    TResult Function(ClockAlertDialogStateLoading value)? loading,
+    TResult Function(ClockAlertDialogStateloaded value)? loaded,
+    TResult Function(ClockAlertDialogStateSaving value)? saving,
+    required TResult orElse(),
+  }) {
+    if (saving != null) {
+      return saving(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ClockAlertDialogStateSaving implements ClockAlertDialogState {
+  const factory ClockAlertDialogStateSaving(
+      {final CrudType type,
+      required final TimeCard clock}) = _$ClockAlertDialogStateSavingImpl;
+
+  CrudType get type;
+  TimeCard get clock;
+  @JsonKey(ignore: true)
+  _$$ClockAlertDialogStateSavingImplCopyWith<_$ClockAlertDialogStateSavingImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

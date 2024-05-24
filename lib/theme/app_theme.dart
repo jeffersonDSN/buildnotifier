@@ -46,7 +46,7 @@ CardTheme get _cardTheme => const CardTheme(
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
-          Radius.circular(Sizes.padding4),
+          Radius.circular(Sizes.size4),
         ),
         side: BorderSide(
           color: AppColor.greyColorSwatch,

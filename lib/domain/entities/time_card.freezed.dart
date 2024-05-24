@@ -25,9 +25,11 @@ mixin _$TimeCard {
   DateTime? get start => throw _privateConstructorUsedError;
   double? get startLatitude => throw _privateConstructorUsedError;
   double? get startLongitude => throw _privateConstructorUsedError;
+  String? get startLocation => throw _privateConstructorUsedError;
   DateTime? get end => throw _privateConstructorUsedError;
   double? get endLatitude => throw _privateConstructorUsedError;
   double? get endLongitude => throw _privateConstructorUsedError;
+  String? get endLocation => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -46,9 +48,11 @@ abstract class $TimeCardCopyWith<$Res> {
       DateTime? start,
       double? startLatitude,
       double? startLongitude,
+      String? startLocation,
       DateTime? end,
       double? endLatitude,
-      double? endLongitude});
+      double? endLongitude,
+      String? endLocation});
 }
 
 /// @nodoc
@@ -69,9 +73,11 @@ class _$TimeCardCopyWithImpl<$Res, $Val extends TimeCard>
     Object? start = freezed,
     Object? startLatitude = freezed,
     Object? startLongitude = freezed,
+    Object? startLocation = freezed,
     Object? end = freezed,
     Object? endLatitude = freezed,
     Object? endLongitude = freezed,
+    Object? endLocation = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -94,6 +100,10 @@ class _$TimeCardCopyWithImpl<$Res, $Val extends TimeCard>
           ? _value.startLongitude
           : startLongitude // ignore: cast_nullable_to_non_nullable
               as double?,
+      startLocation: freezed == startLocation
+          ? _value.startLocation
+          : startLocation // ignore: cast_nullable_to_non_nullable
+              as String?,
       end: freezed == end
           ? _value.end
           : end // ignore: cast_nullable_to_non_nullable
@@ -106,6 +116,10 @@ class _$TimeCardCopyWithImpl<$Res, $Val extends TimeCard>
           ? _value.endLongitude
           : endLongitude // ignore: cast_nullable_to_non_nullable
               as double?,
+      endLocation: freezed == endLocation
+          ? _value.endLocation
+          : endLocation // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -124,9 +138,11 @@ abstract class _$$TimeCardImplCopyWith<$Res>
       DateTime? start,
       double? startLatitude,
       double? startLongitude,
+      String? startLocation,
       DateTime? end,
       double? endLatitude,
-      double? endLongitude});
+      double? endLongitude,
+      String? endLocation});
 }
 
 /// @nodoc
@@ -145,9 +161,11 @@ class __$$TimeCardImplCopyWithImpl<$Res>
     Object? start = freezed,
     Object? startLatitude = freezed,
     Object? startLongitude = freezed,
+    Object? startLocation = freezed,
     Object? end = freezed,
     Object? endLatitude = freezed,
     Object? endLongitude = freezed,
+    Object? endLocation = freezed,
   }) {
     return _then(_$TimeCardImpl(
       id: null == id
@@ -170,6 +188,10 @@ class __$$TimeCardImplCopyWithImpl<$Res>
           ? _value.startLongitude
           : startLongitude // ignore: cast_nullable_to_non_nullable
               as double?,
+      startLocation: freezed == startLocation
+          ? _value.startLocation
+          : startLocation // ignore: cast_nullable_to_non_nullable
+              as String?,
       end: freezed == end
           ? _value.end
           : end // ignore: cast_nullable_to_non_nullable
@@ -182,6 +204,10 @@ class __$$TimeCardImplCopyWithImpl<$Res>
           ? _value.endLongitude
           : endLongitude // ignore: cast_nullable_to_non_nullable
               as double?,
+      endLocation: freezed == endLocation
+          ? _value.endLocation
+          : endLocation // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -195,9 +221,11 @@ class _$TimeCardImpl implements _TimeCard {
       this.start,
       this.startLatitude,
       this.startLongitude,
+      this.startLocation,
       this.end,
       this.endLatitude,
-      this.endLongitude});
+      this.endLongitude,
+      this.endLocation});
 
   factory _$TimeCardImpl.fromJson(Map<String, dynamic> json) =>
       _$$TimeCardImplFromJson(json);
@@ -214,15 +242,19 @@ class _$TimeCardImpl implements _TimeCard {
   @override
   final double? startLongitude;
   @override
+  final String? startLocation;
+  @override
   final DateTime? end;
   @override
   final double? endLatitude;
   @override
   final double? endLongitude;
+  @override
+  final String? endLocation;
 
   @override
   String toString() {
-    return 'TimeCard(id: $id, userId: $userId, start: $start, startLatitude: $startLatitude, startLongitude: $startLongitude, end: $end, endLatitude: $endLatitude, endLongitude: $endLongitude)';
+    return 'TimeCard(id: $id, userId: $userId, start: $start, startLatitude: $startLatitude, startLongitude: $startLongitude, startLocation: $startLocation, end: $end, endLatitude: $endLatitude, endLongitude: $endLongitude, endLocation: $endLocation)';
   }
 
   @override
@@ -237,17 +269,31 @@ class _$TimeCardImpl implements _TimeCard {
                 other.startLatitude == startLatitude) &&
             (identical(other.startLongitude, startLongitude) ||
                 other.startLongitude == startLongitude) &&
+            (identical(other.startLocation, startLocation) ||
+                other.startLocation == startLocation) &&
             (identical(other.end, end) || other.end == end) &&
             (identical(other.endLatitude, endLatitude) ||
                 other.endLatitude == endLatitude) &&
             (identical(other.endLongitude, endLongitude) ||
-                other.endLongitude == endLongitude));
+                other.endLongitude == endLongitude) &&
+            (identical(other.endLocation, endLocation) ||
+                other.endLocation == endLocation));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, userId, start, startLatitude,
-      startLongitude, end, endLatitude, endLongitude);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      userId,
+      start,
+      startLatitude,
+      startLongitude,
+      startLocation,
+      end,
+      endLatitude,
+      endLongitude,
+      endLocation);
 
   @JsonKey(ignore: true)
   @override
@@ -270,9 +316,11 @@ abstract class _TimeCard implements TimeCard {
       final DateTime? start,
       final double? startLatitude,
       final double? startLongitude,
+      final String? startLocation,
       final DateTime? end,
       final double? endLatitude,
-      final double? endLongitude}) = _$TimeCardImpl;
+      final double? endLongitude,
+      final String? endLocation}) = _$TimeCardImpl;
 
   factory _TimeCard.fromJson(Map<String, dynamic> json) =
       _$TimeCardImpl.fromJson;
@@ -288,11 +336,15 @@ abstract class _TimeCard implements TimeCard {
   @override
   double? get startLongitude;
   @override
+  String? get startLocation;
+  @override
   DateTime? get end;
   @override
   double? get endLatitude;
   @override
   double? get endLongitude;
+  @override
+  String? get endLocation;
   @override
   @JsonKey(ignore: true)
   _$$TimeCardImplCopyWith<_$TimeCardImpl> get copyWith =>

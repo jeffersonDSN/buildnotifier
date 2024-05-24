@@ -10,12 +10,9 @@ part 'client_detail_state.dart';
 part 'client_detail_bloc.freezed.dart';
 
 class ClientDetailBloc extends Bloc<ClientDetailEvent, ClientDetailState> {
-  final ClientsController controller;
-
-  ClientDetailBloc({required this.controller})
-      : super(
-          const ClientDetailState.empty(),
-        ) {
+  ClientDetailBloc({
+    required ClientsController controller,
+  }) : super(const ClientDetailState.empty()) {
     on<ClientDetailEvent>(
       (event, emit) async {
         await event.when(

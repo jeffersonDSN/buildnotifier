@@ -2,27 +2,28 @@ import 'package:buildnotifier/domain/entities/user.dart';
 import 'package:buildnotifier/domain/repositories/abs_i_users_repository.dart';
 
 class UsersController {
-  final AbsIUsersRepository repository;
+  final AbsIUsersRepository _repository;
 
-  UsersController({required this.repository});
+  UsersController({required AbsIUsersRepository repository})
+      : _repository = repository;
 
   Future<List<User>> getAll() {
-    return repository.getAll();
+    return _repository.getAll();
   }
 
   Future<User> getById(String id) {
-    return repository.getById(id);
+    return _repository.getById(id);
   }
 
   Future<bool> update(User value) {
-    return repository.put(value);
+    return _repository.put(value);
   }
 
   Future<bool> create(User value) {
-    return repository.post(value);
+    return _repository.post(value);
   }
 
   Future<bool> delete(String id) {
-    return repository.delete(id);
+    return _repository.delete(id);
   }
 }

@@ -9,10 +9,8 @@ part 'appointment_event.dart';
 part 'appointment_state.dart';
 
 class AppointmentBloc extends Bloc<AppointmentEvent, AppointmentState> {
-  final ScheduleController controller;
-
   AppointmentBloc({
-    required this.controller,
+    required ScheduleController controller,
   }) : super(const AppointmentState.empty()) {
     on<AppointmentEvent>(
       (event, emit) async {

@@ -1,11 +1,10 @@
-import 'dart:convert';
-
 import 'package:buildnotifier/domain/controllers/time_card_controller.dart';
 import 'package:buildnotifier/domain/entities/crud_type.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:buildnotifier/domain/entities/time_card.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 
 part 'clock_alert_dialog_event.dart';
@@ -14,10 +13,8 @@ part 'clock_alert_dialog_bloc.freezed.dart';
 
 class ClockAlertDialogBloc
     extends Bloc<ClockAlertDialogEvent, ClockAlertDialogState> {
-  final TimeCardController controller;
-
   ClockAlertDialogBloc({
-    required this.controller,
+    required TimeCardController controller,
   }) : super(const ClockAlertDialogState.empty()) {
     on<ClockAlertDialogEvent>(
       (event, emit) async {
@@ -39,22 +36,36 @@ class ClockAlertDialogBloc
             );
           },
           save: (clock, callback) async {
-            var position = await getLocation();
+            emit(
+              ClockAlertDialogState.saving(
+                clock: state.asLoaded.clock,
+                type: state.asLoaded.type,
+              ),
+            );
 
-            state.asLoaded.type.when(
+            var position = await _getLocation();
+
+            var location = await _getAddressFromLatLng(
+              position!.latitude,
+              position.longitude,
+            );
+
+            state.asSaving.type.when(
               create: () async {
                 await controller.createClock(
                   clock.copyWith(
-                    startLatitude: position!.latitude,
+                    startLatitude: position.latitude,
                     startLongitude: position.longitude,
+                    startLocation: location,
                   ),
                 );
               },
               update: (id) async {
                 await controller.updateClock(
                   clock.copyWith(
-                    endLatitude: position!.latitude,
+                    endLatitude: position.latitude,
                     endLongitude: position.longitude,
+                    endLocation: location,
                   ),
                 );
               },
@@ -67,7 +78,7 @@ class ClockAlertDialogBloc
     );
   }
 
-  Future<({double latitude, double longitude})?> getLocation() async {
+  Future<({double latitude, double longitude})?> _getLocation() async {
     // Verifica se a permissão de localização foi concedida
     bool isLocationServiceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!isLocationServiceEnabled) {
@@ -98,5 +109,17 @@ class ClockAlertDialogBloc
         longitude: position.longitude,
       ),
     );
+  }
+
+  Future<String> _getAddressFromLatLng(
+      double latitude, double longitude) async {
+    List<Placemark> placemarks = await placemarkFromCoordinates(
+      latitude,
+      longitude,
+    );
+
+    Placemark place = placemarks[0];
+
+    return Future(() => '${place.street}, ${place.locality}');
   }
 }
