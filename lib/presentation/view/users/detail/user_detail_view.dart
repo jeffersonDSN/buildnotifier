@@ -1,7 +1,7 @@
 import 'package:buildnotifier/domain/controllers/users_controller.dart';
 import 'package:buildnotifier/domain/entities/crud_type.dart';
 import 'package:buildnotifier/domain/entities/user.dart';
-import 'package:buildnotifier/infrastructure/repositories/firestore/users_firestore_repositorie.dart';
+import 'package:buildnotifier/infrastructure/repositories/firestore/users_firestore_repository.dart';
 import 'package:buildnotifier/presentation/view/users/detail/user_detail_bloc.dart';
 import 'package:buildnotifier/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +21,7 @@ class UserDetailView extends StatelessWidget {
 
   final UserDetailBloc bloc = UserDetailBloc(
     controller: UsersController(
-      repositorie: UsersFireStoreRepositorie(),
+      repository: UsersFireStoreRepository(),
     ),
   );
 

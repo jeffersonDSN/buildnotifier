@@ -1,12 +1,11 @@
+import 'package:buildnotifier/domain/controllers/schedule_controller.dart';
+import 'package:buildnotifier/infrastructure/repositories/firestore/schedule_firestore_repository.dart';
+import 'package:buildnotifier/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:intl/intl.dart';
-
-import '../../../../theme/app_sizes.dart';
-import '../../../domain/controllers/schedule_controller.dart';
-import '../../../infrastructure/repositories/firestore/schedule_firestore_repositorie.dart';
 
 import 'appointment_bloc.dart';
 
@@ -35,7 +34,7 @@ class _AppointmentView extends State<AppointmentView> {
   Widget build(BuildContext context) {
     var bloc = AppointmentBloc(
       controller: ScheduleController(
-        repositorie: ScheduleFirestoreRepositorie(),
+        repository: ScheduleFirestoreRepository(),
       ),
     );
 

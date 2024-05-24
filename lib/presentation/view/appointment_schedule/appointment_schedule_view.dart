@@ -1,10 +1,9 @@
 import 'package:buildnotifier/domain/controllers/location_controller.dart';
+import 'package:buildnotifier/domain/controllers/schedule_controller.dart';
+import 'package:buildnotifier/infrastructure/repositories/firestore/schedule_firestore_repository.dart';
 import 'package:buildnotifier/infrastructure/repositories/http/location_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../domain/controllers/schedule_controller.dart';
-import '../../../infrastructure/repositories/firestore/schedule_firestore_repositorie.dart';
 
 import 'appointment_schedule_bloc.dart';
 import 'widgets/appointment_schedule_form.dart';
@@ -27,10 +26,10 @@ class _AppointmentScheduleView extends State<AppointmentScheduleView> {
   Widget build(BuildContext context) {
     var bloc = AppointmentScheduleBloc(
       controller: ScheduleController(
-        repositorie: ScheduleFirestoreRepositorie(),
+        repository: ScheduleFirestoreRepository(),
       ),
       locationController: LocationController(
-        repositorie: LocationRepository(),
+        repository: LocationRepository(),
       ),
     );
 

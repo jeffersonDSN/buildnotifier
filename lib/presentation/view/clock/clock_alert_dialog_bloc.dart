@@ -1,0 +1,102 @@
+import 'dart:convert';
+
+import 'package:buildnotifier/domain/controllers/time_card_controller.dart';
+import 'package:buildnotifier/domain/entities/crud_type.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:buildnotifier/domain/entities/time_card.dart';
+import 'package:geolocator/geolocator.dart';
+
+part 'clock_alert_dialog_event.dart';
+part 'clock_alert_dialog_state.dart';
+part 'clock_alert_dialog_bloc.freezed.dart';
+
+class ClockAlertDialogBloc
+    extends Bloc<ClockAlertDialogEvent, ClockAlertDialogState> {
+  final TimeCardController controller;
+
+  ClockAlertDialogBloc({
+    required this.controller,
+  }) : super(const ClockAlertDialogState.empty()) {
+    on<ClockAlertDialogEvent>(
+      (event, emit) async {
+        await event.when(
+          load: (userID) async {
+            emit(const ClockAlertDialogState.loading());
+            var clock = await controller.getLastTimeCardByUserId(userID);
+
+            clock ??= TimeCard(userId: userID);
+            clock = clock.end == null ? clock : TimeCard(userId: userID);
+
+            emit(
+              ClockAlertDialogState.loaded(
+                clock: clock,
+                type: clock.id.isNotEmpty
+                    ? CrudType.update(id: clock.id)
+                    : const CrudType.create(),
+              ),
+            );
+          },
+          save: (clock, callback) async {
+            var position = await getLocation();
+
+            state.asLoaded.type.when(
+              create: () async {
+                await controller.createClock(
+                  clock.copyWith(
+                    startLatitude: position!.latitude,
+                    startLongitude: position.longitude,
+                  ),
+                );
+              },
+              update: (id) async {
+                await controller.updateClock(
+                  clock.copyWith(
+                    endLatitude: position!.latitude,
+                    endLongitude: position.longitude,
+                  ),
+                );
+              },
+            );
+
+            callback.call();
+          },
+        );
+      },
+    );
+  }
+
+  Future<({double latitude, double longitude})?> getLocation() async {
+    // Verifica se a permissão de localização foi concedida
+    bool isLocationServiceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!isLocationServiceEnabled) {
+      // Se o serviço de localização não estiver habilitado, você pode solicitar ao usuário que o ative
+      // ou fornecer uma mensagem informando que o aplicativo precisa de localização para funcionar corretamente
+      return Future(() => null);
+    }
+
+    // Verifica se a permissão de localização foi concedida
+    LocationPermission permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      // Se a permissão não foi concedida, você pode solicitar ao usuário que a conceda
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        // Se a permissão ainda não foi concedida, você pode exibir uma mensagem informando que o aplicativo precisa de permissão de localização
+        return Future(() => null);
+      }
+    }
+
+    // Obter a posição atual do dispositivo
+    Position position = await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.high,
+    );
+
+    return Future(
+      () => (
+        latitude: position.latitude,
+        longitude: position.longitude,
+      ),
+    );
+  }
+}

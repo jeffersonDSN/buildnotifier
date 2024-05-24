@@ -1,28 +1,28 @@
 import 'package:buildnotifier/domain/entities/client.dart';
-import 'package:buildnotifier/domain/repositories/abs_i_clients_repositorie.dart';
+import 'package:buildnotifier/domain/repositories/abs_i_clients_repository.dart';
 
 class ClientsController {
-  final AbsIClientsRepositorie repositorie;
+  final AbsIClientsRepository repository;
 
-  ClientsController({required this.repositorie});
+  ClientsController({required this.repository});
 
   Future<List<Client>> getAll() {
-    return repositorie.getAll();
+    return repository.getAll();
   }
 
   Future<Client> getById(String id) {
-    return repositorie.getById(id);
+    return repository.getById(id);
   }
 
   Future<bool> update(Client value) {
-    return repositorie.post(value);
+    return repository.put(value);
   }
 
   Future<bool> create(Client value) {
-    return repositorie.put(value);
+    return repository.post(value);
   }
 
   Future<bool> delete(String id) {
-    return repositorie.delete(id);
+    return repository.delete(id);
   }
 }

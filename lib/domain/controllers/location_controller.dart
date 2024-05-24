@@ -1,11 +1,11 @@
-import 'package:buildnotifier/domain/repositories/abs_i_location_repositorie.dart';
+import 'package:buildnotifier/domain/repositories/abs_i_location_repository.dart';
 
 class LocationController {
-  final AbsILocationRepositorie repositorie;
+  final AbsILocationRepository repository;
 
-  LocationController({required this.repositorie});
+  LocationController({required this.repository});
 
   Future<({double latitude, double longitude})?> getLatLng(String address) {
-    return repositorie.getLatLng(address);
+    return repository.getLatLng(address);
   }
 }

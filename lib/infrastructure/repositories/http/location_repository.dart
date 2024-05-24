@@ -1,9 +1,8 @@
 import 'dart:convert';
+import 'package:buildnotifier/domain/repositories/abs_i_location_repository.dart';
 import 'package:http/http.dart' as http;
 
-import '../../../domain/repositories/abs_i_location_repositorie.dart';
-
-class LocationRepository implements AbsILocationRepositorie {
+class LocationRepository implements AbsILocationRepository {
   @override
   Future<({double latitude, double longitude})?> getLatLng(
       String address) async {

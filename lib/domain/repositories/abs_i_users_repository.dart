@@ -1,6 +1,6 @@
 import 'package:buildnotifier/domain/entities/user.dart';
 
-abstract interface class AbsIUsersRepositorie {
+abstract interface class AbsIUsersRepository {
   Future<List<User>> getAll();
   Future<User> getById(String id);
   Future<bool> put(User value);

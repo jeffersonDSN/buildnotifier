@@ -1,12 +1,12 @@
 import 'package:buildnotifier/domain/entities/schedule.dart';
-import 'package:buildnotifier/domain/repositories/abs_i_schedule_repositorie.dart';
+import 'package:buildnotifier/domain/repositories/abs_i_schedule_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'firestore_repository.dart';
 
-class ScheduleFirestoreRepositorie extends FireStoreRepository
-    implements AbsIScheduleRepositorie {
-  ScheduleFirestoreRepositorie() : super(collectionName: 'schedule');
+class ScheduleFirestoreRepository extends FireStoreRepository
+    implements AbsIScheduleRepository {
+  ScheduleFirestoreRepository() : super(collectionName: 'schedule');
 
   @override
   Future<List<Schedule>> getAll() async {
@@ -95,7 +95,7 @@ class ScheduleFirestoreRepositorie extends FireStoreRepository
   }
 
   @override
-  Future<bool> post(Schedule value) async {
+  Future<bool> put(Schedule value) async {
     var schedule = {
       'startDateTime': value.startDateTime,
       'endDateTime': value.endDateTime,
@@ -110,7 +110,7 @@ class ScheduleFirestoreRepositorie extends FireStoreRepository
   }
 
   @override
-  Future<bool> put(Schedule value) async {
+  Future<bool> post(Schedule value) async {
     var schedule = {
       'startDateTime': value.startDateTime,
       'endDateTime': value.endDateTime,

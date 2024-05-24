@@ -1,14 +1,14 @@
-import 'package:buildnotifier/domain/entities/user.dart';
-import 'package:buildnotifier/domain/repositories/abs_i_users_repositorie.dart';
+import 'package:buildnotifier/domain/entities/client.dart';
+import 'package:buildnotifier/domain/repositories/abs_i_clients_repository.dart';
 import 'package:buildnotifier/infrastructure/repositories/firestore/firestore_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class UsersFireStoreRepositorie extends FireStoreRepository
-    implements AbsIUsersRepositorie {
-  UsersFireStoreRepositorie() : super(collectionName: 'users');
+class ClientsFireStoreRepository extends FireStoreRepository
+    implements AbsIClientsRepository {
+  ClientsFireStoreRepository() : super(collectionName: 'clients');
 
   @override
-  Future<List<User>> getAll() async {
+  Future<List<Client>> getAll() async {
     var querySnapshot = await collection.get();
 
     return querySnapshot.docs
@@ -18,20 +18,20 @@ class UsersFireStoreRepositorie extends FireStoreRepository
           return {...doc, 'id': document.id};
         })
         .toList()
-        .map((e) => User.fromJson(e))
+        .map((e) => Client.fromJson(e))
         .toList();
   }
 
   @override
-  Future<User> getById(String id) async {
+  Future<Client> getById(String id) async {
     var snapshot = await collection.doc(id).get();
 
     var doc = snapshot.data() as Map<String, dynamic>;
-    return User.fromJson({...doc, 'id': snapshot.id});
+    return Client.fromJson({...doc, 'id': snapshot.id});
   }
 
   @override
-  Future<bool> put(User value) async {
+  Future<bool> post(Client value) async {
     var user = {
       'firstName': value.firstName,
       'lastName': value.lastName,
@@ -43,7 +43,7 @@ class UsersFireStoreRepositorie extends FireStoreRepository
   }
 
   @override
-  Future<bool> post(User value) async {
+  Future<bool> put(Client value) async {
     var user = {
       'firstName': value.firstName,
       'lastName': value.lastName,

@@ -1,6 +1,6 @@
 import '../entities/schedule.dart';
 
-abstract interface class AbsIScheduleRepositorie {
+abstract interface class AbsIScheduleRepository {
   Future<List<Schedule>> getAll();
   Future<List<Schedule>> getByDay(DateTime selectedDay);
   Future<Schedule> getById(String id);

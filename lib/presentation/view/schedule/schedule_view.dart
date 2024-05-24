@@ -1,11 +1,9 @@
 import 'package:buildnotifier/domain/controllers/schedule_controller.dart';
-import 'package:buildnotifier/infrastructure/repositories/firestore/schedule_firestore_repositorie.dart';
+import 'package:buildnotifier/infrastructure/repositories/firestore/schedule_firestore_repository.dart';
 import 'package:buildnotifier/presentation/core/const/images_conts.dart';
 import 'package:buildnotifier/presentation/view/appointment/appointment_view.dart';
 import 'package:buildnotifier/presentation/view/appointment_schedule/appointment_schedule_view.dart';
-import 'package:buildnotifier/presentation/view/clients/list/clients_view.dart';
 import 'package:buildnotifier/presentation/view/schedule/schedule_bloc.dart';
-import 'package:buildnotifier/presentation/view/users/list/users_view.dart';
 import 'package:buildnotifier/theme/app_color.dart';
 import 'package:buildnotifier/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +18,7 @@ class ScheduleView extends StatelessWidget {
   Widget build(BuildContext context) {
     var bloc = ScheduleBloc(
       controller: ScheduleController(
-        repositorie: ScheduleFirestoreRepositorie(),
+        repository: ScheduleFirestoreRepository(),
       ),
     );
 
@@ -38,71 +36,6 @@ class ScheduleView extends StatelessWidget {
         title: Image.asset(
           '$assetImage$logo2',
           height: 48,
-        ),
-      ),
-      drawer: Drawer(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Container(
-              color: Theme.of(context).primaryColor,
-              child: SizedBox(
-                height: 250,
-                child: Image.asset(
-                  '$assetImage$logo2',
-                ),
-              ),
-            ),
-            Expanded(
-              child: ListView(
-                padding: EdgeInsets.zero,
-                children: [
-                  InkWell(
-                    onTap: () {},
-                    child: const ListTile(
-                      leading: Icon(Icons.calendar_month_outlined),
-                      title: Text('Schedule'),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: const ListTile(
-                      leading: Icon(Icons.business),
-                      title: Text('Projects'),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ClientsView(),
-                        ),
-                      );
-                    },
-                    child: const ListTile(
-                      leading: Icon(Icons.people_outline),
-                      title: Text('Clients'),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => UsersView(),
-                        ),
-                      );
-                    },
-                    child: const ListTile(
-                      leading: Icon(Icons.badge_outlined),
-                      title: Text('Users'),
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ],
         ),
       ),
       body: BlocBuilder<ScheduleBloc, ScheduleState>(
