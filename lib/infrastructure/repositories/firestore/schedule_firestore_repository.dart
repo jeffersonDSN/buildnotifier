@@ -1,4 +1,4 @@
-import 'package:buildnotifier/domain/entities/schedule.dart';
+import 'package:buildnotifier/domain/entities/appointment.dart';
 import 'package:buildnotifier/domain/repositories/abs_i_schedule_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -9,7 +9,7 @@ class ScheduleFirestoreRepository extends FireStoreRepository
   ScheduleFirestoreRepository() : super(collectionName: 'schedule');
 
   @override
-  Future<List<Schedule>> getAll() async {
+  Future<List<Appointment>> getAll() async {
     var querySnapshot = await collection.get();
 
     return querySnapshot.docs
@@ -26,12 +26,12 @@ class ScheduleFirestoreRepository extends FireStoreRepository
           return {...result, 'id': document.id};
         })
         .toList()
-        .map((e) => Schedule.fromJson(e))
+        .map((e) => Appointment.fromJson(e))
         .toList();
   }
 
   @override
-  Future<List<Schedule>> getByDay(DateTime selectedDay) async {
+  Future<List<Appointment>> getByDay(DateTime selectedDay) async {
     DateTime startOfDay = DateTime(
       selectedDay.year,
       selectedDay.month,
@@ -74,12 +74,12 @@ class ScheduleFirestoreRepository extends FireStoreRepository
         return MapEntry(key, value);
       });
 
-      return Schedule.fromJson(data);
+      return Appointment.fromJson(data);
     }).toList();
   }
 
   @override
-  Future<Schedule> getById(String id) async {
+  Future<Appointment> getById(String id) async {
     var snapshot = await collection.doc(id).get();
 
     var doc = snapshot.data() as Map<String, dynamic>;
@@ -91,11 +91,11 @@ class ScheduleFirestoreRepository extends FireStoreRepository
       }
     });
 
-    return Schedule.fromJson({...result, 'id': snapshot.id});
+    return Appointment.fromJson({...result, 'id': snapshot.id});
   }
 
   @override
-  Future<bool> put(Schedule value) async {
+  Future<bool> put(Appointment value) async {
     var schedule = {
       'startDateTime': value.startDateTime,
       'endDateTime': value.endDateTime,
@@ -103,6 +103,7 @@ class ScheduleFirestoreRepository extends FireStoreRepository
       'location': value.location,
       'latitude': value.latitude,
       'longitude': value.longitude,
+      'assignTo': value.assignTo,
     };
 
     await collection.doc(value.id.toString()).update(schedule);
@@ -110,7 +111,7 @@ class ScheduleFirestoreRepository extends FireStoreRepository
   }
 
   @override
-  Future<bool> post(Schedule value) async {
+  Future<bool> post(Appointment value) async {
     var schedule = {
       'startDateTime': value.startDateTime,
       'endDateTime': value.endDateTime,
@@ -118,6 +119,7 @@ class ScheduleFirestoreRepository extends FireStoreRepository
       'location': value.location,
       'latitude': value.latitude,
       'longitude': value.longitude,
+      'assignTo': value.assignTo.toJson(),
     };
 
     await collection.add(schedule);

@@ -1,10 +1,10 @@
-import '../entities/schedule.dart';
+import '../entities/appointment.dart';
 
 abstract interface class AbsIScheduleRepository {
-  Future<List<Schedule>> getAll();
-  Future<List<Schedule>> getByDay(DateTime selectedDay);
-  Future<Schedule> getById(String id);
-  Future<bool> post(Schedule value);
-  Future<bool> put(Schedule value);
+  Future<List<Appointment>> getAll();
+  Future<List<Appointment>> getByDay(DateTime selectedDay);
+  Future<Appointment> getById(String id);
+  Future<bool> post(Appointment value);
+  Future<bool> put(Appointment value);
   Future<bool> delete(String id);
 }

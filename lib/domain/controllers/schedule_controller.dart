@@ -1,4 +1,4 @@
-import 'package:buildnotifier/domain/entities/schedule.dart';
+import 'package:buildnotifier/domain/entities/appointment.dart';
 import 'package:buildnotifier/domain/repositories/abs_i_schedule_repository.dart';
 
 class ScheduleController {
@@ -7,23 +7,23 @@ class ScheduleController {
   ScheduleController({required AbsIScheduleRepository repository})
       : _repository = repository;
 
-  Future<List<Schedule>> getAllSchedule() {
+  Future<List<Appointment>> getAllSchedule() {
     return _repository.getAll();
   }
 
-  Future<List<Schedule>> getByDay(DateTime selectedDay) {
+  Future<List<Appointment>> getByDay(DateTime selectedDay) {
     return _repository.getByDay(selectedDay);
   }
 
-  Future<Schedule> getById(String id) {
+  Future<Appointment> getById(String id) {
     return _repository.getById(id);
   }
 
-  Future<bool> editSchedule(Schedule value) {
+  Future<bool> editSchedule(Appointment value) {
     return _repository.put(value);
   }
 
-  Future<bool> createSchedule(Schedule value) {
+  Future<bool> createSchedule(Appointment value) {
     return _repository.post(value);
   }
 

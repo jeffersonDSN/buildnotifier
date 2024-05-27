@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'presentation/view/home/home_view.dart';
+import 'presentation/home/view/home_view.dart';
 import 'theme/app_theme.dart';
 import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
