@@ -1,6 +1,6 @@
 import 'package:buildnotifier/domain/controllers/schedule_controller.dart';
 import 'package:buildnotifier/infrastructure/repositories/firestore/schedule_firestore_repository.dart';
-import 'package:buildnotifier/presentation/core/const/images_conts.dart';
+import 'package:buildnotifier/presentation/core/const/images_const.dart';
 import 'package:buildnotifier/presentation/appointment/view/appointment_view.dart';
 import 'package:buildnotifier/presentation/appointment_schedule/view/appointment_schedule_view.dart';
 import 'package:buildnotifier/presentation/schedule/bloc/schedule_bloc.dart';

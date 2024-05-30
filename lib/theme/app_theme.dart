@@ -11,6 +11,7 @@ class AppTheme {
     inputDecorationTheme: _inputDecorationTheme,
     cardTheme: _cardTheme,
     textTheme: _textTheme,
+    listTileTheme: _listTileTheme,
     outlinedButtonTheme: _outlinedButtonThemeData,
     floatingActionButtonTheme: _floatingActionButtonThemeData,
   );
@@ -46,11 +47,7 @@ CardTheme get _cardTheme => const CardTheme(
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
-          Radius.circular(Sizes.size4),
-        ),
-        side: BorderSide(
-          color: AppColor.greyColorSwatch,
-          width: 1,
+          Radius.circular(Sizes.size24),
         ),
       ),
     );
@@ -60,6 +57,17 @@ TextTheme get _textTheme => const TextTheme(
         fontSize: 16,
         fontWeight: FontWeight.bold,
       ),
+    );
+
+ListTileThemeData get _listTileTheme => const ListTileThemeData(
+      titleTextStyle: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        color: Colors.black,
+      ),
+      iconColor: Colors.black,
+      selectedColor: Colors.black,
+      selectedTileColor: AppColor.backgroundColor,
     );
 
 OutlinedButtonThemeData get _outlinedButtonThemeData => OutlinedButtonThemeData(

@@ -5,9 +5,8 @@ import 'package:buildnotifier/presentation/time_card/view/time_card_view.dart';
 import 'package:buildnotifier/presentation/view/users/list/users_view.dart';
 import 'package:buildnotifier/theme/app_color.dart';
 import 'package:buildnotifier/theme/app_sizes.dart';
+import 'package:buildnotifier/presentation/core/const/images_const.dart';
 import 'package:flutter/material.dart';
-
-import '../../core/const/images_conts.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -41,7 +40,7 @@ class HomeView extends StatelessWidget {
                 children: [
                   InkWell(
                     child: const ListTile(
-                      leading: Icon(Icons.calendar_month_outlined),
+                      leading: Icon(Icons.calendar_month),
                       title: Text('Schedule'),
                     ),
                     onTap: () {
@@ -70,7 +69,7 @@ class HomeView extends StatelessWidget {
                       );
                     },
                     child: const ListTile(
-                      leading: Icon(Icons.people_outline),
+                      leading: Icon(Icons.people),
                       title: Text('Clients'),
                     ),
                   ),
@@ -84,7 +83,7 @@ class HomeView extends StatelessWidget {
                       );
                     },
                     child: const ListTile(
-                      leading: Icon(Icons.badge_outlined),
+                      leading: Icon(Icons.badge),
                       title: Text('Users'),
                     ),
                   )
@@ -107,7 +106,6 @@ class HomeView extends StatelessWidget {
             ),
             gapHeight16,
             Card(
-              elevation: 2,
               child: ListTile(
                 leading: const Icon(
                   Icons.watch_later_outlined,
@@ -131,7 +129,6 @@ class HomeView extends StatelessWidget {
               ),
             ),
             Card(
-              elevation: 2,
               child: ListTile(
                 leading: const Icon(
                   Icons.pending_actions_outlined,
@@ -153,7 +150,6 @@ class HomeView extends StatelessWidget {
               ),
             ),
             Card(
-              elevation: 2,
               child: ListTile(
                 leading: const Icon(
                   Icons.calendar_month_outlined,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/const/images_conts.dart';
+import '../../core/const/images_const.dart';
 
 class DashboardView extends StatelessWidget {
   const DashboardView({super.key});
