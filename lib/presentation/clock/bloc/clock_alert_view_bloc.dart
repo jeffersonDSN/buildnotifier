@@ -14,17 +14,17 @@ part 'clock_alert_view_state.dart';
 class ClockAlertViewBloc
     extends Bloc<ClockAlertViewEvent, ClockAlertViewState> {
   ClockAlertViewBloc({
-    required TimeCardController controller,
+    required TimecardController controller,
   }) : super(const ClockAlertViewState.empty()) {
     on<ClockAlertViewEvent>(
       (event, emit) async {
         await event.when(
           load: (userID) async {
             emit(const ClockAlertViewState.loading());
-            var clock = await controller.getLastTimeCardByUserId(userID);
+            var clock = await controller.getLastTimecardByUserId(userID);
 
-            clock ??= TimeCard(userId: userID);
-            clock = clock.end == null ? clock : TimeCard(userId: userID);
+            clock ??= Timecard(userId: userID);
+            clock = clock.end == null ? clock : Timecard(userId: userID);
 
             emit(
               ClockAlertViewState.loaded(

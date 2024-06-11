@@ -3,14 +3,14 @@ import 'package:buildnotifier/domain/repositories/abs_i_time_card_repository.dar
 import 'package:buildnotifier/infrastructure/repositories/firestore/firestore_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class TimeCardFireStoreRepository extends FireStoreRepository
-    implements AbsITimeCardRepository {
-  TimeCardFireStoreRepository({
+class TimecardFireStoreRepository extends FireStoreRepository
+    implements AbsITimecardRepository {
+  TimecardFireStoreRepository({
     required super.tenantId,
   }) : super(collectionName: 'timecard');
 
   @override
-  Future<List<TimeCard>> getAll() async {
+  Future<List<Timecard>> getAll() async {
     var querySnapshot = await collection.get();
 
     return querySnapshot.docs
@@ -27,12 +27,12 @@ class TimeCardFireStoreRepository extends FireStoreRepository
           return {...result, 'id': document.id};
         })
         .toList()
-        .map((e) => TimeCard.fromJson(e))
+        .map((e) => Timecard.fromJson(e))
         .toList();
   }
 
   @override
-  Future<List<TimeCard>> getAllByUserId(String userId) async {
+  Future<List<Timecard>> getAllByUserId(String userId) async {
     var querySnapshot = await collection
         .where('userId', isEqualTo: userId)
         .orderBy('start', descending: true)
@@ -52,12 +52,12 @@ class TimeCardFireStoreRepository extends FireStoreRepository
           return {...result, 'id': document.id};
         })
         .toList()
-        .map((e) => TimeCard.fromJson(e))
+        .map((e) => Timecard.fromJson(e))
         .toList();
   }
 
   @override
-  Future<TimeCard?> getLastTimeCardByUserId(String userId) async {
+  Future<Timecard?> getLastTimecardByUserId(String userId) async {
     var querySnapshot = await collection
         .where('userId', isEqualTo: userId)
         .orderBy('start', descending: true)
@@ -74,14 +74,14 @@ class TimeCardFireStoreRepository extends FireStoreRepository
         }
       });
 
-      return TimeCard.fromJson({...result, 'id': snapshot.id});
+      return Timecard.fromJson({...result, 'id': snapshot.id});
     }
 
     return Future(() => null);
   }
 
   @override
-  Future<bool> post(TimeCard clock) async {
+  Future<bool> post(Timecard clock) async {
     var schedule = {
       'userId': clock.userId,
       'start': clock.start,
@@ -99,7 +99,7 @@ class TimeCardFireStoreRepository extends FireStoreRepository
   }
 
   @override
-  Future<bool> put(TimeCard clock) async {
+  Future<bool> put(Timecard clock) async {
     var schedule = {
       'userId': clock.userId,
       'start': clock.start,

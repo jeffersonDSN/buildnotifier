@@ -30,7 +30,6 @@ class AppointmentScheduleView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primary,
         title: const Text('Appointment'),
       ),
       body: BlocBuilder<AppointmentScheduleBloc, AppointmentScheduleState>(

@@ -1,15 +1,23 @@
+import 'package:buildnotifier/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifier/presentation/clock/bloc/clock_alert_view_bloc.dart';
 import 'package:buildnotifier/presentation/clock/widget/clock_alert_dialog_widget.dart';
+import 'package:buildnotifier/presentation/core/view/i_view.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ClockAlertView extends StatelessWidget {
-  ClockAlertView({super.key});
+class ClockAlertView extends IView {
+  const ClockAlertView({super.key});
 
   @override
   Widget build(BuildContext context) {
     var bloc = BlocProvider.of<ClockAlertViewBloc>(context);
+
+    bloc.add(
+      ClockAlertViewEvent.load(
+        userID: appBloc(context).state.asLogged.user.id,
+      ),
+    );
 
     return AlertDialog(
       title: const Column(

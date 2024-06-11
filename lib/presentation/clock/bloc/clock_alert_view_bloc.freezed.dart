@@ -19,19 +19,19 @@ mixin _$ClockAlertViewEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String userID) load,
-    required TResult Function(TimeCard clock, VoidCallback callback) save,
+    required TResult Function(Timecard clock, VoidCallback callback) save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String userID)? load,
-    TResult? Function(TimeCard clock, VoidCallback callback)? save,
+    TResult? Function(Timecard clock, VoidCallback callback)? save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String userID)? load,
-    TResult Function(TimeCard clock, VoidCallback callback)? save,
+    TResult Function(Timecard clock, VoidCallback callback)? save,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -143,7 +143,7 @@ class _$ClockAlertViewEventLoadImpl implements ClockAlertViewEventLoad {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String userID) load,
-    required TResult Function(TimeCard clock, VoidCallback callback) save,
+    required TResult Function(Timecard clock, VoidCallback callback) save,
   }) {
     return load(userID);
   }
@@ -152,7 +152,7 @@ class _$ClockAlertViewEventLoadImpl implements ClockAlertViewEventLoad {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String userID)? load,
-    TResult? Function(TimeCard clock, VoidCallback callback)? save,
+    TResult? Function(Timecard clock, VoidCallback callback)? save,
   }) {
     return load?.call(userID);
   }
@@ -161,7 +161,7 @@ class _$ClockAlertViewEventLoadImpl implements ClockAlertViewEventLoad {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String userID)? load,
-    TResult Function(TimeCard clock, VoidCallback callback)? save,
+    TResult Function(Timecard clock, VoidCallback callback)? save,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -219,9 +219,9 @@ abstract class _$$ClockAlertViewEventSaveImplCopyWith<$Res> {
           $Res Function(_$ClockAlertViewEventSaveImpl) then) =
       __$$ClockAlertViewEventSaveImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({TimeCard clock, VoidCallback callback});
+  $Res call({Timecard clock, VoidCallback callback});
 
-  $TimeCardCopyWith<$Res> get clock;
+  $TimecardCopyWith<$Res> get clock;
 }
 
 /// @nodoc
@@ -244,7 +244,7 @@ class __$$ClockAlertViewEventSaveImplCopyWithImpl<$Res>
       clock: null == clock
           ? _value.clock
           : clock // ignore: cast_nullable_to_non_nullable
-              as TimeCard,
+              as Timecard,
       callback: null == callback
           ? _value.callback
           : callback // ignore: cast_nullable_to_non_nullable
@@ -254,8 +254,8 @@ class __$$ClockAlertViewEventSaveImplCopyWithImpl<$Res>
 
   @override
   @pragma('vm:prefer-inline')
-  $TimeCardCopyWith<$Res> get clock {
-    return $TimeCardCopyWith<$Res>(_value.clock, (value) {
+  $TimecardCopyWith<$Res> get clock {
+    return $TimecardCopyWith<$Res>(_value.clock, (value) {
       return _then(_value.copyWith(clock: value));
     });
   }
@@ -268,7 +268,7 @@ class _$ClockAlertViewEventSaveImpl implements ClockAlertViewEventSave {
       {required this.clock, required this.callback});
 
   @override
-  final TimeCard clock;
+  final Timecard clock;
   @override
   final VoidCallback callback;
 
@@ -301,7 +301,7 @@ class _$ClockAlertViewEventSaveImpl implements ClockAlertViewEventSave {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String userID) load,
-    required TResult Function(TimeCard clock, VoidCallback callback) save,
+    required TResult Function(Timecard clock, VoidCallback callback) save,
   }) {
     return save(clock, callback);
   }
@@ -310,7 +310,7 @@ class _$ClockAlertViewEventSaveImpl implements ClockAlertViewEventSave {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String userID)? load,
-    TResult? Function(TimeCard clock, VoidCallback callback)? save,
+    TResult? Function(Timecard clock, VoidCallback callback)? save,
   }) {
     return save?.call(clock, callback);
   }
@@ -319,7 +319,7 @@ class _$ClockAlertViewEventSaveImpl implements ClockAlertViewEventSave {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String userID)? load,
-    TResult Function(TimeCard clock, VoidCallback callback)? save,
+    TResult Function(Timecard clock, VoidCallback callback)? save,
     required TResult orElse(),
   }) {
     if (save != null) {
@@ -362,10 +362,10 @@ class _$ClockAlertViewEventSaveImpl implements ClockAlertViewEventSave {
 
 abstract class ClockAlertViewEventSave implements ClockAlertViewEvent {
   const factory ClockAlertViewEventSave(
-      {required final TimeCard clock,
+      {required final Timecard clock,
       required final VoidCallback callback}) = _$ClockAlertViewEventSaveImpl;
 
-  TimeCard get clock;
+  Timecard get clock;
   VoidCallback get callback;
   @JsonKey(ignore: true)
   _$$ClockAlertViewEventSaveImplCopyWith<_$ClockAlertViewEventSaveImpl>
@@ -378,24 +378,24 @@ mixin _$ClockAlertViewState {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(CrudType type, TimeCard clock) loaded,
-    required TResult Function(CrudType type, TimeCard clock) saving,
+    required TResult Function(CrudType type, Timecard clock) loaded,
+    required TResult Function(CrudType type, Timecard clock) saving,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(CrudType type, TimeCard clock)? loaded,
-    TResult? Function(CrudType type, TimeCard clock)? saving,
+    TResult? Function(CrudType type, Timecard clock)? loaded,
+    TResult? Function(CrudType type, Timecard clock)? saving,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(CrudType type, TimeCard clock)? loaded,
-    TResult Function(CrudType type, TimeCard clock)? saving,
+    TResult Function(CrudType type, Timecard clock)? loaded,
+    TResult Function(CrudType type, Timecard clock)? saving,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -488,8 +488,8 @@ class _$ClockAlertViewStateEmptyImpl implements ClockAlertViewStateEmpty {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(CrudType type, TimeCard clock) loaded,
-    required TResult Function(CrudType type, TimeCard clock) saving,
+    required TResult Function(CrudType type, Timecard clock) loaded,
+    required TResult Function(CrudType type, Timecard clock) saving,
   }) {
     return empty();
   }
@@ -499,8 +499,8 @@ class _$ClockAlertViewStateEmptyImpl implements ClockAlertViewStateEmpty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(CrudType type, TimeCard clock)? loaded,
-    TResult? Function(CrudType type, TimeCard clock)? saving,
+    TResult? Function(CrudType type, Timecard clock)? loaded,
+    TResult? Function(CrudType type, Timecard clock)? saving,
   }) {
     return empty?.call();
   }
@@ -510,8 +510,8 @@ class _$ClockAlertViewStateEmptyImpl implements ClockAlertViewStateEmpty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(CrudType type, TimeCard clock)? loaded,
-    TResult Function(CrudType type, TimeCard clock)? saving,
+    TResult Function(CrudType type, Timecard clock)? loaded,
+    TResult Function(CrudType type, Timecard clock)? saving,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -606,8 +606,8 @@ class _$ClockAlertViewStateLoadingImpl implements ClockAlertViewStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(CrudType type, TimeCard clock) loaded,
-    required TResult Function(CrudType type, TimeCard clock) saving,
+    required TResult Function(CrudType type, Timecard clock) loaded,
+    required TResult Function(CrudType type, Timecard clock) saving,
   }) {
     return loading();
   }
@@ -617,8 +617,8 @@ class _$ClockAlertViewStateLoadingImpl implements ClockAlertViewStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(CrudType type, TimeCard clock)? loaded,
-    TResult? Function(CrudType type, TimeCard clock)? saving,
+    TResult? Function(CrudType type, Timecard clock)? loaded,
+    TResult? Function(CrudType type, Timecard clock)? saving,
   }) {
     return loading?.call();
   }
@@ -628,8 +628,8 @@ class _$ClockAlertViewStateLoadingImpl implements ClockAlertViewStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(CrudType type, TimeCard clock)? loaded,
-    TResult Function(CrudType type, TimeCard clock)? saving,
+    TResult Function(CrudType type, Timecard clock)? loaded,
+    TResult Function(CrudType type, Timecard clock)? saving,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -687,10 +687,10 @@ abstract class _$$ClockAlertViewStateLoadedImplCopyWith<$Res> {
           $Res Function(_$ClockAlertViewStateLoadedImpl) then) =
       __$$ClockAlertViewStateLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({CrudType type, TimeCard clock});
+  $Res call({CrudType type, Timecard clock});
 
   $CrudTypeCopyWith<$Res> get type;
-  $TimeCardCopyWith<$Res> get clock;
+  $TimecardCopyWith<$Res> get clock;
 }
 
 /// @nodoc
@@ -717,7 +717,7 @@ class __$$ClockAlertViewStateLoadedImplCopyWithImpl<$Res>
       clock: null == clock
           ? _value.clock
           : clock // ignore: cast_nullable_to_non_nullable
-              as TimeCard,
+              as Timecard,
     ));
   }
 
@@ -731,8 +731,8 @@ class __$$ClockAlertViewStateLoadedImplCopyWithImpl<$Res>
 
   @override
   @pragma('vm:prefer-inline')
-  $TimeCardCopyWith<$Res> get clock {
-    return $TimeCardCopyWith<$Res>(_value.clock, (value) {
+  $TimecardCopyWith<$Res> get clock {
+    return $TimecardCopyWith<$Res>(_value.clock, (value) {
       return _then(_value.copyWith(clock: value));
     });
   }
@@ -748,7 +748,7 @@ class _$ClockAlertViewStateLoadedImpl implements ClockAlertViewStateLoaded {
   @JsonKey()
   final CrudType type;
   @override
-  final TimeCard clock;
+  final Timecard clock;
 
   @override
   String toString() {
@@ -779,8 +779,8 @@ class _$ClockAlertViewStateLoadedImpl implements ClockAlertViewStateLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(CrudType type, TimeCard clock) loaded,
-    required TResult Function(CrudType type, TimeCard clock) saving,
+    required TResult Function(CrudType type, Timecard clock) loaded,
+    required TResult Function(CrudType type, Timecard clock) saving,
   }) {
     return loaded(type, clock);
   }
@@ -790,8 +790,8 @@ class _$ClockAlertViewStateLoadedImpl implements ClockAlertViewStateLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(CrudType type, TimeCard clock)? loaded,
-    TResult? Function(CrudType type, TimeCard clock)? saving,
+    TResult? Function(CrudType type, Timecard clock)? loaded,
+    TResult? Function(CrudType type, Timecard clock)? saving,
   }) {
     return loaded?.call(type, clock);
   }
@@ -801,8 +801,8 @@ class _$ClockAlertViewStateLoadedImpl implements ClockAlertViewStateLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(CrudType type, TimeCard clock)? loaded,
-    TResult Function(CrudType type, TimeCard clock)? saving,
+    TResult Function(CrudType type, Timecard clock)? loaded,
+    TResult Function(CrudType type, Timecard clock)? saving,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -852,10 +852,10 @@ class _$ClockAlertViewStateLoadedImpl implements ClockAlertViewStateLoaded {
 abstract class ClockAlertViewStateLoaded implements ClockAlertViewState {
   const factory ClockAlertViewStateLoaded(
       {final CrudType type,
-      required final TimeCard clock}) = _$ClockAlertViewStateLoadedImpl;
+      required final Timecard clock}) = _$ClockAlertViewStateLoadedImpl;
 
   CrudType get type;
-  TimeCard get clock;
+  Timecard get clock;
   @JsonKey(ignore: true)
   _$$ClockAlertViewStateLoadedImplCopyWith<_$ClockAlertViewStateLoadedImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -868,10 +868,10 @@ abstract class _$$ClockAlertViewStateSavingImplCopyWith<$Res> {
           $Res Function(_$ClockAlertViewStateSavingImpl) then) =
       __$$ClockAlertViewStateSavingImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({CrudType type, TimeCard clock});
+  $Res call({CrudType type, Timecard clock});
 
   $CrudTypeCopyWith<$Res> get type;
-  $TimeCardCopyWith<$Res> get clock;
+  $TimecardCopyWith<$Res> get clock;
 }
 
 /// @nodoc
@@ -898,7 +898,7 @@ class __$$ClockAlertViewStateSavingImplCopyWithImpl<$Res>
       clock: null == clock
           ? _value.clock
           : clock // ignore: cast_nullable_to_non_nullable
-              as TimeCard,
+              as Timecard,
     ));
   }
 
@@ -912,8 +912,8 @@ class __$$ClockAlertViewStateSavingImplCopyWithImpl<$Res>
 
   @override
   @pragma('vm:prefer-inline')
-  $TimeCardCopyWith<$Res> get clock {
-    return $TimeCardCopyWith<$Res>(_value.clock, (value) {
+  $TimecardCopyWith<$Res> get clock {
+    return $TimecardCopyWith<$Res>(_value.clock, (value) {
       return _then(_value.copyWith(clock: value));
     });
   }
@@ -929,7 +929,7 @@ class _$ClockAlertViewStateSavingImpl implements ClockAlertViewStateSaving {
   @JsonKey()
   final CrudType type;
   @override
-  final TimeCard clock;
+  final Timecard clock;
 
   @override
   String toString() {
@@ -960,8 +960,8 @@ class _$ClockAlertViewStateSavingImpl implements ClockAlertViewStateSaving {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(CrudType type, TimeCard clock) loaded,
-    required TResult Function(CrudType type, TimeCard clock) saving,
+    required TResult Function(CrudType type, Timecard clock) loaded,
+    required TResult Function(CrudType type, Timecard clock) saving,
   }) {
     return saving(type, clock);
   }
@@ -971,8 +971,8 @@ class _$ClockAlertViewStateSavingImpl implements ClockAlertViewStateSaving {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(CrudType type, TimeCard clock)? loaded,
-    TResult? Function(CrudType type, TimeCard clock)? saving,
+    TResult? Function(CrudType type, Timecard clock)? loaded,
+    TResult? Function(CrudType type, Timecard clock)? saving,
   }) {
     return saving?.call(type, clock);
   }
@@ -982,8 +982,8 @@ class _$ClockAlertViewStateSavingImpl implements ClockAlertViewStateSaving {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(CrudType type, TimeCard clock)? loaded,
-    TResult Function(CrudType type, TimeCard clock)? saving,
+    TResult Function(CrudType type, Timecard clock)? loaded,
+    TResult Function(CrudType type, Timecard clock)? saving,
     required TResult orElse(),
   }) {
     if (saving != null) {
@@ -1033,10 +1033,10 @@ class _$ClockAlertViewStateSavingImpl implements ClockAlertViewStateSaving {
 abstract class ClockAlertViewStateSaving implements ClockAlertViewState {
   const factory ClockAlertViewStateSaving(
       {final CrudType type,
-      required final TimeCard clock}) = _$ClockAlertViewStateSavingImpl;
+      required final Timecard clock}) = _$ClockAlertViewStateSavingImpl;
 
   CrudType get type;
-  TimeCard get clock;
+  Timecard get clock;
   @JsonKey(ignore: true)
   _$$ClockAlertViewStateSavingImplCopyWith<_$ClockAlertViewStateSavingImpl>
       get copyWith => throw _privateConstructorUsedError;

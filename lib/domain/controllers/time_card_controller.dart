@@ -1,30 +1,30 @@
 import 'package:buildnotifier/domain/entities/time_card.dart';
 import 'package:buildnotifier/domain/repositories/abs_i_time_card_repository.dart';
 
-class TimeCardController {
-  final AbsITimeCardRepository _repository;
+class TimecardController {
+  final AbsITimecardRepository _repository;
 
-  TimeCardController({
-    required AbsITimeCardRepository repository,
+  TimecardController({
+    required AbsITimecardRepository repository,
   }) : _repository = repository;
 
-  Future<List<TimeCard>> getAll() {
+  Future<List<Timecard>> getAll() {
     return _repository.getAll();
   }
 
-  Future<List<TimeCard>> getAllByUserId(String userId) {
+  Future<List<Timecard>> getAllByUserId(String userId) {
     return _repository.getAllByUserId(userId);
   }
 
-  Future<TimeCard?> getLastTimeCardByUserId(String userId) {
-    return _repository.getLastTimeCardByUserId(userId);
+  Future<Timecard?> getLastTimecardByUserId(String userId) {
+    return _repository.getLastTimecardByUserId(userId);
   }
 
-  Future<bool> createClock(TimeCard clock) {
+  Future<bool> createClock(Timecard clock) {
     return _repository.post(clock);
   }
 
-  Future<bool> updateClock(TimeCard clock) {
+  Future<bool> updateClock(Timecard clock) {
     return _repository.put(clock);
   }
 }

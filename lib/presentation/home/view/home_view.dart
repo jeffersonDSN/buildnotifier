@@ -3,7 +3,7 @@ import 'package:buildnotifier/presentation/app/model/mod.dart';
 import 'package:buildnotifier/presentation/app/model/view_type.dart';
 import 'package:buildnotifier/presentation/clock/clock_dialog.dart';
 import 'package:buildnotifier/presentation/core/view/i_view.dart';
-import 'package:buildnotifier/presentation/time_card/view/time_card_view.dart';
+import 'package:buildnotifier/presentation/time_card/overview/view/timecard_overview_view.dart';
 import 'package:buildnotifier/theme/app_color.dart';
 import 'package:buildnotifier/theme/app_sizes.dart';
 import 'package:buildnotifier/presentation/core/const/images_const.dart';
@@ -16,7 +16,6 @@ class HomeView extends IView {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primary,
         title: Image.asset(
           '$assetImage$logo2',
           height: 48,
@@ -50,7 +49,7 @@ class HomeView extends IView {
                     onTap: () {},
                     child: const ListTile(
                       leading: Icon(Icons.business),
-                      title: Text('Timecard'),
+                      title: Text('timecard'),
                     ),
                   ),
                 ],
@@ -110,7 +109,15 @@ class HomeView extends IView {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => TimeCardView()),
+                    MaterialPageRoute(builder: (context) => TimecardView()),
+                  );
+
+                  appBloc(context).add(
+                    const AppEvent.changeView(
+                      mod: Mod.schedule(
+                        type: ViewType.overview(),
+                      ),
+                    ),
                   );
                 },
               ),

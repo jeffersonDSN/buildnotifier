@@ -1,5 +1,7 @@
-import 'package:buildnotifier/domain/controllers/appointment_controller.dart';
-import 'package:buildnotifier/infrastructure/repositories/firestore/appointment_firestore_repository.dart';
+import 'package:buildnotifier/presentation/app/bloc/app_bloc.dart';
+import 'package:buildnotifier/presentation/app/model/mod.dart';
+import 'package:buildnotifier/presentation/app/model/view_type.dart';
+import 'package:buildnotifier/presentation/core/view/i_view.dart';
 import 'package:buildnotifier/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,51 +9,53 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:intl/intl.dart';
 
-import '../bloc/appointment_bloc.dart';
+import '../bloc/appointment_overview_bloc.dart';
 
-class AppointmentView extends StatefulWidget {
+class AppointmentOverviewView extends IView {
   final String id;
 
-  const AppointmentView({
+  AppointmentOverviewView({
     super.key,
     required this.id,
   });
 
-  @override
-  State<StatefulWidget> createState() => _AppointmentView();
-}
-
-class _AppointmentView extends State<AppointmentView> {
   final TextEditingController titleController = TextEditingController();
   final TextEditingController locationController = TextEditingController();
 
-  DateTime startDateTime = DateTime.now();
-  DateTime endDateTime = DateTime.now();
+  final DateTime startDateTime = DateTime.now();
+  final DateTime endDateTime = DateTime.now();
 
   final DateFormat dateFormat = DateFormat("MMM dd yyyy").add_jm();
 
   @override
   Widget build(BuildContext context) {
-    var bloc = AppointmentBloc(
-      controller: AppointmentController(
-        repository: AppointmentsFirestoreRepository(
-          tenantId: '',
-        ),
-      ),
-    );
+    var bloc = BlocProvider.of<AppointmentOverviewBloc>(context);
 
     bloc.add(
-      AppointmentEvent.load(
-        id: widget.id,
+      AppointmentOverviewEvent.load(
+        id: id,
       ),
     );
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primary,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+          ),
+          onPressed: () {
+            appBloc(context).add(
+              const AppEvent.changeView(
+                mod: Mod.schedule(
+                  type: ViewType.overview(),
+                ),
+              ),
+            );
+          },
+        ),
         title: const Text('Appointment'),
       ),
-      body: BlocBuilder<AppointmentBloc, AppointmentState>(
+      body: BlocBuilder<AppointmentOverviewBloc, AppointmentOverviewState>(
         bloc: bloc,
         builder: (context, state) {
           return state.when(
@@ -62,19 +66,21 @@ class _AppointmentView extends State<AppointmentView> {
               return const Center();
             },
             loaded: (id, appointment) => Padding(
-              padding: const EdgeInsets.only(bottom: 100),
+              padding: const EdgeInsets.only(
+                bottom: Sizes.size112,
+              ),
               child: SingleChildScrollView(
                 child: Column(
                   children: [
                     SizedBox(
-                      height: 150,
+                      height: Sizes.size148,
                       child: GoogleMap(
                         initialCameraPosition: CameraPosition(
                           target: LatLng(
                             appointment.latitude,
                             appointment.longitude,
                           ),
-                          zoom: 11.0,
+                          zoom: Sizes.size12,
                         ),
                         markers: {
                           Marker(
@@ -91,54 +97,44 @@ class _AppointmentView extends State<AppointmentView> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+                      padding: const EdgeInsets.fromLTRB(
+                        Sizes.size8,
+                        Sizes.size0,
+                        Sizes.size8,
+                        Sizes.size0,
+                      ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Card(
                             child: Padding(
-                              padding: const EdgeInsets.all(16),
+                              padding: const EdgeInsets.all(Sizes.size16),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   const Text(
                                     'Appointment details',
                                     style: TextStyle(
-                                      fontSize: 20,
+                                      fontSize: Sizes.size20,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                   gapHeight16,
                                   Text(
                                     appointment.title,
-                                    style: const TextStyle(
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.bold,
-                                    ),
                                   ),
                                   gapHeight4,
                                   Text(
                                     'Start: ${dateFormat.format(startDateTime)}',
-                                    style: const TextStyle(
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.bold,
-                                    ),
                                   ),
                                   gapHeight4,
                                   Text(
                                     'End  : ${dateFormat.format(endDateTime)}',
-                                    style: const TextStyle(
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.bold,
-                                    ),
                                   ),
                                   gapHeight4,
                                   Row(
                                     children: [
-                                      const Icon(
-                                        Icons.location_on_outlined,
-                                        color: Colors.grey,
-                                      ),
+                                      const Icon(Icons.location_on_outlined),
                                       Expanded(
                                         child: Text(
                                           maxLines: 1,
@@ -146,10 +142,6 @@ class _AppointmentView extends State<AppointmentView> {
                                           appointment.location.isNotEmpty
                                               ? appointment.location
                                               : 'N/A',
-                                          style: const TextStyle(
-                                            color: Colors.grey,
-                                            fontWeight: FontWeight.bold,
-                                          ),
                                         ),
                                       ),
                                       SizedBox(
@@ -179,41 +171,23 @@ class _AppointmentView extends State<AppointmentView> {
                           ),
                           const Card(
                             child: Padding(
-                              padding: EdgeInsets.all(16),
+                              padding: EdgeInsets.all(Sizes.size16),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     'Project details',
                                     style: TextStyle(
-                                      fontSize: 20,
+                                      fontSize: Sizes.size20,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                   gapHeight16,
-                                  Text(
-                                    'Project A',
-                                    style: TextStyle(
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
+                                  Text('Project A'),
                                   gapHeight4,
-                                  Text(
-                                    'Task A',
-                                    style: TextStyle(
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
+                                  Text('Task A'),
                                   gapHeight4,
-                                  Text(
-                                    'Description',
-                                    style: TextStyle(
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
+                                  Text('Description'),
                                 ],
                               ),
                             ),
@@ -227,19 +201,6 @@ class _AppointmentView extends State<AppointmentView> {
             ),
           );
         },
-      ),
-      bottomSheet: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          children: [
-            Expanded(
-              child: FilledButton(
-                child: const Text('Save'),
-                onPressed: () {},
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }

@@ -20,18 +20,21 @@ mixin _$Mod {
   TResult when<TResult extends Object?>({
     required TResult Function() home,
     required TResult Function(ViewType type) schedule,
+    required TResult Function(ViewType type) timecard,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? home,
     TResult? Function(ViewType type)? schedule,
+    TResult? Function(ViewType type)? timecard,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? home,
     TResult Function(ViewType type)? schedule,
+    TResult Function(ViewType type)? timecard,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$Mod {
   TResult map<TResult extends Object?>({
     required TResult Function(ModHome value) home,
     required TResult Function(ModSchedule value) schedule,
+    required TResult Function(ModTimecard value) timecard,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ModHome value)? home,
     TResult? Function(ModSchedule value)? schedule,
+    TResult? Function(ModTimecard value)? timecard,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ModHome value)? home,
     TResult Function(ModSchedule value)? schedule,
+    TResult Function(ModTimecard value)? timecard,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -112,6 +118,7 @@ class _$ModHomeImpl implements ModHome {
   TResult when<TResult extends Object?>({
     required TResult Function() home,
     required TResult Function(ViewType type) schedule,
+    required TResult Function(ViewType type) timecard,
   }) {
     return home();
   }
@@ -121,6 +128,7 @@ class _$ModHomeImpl implements ModHome {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? home,
     TResult? Function(ViewType type)? schedule,
+    TResult? Function(ViewType type)? timecard,
   }) {
     return home?.call();
   }
@@ -130,6 +138,7 @@ class _$ModHomeImpl implements ModHome {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? home,
     TResult Function(ViewType type)? schedule,
+    TResult Function(ViewType type)? timecard,
     required TResult orElse(),
   }) {
     if (home != null) {
@@ -143,6 +152,7 @@ class _$ModHomeImpl implements ModHome {
   TResult map<TResult extends Object?>({
     required TResult Function(ModHome value) home,
     required TResult Function(ModSchedule value) schedule,
+    required TResult Function(ModTimecard value) timecard,
   }) {
     return home(this);
   }
@@ -152,6 +162,7 @@ class _$ModHomeImpl implements ModHome {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ModHome value)? home,
     TResult? Function(ModSchedule value)? schedule,
+    TResult? Function(ModTimecard value)? timecard,
   }) {
     return home?.call(this);
   }
@@ -161,6 +172,7 @@ class _$ModHomeImpl implements ModHome {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ModHome value)? home,
     TResult Function(ModSchedule value)? schedule,
+    TResult Function(ModTimecard value)? timecard,
     required TResult orElse(),
   }) {
     if (home != null) {
@@ -250,6 +262,7 @@ class _$ModScheduleImpl implements ModSchedule {
   TResult when<TResult extends Object?>({
     required TResult Function() home,
     required TResult Function(ViewType type) schedule,
+    required TResult Function(ViewType type) timecard,
   }) {
     return schedule(type);
   }
@@ -259,6 +272,7 @@ class _$ModScheduleImpl implements ModSchedule {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? home,
     TResult? Function(ViewType type)? schedule,
+    TResult? Function(ViewType type)? timecard,
   }) {
     return schedule?.call(type);
   }
@@ -268,6 +282,7 @@ class _$ModScheduleImpl implements ModSchedule {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? home,
     TResult Function(ViewType type)? schedule,
+    TResult Function(ViewType type)? timecard,
     required TResult orElse(),
   }) {
     if (schedule != null) {
@@ -281,6 +296,7 @@ class _$ModScheduleImpl implements ModSchedule {
   TResult map<TResult extends Object?>({
     required TResult Function(ModHome value) home,
     required TResult Function(ModSchedule value) schedule,
+    required TResult Function(ModTimecard value) timecard,
   }) {
     return schedule(this);
   }
@@ -290,6 +306,7 @@ class _$ModScheduleImpl implements ModSchedule {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ModHome value)? home,
     TResult? Function(ModSchedule value)? schedule,
+    TResult? Function(ModTimecard value)? timecard,
   }) {
     return schedule?.call(this);
   }
@@ -299,6 +316,7 @@ class _$ModScheduleImpl implements ModSchedule {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ModHome value)? home,
     TResult Function(ModSchedule value)? schedule,
+    TResult Function(ModTimecard value)? timecard,
     required TResult orElse(),
   }) {
     if (schedule != null) {
@@ -314,5 +332,154 @@ abstract class ModSchedule implements Mod {
   ViewType get type;
   @JsonKey(ignore: true)
   _$$ModScheduleImplCopyWith<_$ModScheduleImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ModTimecardImplCopyWith<$Res> {
+  factory _$$ModTimecardImplCopyWith(
+          _$ModTimecardImpl value, $Res Function(_$ModTimecardImpl) then) =
+      __$$ModTimecardImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ViewType type});
+
+  $ViewTypeCopyWith<$Res> get type;
+}
+
+/// @nodoc
+class __$$ModTimecardImplCopyWithImpl<$Res>
+    extends _$ModCopyWithImpl<$Res, _$ModTimecardImpl>
+    implements _$$ModTimecardImplCopyWith<$Res> {
+  __$$ModTimecardImplCopyWithImpl(
+      _$ModTimecardImpl _value, $Res Function(_$ModTimecardImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+  }) {
+    return _then(_$ModTimecardImpl(
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ViewType,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ViewTypeCopyWith<$Res> get type {
+    return $ViewTypeCopyWith<$Res>(_value.type, (value) {
+      return _then(_value.copyWith(type: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$ModTimecardImpl implements ModTimecard {
+  const _$ModTimecardImpl({required this.type});
+
+  @override
+  final ViewType type;
+
+  @override
+  String toString() {
+    return 'Mod.timecard(type: $type)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ModTimecardImpl &&
+            (identical(other.type, type) || other.type == type));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, type);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ModTimecardImplCopyWith<_$ModTimecardImpl> get copyWith =>
+      __$$ModTimecardImplCopyWithImpl<_$ModTimecardImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() home,
+    required TResult Function(ViewType type) schedule,
+    required TResult Function(ViewType type) timecard,
+  }) {
+    return timecard(type);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? home,
+    TResult? Function(ViewType type)? schedule,
+    TResult? Function(ViewType type)? timecard,
+  }) {
+    return timecard?.call(type);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? home,
+    TResult Function(ViewType type)? schedule,
+    TResult Function(ViewType type)? timecard,
+    required TResult orElse(),
+  }) {
+    if (timecard != null) {
+      return timecard(type);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ModHome value) home,
+    required TResult Function(ModSchedule value) schedule,
+    required TResult Function(ModTimecard value) timecard,
+  }) {
+    return timecard(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ModHome value)? home,
+    TResult? Function(ModSchedule value)? schedule,
+    TResult? Function(ModTimecard value)? timecard,
+  }) {
+    return timecard?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ModHome value)? home,
+    TResult Function(ModSchedule value)? schedule,
+    TResult Function(ModTimecard value)? timecard,
+    required TResult orElse(),
+  }) {
+    if (timecard != null) {
+      return timecard(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ModTimecard implements Mod {
+  const factory ModTimecard({required final ViewType type}) = _$ModTimecardImpl;
+
+  ViewType get type;
+  @JsonKey(ignore: true)
+  _$$ModTimecardImplCopyWith<_$ModTimecardImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

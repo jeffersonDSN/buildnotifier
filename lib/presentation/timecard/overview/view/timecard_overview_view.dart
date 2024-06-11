@@ -1,34 +1,36 @@
 import 'package:buildnotifier/domain/controllers/time_card_controller.dart';
 import 'package:buildnotifier/infrastructure/repositories/firestore/time_card_firestore_repository.dart';
-import 'package:buildnotifier/presentation/time_card/bloc/time_card_block.dart';
+import 'package:buildnotifier/presentation/timecard/overview/bloc/timecard_overview_block.dart';
 import 'package:buildnotifier/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
-class TimeCardView extends StatelessWidget {
-  TimeCardView({super.key});
+class TimecardView extends StatelessWidget {
+  TimecardView({super.key});
 
   final DateFormat dayFormat = DateFormat("EEEE");
   final DateFormat dateFormat = DateFormat("MMM dd");
   final DateFormat hourFormat = DateFormat.jm();
 
-  final TimeCardBloc bloc = TimeCardBloc(
-    controller: TimeCardController(
-      repository: TimeCardFireStoreRepository(tenantId: ''),
+  final TimecardOverviewBloc bloc = TimecardOverviewBloc(
+    controller: TimecardController(
+      repository: TimecardFireStoreRepository(tenantId: ''),
     ),
   );
 
   @override
   Widget build(BuildContext context) {
-    bloc.add(const TimeCardEvent.load(userID: 'VZHac7Dmst1hk4nBmZqw'));
+    bloc.add(
+      const TimecardOverviewEvent.load(userID: 'VZHac7Dmst1hk4nBmZqw'),
+    );
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Timecards'),
       ),
-      body: BlocBuilder<TimeCardBloc, TimeCardState>(
+      body: BlocBuilder<TimecardOverviewBloc, TimecardOverviewState>(
         bloc: bloc,
         builder: (context, state) {
           return state.when(
@@ -36,11 +38,11 @@ class TimeCardView extends StatelessWidget {
             loading: () => const Center(
               child: CircularProgressIndicator(),
             ),
-            loaded: (timeCards) {
+            loaded: (timecards) {
               return ListView.builder(
-                itemCount: timeCards.length,
+                itemCount: timecards.length,
                 itemBuilder: (context, index) {
-                  var timeCard = timeCards[index];
+                  var timecard = timecards[index];
 
                   return Card(
                     child: Padding(
@@ -52,14 +54,14 @@ class TimeCardView extends StatelessWidget {
                             child: Column(
                               children: [
                                 Text(
-                                  dayFormat.format(timeCard.start!),
+                                  dayFormat.format(timecard.start!),
                                   style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: Sizes.size16,
                                   ),
                                 ),
                                 Text(
-                                  dateFormat.format(timeCard.start!),
+                                  dateFormat.format(timecard.start!),
                                   style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: Sizes.size16,
@@ -82,7 +84,7 @@ class TimeCardView extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    hourFormat.format(timeCard.start!),
+                                    hourFormat.format(timecard.start!),
                                     style: const TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: Sizes.size16,
@@ -95,14 +97,14 @@ class TimeCardView extends StatelessWidget {
                                   const Icon(Icons.location_on),
                                   gapHeight4,
                                   Text(
-                                    timeCard.startLocation!,
+                                    timecard.startLocation!,
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
                                   ),
                                 ],
                               ),
                               gapHeight16,
-                              if (timeCard.end != null)
+                              if (timecard.end != null)
                                 Row(
                                   children: [
                                     const Text(
@@ -113,7 +115,7 @@ class TimeCardView extends StatelessWidget {
                                       ),
                                     ),
                                     Text(
-                                      hourFormat.format(timeCard.end!),
+                                      hourFormat.format(timecard.end!),
                                       style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: Sizes.size16,
@@ -121,13 +123,13 @@ class TimeCardView extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                              if (timeCard.end != null)
+                              if (timecard.end != null)
                                 Row(
                                   children: [
                                     const Icon(Icons.location_on),
                                     gapHeight4,
                                     Text(
-                                      timeCard.endLocation!,
+                                      timecard.endLocation!,
                                       maxLines: 1,
                                       overflow: TextOverflow.ellipsis,
                                     ),

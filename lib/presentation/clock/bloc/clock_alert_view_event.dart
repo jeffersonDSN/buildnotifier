@@ -7,7 +7,7 @@ class ClockAlertViewEvent with _$ClockAlertViewEvent {
   }) = ClockAlertViewEventLoad;
 
   const factory ClockAlertViewEvent.save({
-    required TimeCard clock,
+    required Timecard clock,
     required VoidCallback callback,
   }) = ClockAlertViewEventSave;
 }

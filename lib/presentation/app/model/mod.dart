@@ -1,8 +1,9 @@
 import 'package:buildnotifier/presentation/app/model/view_type.dart';
-import 'package:buildnotifier/presentation/appointment/view/appointment_view.dart';
+import 'package:buildnotifier/presentation/appointment/overview/appointment_overview.dart';
 import 'package:buildnotifier/presentation/home/view/home_view.dart';
 import 'package:buildnotifier/presentation/schedule/overview/schedule_overview.dart';
 import 'package:flutter/material.dart';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'mod.freezed.dart';
@@ -13,6 +14,9 @@ class Mod with _$Mod {
   const factory Mod.schedule({
     required ViewType type,
   }) = ModSchedule;
+  const factory Mod.timecard({
+    required ViewType type,
+  }) = ModTimecard;
 }
 
 extension OnModel on Mod {
@@ -28,7 +32,13 @@ extension OnModel on Mod {
       schedule: (viewType) {
         return viewType.maybeWhen(
           orElse: () => const ScheduleOverview(),
-          overviewById: (id) => AppointmentView(id: id),
+          overviewById: (id) => AppointmentOverview(id: id),
+        );
+      },
+      timecard: (viewType) {
+        return viewType.maybeWhen(
+          orElse: () => const ScheduleOverview(),
+          overviewById: (id) => AppointmentOverview(id: id),
         );
       },
     );

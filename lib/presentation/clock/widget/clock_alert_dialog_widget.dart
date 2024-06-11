@@ -7,7 +7,7 @@ import 'package:intl/intl.dart';
 
 class ClockAlertDialogWidget extends StatelessWidget {
   final CrudType type;
-  final TimeCard clock;
+  final Timecard clock;
   final VoidCallback? onSubmit;
 
   ClockAlertDialogWidget({

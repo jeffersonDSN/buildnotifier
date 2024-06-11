@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'appointment_bloc.dart';
+part of 'appointment_overview_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$AppointmentEvent {
+mixin _$AppointmentOverviewEvent {
   String get id => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -35,39 +35,40 @@ mixin _$AppointmentEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AppointmentEventLoad value) load,
+    required TResult Function(AppointmentOverviewEventLoad value) load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AppointmentEventLoad value)? load,
+    TResult? Function(AppointmentOverviewEventLoad value)? load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppointmentEventLoad value)? load,
+    TResult Function(AppointmentOverviewEventLoad value)? load,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $AppointmentEventCopyWith<AppointmentEvent> get copyWith =>
+  $AppointmentOverviewEventCopyWith<AppointmentOverviewEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AppointmentEventCopyWith<$Res> {
-  factory $AppointmentEventCopyWith(
-          AppointmentEvent value, $Res Function(AppointmentEvent) then) =
-      _$AppointmentEventCopyWithImpl<$Res, AppointmentEvent>;
+abstract class $AppointmentOverviewEventCopyWith<$Res> {
+  factory $AppointmentOverviewEventCopyWith(AppointmentOverviewEvent value,
+          $Res Function(AppointmentOverviewEvent) then) =
+      _$AppointmentOverviewEventCopyWithImpl<$Res, AppointmentOverviewEvent>;
   @useResult
   $Res call({String id});
 }
 
 /// @nodoc
-class _$AppointmentEventCopyWithImpl<$Res, $Val extends AppointmentEvent>
-    implements $AppointmentEventCopyWith<$Res> {
-  _$AppointmentEventCopyWithImpl(this._value, this._then);
+class _$AppointmentOverviewEventCopyWithImpl<$Res,
+        $Val extends AppointmentOverviewEvent>
+    implements $AppointmentOverviewEventCopyWith<$Res> {
+  _$AppointmentOverviewEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -89,22 +90,25 @@ class _$AppointmentEventCopyWithImpl<$Res, $Val extends AppointmentEvent>
 }
 
 /// @nodoc
-abstract class _$$AppointmentEventLoadImplCopyWith<$Res>
-    implements $AppointmentEventCopyWith<$Res> {
-  factory _$$AppointmentEventLoadImplCopyWith(_$AppointmentEventLoadImpl value,
-          $Res Function(_$AppointmentEventLoadImpl) then) =
-      __$$AppointmentEventLoadImplCopyWithImpl<$Res>;
+abstract class _$$AppointmentOverviewEventLoadImplCopyWith<$Res>
+    implements $AppointmentOverviewEventCopyWith<$Res> {
+  factory _$$AppointmentOverviewEventLoadImplCopyWith(
+          _$AppointmentOverviewEventLoadImpl value,
+          $Res Function(_$AppointmentOverviewEventLoadImpl) then) =
+      __$$AppointmentOverviewEventLoadImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id});
 }
 
 /// @nodoc
-class __$$AppointmentEventLoadImplCopyWithImpl<$Res>
-    extends _$AppointmentEventCopyWithImpl<$Res, _$AppointmentEventLoadImpl>
-    implements _$$AppointmentEventLoadImplCopyWith<$Res> {
-  __$$AppointmentEventLoadImplCopyWithImpl(_$AppointmentEventLoadImpl _value,
-      $Res Function(_$AppointmentEventLoadImpl) _then)
+class __$$AppointmentOverviewEventLoadImplCopyWithImpl<$Res>
+    extends _$AppointmentOverviewEventCopyWithImpl<$Res,
+        _$AppointmentOverviewEventLoadImpl>
+    implements _$$AppointmentOverviewEventLoadImplCopyWith<$Res> {
+  __$$AppointmentOverviewEventLoadImplCopyWithImpl(
+      _$AppointmentOverviewEventLoadImpl _value,
+      $Res Function(_$AppointmentOverviewEventLoadImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -112,7 +116,7 @@ class __$$AppointmentEventLoadImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
   }) {
-    return _then(_$AppointmentEventLoadImpl(
+    return _then(_$AppointmentOverviewEventLoadImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -123,22 +127,23 @@ class __$$AppointmentEventLoadImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AppointmentEventLoadImpl implements AppointmentEventLoad {
-  const _$AppointmentEventLoadImpl({required this.id});
+class _$AppointmentOverviewEventLoadImpl
+    implements AppointmentOverviewEventLoad {
+  const _$AppointmentOverviewEventLoadImpl({required this.id});
 
   @override
   final String id;
 
   @override
   String toString() {
-    return 'AppointmentEvent.load(id: $id)';
+    return 'AppointmentOverviewEvent.load(id: $id)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AppointmentEventLoadImpl &&
+            other is _$AppointmentOverviewEventLoadImpl &&
             (identical(other.id, id) || other.id == id));
   }
 
@@ -148,10 +153,10 @@ class _$AppointmentEventLoadImpl implements AppointmentEventLoad {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AppointmentEventLoadImplCopyWith<_$AppointmentEventLoadImpl>
-      get copyWith =>
-          __$$AppointmentEventLoadImplCopyWithImpl<_$AppointmentEventLoadImpl>(
-              this, _$identity);
+  _$$AppointmentOverviewEventLoadImplCopyWith<
+          _$AppointmentOverviewEventLoadImpl>
+      get copyWith => __$$AppointmentOverviewEventLoadImplCopyWithImpl<
+          _$AppointmentOverviewEventLoadImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -184,7 +189,7 @@ class _$AppointmentEventLoadImpl implements AppointmentEventLoad {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AppointmentEventLoad value) load,
+    required TResult Function(AppointmentOverviewEventLoad value) load,
   }) {
     return load(this);
   }
@@ -192,7 +197,7 @@ class _$AppointmentEventLoadImpl implements AppointmentEventLoad {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AppointmentEventLoad value)? load,
+    TResult? Function(AppointmentOverviewEventLoad value)? load,
   }) {
     return load?.call(this);
   }
@@ -200,7 +205,7 @@ class _$AppointmentEventLoadImpl implements AppointmentEventLoad {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppointmentEventLoad value)? load,
+    TResult Function(AppointmentOverviewEventLoad value)? load,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -210,20 +215,22 @@ class _$AppointmentEventLoadImpl implements AppointmentEventLoad {
   }
 }
 
-abstract class AppointmentEventLoad implements AppointmentEvent {
-  const factory AppointmentEventLoad({required final String id}) =
-      _$AppointmentEventLoadImpl;
+abstract class AppointmentOverviewEventLoad
+    implements AppointmentOverviewEvent {
+  const factory AppointmentOverviewEventLoad({required final String id}) =
+      _$AppointmentOverviewEventLoadImpl;
 
   @override
   String get id;
   @override
   @JsonKey(ignore: true)
-  _$$AppointmentEventLoadImplCopyWith<_$AppointmentEventLoadImpl>
+  _$$AppointmentOverviewEventLoadImplCopyWith<
+          _$AppointmentOverviewEventLoadImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$AppointmentState {
+mixin _$AppointmentOverviewState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
@@ -248,39 +255,40 @@ mixin _$AppointmentState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AppointmentStateEmpty value) empty,
-    required TResult Function(AppointmentStateLoading value) loading,
-    required TResult Function(AppointmentStateLoaded value) loaded,
+    required TResult Function(AppointmentOverviewStateEmpty value) empty,
+    required TResult Function(AppointmentOverviewStateLoading value) loading,
+    required TResult Function(AppointmentOverviewStateLoaded value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AppointmentStateEmpty value)? empty,
-    TResult? Function(AppointmentStateLoading value)? loading,
-    TResult? Function(AppointmentStateLoaded value)? loaded,
+    TResult? Function(AppointmentOverviewStateEmpty value)? empty,
+    TResult? Function(AppointmentOverviewStateLoading value)? loading,
+    TResult? Function(AppointmentOverviewStateLoaded value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppointmentStateEmpty value)? empty,
-    TResult Function(AppointmentStateLoading value)? loading,
-    TResult Function(AppointmentStateLoaded value)? loaded,
+    TResult Function(AppointmentOverviewStateEmpty value)? empty,
+    TResult Function(AppointmentOverviewStateLoading value)? loading,
+    TResult Function(AppointmentOverviewStateLoaded value)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AppointmentStateCopyWith<$Res> {
-  factory $AppointmentStateCopyWith(
-          AppointmentState value, $Res Function(AppointmentState) then) =
-      _$AppointmentStateCopyWithImpl<$Res, AppointmentState>;
+abstract class $AppointmentOverviewStateCopyWith<$Res> {
+  factory $AppointmentOverviewStateCopyWith(AppointmentOverviewState value,
+          $Res Function(AppointmentOverviewState) then) =
+      _$AppointmentOverviewStateCopyWithImpl<$Res, AppointmentOverviewState>;
 }
 
 /// @nodoc
-class _$AppointmentStateCopyWithImpl<$Res, $Val extends AppointmentState>
-    implements $AppointmentStateCopyWith<$Res> {
-  _$AppointmentStateCopyWithImpl(this._value, this._then);
+class _$AppointmentOverviewStateCopyWithImpl<$Res,
+        $Val extends AppointmentOverviewState>
+    implements $AppointmentOverviewStateCopyWith<$Res> {
+  _$AppointmentOverviewStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -289,37 +297,40 @@ class _$AppointmentStateCopyWithImpl<$Res, $Val extends AppointmentState>
 }
 
 /// @nodoc
-abstract class _$$AppointmentStateEmptyImplCopyWith<$Res> {
-  factory _$$AppointmentStateEmptyImplCopyWith(
-          _$AppointmentStateEmptyImpl value,
-          $Res Function(_$AppointmentStateEmptyImpl) then) =
-      __$$AppointmentStateEmptyImplCopyWithImpl<$Res>;
+abstract class _$$AppointmentOverviewStateEmptyImplCopyWith<$Res> {
+  factory _$$AppointmentOverviewStateEmptyImplCopyWith(
+          _$AppointmentOverviewStateEmptyImpl value,
+          $Res Function(_$AppointmentOverviewStateEmptyImpl) then) =
+      __$$AppointmentOverviewStateEmptyImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AppointmentStateEmptyImplCopyWithImpl<$Res>
-    extends _$AppointmentStateCopyWithImpl<$Res, _$AppointmentStateEmptyImpl>
-    implements _$$AppointmentStateEmptyImplCopyWith<$Res> {
-  __$$AppointmentStateEmptyImplCopyWithImpl(_$AppointmentStateEmptyImpl _value,
-      $Res Function(_$AppointmentStateEmptyImpl) _then)
+class __$$AppointmentOverviewStateEmptyImplCopyWithImpl<$Res>
+    extends _$AppointmentOverviewStateCopyWithImpl<$Res,
+        _$AppointmentOverviewStateEmptyImpl>
+    implements _$$AppointmentOverviewStateEmptyImplCopyWith<$Res> {
+  __$$AppointmentOverviewStateEmptyImplCopyWithImpl(
+      _$AppointmentOverviewStateEmptyImpl _value,
+      $Res Function(_$AppointmentOverviewStateEmptyImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$AppointmentStateEmptyImpl implements AppointmentStateEmpty {
-  const _$AppointmentStateEmptyImpl();
+class _$AppointmentOverviewStateEmptyImpl
+    implements AppointmentOverviewStateEmpty {
+  const _$AppointmentOverviewStateEmptyImpl();
 
   @override
   String toString() {
-    return 'AppointmentState.empty()';
+    return 'AppointmentOverviewState.empty()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AppointmentStateEmptyImpl);
+            other is _$AppointmentOverviewStateEmptyImpl);
   }
 
   @override
@@ -362,9 +373,9 @@ class _$AppointmentStateEmptyImpl implements AppointmentStateEmpty {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AppointmentStateEmpty value) empty,
-    required TResult Function(AppointmentStateLoading value) loading,
-    required TResult Function(AppointmentStateLoaded value) loaded,
+    required TResult Function(AppointmentOverviewStateEmpty value) empty,
+    required TResult Function(AppointmentOverviewStateLoading value) loading,
+    required TResult Function(AppointmentOverviewStateLoaded value) loaded,
   }) {
     return empty(this);
   }
@@ -372,9 +383,9 @@ class _$AppointmentStateEmptyImpl implements AppointmentStateEmpty {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AppointmentStateEmpty value)? empty,
-    TResult? Function(AppointmentStateLoading value)? loading,
-    TResult? Function(AppointmentStateLoaded value)? loaded,
+    TResult? Function(AppointmentOverviewStateEmpty value)? empty,
+    TResult? Function(AppointmentOverviewStateLoading value)? loading,
+    TResult? Function(AppointmentOverviewStateLoaded value)? loaded,
   }) {
     return empty?.call(this);
   }
@@ -382,9 +393,9 @@ class _$AppointmentStateEmptyImpl implements AppointmentStateEmpty {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppointmentStateEmpty value)? empty,
-    TResult Function(AppointmentStateLoading value)? loading,
-    TResult Function(AppointmentStateLoaded value)? loaded,
+    TResult Function(AppointmentOverviewStateEmpty value)? empty,
+    TResult Function(AppointmentOverviewStateLoading value)? loading,
+    TResult Function(AppointmentOverviewStateLoaded value)? loaded,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -394,27 +405,30 @@ class _$AppointmentStateEmptyImpl implements AppointmentStateEmpty {
   }
 }
 
-abstract class AppointmentStateEmpty implements AppointmentState {
-  const factory AppointmentStateEmpty() = _$AppointmentStateEmptyImpl;
+abstract class AppointmentOverviewStateEmpty
+    implements AppointmentOverviewState {
+  const factory AppointmentOverviewStateEmpty() =
+      _$AppointmentOverviewStateEmptyImpl;
 }
 
 /// @nodoc
-abstract class _$$AppointmentStateLoadingImplCopyWith<$Res> {
-  factory _$$AppointmentStateLoadingImplCopyWith(
-          _$AppointmentStateLoadingImpl value,
-          $Res Function(_$AppointmentStateLoadingImpl) then) =
-      __$$AppointmentStateLoadingImplCopyWithImpl<$Res>;
+abstract class _$$AppointmentOverviewStateLoadingImplCopyWith<$Res> {
+  factory _$$AppointmentOverviewStateLoadingImplCopyWith(
+          _$AppointmentOverviewStateLoadingImpl value,
+          $Res Function(_$AppointmentOverviewStateLoadingImpl) then) =
+      __$$AppointmentOverviewStateLoadingImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String id});
 }
 
 /// @nodoc
-class __$$AppointmentStateLoadingImplCopyWithImpl<$Res>
-    extends _$AppointmentStateCopyWithImpl<$Res, _$AppointmentStateLoadingImpl>
-    implements _$$AppointmentStateLoadingImplCopyWith<$Res> {
-  __$$AppointmentStateLoadingImplCopyWithImpl(
-      _$AppointmentStateLoadingImpl _value,
-      $Res Function(_$AppointmentStateLoadingImpl) _then)
+class __$$AppointmentOverviewStateLoadingImplCopyWithImpl<$Res>
+    extends _$AppointmentOverviewStateCopyWithImpl<$Res,
+        _$AppointmentOverviewStateLoadingImpl>
+    implements _$$AppointmentOverviewStateLoadingImplCopyWith<$Res> {
+  __$$AppointmentOverviewStateLoadingImplCopyWithImpl(
+      _$AppointmentOverviewStateLoadingImpl _value,
+      $Res Function(_$AppointmentOverviewStateLoadingImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -422,7 +436,7 @@ class __$$AppointmentStateLoadingImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
   }) {
-    return _then(_$AppointmentStateLoadingImpl(
+    return _then(_$AppointmentOverviewStateLoadingImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -433,22 +447,23 @@ class __$$AppointmentStateLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AppointmentStateLoadingImpl implements AppointmentStateLoading {
-  const _$AppointmentStateLoadingImpl({required this.id});
+class _$AppointmentOverviewStateLoadingImpl
+    implements AppointmentOverviewStateLoading {
+  const _$AppointmentOverviewStateLoadingImpl({required this.id});
 
   @override
   final String id;
 
   @override
   String toString() {
-    return 'AppointmentState.loading(id: $id)';
+    return 'AppointmentOverviewState.loading(id: $id)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AppointmentStateLoadingImpl &&
+            other is _$AppointmentOverviewStateLoadingImpl &&
             (identical(other.id, id) || other.id == id));
   }
 
@@ -458,9 +473,10 @@ class _$AppointmentStateLoadingImpl implements AppointmentStateLoading {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AppointmentStateLoadingImplCopyWith<_$AppointmentStateLoadingImpl>
-      get copyWith => __$$AppointmentStateLoadingImplCopyWithImpl<
-          _$AppointmentStateLoadingImpl>(this, _$identity);
+  _$$AppointmentOverviewStateLoadingImplCopyWith<
+          _$AppointmentOverviewStateLoadingImpl>
+      get copyWith => __$$AppointmentOverviewStateLoadingImplCopyWithImpl<
+          _$AppointmentOverviewStateLoadingImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -499,9 +515,9 @@ class _$AppointmentStateLoadingImpl implements AppointmentStateLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AppointmentStateEmpty value) empty,
-    required TResult Function(AppointmentStateLoading value) loading,
-    required TResult Function(AppointmentStateLoaded value) loaded,
+    required TResult Function(AppointmentOverviewStateEmpty value) empty,
+    required TResult Function(AppointmentOverviewStateLoading value) loading,
+    required TResult Function(AppointmentOverviewStateLoaded value) loaded,
   }) {
     return loading(this);
   }
@@ -509,9 +525,9 @@ class _$AppointmentStateLoadingImpl implements AppointmentStateLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AppointmentStateEmpty value)? empty,
-    TResult? Function(AppointmentStateLoading value)? loading,
-    TResult? Function(AppointmentStateLoaded value)? loaded,
+    TResult? Function(AppointmentOverviewStateEmpty value)? empty,
+    TResult? Function(AppointmentOverviewStateLoading value)? loading,
+    TResult? Function(AppointmentOverviewStateLoaded value)? loaded,
   }) {
     return loading?.call(this);
   }
@@ -519,9 +535,9 @@ class _$AppointmentStateLoadingImpl implements AppointmentStateLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppointmentStateEmpty value)? empty,
-    TResult Function(AppointmentStateLoading value)? loading,
-    TResult Function(AppointmentStateLoaded value)? loaded,
+    TResult Function(AppointmentOverviewStateEmpty value)? empty,
+    TResult Function(AppointmentOverviewStateLoading value)? loading,
+    TResult Function(AppointmentOverviewStateLoaded value)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -531,22 +547,24 @@ class _$AppointmentStateLoadingImpl implements AppointmentStateLoading {
   }
 }
 
-abstract class AppointmentStateLoading implements AppointmentState {
-  const factory AppointmentStateLoading({required final String id}) =
-      _$AppointmentStateLoadingImpl;
+abstract class AppointmentOverviewStateLoading
+    implements AppointmentOverviewState {
+  const factory AppointmentOverviewStateLoading({required final String id}) =
+      _$AppointmentOverviewStateLoadingImpl;
 
   String get id;
   @JsonKey(ignore: true)
-  _$$AppointmentStateLoadingImplCopyWith<_$AppointmentStateLoadingImpl>
+  _$$AppointmentOverviewStateLoadingImplCopyWith<
+          _$AppointmentOverviewStateLoadingImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AppointmentStateLoadedImplCopyWith<$Res> {
-  factory _$$AppointmentStateLoadedImplCopyWith(
-          _$AppointmentStateLoadedImpl value,
-          $Res Function(_$AppointmentStateLoadedImpl) then) =
-      __$$AppointmentStateLoadedImplCopyWithImpl<$Res>;
+abstract class _$$AppointmentOverviewStateLoadedImplCopyWith<$Res> {
+  factory _$$AppointmentOverviewStateLoadedImplCopyWith(
+          _$AppointmentOverviewStateLoadedImpl value,
+          $Res Function(_$AppointmentOverviewStateLoadedImpl) then) =
+      __$$AppointmentOverviewStateLoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String id, Appointment appointment});
 
@@ -554,12 +572,13 @@ abstract class _$$AppointmentStateLoadedImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AppointmentStateLoadedImplCopyWithImpl<$Res>
-    extends _$AppointmentStateCopyWithImpl<$Res, _$AppointmentStateLoadedImpl>
-    implements _$$AppointmentStateLoadedImplCopyWith<$Res> {
-  __$$AppointmentStateLoadedImplCopyWithImpl(
-      _$AppointmentStateLoadedImpl _value,
-      $Res Function(_$AppointmentStateLoadedImpl) _then)
+class __$$AppointmentOverviewStateLoadedImplCopyWithImpl<$Res>
+    extends _$AppointmentOverviewStateCopyWithImpl<$Res,
+        _$AppointmentOverviewStateLoadedImpl>
+    implements _$$AppointmentOverviewStateLoadedImplCopyWith<$Res> {
+  __$$AppointmentOverviewStateLoadedImplCopyWithImpl(
+      _$AppointmentOverviewStateLoadedImpl _value,
+      $Res Function(_$AppointmentOverviewStateLoadedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -568,7 +587,7 @@ class __$$AppointmentStateLoadedImplCopyWithImpl<$Res>
     Object? id = null,
     Object? appointment = null,
   }) {
-    return _then(_$AppointmentStateLoadedImpl(
+    return _then(_$AppointmentOverviewStateLoadedImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -591,8 +610,9 @@ class __$$AppointmentStateLoadedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AppointmentStateLoadedImpl implements AppointmentStateLoaded {
-  const _$AppointmentStateLoadedImpl(
+class _$AppointmentOverviewStateLoadedImpl
+    implements AppointmentOverviewStateLoaded {
+  const _$AppointmentOverviewStateLoadedImpl(
       {required this.id, required this.appointment});
 
   @override
@@ -602,14 +622,14 @@ class _$AppointmentStateLoadedImpl implements AppointmentStateLoaded {
 
   @override
   String toString() {
-    return 'AppointmentState.loaded(id: $id, appointment: $appointment)';
+    return 'AppointmentOverviewState.loaded(id: $id, appointment: $appointment)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AppointmentStateLoadedImpl &&
+            other is _$AppointmentOverviewStateLoadedImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.appointment, appointment) ||
                 other.appointment == appointment));
@@ -621,9 +641,10 @@ class _$AppointmentStateLoadedImpl implements AppointmentStateLoaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AppointmentStateLoadedImplCopyWith<_$AppointmentStateLoadedImpl>
-      get copyWith => __$$AppointmentStateLoadedImplCopyWithImpl<
-          _$AppointmentStateLoadedImpl>(this, _$identity);
+  _$$AppointmentOverviewStateLoadedImplCopyWith<
+          _$AppointmentOverviewStateLoadedImpl>
+      get copyWith => __$$AppointmentOverviewStateLoadedImplCopyWithImpl<
+          _$AppointmentOverviewStateLoadedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -662,9 +683,9 @@ class _$AppointmentStateLoadedImpl implements AppointmentStateLoaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AppointmentStateEmpty value) empty,
-    required TResult Function(AppointmentStateLoading value) loading,
-    required TResult Function(AppointmentStateLoaded value) loaded,
+    required TResult Function(AppointmentOverviewStateEmpty value) empty,
+    required TResult Function(AppointmentOverviewStateLoading value) loading,
+    required TResult Function(AppointmentOverviewStateLoaded value) loaded,
   }) {
     return loaded(this);
   }
@@ -672,9 +693,9 @@ class _$AppointmentStateLoadedImpl implements AppointmentStateLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AppointmentStateEmpty value)? empty,
-    TResult? Function(AppointmentStateLoading value)? loading,
-    TResult? Function(AppointmentStateLoaded value)? loaded,
+    TResult? Function(AppointmentOverviewStateEmpty value)? empty,
+    TResult? Function(AppointmentOverviewStateLoading value)? loading,
+    TResult? Function(AppointmentOverviewStateLoaded value)? loaded,
   }) {
     return loaded?.call(this);
   }
@@ -682,9 +703,9 @@ class _$AppointmentStateLoadedImpl implements AppointmentStateLoaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppointmentStateEmpty value)? empty,
-    TResult Function(AppointmentStateLoading value)? loading,
-    TResult Function(AppointmentStateLoaded value)? loaded,
+    TResult Function(AppointmentOverviewStateEmpty value)? empty,
+    TResult Function(AppointmentOverviewStateLoading value)? loading,
+    TResult Function(AppointmentOverviewStateLoaded value)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -694,14 +715,16 @@ class _$AppointmentStateLoadedImpl implements AppointmentStateLoaded {
   }
 }
 
-abstract class AppointmentStateLoaded implements AppointmentState {
-  const factory AppointmentStateLoaded(
-      {required final String id,
-      required final Appointment appointment}) = _$AppointmentStateLoadedImpl;
+abstract class AppointmentOverviewStateLoaded
+    implements AppointmentOverviewState {
+  const factory AppointmentOverviewStateLoaded(
+          {required final String id, required final Appointment appointment}) =
+      _$AppointmentOverviewStateLoadedImpl;
 
   String get id;
   Appointment get appointment;
   @JsonKey(ignore: true)
-  _$$AppointmentStateLoadedImplCopyWith<_$AppointmentStateLoadedImpl>
+  _$$AppointmentOverviewStateLoadedImplCopyWith<
+          _$AppointmentOverviewStateLoadedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

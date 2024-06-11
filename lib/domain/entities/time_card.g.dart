@@ -6,8 +6,8 @@ part of 'time_card.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TimeCardImpl _$$TimeCardImplFromJson(Map<String, dynamic> json) =>
-    _$TimeCardImpl(
+_$TimecardImpl _$$TimecardImplFromJson(Map<String, dynamic> json) =>
+    _$TimecardImpl(
       id: json['id'] as String? ?? '',
       userId: json['userId'] as String,
       start: json['start'] == null
@@ -22,7 +22,7 @@ _$TimeCardImpl _$$TimeCardImplFromJson(Map<String, dynamic> json) =>
       endLocation: json['endLocation'] as String?,
     );
 
-Map<String, dynamic> _$$TimeCardImplToJson(_$TimeCardImpl instance) =>
+Map<String, dynamic> _$$TimecardImplToJson(_$TimecardImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'userId': instance.userId,

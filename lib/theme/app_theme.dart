@@ -19,7 +19,7 @@ class AppTheme {
 }
 
 AppBarTheme get _appBarTheme => const AppBarTheme(
-      backgroundColor: AppColor.backgroundColor,
+      backgroundColor: AppColor.primaryColorSwatch,
       titleTextStyle: TextStyle(
         color: AppColor.lightColor,
         fontSize: 20,

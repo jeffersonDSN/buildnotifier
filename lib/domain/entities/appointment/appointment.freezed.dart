@@ -201,7 +201,7 @@ mixin _$Appointment {
   DateTime get startDateTime => throw _privateConstructorUsedError;
   DateTime get endDateTime => throw _privateConstructorUsedError;
   double get latitude => throw _privateConstructorUsedError;
-  dynamic get longitude => throw _privateConstructorUsedError;
+  double get longitude => throw _privateConstructorUsedError;
   String get projectId => throw _privateConstructorUsedError;
   String get projectName => throw _privateConstructorUsedError;
   String get taskId => throw _privateConstructorUsedError;
@@ -227,7 +227,7 @@ abstract class $AppointmentCopyWith<$Res> {
       DateTime startDateTime,
       DateTime endDateTime,
       double latitude,
-      dynamic longitude,
+      double longitude,
       String projectId,
       String projectName,
       String taskId,
@@ -254,7 +254,7 @@ class _$AppointmentCopyWithImpl<$Res, $Val extends Appointment>
     Object? startDateTime = null,
     Object? endDateTime = null,
     Object? latitude = null,
-    Object? longitude = freezed,
+    Object? longitude = null,
     Object? projectId = null,
     Object? projectName = null,
     Object? taskId = null,
@@ -286,10 +286,10 @@ class _$AppointmentCopyWithImpl<$Res, $Val extends Appointment>
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
-      longitude: freezed == longitude
+      longitude: null == longitude
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as double,
       projectId: null == projectId
           ? _value.projectId
           : projectId // ignore: cast_nullable_to_non_nullable
@@ -329,7 +329,7 @@ abstract class _$$AppointmentImplCopyWith<$Res>
       DateTime startDateTime,
       DateTime endDateTime,
       double latitude,
-      dynamic longitude,
+      double longitude,
       String projectId,
       String projectName,
       String taskId,
@@ -354,7 +354,7 @@ class __$$AppointmentImplCopyWithImpl<$Res>
     Object? startDateTime = null,
     Object? endDateTime = null,
     Object? latitude = null,
-    Object? longitude = freezed,
+    Object? longitude = null,
     Object? projectId = null,
     Object? projectName = null,
     Object? taskId = null,
@@ -386,7 +386,10 @@ class __$$AppointmentImplCopyWithImpl<$Res>
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
-      longitude: freezed == longitude ? _value.longitude! : longitude,
+      longitude: null == longitude
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double,
       projectId: null == projectId
           ? _value.projectId
           : projectId // ignore: cast_nullable_to_non_nullable
@@ -450,7 +453,7 @@ class _$AppointmentImpl implements _Appointment {
   final double latitude;
   @override
   @JsonKey()
-  final dynamic longitude;
+  final double longitude;
   @override
   @JsonKey()
   final String projectId;
@@ -492,7 +495,8 @@ class _$AppointmentImpl implements _Appointment {
                 other.endDateTime == endDateTime) &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
-            const DeepCollectionEquality().equals(other.longitude, longitude) &&
+            (identical(other.longitude, longitude) ||
+                other.longitude == longitude) &&
             (identical(other.projectId, projectId) ||
                 other.projectId == projectId) &&
             (identical(other.projectName, projectName) ||
@@ -513,7 +517,7 @@ class _$AppointmentImpl implements _Appointment {
       startDateTime,
       endDateTime,
       latitude,
-      const DeepCollectionEquality().hash(longitude),
+      longitude,
       projectId,
       projectName,
       taskId,
@@ -542,7 +546,7 @@ abstract class _Appointment implements Appointment {
       required final DateTime startDateTime,
       required final DateTime endDateTime,
       final double latitude,
-      final dynamic longitude,
+      final double longitude,
       final String projectId,
       final String projectName,
       final String taskId,
@@ -565,7 +569,7 @@ abstract class _Appointment implements Appointment {
   @override
   double get latitude;
   @override
-  dynamic get longitude;
+  double get longitude;
   @override
   String get projectId;
   @override

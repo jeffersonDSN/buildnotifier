@@ -30,7 +30,7 @@ class Appointment with _$Appointment {
     required DateTime startDateTime,
     required DateTime endDateTime,
     @Default(0) double latitude,
-    @Default(0) longitude,
+    @Default(0) double longitude,
     @Default('') String projectId,
     @Default('') String projectName,
     @Default('') String taskId,

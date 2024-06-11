@@ -3,24 +3,25 @@ import 'package:buildnotifier/domain/entities/appointment/appointment.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'appointment_bloc.freezed.dart';
-part 'appointment_event.dart';
-part 'appointment_state.dart';
+part 'appointment_overview_bloc.freezed.dart';
+part 'appointment_overview_event.dart';
+part 'appointment_overview_state.dart';
 
-class AppointmentBloc extends Bloc<AppointmentEvent, AppointmentState> {
-  AppointmentBloc({
+class AppointmentOverviewBloc
+    extends Bloc<AppointmentOverviewEvent, AppointmentOverviewState> {
+  AppointmentOverviewBloc({
     required AppointmentController controller,
-  }) : super(const AppointmentState.empty()) {
-    on<AppointmentEvent>(
+  }) : super(const AppointmentOverviewState.empty()) {
+    on<AppointmentOverviewEvent>(
       (event, emit) async {
         await event.when(
           load: (id) async {
-            emit(AppointmentState.loading(id: id));
+            emit(AppointmentOverviewState.loading(id: id));
 
             var appointment = await controller.getById(id);
 
             emit(
-              AppointmentState.loaded(
+              AppointmentOverviewState.loaded(
                 id: id,
                 appointment: appointment,
               ),

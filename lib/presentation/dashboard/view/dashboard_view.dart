@@ -9,7 +9,6 @@ class DashboardView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primary,
         title: Image.asset(
           '$assetImage$logo2',
           height: 48,

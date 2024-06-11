@@ -2,7 +2,6 @@ import 'package:buildnotifier/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifier/presentation/app/model/mod.dart';
 import 'package:buildnotifier/presentation/app/model/view_type.dart';
 import 'package:buildnotifier/presentation/core/const/images_const.dart';
-import 'package:buildnotifier/presentation/appointment/view/appointment_view.dart';
 import 'package:buildnotifier/presentation/core/view/i_view.dart';
 import 'package:buildnotifier/presentation/schedule/overview/bloc/schedule_bloc.dart';
 import 'package:buildnotifier/theme/app_color.dart';
@@ -39,7 +38,6 @@ class ScheduleOverviewView extends IView {
             );
           },
         ),
-        backgroundColor: Theme.of(context).colorScheme.primary,
         title: Image.asset(
           '$assetImage$logo2',
           height: 48,
@@ -140,8 +138,8 @@ class ScheduleOverviewView extends IView {
                 const Divider(),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.all(4),
-                    child: ListView.builder(
+                    padding: const EdgeInsets.all(Sizes.size4),
+                    child: ListView.separated(
                       itemCount: schedules.length,
                       itemBuilder: (context, index) {
                         var schedule = schedules[index];
@@ -165,37 +163,43 @@ class ScheduleOverviewView extends IView {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                if (schedule.location.isNotEmpty)
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      const Icon(
-                                        Icons.location_on,
-                                        color: AppColor.primaryColorSwatch,
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    const Icon(
+                                      Icons.location_on,
+                                      color: AppColor.primaryColorSwatch,
+                                    ),
+                                    gapWidth4,
+                                    Expanded(
+                                      child: Text(
+                                        schedule.location.isNotEmpty
+                                            ? schedule.location
+                                            : 'N/A',
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 1,
                                       ),
-                                      gapWidth4,
-                                      Expanded(
-                                        child: Text(
-                                          schedule.location,
-                                          overflow: TextOverflow.ellipsis,
-                                          maxLines: 1,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
+                                ),
                               ],
                             ),
                           ),
                           onTap: () {
                             appBloc(context).add(
-                              const AppEvent.changeView(
+                              AppEvent.changeView(
                                 mod: Mod.schedule(
-                                  type: ViewType.overview(),
+                                  type: ViewType.overviewById(
+                                    id: schedule.id,
+                                  ),
                                 ),
                               ),
                             );
                           },
                         );
+                      },
+                      separatorBuilder: (context, index) {
+                        return const Divider();
                       },
                     ),
                   ),

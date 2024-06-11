@@ -6,12 +6,12 @@ class ClockAlertViewState with _$ClockAlertViewState {
   const factory ClockAlertViewState.loading() = ClockAlertViewStateLoading;
   const factory ClockAlertViewState.loaded({
     @Default(CrudType.create()) CrudType type,
-    required TimeCard clock,
+    required Timecard clock,
   }) = ClockAlertViewStateLoaded;
 
   const factory ClockAlertViewState.saving({
     @Default(CrudType.create()) CrudType type,
-    required TimeCard clock,
+    required Timecard clock,
   }) = ClockAlertViewStateSaving;
 }
 

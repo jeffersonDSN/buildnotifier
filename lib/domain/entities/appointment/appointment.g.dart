@@ -30,7 +30,7 @@ _$AppointmentImpl _$$AppointmentImplFromJson(Map<String, dynamic> json) =>
       startDateTime: DateTime.parse(json['startDateTime'] as String),
       endDateTime: DateTime.parse(json['endDateTime'] as String),
       latitude: (json['latitude'] as num?)?.toDouble() ?? 0,
-      longitude: json['longitude'] ?? 0,
+      longitude: (json['longitude'] as num?)?.toDouble() ?? 0,
       projectId: json['projectId'] as String? ?? '',
       projectName: json['projectName'] as String? ?? '',
       taskId: json['taskId'] as String? ?? '',

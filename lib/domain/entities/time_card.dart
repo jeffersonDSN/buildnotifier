@@ -4,8 +4,8 @@ part 'time_card.freezed.dart';
 part 'time_card.g.dart';
 
 @freezed
-class TimeCard with _$TimeCard {
-  factory TimeCard({
+class Timecard with _$Timecard {
+  factory Timecard({
     @Default('') String id,
     required String userId,
     DateTime? start,
@@ -16,8 +16,8 @@ class TimeCard with _$TimeCard {
     double? endLatitude,
     double? endLongitude,
     String? endLocation,
-  }) = _TimeCard;
+  }) = _Timecard;
 
-  factory TimeCard.fromJson(Map<String, Object?> json) =>
-      _$TimeCardFromJson(json);
+  factory Timecard.fromJson(Map<String, Object?> json) =>
+      _$TimecardFromJson(json);
 }
