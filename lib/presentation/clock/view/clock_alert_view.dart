@@ -1,25 +1,15 @@
-import 'package:buildnotifier/domain/controllers/time_card_controller.dart';
-import 'package:buildnotifier/infrastructure/repositories/firestore/time_card_firestore_repository.dart';
-import 'package:buildnotifier/presentation/clock/bloc/clock_alert_dialog_bloc.dart';
+import 'package:buildnotifier/presentation/clock/bloc/clock_alert_view_bloc.dart';
 import 'package:buildnotifier/presentation/clock/widget/clock_alert_dialog_widget.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ClockAlertDialog extends StatelessWidget {
-  ClockAlertDialog({super.key});
-
-  final ClockAlertDialogBloc bloc = ClockAlertDialogBloc(
-    controller: TimeCardController(
-      repository: TimeCardFireStoreRepository(),
-    ),
-  );
+class ClockAlertView extends StatelessWidget {
+  ClockAlertView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    bloc.add(
-      const ClockAlertDialogEvent.load(userID: 'VZHac7Dmst1hk4nBmZqw'),
-    );
+    var bloc = BlocProvider.of<ClockAlertViewBloc>(context);
 
     return AlertDialog(
       title: const Column(
@@ -34,7 +24,7 @@ class ClockAlertDialog extends StatelessWidget {
           Divider(),
         ],
       ),
-      content: BlocBuilder<ClockAlertDialogBloc, ClockAlertDialogState>(
+      content: BlocBuilder<ClockAlertViewBloc, ClockAlertViewState>(
         bloc: bloc,
         builder: (context, state) {
           return state.when(
@@ -60,7 +50,7 @@ class ClockAlertDialog extends StatelessWidget {
                 type: type,
                 onSubmit: () {
                   bloc.add(
-                    ClockAlertDialogEvent.save(
+                    ClockAlertViewEvent.save(
                       clock: type.when(
                         create: () => clock.copyWith(
                           start: DateTime.now(),

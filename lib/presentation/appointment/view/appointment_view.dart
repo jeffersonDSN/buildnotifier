@@ -34,7 +34,9 @@ class _AppointmentView extends State<AppointmentView> {
   Widget build(BuildContext context) {
     var bloc = AppointmentBloc(
       controller: ScheduleController(
-        repository: ScheduleFirestoreRepository(),
+        repository: ScheduleFirestoreRepository(
+          tenantId: '',
+        ),
       ),
     );
 

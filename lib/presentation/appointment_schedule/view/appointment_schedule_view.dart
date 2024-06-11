@@ -15,7 +15,9 @@ class AppointmentScheduleView extends StatelessWidget {
 
   final bloc = AppointmentScheduleBloc(
     controller: ScheduleController(
-      repository: ScheduleFirestoreRepository(),
+      repository: ScheduleFirestoreRepository(
+        tenantId: '',
+      ),
     ),
     locationController: LocationController(
       repository: LocationRepository(),

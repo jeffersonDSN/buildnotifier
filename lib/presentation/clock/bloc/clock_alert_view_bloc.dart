@@ -7,27 +7,27 @@ import 'package:buildnotifier/domain/entities/time_card.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 
-part 'clock_alert_dialog_event.dart';
-part 'clock_alert_dialog_state.dart';
-part 'clock_alert_dialog_bloc.freezed.dart';
+part 'clock_alert_view_bloc.freezed.dart';
+part 'clock_alert_view_event.dart';
+part 'clock_alert_view_state.dart';
 
-class ClockAlertDialogBloc
-    extends Bloc<ClockAlertDialogEvent, ClockAlertDialogState> {
-  ClockAlertDialogBloc({
+class ClockAlertViewBloc
+    extends Bloc<ClockAlertViewEvent, ClockAlertViewState> {
+  ClockAlertViewBloc({
     required TimeCardController controller,
-  }) : super(const ClockAlertDialogState.empty()) {
-    on<ClockAlertDialogEvent>(
+  }) : super(const ClockAlertViewState.empty()) {
+    on<ClockAlertViewEvent>(
       (event, emit) async {
         await event.when(
           load: (userID) async {
-            emit(const ClockAlertDialogState.loading());
+            emit(const ClockAlertViewState.loading());
             var clock = await controller.getLastTimeCardByUserId(userID);
 
             clock ??= TimeCard(userId: userID);
             clock = clock.end == null ? clock : TimeCard(userId: userID);
 
             emit(
-              ClockAlertDialogState.loaded(
+              ClockAlertViewState.loaded(
                 clock: clock,
                 type: clock.id.isNotEmpty
                     ? CrudType.update(id: clock.id)
@@ -37,7 +37,7 @@ class ClockAlertDialogBloc
           },
           save: (clock, callback) async {
             emit(
-              ClockAlertDialogState.saving(
+              ClockAlertViewState.saving(
                 clock: state.asLoaded.clock,
                 type: state.asLoaded.type,
               ),

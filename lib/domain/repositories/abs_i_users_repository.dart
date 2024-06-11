@@ -1,9 +1,7 @@
-import 'package:buildnotifier/domain/entities/user.dart';
+import 'package:buildnotifier/domain/entities/user/user.dart';
+import 'package:buildnotifier/domain/repositories/abs_i_crud_repository.dart';
 
-abstract interface class AbsIUsersRepository {
-  Future<List<User>> getAll();
-  Future<User> getById(String id);
-  Future<bool> put(User value);
-  Future<bool> post(User value);
-  Future<bool> delete(String id);
+abstract interface class AbsIUsersRepository
+    implements AbsICRUDRepository<User> {
+  Future<User?> getUserByUserNamePassword(String userName, String password);
 }

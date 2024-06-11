@@ -13,7 +13,7 @@ class UsersView extends StatelessWidget {
 
   final UsersBloc bloc = UsersBloc(
     controller: UsersController(
-      repository: UsersFireStoreRepository(),
+      repository: UsersFireStoreRepository(tenant: ''),
     ),
   );
 

@@ -1,6 +1,6 @@
 import 'package:buildnotifier/domain/controllers/users_controller.dart';
 import 'package:buildnotifier/domain/entities/crud_type.dart';
-import 'package:buildnotifier/domain/entities/user.dart';
+import 'package:buildnotifier/domain/entities/user/user.dart';
 import 'package:buildnotifier/infrastructure/repositories/firestore/users_firestore_repository.dart';
 import 'package:buildnotifier/presentation/view/users/detail/user_detail_bloc.dart';
 import 'package:buildnotifier/theme/app_sizes.dart';
@@ -21,7 +21,7 @@ class UserDetailView extends StatelessWidget {
 
   final UserDetailBloc bloc = UserDetailBloc(
     controller: UsersController(
-      repository: UsersFireStoreRepository(),
+      repository: UsersFireStoreRepository(tenant: ''),
     ),
   );
 
@@ -34,7 +34,7 @@ class UserDetailView extends StatelessWidget {
         builder: (context, state) {
           var user = state.maybeWhen(
             loaded: (crudType, user) => user,
-            orElse: () => User.empty(),
+            orElse: () => const User(),
           );
 
           firstNameController.text = user.firstName;

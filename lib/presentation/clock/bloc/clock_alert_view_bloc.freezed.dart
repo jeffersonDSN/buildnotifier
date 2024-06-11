@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'clock_alert_dialog_bloc.dart';
+part of 'clock_alert_view_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$ClockAlertDialogEvent {
+mixin _$ClockAlertViewEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String userID) load,
@@ -37,37 +37,36 @@ mixin _$ClockAlertDialogEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ClockAlertDialogEventLoad value) load,
-    required TResult Function(ClockAlertDialogEventSave value) save,
+    required TResult Function(ClockAlertViewEventLoad value) load,
+    required TResult Function(ClockAlertViewEventSave value) save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ClockAlertDialogEventLoad value)? load,
-    TResult? Function(ClockAlertDialogEventSave value)? save,
+    TResult? Function(ClockAlertViewEventLoad value)? load,
+    TResult? Function(ClockAlertViewEventSave value)? save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ClockAlertDialogEventLoad value)? load,
-    TResult Function(ClockAlertDialogEventSave value)? save,
+    TResult Function(ClockAlertViewEventLoad value)? load,
+    TResult Function(ClockAlertViewEventSave value)? save,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ClockAlertDialogEventCopyWith<$Res> {
-  factory $ClockAlertDialogEventCopyWith(ClockAlertDialogEvent value,
-          $Res Function(ClockAlertDialogEvent) then) =
-      _$ClockAlertDialogEventCopyWithImpl<$Res, ClockAlertDialogEvent>;
+abstract class $ClockAlertViewEventCopyWith<$Res> {
+  factory $ClockAlertViewEventCopyWith(
+          ClockAlertViewEvent value, $Res Function(ClockAlertViewEvent) then) =
+      _$ClockAlertViewEventCopyWithImpl<$Res, ClockAlertViewEvent>;
 }
 
 /// @nodoc
-class _$ClockAlertDialogEventCopyWithImpl<$Res,
-        $Val extends ClockAlertDialogEvent>
-    implements $ClockAlertDialogEventCopyWith<$Res> {
-  _$ClockAlertDialogEventCopyWithImpl(this._value, this._then);
+class _$ClockAlertViewEventCopyWithImpl<$Res, $Val extends ClockAlertViewEvent>
+    implements $ClockAlertViewEventCopyWith<$Res> {
+  _$ClockAlertViewEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -76,23 +75,23 @@ class _$ClockAlertDialogEventCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$ClockAlertDialogEventLoadImplCopyWith<$Res> {
-  factory _$$ClockAlertDialogEventLoadImplCopyWith(
-          _$ClockAlertDialogEventLoadImpl value,
-          $Res Function(_$ClockAlertDialogEventLoadImpl) then) =
-      __$$ClockAlertDialogEventLoadImplCopyWithImpl<$Res>;
+abstract class _$$ClockAlertViewEventLoadImplCopyWith<$Res> {
+  factory _$$ClockAlertViewEventLoadImplCopyWith(
+          _$ClockAlertViewEventLoadImpl value,
+          $Res Function(_$ClockAlertViewEventLoadImpl) then) =
+      __$$ClockAlertViewEventLoadImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String userID});
 }
 
 /// @nodoc
-class __$$ClockAlertDialogEventLoadImplCopyWithImpl<$Res>
-    extends _$ClockAlertDialogEventCopyWithImpl<$Res,
-        _$ClockAlertDialogEventLoadImpl>
-    implements _$$ClockAlertDialogEventLoadImplCopyWith<$Res> {
-  __$$ClockAlertDialogEventLoadImplCopyWithImpl(
-      _$ClockAlertDialogEventLoadImpl _value,
-      $Res Function(_$ClockAlertDialogEventLoadImpl) _then)
+class __$$ClockAlertViewEventLoadImplCopyWithImpl<$Res>
+    extends _$ClockAlertViewEventCopyWithImpl<$Res,
+        _$ClockAlertViewEventLoadImpl>
+    implements _$$ClockAlertViewEventLoadImplCopyWith<$Res> {
+  __$$ClockAlertViewEventLoadImplCopyWithImpl(
+      _$ClockAlertViewEventLoadImpl _value,
+      $Res Function(_$ClockAlertViewEventLoadImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -100,7 +99,7 @@ class __$$ClockAlertDialogEventLoadImplCopyWithImpl<$Res>
   $Res call({
     Object? userID = null,
   }) {
-    return _then(_$ClockAlertDialogEventLoadImpl(
+    return _then(_$ClockAlertViewEventLoadImpl(
       userID: null == userID
           ? _value.userID
           : userID // ignore: cast_nullable_to_non_nullable
@@ -111,22 +110,22 @@ class __$$ClockAlertDialogEventLoadImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ClockAlertDialogEventLoadImpl implements ClockAlertDialogEventLoad {
-  const _$ClockAlertDialogEventLoadImpl({required this.userID});
+class _$ClockAlertViewEventLoadImpl implements ClockAlertViewEventLoad {
+  const _$ClockAlertViewEventLoadImpl({required this.userID});
 
   @override
   final String userID;
 
   @override
   String toString() {
-    return 'ClockAlertDialogEvent.load(userID: $userID)';
+    return 'ClockAlertViewEvent.load(userID: $userID)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ClockAlertDialogEventLoadImpl &&
+            other is _$ClockAlertViewEventLoadImpl &&
             (identical(other.userID, userID) || other.userID == userID));
   }
 
@@ -136,9 +135,9 @@ class _$ClockAlertDialogEventLoadImpl implements ClockAlertDialogEventLoad {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ClockAlertDialogEventLoadImplCopyWith<_$ClockAlertDialogEventLoadImpl>
-      get copyWith => __$$ClockAlertDialogEventLoadImplCopyWithImpl<
-          _$ClockAlertDialogEventLoadImpl>(this, _$identity);
+  _$$ClockAlertViewEventLoadImplCopyWith<_$ClockAlertViewEventLoadImpl>
+      get copyWith => __$$ClockAlertViewEventLoadImplCopyWithImpl<
+          _$ClockAlertViewEventLoadImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -174,8 +173,8 @@ class _$ClockAlertDialogEventLoadImpl implements ClockAlertDialogEventLoad {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ClockAlertDialogEventLoad value) load,
-    required TResult Function(ClockAlertDialogEventSave value) save,
+    required TResult Function(ClockAlertViewEventLoad value) load,
+    required TResult Function(ClockAlertViewEventSave value) save,
   }) {
     return load(this);
   }
@@ -183,8 +182,8 @@ class _$ClockAlertDialogEventLoadImpl implements ClockAlertDialogEventLoad {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ClockAlertDialogEventLoad value)? load,
-    TResult? Function(ClockAlertDialogEventSave value)? save,
+    TResult? Function(ClockAlertViewEventLoad value)? load,
+    TResult? Function(ClockAlertViewEventSave value)? save,
   }) {
     return load?.call(this);
   }
@@ -192,8 +191,8 @@ class _$ClockAlertDialogEventLoadImpl implements ClockAlertDialogEventLoad {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ClockAlertDialogEventLoad value)? load,
-    TResult Function(ClockAlertDialogEventSave value)? save,
+    TResult Function(ClockAlertViewEventLoad value)? load,
+    TResult Function(ClockAlertViewEventSave value)? save,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -203,22 +202,22 @@ class _$ClockAlertDialogEventLoadImpl implements ClockAlertDialogEventLoad {
   }
 }
 
-abstract class ClockAlertDialogEventLoad implements ClockAlertDialogEvent {
-  const factory ClockAlertDialogEventLoad({required final String userID}) =
-      _$ClockAlertDialogEventLoadImpl;
+abstract class ClockAlertViewEventLoad implements ClockAlertViewEvent {
+  const factory ClockAlertViewEventLoad({required final String userID}) =
+      _$ClockAlertViewEventLoadImpl;
 
   String get userID;
   @JsonKey(ignore: true)
-  _$$ClockAlertDialogEventLoadImplCopyWith<_$ClockAlertDialogEventLoadImpl>
+  _$$ClockAlertViewEventLoadImplCopyWith<_$ClockAlertViewEventLoadImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ClockAlertDialogEventSaveImplCopyWith<$Res> {
-  factory _$$ClockAlertDialogEventSaveImplCopyWith(
-          _$ClockAlertDialogEventSaveImpl value,
-          $Res Function(_$ClockAlertDialogEventSaveImpl) then) =
-      __$$ClockAlertDialogEventSaveImplCopyWithImpl<$Res>;
+abstract class _$$ClockAlertViewEventSaveImplCopyWith<$Res> {
+  factory _$$ClockAlertViewEventSaveImplCopyWith(
+          _$ClockAlertViewEventSaveImpl value,
+          $Res Function(_$ClockAlertViewEventSaveImpl) then) =
+      __$$ClockAlertViewEventSaveImplCopyWithImpl<$Res>;
   @useResult
   $Res call({TimeCard clock, VoidCallback callback});
 
@@ -226,13 +225,13 @@ abstract class _$$ClockAlertDialogEventSaveImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ClockAlertDialogEventSaveImplCopyWithImpl<$Res>
-    extends _$ClockAlertDialogEventCopyWithImpl<$Res,
-        _$ClockAlertDialogEventSaveImpl>
-    implements _$$ClockAlertDialogEventSaveImplCopyWith<$Res> {
-  __$$ClockAlertDialogEventSaveImplCopyWithImpl(
-      _$ClockAlertDialogEventSaveImpl _value,
-      $Res Function(_$ClockAlertDialogEventSaveImpl) _then)
+class __$$ClockAlertViewEventSaveImplCopyWithImpl<$Res>
+    extends _$ClockAlertViewEventCopyWithImpl<$Res,
+        _$ClockAlertViewEventSaveImpl>
+    implements _$$ClockAlertViewEventSaveImplCopyWith<$Res> {
+  __$$ClockAlertViewEventSaveImplCopyWithImpl(
+      _$ClockAlertViewEventSaveImpl _value,
+      $Res Function(_$ClockAlertViewEventSaveImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -241,7 +240,7 @@ class __$$ClockAlertDialogEventSaveImplCopyWithImpl<$Res>
     Object? clock = null,
     Object? callback = null,
   }) {
-    return _then(_$ClockAlertDialogEventSaveImpl(
+    return _then(_$ClockAlertViewEventSaveImpl(
       clock: null == clock
           ? _value.clock
           : clock // ignore: cast_nullable_to_non_nullable
@@ -264,8 +263,8 @@ class __$$ClockAlertDialogEventSaveImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ClockAlertDialogEventSaveImpl implements ClockAlertDialogEventSave {
-  const _$ClockAlertDialogEventSaveImpl(
+class _$ClockAlertViewEventSaveImpl implements ClockAlertViewEventSave {
+  const _$ClockAlertViewEventSaveImpl(
       {required this.clock, required this.callback});
 
   @override
@@ -275,14 +274,14 @@ class _$ClockAlertDialogEventSaveImpl implements ClockAlertDialogEventSave {
 
   @override
   String toString() {
-    return 'ClockAlertDialogEvent.save(clock: $clock, callback: $callback)';
+    return 'ClockAlertViewEvent.save(clock: $clock, callback: $callback)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ClockAlertDialogEventSaveImpl &&
+            other is _$ClockAlertViewEventSaveImpl &&
             (identical(other.clock, clock) || other.clock == clock) &&
             (identical(other.callback, callback) ||
                 other.callback == callback));
@@ -294,9 +293,9 @@ class _$ClockAlertDialogEventSaveImpl implements ClockAlertDialogEventSave {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ClockAlertDialogEventSaveImplCopyWith<_$ClockAlertDialogEventSaveImpl>
-      get copyWith => __$$ClockAlertDialogEventSaveImplCopyWithImpl<
-          _$ClockAlertDialogEventSaveImpl>(this, _$identity);
+  _$$ClockAlertViewEventSaveImplCopyWith<_$ClockAlertViewEventSaveImpl>
+      get copyWith => __$$ClockAlertViewEventSaveImplCopyWithImpl<
+          _$ClockAlertViewEventSaveImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -332,8 +331,8 @@ class _$ClockAlertDialogEventSaveImpl implements ClockAlertDialogEventSave {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ClockAlertDialogEventLoad value) load,
-    required TResult Function(ClockAlertDialogEventSave value) save,
+    required TResult Function(ClockAlertViewEventLoad value) load,
+    required TResult Function(ClockAlertViewEventSave value) save,
   }) {
     return save(this);
   }
@@ -341,8 +340,8 @@ class _$ClockAlertDialogEventSaveImpl implements ClockAlertDialogEventSave {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ClockAlertDialogEventLoad value)? load,
-    TResult? Function(ClockAlertDialogEventSave value)? save,
+    TResult? Function(ClockAlertViewEventLoad value)? load,
+    TResult? Function(ClockAlertViewEventSave value)? save,
   }) {
     return save?.call(this);
   }
@@ -350,8 +349,8 @@ class _$ClockAlertDialogEventSaveImpl implements ClockAlertDialogEventSave {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ClockAlertDialogEventLoad value)? load,
-    TResult Function(ClockAlertDialogEventSave value)? save,
+    TResult Function(ClockAlertViewEventLoad value)? load,
+    TResult Function(ClockAlertViewEventSave value)? save,
     required TResult orElse(),
   }) {
     if (save != null) {
@@ -361,20 +360,20 @@ class _$ClockAlertDialogEventSaveImpl implements ClockAlertDialogEventSave {
   }
 }
 
-abstract class ClockAlertDialogEventSave implements ClockAlertDialogEvent {
-  const factory ClockAlertDialogEventSave(
+abstract class ClockAlertViewEventSave implements ClockAlertViewEvent {
+  const factory ClockAlertViewEventSave(
       {required final TimeCard clock,
-      required final VoidCallback callback}) = _$ClockAlertDialogEventSaveImpl;
+      required final VoidCallback callback}) = _$ClockAlertViewEventSaveImpl;
 
   TimeCard get clock;
   VoidCallback get callback;
   @JsonKey(ignore: true)
-  _$$ClockAlertDialogEventSaveImplCopyWith<_$ClockAlertDialogEventSaveImpl>
+  _$$ClockAlertViewEventSaveImplCopyWith<_$ClockAlertViewEventSaveImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$ClockAlertDialogState {
+mixin _$ClockAlertViewState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
@@ -402,43 +401,42 @@ mixin _$ClockAlertDialogState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ClockAlertDialogStateEmpty value) empty,
-    required TResult Function(ClockAlertDialogStateLoading value) loading,
-    required TResult Function(ClockAlertDialogStateloaded value) loaded,
-    required TResult Function(ClockAlertDialogStateSaving value) saving,
+    required TResult Function(ClockAlertViewStateEmpty value) empty,
+    required TResult Function(ClockAlertViewStateLoading value) loading,
+    required TResult Function(ClockAlertViewStateLoaded value) loaded,
+    required TResult Function(ClockAlertViewStateSaving value) saving,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ClockAlertDialogStateEmpty value)? empty,
-    TResult? Function(ClockAlertDialogStateLoading value)? loading,
-    TResult? Function(ClockAlertDialogStateloaded value)? loaded,
-    TResult? Function(ClockAlertDialogStateSaving value)? saving,
+    TResult? Function(ClockAlertViewStateEmpty value)? empty,
+    TResult? Function(ClockAlertViewStateLoading value)? loading,
+    TResult? Function(ClockAlertViewStateLoaded value)? loaded,
+    TResult? Function(ClockAlertViewStateSaving value)? saving,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ClockAlertDialogStateEmpty value)? empty,
-    TResult Function(ClockAlertDialogStateLoading value)? loading,
-    TResult Function(ClockAlertDialogStateloaded value)? loaded,
-    TResult Function(ClockAlertDialogStateSaving value)? saving,
+    TResult Function(ClockAlertViewStateEmpty value)? empty,
+    TResult Function(ClockAlertViewStateLoading value)? loading,
+    TResult Function(ClockAlertViewStateLoaded value)? loaded,
+    TResult Function(ClockAlertViewStateSaving value)? saving,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ClockAlertDialogStateCopyWith<$Res> {
-  factory $ClockAlertDialogStateCopyWith(ClockAlertDialogState value,
-          $Res Function(ClockAlertDialogState) then) =
-      _$ClockAlertDialogStateCopyWithImpl<$Res, ClockAlertDialogState>;
+abstract class $ClockAlertViewStateCopyWith<$Res> {
+  factory $ClockAlertViewStateCopyWith(
+          ClockAlertViewState value, $Res Function(ClockAlertViewState) then) =
+      _$ClockAlertViewStateCopyWithImpl<$Res, ClockAlertViewState>;
 }
 
 /// @nodoc
-class _$ClockAlertDialogStateCopyWithImpl<$Res,
-        $Val extends ClockAlertDialogState>
-    implements $ClockAlertDialogStateCopyWith<$Res> {
-  _$ClockAlertDialogStateCopyWithImpl(this._value, this._then);
+class _$ClockAlertViewStateCopyWithImpl<$Res, $Val extends ClockAlertViewState>
+    implements $ClockAlertViewStateCopyWith<$Res> {
+  _$ClockAlertViewStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -447,39 +445,39 @@ class _$ClockAlertDialogStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$ClockAlertDialogStateEmptyImplCopyWith<$Res> {
-  factory _$$ClockAlertDialogStateEmptyImplCopyWith(
-          _$ClockAlertDialogStateEmptyImpl value,
-          $Res Function(_$ClockAlertDialogStateEmptyImpl) then) =
-      __$$ClockAlertDialogStateEmptyImplCopyWithImpl<$Res>;
+abstract class _$$ClockAlertViewStateEmptyImplCopyWith<$Res> {
+  factory _$$ClockAlertViewStateEmptyImplCopyWith(
+          _$ClockAlertViewStateEmptyImpl value,
+          $Res Function(_$ClockAlertViewStateEmptyImpl) then) =
+      __$$ClockAlertViewStateEmptyImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ClockAlertDialogStateEmptyImplCopyWithImpl<$Res>
-    extends _$ClockAlertDialogStateCopyWithImpl<$Res,
-        _$ClockAlertDialogStateEmptyImpl>
-    implements _$$ClockAlertDialogStateEmptyImplCopyWith<$Res> {
-  __$$ClockAlertDialogStateEmptyImplCopyWithImpl(
-      _$ClockAlertDialogStateEmptyImpl _value,
-      $Res Function(_$ClockAlertDialogStateEmptyImpl) _then)
+class __$$ClockAlertViewStateEmptyImplCopyWithImpl<$Res>
+    extends _$ClockAlertViewStateCopyWithImpl<$Res,
+        _$ClockAlertViewStateEmptyImpl>
+    implements _$$ClockAlertViewStateEmptyImplCopyWith<$Res> {
+  __$$ClockAlertViewStateEmptyImplCopyWithImpl(
+      _$ClockAlertViewStateEmptyImpl _value,
+      $Res Function(_$ClockAlertViewStateEmptyImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ClockAlertDialogStateEmptyImpl implements ClockAlertDialogStateEmpty {
-  const _$ClockAlertDialogStateEmptyImpl();
+class _$ClockAlertViewStateEmptyImpl implements ClockAlertViewStateEmpty {
+  const _$ClockAlertViewStateEmptyImpl();
 
   @override
   String toString() {
-    return 'ClockAlertDialogState.empty()';
+    return 'ClockAlertViewState.empty()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ClockAlertDialogStateEmptyImpl);
+            other is _$ClockAlertViewStateEmptyImpl);
   }
 
   @override
@@ -525,10 +523,10 @@ class _$ClockAlertDialogStateEmptyImpl implements ClockAlertDialogStateEmpty {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ClockAlertDialogStateEmpty value) empty,
-    required TResult Function(ClockAlertDialogStateLoading value) loading,
-    required TResult Function(ClockAlertDialogStateloaded value) loaded,
-    required TResult Function(ClockAlertDialogStateSaving value) saving,
+    required TResult Function(ClockAlertViewStateEmpty value) empty,
+    required TResult Function(ClockAlertViewStateLoading value) loading,
+    required TResult Function(ClockAlertViewStateLoaded value) loaded,
+    required TResult Function(ClockAlertViewStateSaving value) saving,
   }) {
     return empty(this);
   }
@@ -536,10 +534,10 @@ class _$ClockAlertDialogStateEmptyImpl implements ClockAlertDialogStateEmpty {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ClockAlertDialogStateEmpty value)? empty,
-    TResult? Function(ClockAlertDialogStateLoading value)? loading,
-    TResult? Function(ClockAlertDialogStateloaded value)? loaded,
-    TResult? Function(ClockAlertDialogStateSaving value)? saving,
+    TResult? Function(ClockAlertViewStateEmpty value)? empty,
+    TResult? Function(ClockAlertViewStateLoading value)? loading,
+    TResult? Function(ClockAlertViewStateLoaded value)? loaded,
+    TResult? Function(ClockAlertViewStateSaving value)? saving,
   }) {
     return empty?.call(this);
   }
@@ -547,10 +545,10 @@ class _$ClockAlertDialogStateEmptyImpl implements ClockAlertDialogStateEmpty {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ClockAlertDialogStateEmpty value)? empty,
-    TResult Function(ClockAlertDialogStateLoading value)? loading,
-    TResult Function(ClockAlertDialogStateloaded value)? loaded,
-    TResult Function(ClockAlertDialogStateSaving value)? saving,
+    TResult Function(ClockAlertViewStateEmpty value)? empty,
+    TResult Function(ClockAlertViewStateLoading value)? loading,
+    TResult Function(ClockAlertViewStateLoaded value)? loaded,
+    TResult Function(ClockAlertViewStateSaving value)? saving,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -560,45 +558,44 @@ class _$ClockAlertDialogStateEmptyImpl implements ClockAlertDialogStateEmpty {
   }
 }
 
-abstract class ClockAlertDialogStateEmpty implements ClockAlertDialogState {
-  const factory ClockAlertDialogStateEmpty() = _$ClockAlertDialogStateEmptyImpl;
+abstract class ClockAlertViewStateEmpty implements ClockAlertViewState {
+  const factory ClockAlertViewStateEmpty() = _$ClockAlertViewStateEmptyImpl;
 }
 
 /// @nodoc
-abstract class _$$ClockAlertDialogStateLoadingImplCopyWith<$Res> {
-  factory _$$ClockAlertDialogStateLoadingImplCopyWith(
-          _$ClockAlertDialogStateLoadingImpl value,
-          $Res Function(_$ClockAlertDialogStateLoadingImpl) then) =
-      __$$ClockAlertDialogStateLoadingImplCopyWithImpl<$Res>;
+abstract class _$$ClockAlertViewStateLoadingImplCopyWith<$Res> {
+  factory _$$ClockAlertViewStateLoadingImplCopyWith(
+          _$ClockAlertViewStateLoadingImpl value,
+          $Res Function(_$ClockAlertViewStateLoadingImpl) then) =
+      __$$ClockAlertViewStateLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ClockAlertDialogStateLoadingImplCopyWithImpl<$Res>
-    extends _$ClockAlertDialogStateCopyWithImpl<$Res,
-        _$ClockAlertDialogStateLoadingImpl>
-    implements _$$ClockAlertDialogStateLoadingImplCopyWith<$Res> {
-  __$$ClockAlertDialogStateLoadingImplCopyWithImpl(
-      _$ClockAlertDialogStateLoadingImpl _value,
-      $Res Function(_$ClockAlertDialogStateLoadingImpl) _then)
+class __$$ClockAlertViewStateLoadingImplCopyWithImpl<$Res>
+    extends _$ClockAlertViewStateCopyWithImpl<$Res,
+        _$ClockAlertViewStateLoadingImpl>
+    implements _$$ClockAlertViewStateLoadingImplCopyWith<$Res> {
+  __$$ClockAlertViewStateLoadingImplCopyWithImpl(
+      _$ClockAlertViewStateLoadingImpl _value,
+      $Res Function(_$ClockAlertViewStateLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ClockAlertDialogStateLoadingImpl
-    implements ClockAlertDialogStateLoading {
-  const _$ClockAlertDialogStateLoadingImpl();
+class _$ClockAlertViewStateLoadingImpl implements ClockAlertViewStateLoading {
+  const _$ClockAlertViewStateLoadingImpl();
 
   @override
   String toString() {
-    return 'ClockAlertDialogState.loading()';
+    return 'ClockAlertViewState.loading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ClockAlertDialogStateLoadingImpl);
+            other is _$ClockAlertViewStateLoadingImpl);
   }
 
   @override
@@ -644,10 +641,10 @@ class _$ClockAlertDialogStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ClockAlertDialogStateEmpty value) empty,
-    required TResult Function(ClockAlertDialogStateLoading value) loading,
-    required TResult Function(ClockAlertDialogStateloaded value) loaded,
-    required TResult Function(ClockAlertDialogStateSaving value) saving,
+    required TResult Function(ClockAlertViewStateEmpty value) empty,
+    required TResult Function(ClockAlertViewStateLoading value) loading,
+    required TResult Function(ClockAlertViewStateLoaded value) loaded,
+    required TResult Function(ClockAlertViewStateSaving value) saving,
   }) {
     return loading(this);
   }
@@ -655,10 +652,10 @@ class _$ClockAlertDialogStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ClockAlertDialogStateEmpty value)? empty,
-    TResult? Function(ClockAlertDialogStateLoading value)? loading,
-    TResult? Function(ClockAlertDialogStateloaded value)? loaded,
-    TResult? Function(ClockAlertDialogStateSaving value)? saving,
+    TResult? Function(ClockAlertViewStateEmpty value)? empty,
+    TResult? Function(ClockAlertViewStateLoading value)? loading,
+    TResult? Function(ClockAlertViewStateLoaded value)? loaded,
+    TResult? Function(ClockAlertViewStateSaving value)? saving,
   }) {
     return loading?.call(this);
   }
@@ -666,10 +663,10 @@ class _$ClockAlertDialogStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ClockAlertDialogStateEmpty value)? empty,
-    TResult Function(ClockAlertDialogStateLoading value)? loading,
-    TResult Function(ClockAlertDialogStateloaded value)? loaded,
-    TResult Function(ClockAlertDialogStateSaving value)? saving,
+    TResult Function(ClockAlertViewStateEmpty value)? empty,
+    TResult Function(ClockAlertViewStateLoading value)? loading,
+    TResult Function(ClockAlertViewStateLoaded value)? loaded,
+    TResult Function(ClockAlertViewStateSaving value)? saving,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -679,17 +676,16 @@ class _$ClockAlertDialogStateLoadingImpl
   }
 }
 
-abstract class ClockAlertDialogStateLoading implements ClockAlertDialogState {
-  const factory ClockAlertDialogStateLoading() =
-      _$ClockAlertDialogStateLoadingImpl;
+abstract class ClockAlertViewStateLoading implements ClockAlertViewState {
+  const factory ClockAlertViewStateLoading() = _$ClockAlertViewStateLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$ClockAlertDialogStateloadedImplCopyWith<$Res> {
-  factory _$$ClockAlertDialogStateloadedImplCopyWith(
-          _$ClockAlertDialogStateloadedImpl value,
-          $Res Function(_$ClockAlertDialogStateloadedImpl) then) =
-      __$$ClockAlertDialogStateloadedImplCopyWithImpl<$Res>;
+abstract class _$$ClockAlertViewStateLoadedImplCopyWith<$Res> {
+  factory _$$ClockAlertViewStateLoadedImplCopyWith(
+          _$ClockAlertViewStateLoadedImpl value,
+          $Res Function(_$ClockAlertViewStateLoadedImpl) then) =
+      __$$ClockAlertViewStateLoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({CrudType type, TimeCard clock});
 
@@ -698,13 +694,13 @@ abstract class _$$ClockAlertDialogStateloadedImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ClockAlertDialogStateloadedImplCopyWithImpl<$Res>
-    extends _$ClockAlertDialogStateCopyWithImpl<$Res,
-        _$ClockAlertDialogStateloadedImpl>
-    implements _$$ClockAlertDialogStateloadedImplCopyWith<$Res> {
-  __$$ClockAlertDialogStateloadedImplCopyWithImpl(
-      _$ClockAlertDialogStateloadedImpl _value,
-      $Res Function(_$ClockAlertDialogStateloadedImpl) _then)
+class __$$ClockAlertViewStateLoadedImplCopyWithImpl<$Res>
+    extends _$ClockAlertViewStateCopyWithImpl<$Res,
+        _$ClockAlertViewStateLoadedImpl>
+    implements _$$ClockAlertViewStateLoadedImplCopyWith<$Res> {
+  __$$ClockAlertViewStateLoadedImplCopyWithImpl(
+      _$ClockAlertViewStateLoadedImpl _value,
+      $Res Function(_$ClockAlertViewStateLoadedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -713,7 +709,7 @@ class __$$ClockAlertDialogStateloadedImplCopyWithImpl<$Res>
     Object? type = null,
     Object? clock = null,
   }) {
-    return _then(_$ClockAlertDialogStateloadedImpl(
+    return _then(_$ClockAlertViewStateLoadedImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -744,8 +740,8 @@ class __$$ClockAlertDialogStateloadedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ClockAlertDialogStateloadedImpl implements ClockAlertDialogStateloaded {
-  const _$ClockAlertDialogStateloadedImpl(
+class _$ClockAlertViewStateLoadedImpl implements ClockAlertViewStateLoaded {
+  const _$ClockAlertViewStateLoadedImpl(
       {this.type = const CrudType.create(), required this.clock});
 
   @override
@@ -756,14 +752,14 @@ class _$ClockAlertDialogStateloadedImpl implements ClockAlertDialogStateloaded {
 
   @override
   String toString() {
-    return 'ClockAlertDialogState.loaded(type: $type, clock: $clock)';
+    return 'ClockAlertViewState.loaded(type: $type, clock: $clock)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ClockAlertDialogStateloadedImpl &&
+            other is _$ClockAlertViewStateLoadedImpl &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.clock, clock) || other.clock == clock));
   }
@@ -774,9 +770,9 @@ class _$ClockAlertDialogStateloadedImpl implements ClockAlertDialogStateloaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ClockAlertDialogStateloadedImplCopyWith<_$ClockAlertDialogStateloadedImpl>
-      get copyWith => __$$ClockAlertDialogStateloadedImplCopyWithImpl<
-          _$ClockAlertDialogStateloadedImpl>(this, _$identity);
+  _$$ClockAlertViewStateLoadedImplCopyWith<_$ClockAlertViewStateLoadedImpl>
+      get copyWith => __$$ClockAlertViewStateLoadedImplCopyWithImpl<
+          _$ClockAlertViewStateLoadedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -818,10 +814,10 @@ class _$ClockAlertDialogStateloadedImpl implements ClockAlertDialogStateloaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ClockAlertDialogStateEmpty value) empty,
-    required TResult Function(ClockAlertDialogStateLoading value) loading,
-    required TResult Function(ClockAlertDialogStateloaded value) loaded,
-    required TResult Function(ClockAlertDialogStateSaving value) saving,
+    required TResult Function(ClockAlertViewStateEmpty value) empty,
+    required TResult Function(ClockAlertViewStateLoading value) loading,
+    required TResult Function(ClockAlertViewStateLoaded value) loaded,
+    required TResult Function(ClockAlertViewStateSaving value) saving,
   }) {
     return loaded(this);
   }
@@ -829,10 +825,10 @@ class _$ClockAlertDialogStateloadedImpl implements ClockAlertDialogStateloaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ClockAlertDialogStateEmpty value)? empty,
-    TResult? Function(ClockAlertDialogStateLoading value)? loading,
-    TResult? Function(ClockAlertDialogStateloaded value)? loaded,
-    TResult? Function(ClockAlertDialogStateSaving value)? saving,
+    TResult? Function(ClockAlertViewStateEmpty value)? empty,
+    TResult? Function(ClockAlertViewStateLoading value)? loading,
+    TResult? Function(ClockAlertViewStateLoaded value)? loaded,
+    TResult? Function(ClockAlertViewStateSaving value)? saving,
   }) {
     return loaded?.call(this);
   }
@@ -840,10 +836,10 @@ class _$ClockAlertDialogStateloadedImpl implements ClockAlertDialogStateloaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ClockAlertDialogStateEmpty value)? empty,
-    TResult Function(ClockAlertDialogStateLoading value)? loading,
-    TResult Function(ClockAlertDialogStateloaded value)? loaded,
-    TResult Function(ClockAlertDialogStateSaving value)? saving,
+    TResult Function(ClockAlertViewStateEmpty value)? empty,
+    TResult Function(ClockAlertViewStateLoading value)? loading,
+    TResult Function(ClockAlertViewStateLoaded value)? loaded,
+    TResult Function(ClockAlertViewStateSaving value)? saving,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -853,24 +849,24 @@ class _$ClockAlertDialogStateloadedImpl implements ClockAlertDialogStateloaded {
   }
 }
 
-abstract class ClockAlertDialogStateloaded implements ClockAlertDialogState {
-  const factory ClockAlertDialogStateloaded(
+abstract class ClockAlertViewStateLoaded implements ClockAlertViewState {
+  const factory ClockAlertViewStateLoaded(
       {final CrudType type,
-      required final TimeCard clock}) = _$ClockAlertDialogStateloadedImpl;
+      required final TimeCard clock}) = _$ClockAlertViewStateLoadedImpl;
 
   CrudType get type;
   TimeCard get clock;
   @JsonKey(ignore: true)
-  _$$ClockAlertDialogStateloadedImplCopyWith<_$ClockAlertDialogStateloadedImpl>
+  _$$ClockAlertViewStateLoadedImplCopyWith<_$ClockAlertViewStateLoadedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ClockAlertDialogStateSavingImplCopyWith<$Res> {
-  factory _$$ClockAlertDialogStateSavingImplCopyWith(
-          _$ClockAlertDialogStateSavingImpl value,
-          $Res Function(_$ClockAlertDialogStateSavingImpl) then) =
-      __$$ClockAlertDialogStateSavingImplCopyWithImpl<$Res>;
+abstract class _$$ClockAlertViewStateSavingImplCopyWith<$Res> {
+  factory _$$ClockAlertViewStateSavingImplCopyWith(
+          _$ClockAlertViewStateSavingImpl value,
+          $Res Function(_$ClockAlertViewStateSavingImpl) then) =
+      __$$ClockAlertViewStateSavingImplCopyWithImpl<$Res>;
   @useResult
   $Res call({CrudType type, TimeCard clock});
 
@@ -879,13 +875,13 @@ abstract class _$$ClockAlertDialogStateSavingImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ClockAlertDialogStateSavingImplCopyWithImpl<$Res>
-    extends _$ClockAlertDialogStateCopyWithImpl<$Res,
-        _$ClockAlertDialogStateSavingImpl>
-    implements _$$ClockAlertDialogStateSavingImplCopyWith<$Res> {
-  __$$ClockAlertDialogStateSavingImplCopyWithImpl(
-      _$ClockAlertDialogStateSavingImpl _value,
-      $Res Function(_$ClockAlertDialogStateSavingImpl) _then)
+class __$$ClockAlertViewStateSavingImplCopyWithImpl<$Res>
+    extends _$ClockAlertViewStateCopyWithImpl<$Res,
+        _$ClockAlertViewStateSavingImpl>
+    implements _$$ClockAlertViewStateSavingImplCopyWith<$Res> {
+  __$$ClockAlertViewStateSavingImplCopyWithImpl(
+      _$ClockAlertViewStateSavingImpl _value,
+      $Res Function(_$ClockAlertViewStateSavingImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -894,7 +890,7 @@ class __$$ClockAlertDialogStateSavingImplCopyWithImpl<$Res>
     Object? type = null,
     Object? clock = null,
   }) {
-    return _then(_$ClockAlertDialogStateSavingImpl(
+    return _then(_$ClockAlertViewStateSavingImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -925,8 +921,8 @@ class __$$ClockAlertDialogStateSavingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ClockAlertDialogStateSavingImpl implements ClockAlertDialogStateSaving {
-  const _$ClockAlertDialogStateSavingImpl(
+class _$ClockAlertViewStateSavingImpl implements ClockAlertViewStateSaving {
+  const _$ClockAlertViewStateSavingImpl(
       {this.type = const CrudType.create(), required this.clock});
 
   @override
@@ -937,14 +933,14 @@ class _$ClockAlertDialogStateSavingImpl implements ClockAlertDialogStateSaving {
 
   @override
   String toString() {
-    return 'ClockAlertDialogState.saving(type: $type, clock: $clock)';
+    return 'ClockAlertViewState.saving(type: $type, clock: $clock)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ClockAlertDialogStateSavingImpl &&
+            other is _$ClockAlertViewStateSavingImpl &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.clock, clock) || other.clock == clock));
   }
@@ -955,9 +951,9 @@ class _$ClockAlertDialogStateSavingImpl implements ClockAlertDialogStateSaving {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ClockAlertDialogStateSavingImplCopyWith<_$ClockAlertDialogStateSavingImpl>
-      get copyWith => __$$ClockAlertDialogStateSavingImplCopyWithImpl<
-          _$ClockAlertDialogStateSavingImpl>(this, _$identity);
+  _$$ClockAlertViewStateSavingImplCopyWith<_$ClockAlertViewStateSavingImpl>
+      get copyWith => __$$ClockAlertViewStateSavingImplCopyWithImpl<
+          _$ClockAlertViewStateSavingImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -999,10 +995,10 @@ class _$ClockAlertDialogStateSavingImpl implements ClockAlertDialogStateSaving {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ClockAlertDialogStateEmpty value) empty,
-    required TResult Function(ClockAlertDialogStateLoading value) loading,
-    required TResult Function(ClockAlertDialogStateloaded value) loaded,
-    required TResult Function(ClockAlertDialogStateSaving value) saving,
+    required TResult Function(ClockAlertViewStateEmpty value) empty,
+    required TResult Function(ClockAlertViewStateLoading value) loading,
+    required TResult Function(ClockAlertViewStateLoaded value) loaded,
+    required TResult Function(ClockAlertViewStateSaving value) saving,
   }) {
     return saving(this);
   }
@@ -1010,10 +1006,10 @@ class _$ClockAlertDialogStateSavingImpl implements ClockAlertDialogStateSaving {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ClockAlertDialogStateEmpty value)? empty,
-    TResult? Function(ClockAlertDialogStateLoading value)? loading,
-    TResult? Function(ClockAlertDialogStateloaded value)? loaded,
-    TResult? Function(ClockAlertDialogStateSaving value)? saving,
+    TResult? Function(ClockAlertViewStateEmpty value)? empty,
+    TResult? Function(ClockAlertViewStateLoading value)? loading,
+    TResult? Function(ClockAlertViewStateLoaded value)? loaded,
+    TResult? Function(ClockAlertViewStateSaving value)? saving,
   }) {
     return saving?.call(this);
   }
@@ -1021,10 +1017,10 @@ class _$ClockAlertDialogStateSavingImpl implements ClockAlertDialogStateSaving {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ClockAlertDialogStateEmpty value)? empty,
-    TResult Function(ClockAlertDialogStateLoading value)? loading,
-    TResult Function(ClockAlertDialogStateloaded value)? loaded,
-    TResult Function(ClockAlertDialogStateSaving value)? saving,
+    TResult Function(ClockAlertViewStateEmpty value)? empty,
+    TResult Function(ClockAlertViewStateLoading value)? loading,
+    TResult Function(ClockAlertViewStateLoaded value)? loaded,
+    TResult Function(ClockAlertViewStateSaving value)? saving,
     required TResult orElse(),
   }) {
     if (saving != null) {
@@ -1034,14 +1030,14 @@ class _$ClockAlertDialogStateSavingImpl implements ClockAlertDialogStateSaving {
   }
 }
 
-abstract class ClockAlertDialogStateSaving implements ClockAlertDialogState {
-  const factory ClockAlertDialogStateSaving(
+abstract class ClockAlertViewStateSaving implements ClockAlertViewState {
+  const factory ClockAlertViewStateSaving(
       {final CrudType type,
-      required final TimeCard clock}) = _$ClockAlertDialogStateSavingImpl;
+      required final TimeCard clock}) = _$ClockAlertViewStateSavingImpl;
 
   CrudType get type;
   TimeCard get clock;
   @JsonKey(ignore: true)
-  _$$ClockAlertDialogStateSavingImplCopyWith<_$ClockAlertDialogStateSavingImpl>
+  _$$ClockAlertViewStateSavingImplCopyWith<_$ClockAlertViewStateSavingImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

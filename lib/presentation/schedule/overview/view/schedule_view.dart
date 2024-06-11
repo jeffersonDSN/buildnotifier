@@ -1,9 +1,9 @@
-import 'package:buildnotifier/domain/controllers/schedule_controller.dart';
-import 'package:buildnotifier/infrastructure/repositories/firestore/schedule_firestore_repository.dart';
+import 'package:buildnotifier/presentation/app/bloc/app_bloc.dart';
+import 'package:buildnotifier/presentation/app/model/mod.dart';
 import 'package:buildnotifier/presentation/core/const/images_const.dart';
 import 'package:buildnotifier/presentation/appointment/view/appointment_view.dart';
-import 'package:buildnotifier/presentation/appointment_schedule/view/appointment_schedule_view.dart';
-import 'package:buildnotifier/presentation/schedule/bloc/schedule_bloc.dart';
+import 'package:buildnotifier/presentation/core/view/i_view.dart';
+import 'package:buildnotifier/presentation/schedule/overview/bloc/schedule_bloc.dart';
 import 'package:buildnotifier/theme/app_color.dart';
 import 'package:buildnotifier/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
@@ -11,19 +11,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
 
-class ScheduleView extends StatelessWidget {
-  const ScheduleView({super.key});
+class ScheduleOverviewView extends IView {
+  const ScheduleOverviewView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var bloc = ScheduleBloc(
-      controller: ScheduleController(
-        repository: ScheduleFirestoreRepository(),
-      ),
-    );
+    var bloc = BlocProvider.of<ScheduleOverviewBloc>(context);
 
     bloc.add(
-      ScheduleEvent.load(
+      ScheduleOverviewEvent.load(
         selectDay: DateTime.now(),
       ),
     );
@@ -32,13 +28,23 @@ class ScheduleView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            appBloc(context).add(
+              const AppEvent.changeView(
+                mod: Mod.home(),
+              ),
+            );
+          },
+        ),
         backgroundColor: Theme.of(context).colorScheme.primary,
         title: Image.asset(
           '$assetImage$logo2',
           height: 48,
         ),
       ),
-      body: BlocBuilder<ScheduleBloc, ScheduleState>(
+      body: BlocBuilder<ScheduleOverviewBloc, ScheduleOverviewState>(
         bloc: bloc,
         builder: (context, state) {
           return state.when(
@@ -71,7 +77,7 @@ class ScheduleView extends StatelessWidget {
                   },
                   onDaySelected: (selectedDay, focusedDay) {
                     bloc.add(
-                      ScheduleEvent.load(
+                      ScheduleOverviewEvent.load(
                         selectDay: focusedDay,
                       ),
                     );
@@ -119,7 +125,7 @@ class ScheduleView extends StatelessWidget {
                   },
                   onDaySelected: (selectedDay, focusedDay) {
                     bloc.add(
-                      ScheduleEvent.load(
+                      ScheduleOverviewEvent.load(
                         selectDay: focusedDay,
                       ),
                     );
@@ -147,7 +153,7 @@ class ScheduleView extends StatelessWidget {
                                   Text(
                                     '${hourFormat.format(schedule.startDateTime)} - ${hourFormat.format(schedule.endDateTime)}',
                                     style: const TextStyle(
-                                      fontSize: 16,
+                                      fontSize: Sizes.size16,
                                       color: AppColor.green,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -162,7 +168,9 @@ class ScheduleView extends StatelessWidget {
                                 ],
                               ),
                               subtitle: Padding(
-                                padding: const EdgeInsets.only(top: 4),
+                                padding: const EdgeInsets.only(
+                                  top: Sizes.size4,
+                                ),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -216,28 +224,28 @@ class ScheduleView extends StatelessWidget {
           );
         },
       ),
-      floatingActionButton: FloatingActionButton(
-        tooltip: 'Add',
-        shape: const CircleBorder(),
-        child: const Icon(
-          Icons.add,
-          color: Colors.white,
-        ),
-        onPressed: () async {
-          await Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => AppointmentScheduleView(),
-            ),
-          );
+      // floatingActionButton: FloatingActionButton(
+      //   tooltip: 'Add',
+      //   shape: const CircleBorder(),
+      //   child: const Icon(
+      //     Icons.add,
+      //     color: Colors.white,
+      //   ),
+      //   onPressed: () async {
+      //     await Navigator.push(
+      //       context,
+      //       MaterialPageRoute(
+      //         builder: (context) => AppointmentScheduleView(),
+      //       ),
+      //     );
 
-          bloc.add(
-            ScheduleEvent.load(
-              selectDay: bloc.state.asLoaded.selectDay,
-            ),
-          );
-        },
-      ),
+      //     bloc.add(
+      //       ScheduleOverviewEvent.load(
+      //         selectDay: bloc.state.asLoaded.selectDay,
+      //       ),
+      //     );
+      //   },
+      // ),
     );
   }
 }

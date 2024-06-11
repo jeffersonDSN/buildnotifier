@@ -14,7 +14,9 @@ class ClientsView extends StatelessWidget {
 
   final ClientsBloc bloc = ClientsBloc(
     controller: ClientsController(
-      repository: ClientsFireStoreRepository(),
+      repository: ClientsFireStoreRepository(
+        tenantId: '',
+      ),
     ),
   );
 

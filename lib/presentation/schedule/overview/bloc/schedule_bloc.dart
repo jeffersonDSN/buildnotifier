@@ -1,27 +1,28 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../domain/controllers/schedule_controller.dart';
-import '../../../domain/entities/appointment.dart';
+import '../../../../domain/controllers/schedule_controller.dart';
+import '../../../../domain/entities/appointment.dart';
 
 part 'schedule_bloc.freezed.dart';
 part 'schedule_state.dart';
 part 'schedule_event.dart';
 
-class ScheduleBloc extends Bloc<ScheduleEvent, ScheduleState> {
-  ScheduleBloc({
+class ScheduleOverviewBloc
+    extends Bloc<ScheduleOverviewEvent, ScheduleOverviewState> {
+  ScheduleOverviewBloc({
     required ScheduleController controller,
-  }) : super(const ScheduleState.empty()) {
-    on<ScheduleEvent>(
+  }) : super(const ScheduleOverviewState.empty()) {
+    on<ScheduleOverviewEvent>(
       (event, emit) async {
         await event.when(
           load: (selectedDay) async {
-            emit(ScheduleState.loading(selectDay: selectedDay));
+            emit(ScheduleOverviewState.loading(selectDay: selectedDay));
 
             var schedule = await controller.getByDay(selectedDay);
 
             emit(
-              ScheduleState.loaded(
+              ScheduleOverviewState.loaded(
                 selectDay: selectedDay,
                 appointments: schedule,
               ),
@@ -30,7 +31,7 @@ class ScheduleBloc extends Bloc<ScheduleEvent, ScheduleState> {
           delete: (id) async {
             await controller.deleteSchedule(id);
             add(
-              ScheduleEvent.load(
+              ScheduleOverviewEvent.load(
                 selectDay: state.asLoaded.selectDay,
               ),
             );

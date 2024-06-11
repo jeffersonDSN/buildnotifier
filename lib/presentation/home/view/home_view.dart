@@ -1,14 +1,15 @@
-import 'package:buildnotifier/presentation/view/clients/list/clients_view.dart';
-import 'package:buildnotifier/presentation/clock/view/clock_alert_dialog.dart';
-import 'package:buildnotifier/presentation/schedule/view/schedule_view.dart';
+import 'package:buildnotifier/presentation/app/bloc/app_bloc.dart';
+import 'package:buildnotifier/presentation/app/model/mod.dart';
+import 'package:buildnotifier/presentation/app/model/view_type.dart';
+import 'package:buildnotifier/presentation/clock/clock_dialog.dart';
+import 'package:buildnotifier/presentation/core/view/i_view.dart';
 import 'package:buildnotifier/presentation/time_card/view/time_card_view.dart';
-import 'package:buildnotifier/presentation/view/users/list/users_view.dart';
 import 'package:buildnotifier/theme/app_color.dart';
 import 'package:buildnotifier/theme/app_sizes.dart';
 import 'package:buildnotifier/presentation/core/const/images_const.dart';
 import 'package:flutter/material.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends IView {
   const HomeView({super.key});
 
   @override
@@ -43,50 +44,15 @@ class HomeView extends StatelessWidget {
                       leading: Icon(Icons.calendar_month),
                       title: Text('Schedule'),
                     ),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ScheduleView(),
-                        ),
-                      );
-                    },
+                    onTap: () {},
                   ),
                   InkWell(
                     onTap: () {},
                     child: const ListTile(
                       leading: Icon(Icons.business),
-                      title: Text('Projects'),
+                      title: Text('Timecard'),
                     ),
                   ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ClientsView(),
-                        ),
-                      );
-                    },
-                    child: const ListTile(
-                      leading: Icon(Icons.people),
-                      title: Text('Clients'),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => UsersView(),
-                        ),
-                      );
-                    },
-                    child: const ListTile(
-                      leading: Icon(Icons.badge),
-                      title: Text('Users'),
-                    ),
-                  )
                 ],
               ),
             ),
@@ -122,7 +88,7 @@ class HomeView extends StatelessWidget {
                   return showDialog(
                     context: context,
                     builder: (context) {
-                      return ClockAlertDialog();
+                      return const ClockDialog();
                     },
                   );
                 },
@@ -135,7 +101,7 @@ class HomeView extends StatelessWidget {
                   color: AppColor.primaryColorSwatch,
                 ),
                 title: const Text(
-                  'TimeCard',
+                  'Timecard',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
@@ -163,10 +129,11 @@ class HomeView extends StatelessWidget {
                 ),
                 subtitle: const Text('View your assigned appointments'),
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const ScheduleView(),
+                  appBloc(context).add(
+                    const AppEvent.changeView(
+                      mod: Mod.schedule(
+                        type: ViewType.overview(),
+                      ),
                     ),
                   );
                 },

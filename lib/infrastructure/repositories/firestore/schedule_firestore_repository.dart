@@ -6,7 +6,9 @@ import 'firestore_repository.dart';
 
 class ScheduleFirestoreRepository extends FireStoreRepository
     implements AbsIScheduleRepository {
-  ScheduleFirestoreRepository() : super(collectionName: 'schedule');
+  ScheduleFirestoreRepository({
+    required super.tenantId,
+  }) : super(collectionName: 'schedule');
 
   @override
   Future<List<Appointment>> getAll() async {

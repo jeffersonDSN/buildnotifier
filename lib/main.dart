@@ -1,8 +1,11 @@
-import 'package:flutter/material.dart';
-import 'presentation/home/view/home_view.dart';
-import 'theme/app_theme.dart';
-import 'firebase_options.dart';
+import 'package:buildnotifier/firebase_options.dart';
+import 'package:buildnotifier/presentation/app/bloc/app_bloc.dart';
+import 'package:buildnotifier/presentation/app/model/mod.dart';
+import 'package:buildnotifier/presentation/sign_in/sign_in.dart';
+import 'package:buildnotifier/theme/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -11,7 +14,10 @@ void main() async {
   );
 
   runApp(
-    const MyApp(),
+    BlocProvider(
+      create: (context) => AppBloc(),
+      child: const MyApp(),
+    ),
   );
 }
 
@@ -21,10 +27,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Build Notifier',
       debugShowCheckedModeBanner: false,
+      title: 'Build Notifier',
       theme: AppTheme.mainTheme,
-      home: const HomeView(),
+      home: BlocBuilder<AppBloc, AppState>(
+        bloc: BlocProvider.of<AppBloc>(context),
+        builder: (context, state) {
+          return state.when(
+            empty: () => const SignIn(),
+            logged: (user, mod) => mod.view(),
+          );
+        },
+      ),
     );
   }
 }

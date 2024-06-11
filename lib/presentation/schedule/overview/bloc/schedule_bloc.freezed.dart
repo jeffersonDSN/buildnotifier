@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$ScheduleState {
+mixin _$ScheduleOverviewState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
@@ -44,39 +44,40 @@ mixin _$ScheduleState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ScheduleEventEmpty value) empty,
-    required TResult Function(ScheduleEventLoading value) loading,
-    required TResult Function(ScheduleEventLoaded value) loaded,
+    required TResult Function(ScheduleOverviewStateEmpty value) empty,
+    required TResult Function(ScheduleOverviewStateLoading value) loading,
+    required TResult Function(ScheduleOverviewStateLoaded value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ScheduleEventEmpty value)? empty,
-    TResult? Function(ScheduleEventLoading value)? loading,
-    TResult? Function(ScheduleEventLoaded value)? loaded,
+    TResult? Function(ScheduleOverviewStateEmpty value)? empty,
+    TResult? Function(ScheduleOverviewStateLoading value)? loading,
+    TResult? Function(ScheduleOverviewStateLoaded value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ScheduleEventEmpty value)? empty,
-    TResult Function(ScheduleEventLoading value)? loading,
-    TResult Function(ScheduleEventLoaded value)? loaded,
+    TResult Function(ScheduleOverviewStateEmpty value)? empty,
+    TResult Function(ScheduleOverviewStateLoading value)? loading,
+    TResult Function(ScheduleOverviewStateLoaded value)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ScheduleStateCopyWith<$Res> {
-  factory $ScheduleStateCopyWith(
-          ScheduleState value, $Res Function(ScheduleState) then) =
-      _$ScheduleStateCopyWithImpl<$Res, ScheduleState>;
+abstract class $ScheduleOverviewStateCopyWith<$Res> {
+  factory $ScheduleOverviewStateCopyWith(ScheduleOverviewState value,
+          $Res Function(ScheduleOverviewState) then) =
+      _$ScheduleOverviewStateCopyWithImpl<$Res, ScheduleOverviewState>;
 }
 
 /// @nodoc
-class _$ScheduleStateCopyWithImpl<$Res, $Val extends ScheduleState>
-    implements $ScheduleStateCopyWith<$Res> {
-  _$ScheduleStateCopyWithImpl(this._value, this._then);
+class _$ScheduleOverviewStateCopyWithImpl<$Res,
+        $Val extends ScheduleOverviewState>
+    implements $ScheduleOverviewStateCopyWith<$Res> {
+  _$ScheduleOverviewStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -85,35 +86,39 @@ class _$ScheduleStateCopyWithImpl<$Res, $Val extends ScheduleState>
 }
 
 /// @nodoc
-abstract class _$$ScheduleEventEmptyImplCopyWith<$Res> {
-  factory _$$ScheduleEventEmptyImplCopyWith(_$ScheduleEventEmptyImpl value,
-          $Res Function(_$ScheduleEventEmptyImpl) then) =
-      __$$ScheduleEventEmptyImplCopyWithImpl<$Res>;
+abstract class _$$ScheduleOverviewStateEmptyImplCopyWith<$Res> {
+  factory _$$ScheduleOverviewStateEmptyImplCopyWith(
+          _$ScheduleOverviewStateEmptyImpl value,
+          $Res Function(_$ScheduleOverviewStateEmptyImpl) then) =
+      __$$ScheduleOverviewStateEmptyImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ScheduleEventEmptyImplCopyWithImpl<$Res>
-    extends _$ScheduleStateCopyWithImpl<$Res, _$ScheduleEventEmptyImpl>
-    implements _$$ScheduleEventEmptyImplCopyWith<$Res> {
-  __$$ScheduleEventEmptyImplCopyWithImpl(_$ScheduleEventEmptyImpl _value,
-      $Res Function(_$ScheduleEventEmptyImpl) _then)
+class __$$ScheduleOverviewStateEmptyImplCopyWithImpl<$Res>
+    extends _$ScheduleOverviewStateCopyWithImpl<$Res,
+        _$ScheduleOverviewStateEmptyImpl>
+    implements _$$ScheduleOverviewStateEmptyImplCopyWith<$Res> {
+  __$$ScheduleOverviewStateEmptyImplCopyWithImpl(
+      _$ScheduleOverviewStateEmptyImpl _value,
+      $Res Function(_$ScheduleOverviewStateEmptyImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ScheduleEventEmptyImpl implements ScheduleEventEmpty {
-  const _$ScheduleEventEmptyImpl();
+class _$ScheduleOverviewStateEmptyImpl implements ScheduleOverviewStateEmpty {
+  const _$ScheduleOverviewStateEmptyImpl();
 
   @override
   String toString() {
-    return 'ScheduleState.empty()';
+    return 'ScheduleOverviewState.empty()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ScheduleEventEmptyImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ScheduleOverviewStateEmptyImpl);
   }
 
   @override
@@ -160,9 +165,9 @@ class _$ScheduleEventEmptyImpl implements ScheduleEventEmpty {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ScheduleEventEmpty value) empty,
-    required TResult Function(ScheduleEventLoading value) loading,
-    required TResult Function(ScheduleEventLoaded value) loaded,
+    required TResult Function(ScheduleOverviewStateEmpty value) empty,
+    required TResult Function(ScheduleOverviewStateLoading value) loading,
+    required TResult Function(ScheduleOverviewStateLoaded value) loaded,
   }) {
     return empty(this);
   }
@@ -170,9 +175,9 @@ class _$ScheduleEventEmptyImpl implements ScheduleEventEmpty {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ScheduleEventEmpty value)? empty,
-    TResult? Function(ScheduleEventLoading value)? loading,
-    TResult? Function(ScheduleEventLoaded value)? loaded,
+    TResult? Function(ScheduleOverviewStateEmpty value)? empty,
+    TResult? Function(ScheduleOverviewStateLoading value)? loading,
+    TResult? Function(ScheduleOverviewStateLoaded value)? loaded,
   }) {
     return empty?.call(this);
   }
@@ -180,9 +185,9 @@ class _$ScheduleEventEmptyImpl implements ScheduleEventEmpty {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ScheduleEventEmpty value)? empty,
-    TResult Function(ScheduleEventLoading value)? loading,
-    TResult Function(ScheduleEventLoaded value)? loaded,
+    TResult Function(ScheduleOverviewStateEmpty value)? empty,
+    TResult Function(ScheduleOverviewStateLoading value)? loading,
+    TResult Function(ScheduleOverviewStateLoaded value)? loaded,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -192,25 +197,28 @@ class _$ScheduleEventEmptyImpl implements ScheduleEventEmpty {
   }
 }
 
-abstract class ScheduleEventEmpty implements ScheduleState {
-  const factory ScheduleEventEmpty() = _$ScheduleEventEmptyImpl;
+abstract class ScheduleOverviewStateEmpty implements ScheduleOverviewState {
+  const factory ScheduleOverviewStateEmpty() = _$ScheduleOverviewStateEmptyImpl;
 }
 
 /// @nodoc
-abstract class _$$ScheduleEventLoadingImplCopyWith<$Res> {
-  factory _$$ScheduleEventLoadingImplCopyWith(_$ScheduleEventLoadingImpl value,
-          $Res Function(_$ScheduleEventLoadingImpl) then) =
-      __$$ScheduleEventLoadingImplCopyWithImpl<$Res>;
+abstract class _$$ScheduleOverviewStateLoadingImplCopyWith<$Res> {
+  factory _$$ScheduleOverviewStateLoadingImplCopyWith(
+          _$ScheduleOverviewStateLoadingImpl value,
+          $Res Function(_$ScheduleOverviewStateLoadingImpl) then) =
+      __$$ScheduleOverviewStateLoadingImplCopyWithImpl<$Res>;
   @useResult
   $Res call({DateTime selectDay});
 }
 
 /// @nodoc
-class __$$ScheduleEventLoadingImplCopyWithImpl<$Res>
-    extends _$ScheduleStateCopyWithImpl<$Res, _$ScheduleEventLoadingImpl>
-    implements _$$ScheduleEventLoadingImplCopyWith<$Res> {
-  __$$ScheduleEventLoadingImplCopyWithImpl(_$ScheduleEventLoadingImpl _value,
-      $Res Function(_$ScheduleEventLoadingImpl) _then)
+class __$$ScheduleOverviewStateLoadingImplCopyWithImpl<$Res>
+    extends _$ScheduleOverviewStateCopyWithImpl<$Res,
+        _$ScheduleOverviewStateLoadingImpl>
+    implements _$$ScheduleOverviewStateLoadingImplCopyWith<$Res> {
+  __$$ScheduleOverviewStateLoadingImplCopyWithImpl(
+      _$ScheduleOverviewStateLoadingImpl _value,
+      $Res Function(_$ScheduleOverviewStateLoadingImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -218,7 +226,7 @@ class __$$ScheduleEventLoadingImplCopyWithImpl<$Res>
   $Res call({
     Object? selectDay = null,
   }) {
-    return _then(_$ScheduleEventLoadingImpl(
+    return _then(_$ScheduleOverviewStateLoadingImpl(
       selectDay: null == selectDay
           ? _value.selectDay
           : selectDay // ignore: cast_nullable_to_non_nullable
@@ -229,22 +237,23 @@ class __$$ScheduleEventLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ScheduleEventLoadingImpl implements ScheduleEventLoading {
-  const _$ScheduleEventLoadingImpl({required this.selectDay});
+class _$ScheduleOverviewStateLoadingImpl
+    implements ScheduleOverviewStateLoading {
+  const _$ScheduleOverviewStateLoadingImpl({required this.selectDay});
 
   @override
   final DateTime selectDay;
 
   @override
   String toString() {
-    return 'ScheduleState.loading(selectDay: $selectDay)';
+    return 'ScheduleOverviewState.loading(selectDay: $selectDay)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ScheduleEventLoadingImpl &&
+            other is _$ScheduleOverviewStateLoadingImpl &&
             (identical(other.selectDay, selectDay) ||
                 other.selectDay == selectDay));
   }
@@ -255,10 +264,10 @@ class _$ScheduleEventLoadingImpl implements ScheduleEventLoading {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ScheduleEventLoadingImplCopyWith<_$ScheduleEventLoadingImpl>
-      get copyWith =>
-          __$$ScheduleEventLoadingImplCopyWithImpl<_$ScheduleEventLoadingImpl>(
-              this, _$identity);
+  _$$ScheduleOverviewStateLoadingImplCopyWith<
+          _$ScheduleOverviewStateLoadingImpl>
+      get copyWith => __$$ScheduleOverviewStateLoadingImplCopyWithImpl<
+          _$ScheduleOverviewStateLoadingImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -301,9 +310,9 @@ class _$ScheduleEventLoadingImpl implements ScheduleEventLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ScheduleEventEmpty value) empty,
-    required TResult Function(ScheduleEventLoading value) loading,
-    required TResult Function(ScheduleEventLoaded value) loaded,
+    required TResult Function(ScheduleOverviewStateEmpty value) empty,
+    required TResult Function(ScheduleOverviewStateLoading value) loading,
+    required TResult Function(ScheduleOverviewStateLoaded value) loaded,
   }) {
     return loading(this);
   }
@@ -311,9 +320,9 @@ class _$ScheduleEventLoadingImpl implements ScheduleEventLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ScheduleEventEmpty value)? empty,
-    TResult? Function(ScheduleEventLoading value)? loading,
-    TResult? Function(ScheduleEventLoaded value)? loaded,
+    TResult? Function(ScheduleOverviewStateEmpty value)? empty,
+    TResult? Function(ScheduleOverviewStateLoading value)? loading,
+    TResult? Function(ScheduleOverviewStateLoaded value)? loaded,
   }) {
     return loading?.call(this);
   }
@@ -321,9 +330,9 @@ class _$ScheduleEventLoadingImpl implements ScheduleEventLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ScheduleEventEmpty value)? empty,
-    TResult Function(ScheduleEventLoading value)? loading,
-    TResult Function(ScheduleEventLoaded value)? loaded,
+    TResult Function(ScheduleOverviewStateEmpty value)? empty,
+    TResult Function(ScheduleOverviewStateLoading value)? loading,
+    TResult Function(ScheduleOverviewStateLoaded value)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -333,31 +342,35 @@ class _$ScheduleEventLoadingImpl implements ScheduleEventLoading {
   }
 }
 
-abstract class ScheduleEventLoading implements ScheduleState {
-  const factory ScheduleEventLoading({required final DateTime selectDay}) =
-      _$ScheduleEventLoadingImpl;
+abstract class ScheduleOverviewStateLoading implements ScheduleOverviewState {
+  const factory ScheduleOverviewStateLoading(
+      {required final DateTime selectDay}) = _$ScheduleOverviewStateLoadingImpl;
 
   DateTime get selectDay;
   @JsonKey(ignore: true)
-  _$$ScheduleEventLoadingImplCopyWith<_$ScheduleEventLoadingImpl>
+  _$$ScheduleOverviewStateLoadingImplCopyWith<
+          _$ScheduleOverviewStateLoadingImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ScheduleEventLoadedImplCopyWith<$Res> {
-  factory _$$ScheduleEventLoadedImplCopyWith(_$ScheduleEventLoadedImpl value,
-          $Res Function(_$ScheduleEventLoadedImpl) then) =
-      __$$ScheduleEventLoadedImplCopyWithImpl<$Res>;
+abstract class _$$ScheduleOverviewStateLoadedImplCopyWith<$Res> {
+  factory _$$ScheduleOverviewStateLoadedImplCopyWith(
+          _$ScheduleOverviewStateLoadedImpl value,
+          $Res Function(_$ScheduleOverviewStateLoadedImpl) then) =
+      __$$ScheduleOverviewStateLoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({DateTime selectDay, List<Appointment> appointments});
 }
 
 /// @nodoc
-class __$$ScheduleEventLoadedImplCopyWithImpl<$Res>
-    extends _$ScheduleStateCopyWithImpl<$Res, _$ScheduleEventLoadedImpl>
-    implements _$$ScheduleEventLoadedImplCopyWith<$Res> {
-  __$$ScheduleEventLoadedImplCopyWithImpl(_$ScheduleEventLoadedImpl _value,
-      $Res Function(_$ScheduleEventLoadedImpl) _then)
+class __$$ScheduleOverviewStateLoadedImplCopyWithImpl<$Res>
+    extends _$ScheduleOverviewStateCopyWithImpl<$Res,
+        _$ScheduleOverviewStateLoadedImpl>
+    implements _$$ScheduleOverviewStateLoadedImplCopyWith<$Res> {
+  __$$ScheduleOverviewStateLoadedImplCopyWithImpl(
+      _$ScheduleOverviewStateLoadedImpl _value,
+      $Res Function(_$ScheduleOverviewStateLoadedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -366,7 +379,7 @@ class __$$ScheduleEventLoadedImplCopyWithImpl<$Res>
     Object? selectDay = null,
     Object? appointments = null,
   }) {
-    return _then(_$ScheduleEventLoadedImpl(
+    return _then(_$ScheduleOverviewStateLoadedImpl(
       selectDay: null == selectDay
           ? _value.selectDay
           : selectDay // ignore: cast_nullable_to_non_nullable
@@ -381,8 +394,8 @@ class __$$ScheduleEventLoadedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ScheduleEventLoadedImpl implements ScheduleEventLoaded {
-  const _$ScheduleEventLoadedImpl(
+class _$ScheduleOverviewStateLoadedImpl implements ScheduleOverviewStateLoaded {
+  const _$ScheduleOverviewStateLoadedImpl(
       {required this.selectDay, required final List<Appointment> appointments})
       : _appointments = appointments;
 
@@ -398,14 +411,14 @@ class _$ScheduleEventLoadedImpl implements ScheduleEventLoaded {
 
   @override
   String toString() {
-    return 'ScheduleState.loaded(selectDay: $selectDay, appointments: $appointments)';
+    return 'ScheduleOverviewState.loaded(selectDay: $selectDay, appointments: $appointments)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ScheduleEventLoadedImpl &&
+            other is _$ScheduleOverviewStateLoadedImpl &&
             (identical(other.selectDay, selectDay) ||
                 other.selectDay == selectDay) &&
             const DeepCollectionEquality()
@@ -419,9 +432,9 @@ class _$ScheduleEventLoadedImpl implements ScheduleEventLoaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ScheduleEventLoadedImplCopyWith<_$ScheduleEventLoadedImpl> get copyWith =>
-      __$$ScheduleEventLoadedImplCopyWithImpl<_$ScheduleEventLoadedImpl>(
-          this, _$identity);
+  _$$ScheduleOverviewStateLoadedImplCopyWith<_$ScheduleOverviewStateLoadedImpl>
+      get copyWith => __$$ScheduleOverviewStateLoadedImplCopyWithImpl<
+          _$ScheduleOverviewStateLoadedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -464,9 +477,9 @@ class _$ScheduleEventLoadedImpl implements ScheduleEventLoaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ScheduleEventEmpty value) empty,
-    required TResult Function(ScheduleEventLoading value) loading,
-    required TResult Function(ScheduleEventLoaded value) loaded,
+    required TResult Function(ScheduleOverviewStateEmpty value) empty,
+    required TResult Function(ScheduleOverviewStateLoading value) loading,
+    required TResult Function(ScheduleOverviewStateLoaded value) loaded,
   }) {
     return loaded(this);
   }
@@ -474,9 +487,9 @@ class _$ScheduleEventLoadedImpl implements ScheduleEventLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ScheduleEventEmpty value)? empty,
-    TResult? Function(ScheduleEventLoading value)? loading,
-    TResult? Function(ScheduleEventLoaded value)? loaded,
+    TResult? Function(ScheduleOverviewStateEmpty value)? empty,
+    TResult? Function(ScheduleOverviewStateLoading value)? loading,
+    TResult? Function(ScheduleOverviewStateLoaded value)? loaded,
   }) {
     return loaded?.call(this);
   }
@@ -484,9 +497,9 @@ class _$ScheduleEventLoadedImpl implements ScheduleEventLoaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ScheduleEventEmpty value)? empty,
-    TResult Function(ScheduleEventLoading value)? loading,
-    TResult Function(ScheduleEventLoaded value)? loaded,
+    TResult Function(ScheduleOverviewStateEmpty value)? empty,
+    TResult Function(ScheduleOverviewStateLoading value)? loading,
+    TResult Function(ScheduleOverviewStateLoaded value)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -496,21 +509,21 @@ class _$ScheduleEventLoadedImpl implements ScheduleEventLoaded {
   }
 }
 
-abstract class ScheduleEventLoaded implements ScheduleState {
-  const factory ScheduleEventLoaded(
+abstract class ScheduleOverviewStateLoaded implements ScheduleOverviewState {
+  const factory ScheduleOverviewStateLoaded(
           {required final DateTime selectDay,
           required final List<Appointment> appointments}) =
-      _$ScheduleEventLoadedImpl;
+      _$ScheduleOverviewStateLoadedImpl;
 
   DateTime get selectDay;
   List<Appointment> get appointments;
   @JsonKey(ignore: true)
-  _$$ScheduleEventLoadedImplCopyWith<_$ScheduleEventLoadedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ScheduleOverviewStateLoadedImplCopyWith<_$ScheduleOverviewStateLoadedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$ScheduleEvent {
+mixin _$ScheduleOverviewEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(DateTime selectDay) load,
@@ -532,36 +545,37 @@ mixin _$ScheduleEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ScheduleEventLoad value) load,
-    required TResult Function(ScheduleEventDelete value) delete,
+    required TResult Function(ScheduleOverviewEventLoad value) load,
+    required TResult Function(ScheduleOverviewEventDelete value) delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ScheduleEventLoad value)? load,
-    TResult? Function(ScheduleEventDelete value)? delete,
+    TResult? Function(ScheduleOverviewEventLoad value)? load,
+    TResult? Function(ScheduleOverviewEventDelete value)? delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ScheduleEventLoad value)? load,
-    TResult Function(ScheduleEventDelete value)? delete,
+    TResult Function(ScheduleOverviewEventLoad value)? load,
+    TResult Function(ScheduleOverviewEventDelete value)? delete,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ScheduleEventCopyWith<$Res> {
-  factory $ScheduleEventCopyWith(
-          ScheduleEvent value, $Res Function(ScheduleEvent) then) =
-      _$ScheduleEventCopyWithImpl<$Res, ScheduleEvent>;
+abstract class $ScheduleOverviewEventCopyWith<$Res> {
+  factory $ScheduleOverviewEventCopyWith(ScheduleOverviewEvent value,
+          $Res Function(ScheduleOverviewEvent) then) =
+      _$ScheduleOverviewEventCopyWithImpl<$Res, ScheduleOverviewEvent>;
 }
 
 /// @nodoc
-class _$ScheduleEventCopyWithImpl<$Res, $Val extends ScheduleEvent>
-    implements $ScheduleEventCopyWith<$Res> {
-  _$ScheduleEventCopyWithImpl(this._value, this._then);
+class _$ScheduleOverviewEventCopyWithImpl<$Res,
+        $Val extends ScheduleOverviewEvent>
+    implements $ScheduleOverviewEventCopyWith<$Res> {
+  _$ScheduleOverviewEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -570,20 +584,23 @@ class _$ScheduleEventCopyWithImpl<$Res, $Val extends ScheduleEvent>
 }
 
 /// @nodoc
-abstract class _$$ScheduleEventLoadImplCopyWith<$Res> {
-  factory _$$ScheduleEventLoadImplCopyWith(_$ScheduleEventLoadImpl value,
-          $Res Function(_$ScheduleEventLoadImpl) then) =
-      __$$ScheduleEventLoadImplCopyWithImpl<$Res>;
+abstract class _$$ScheduleOverviewEventLoadImplCopyWith<$Res> {
+  factory _$$ScheduleOverviewEventLoadImplCopyWith(
+          _$ScheduleOverviewEventLoadImpl value,
+          $Res Function(_$ScheduleOverviewEventLoadImpl) then) =
+      __$$ScheduleOverviewEventLoadImplCopyWithImpl<$Res>;
   @useResult
   $Res call({DateTime selectDay});
 }
 
 /// @nodoc
-class __$$ScheduleEventLoadImplCopyWithImpl<$Res>
-    extends _$ScheduleEventCopyWithImpl<$Res, _$ScheduleEventLoadImpl>
-    implements _$$ScheduleEventLoadImplCopyWith<$Res> {
-  __$$ScheduleEventLoadImplCopyWithImpl(_$ScheduleEventLoadImpl _value,
-      $Res Function(_$ScheduleEventLoadImpl) _then)
+class __$$ScheduleOverviewEventLoadImplCopyWithImpl<$Res>
+    extends _$ScheduleOverviewEventCopyWithImpl<$Res,
+        _$ScheduleOverviewEventLoadImpl>
+    implements _$$ScheduleOverviewEventLoadImplCopyWith<$Res> {
+  __$$ScheduleOverviewEventLoadImplCopyWithImpl(
+      _$ScheduleOverviewEventLoadImpl _value,
+      $Res Function(_$ScheduleOverviewEventLoadImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -591,7 +608,7 @@ class __$$ScheduleEventLoadImplCopyWithImpl<$Res>
   $Res call({
     Object? selectDay = null,
   }) {
-    return _then(_$ScheduleEventLoadImpl(
+    return _then(_$ScheduleOverviewEventLoadImpl(
       selectDay: null == selectDay
           ? _value.selectDay
           : selectDay // ignore: cast_nullable_to_non_nullable
@@ -602,22 +619,22 @@ class __$$ScheduleEventLoadImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ScheduleEventLoadImpl implements ScheduleEventLoad {
-  const _$ScheduleEventLoadImpl({required this.selectDay});
+class _$ScheduleOverviewEventLoadImpl implements ScheduleOverviewEventLoad {
+  const _$ScheduleOverviewEventLoadImpl({required this.selectDay});
 
   @override
   final DateTime selectDay;
 
   @override
   String toString() {
-    return 'ScheduleEvent.load(selectDay: $selectDay)';
+    return 'ScheduleOverviewEvent.load(selectDay: $selectDay)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ScheduleEventLoadImpl &&
+            other is _$ScheduleOverviewEventLoadImpl &&
             (identical(other.selectDay, selectDay) ||
                 other.selectDay == selectDay));
   }
@@ -628,9 +645,9 @@ class _$ScheduleEventLoadImpl implements ScheduleEventLoad {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ScheduleEventLoadImplCopyWith<_$ScheduleEventLoadImpl> get copyWith =>
-      __$$ScheduleEventLoadImplCopyWithImpl<_$ScheduleEventLoadImpl>(
-          this, _$identity);
+  _$$ScheduleOverviewEventLoadImplCopyWith<_$ScheduleOverviewEventLoadImpl>
+      get copyWith => __$$ScheduleOverviewEventLoadImplCopyWithImpl<
+          _$ScheduleOverviewEventLoadImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -666,8 +683,8 @@ class _$ScheduleEventLoadImpl implements ScheduleEventLoad {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ScheduleEventLoad value) load,
-    required TResult Function(ScheduleEventDelete value) delete,
+    required TResult Function(ScheduleOverviewEventLoad value) load,
+    required TResult Function(ScheduleOverviewEventDelete value) delete,
   }) {
     return load(this);
   }
@@ -675,8 +692,8 @@ class _$ScheduleEventLoadImpl implements ScheduleEventLoad {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ScheduleEventLoad value)? load,
-    TResult? Function(ScheduleEventDelete value)? delete,
+    TResult? Function(ScheduleOverviewEventLoad value)? load,
+    TResult? Function(ScheduleOverviewEventDelete value)? delete,
   }) {
     return load?.call(this);
   }
@@ -684,8 +701,8 @@ class _$ScheduleEventLoadImpl implements ScheduleEventLoad {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ScheduleEventLoad value)? load,
-    TResult Function(ScheduleEventDelete value)? delete,
+    TResult Function(ScheduleOverviewEventLoad value)? load,
+    TResult Function(ScheduleOverviewEventDelete value)? delete,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -695,31 +712,34 @@ class _$ScheduleEventLoadImpl implements ScheduleEventLoad {
   }
 }
 
-abstract class ScheduleEventLoad implements ScheduleEvent {
-  const factory ScheduleEventLoad({required final DateTime selectDay}) =
-      _$ScheduleEventLoadImpl;
+abstract class ScheduleOverviewEventLoad implements ScheduleOverviewEvent {
+  const factory ScheduleOverviewEventLoad({required final DateTime selectDay}) =
+      _$ScheduleOverviewEventLoadImpl;
 
   DateTime get selectDay;
   @JsonKey(ignore: true)
-  _$$ScheduleEventLoadImplCopyWith<_$ScheduleEventLoadImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ScheduleOverviewEventLoadImplCopyWith<_$ScheduleOverviewEventLoadImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ScheduleEventDeleteImplCopyWith<$Res> {
-  factory _$$ScheduleEventDeleteImplCopyWith(_$ScheduleEventDeleteImpl value,
-          $Res Function(_$ScheduleEventDeleteImpl) then) =
-      __$$ScheduleEventDeleteImplCopyWithImpl<$Res>;
+abstract class _$$ScheduleOverviewEventDeleteImplCopyWith<$Res> {
+  factory _$$ScheduleOverviewEventDeleteImplCopyWith(
+          _$ScheduleOverviewEventDeleteImpl value,
+          $Res Function(_$ScheduleOverviewEventDeleteImpl) then) =
+      __$$ScheduleOverviewEventDeleteImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String id});
 }
 
 /// @nodoc
-class __$$ScheduleEventDeleteImplCopyWithImpl<$Res>
-    extends _$ScheduleEventCopyWithImpl<$Res, _$ScheduleEventDeleteImpl>
-    implements _$$ScheduleEventDeleteImplCopyWith<$Res> {
-  __$$ScheduleEventDeleteImplCopyWithImpl(_$ScheduleEventDeleteImpl _value,
-      $Res Function(_$ScheduleEventDeleteImpl) _then)
+class __$$ScheduleOverviewEventDeleteImplCopyWithImpl<$Res>
+    extends _$ScheduleOverviewEventCopyWithImpl<$Res,
+        _$ScheduleOverviewEventDeleteImpl>
+    implements _$$ScheduleOverviewEventDeleteImplCopyWith<$Res> {
+  __$$ScheduleOverviewEventDeleteImplCopyWithImpl(
+      _$ScheduleOverviewEventDeleteImpl _value,
+      $Res Function(_$ScheduleOverviewEventDeleteImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -727,7 +747,7 @@ class __$$ScheduleEventDeleteImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
   }) {
-    return _then(_$ScheduleEventDeleteImpl(
+    return _then(_$ScheduleOverviewEventDeleteImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -738,22 +758,22 @@ class __$$ScheduleEventDeleteImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ScheduleEventDeleteImpl implements ScheduleEventDelete {
-  const _$ScheduleEventDeleteImpl({required this.id});
+class _$ScheduleOverviewEventDeleteImpl implements ScheduleOverviewEventDelete {
+  const _$ScheduleOverviewEventDeleteImpl({required this.id});
 
   @override
   final String id;
 
   @override
   String toString() {
-    return 'ScheduleEvent.delete(id: $id)';
+    return 'ScheduleOverviewEvent.delete(id: $id)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ScheduleEventDeleteImpl &&
+            other is _$ScheduleOverviewEventDeleteImpl &&
             (identical(other.id, id) || other.id == id));
   }
 
@@ -763,9 +783,9 @@ class _$ScheduleEventDeleteImpl implements ScheduleEventDelete {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ScheduleEventDeleteImplCopyWith<_$ScheduleEventDeleteImpl> get copyWith =>
-      __$$ScheduleEventDeleteImplCopyWithImpl<_$ScheduleEventDeleteImpl>(
-          this, _$identity);
+  _$$ScheduleOverviewEventDeleteImplCopyWith<_$ScheduleOverviewEventDeleteImpl>
+      get copyWith => __$$ScheduleOverviewEventDeleteImplCopyWithImpl<
+          _$ScheduleOverviewEventDeleteImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -801,8 +821,8 @@ class _$ScheduleEventDeleteImpl implements ScheduleEventDelete {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ScheduleEventLoad value) load,
-    required TResult Function(ScheduleEventDelete value) delete,
+    required TResult Function(ScheduleOverviewEventLoad value) load,
+    required TResult Function(ScheduleOverviewEventDelete value) delete,
   }) {
     return delete(this);
   }
@@ -810,8 +830,8 @@ class _$ScheduleEventDeleteImpl implements ScheduleEventDelete {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ScheduleEventLoad value)? load,
-    TResult? Function(ScheduleEventDelete value)? delete,
+    TResult? Function(ScheduleOverviewEventLoad value)? load,
+    TResult? Function(ScheduleOverviewEventDelete value)? delete,
   }) {
     return delete?.call(this);
   }
@@ -819,8 +839,8 @@ class _$ScheduleEventDeleteImpl implements ScheduleEventDelete {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ScheduleEventLoad value)? load,
-    TResult Function(ScheduleEventDelete value)? delete,
+    TResult Function(ScheduleOverviewEventLoad value)? load,
+    TResult Function(ScheduleOverviewEventDelete value)? delete,
     required TResult orElse(),
   }) {
     if (delete != null) {
@@ -830,12 +850,12 @@ class _$ScheduleEventDeleteImpl implements ScheduleEventDelete {
   }
 }
 
-abstract class ScheduleEventDelete implements ScheduleEvent {
-  const factory ScheduleEventDelete({required final String id}) =
-      _$ScheduleEventDeleteImpl;
+abstract class ScheduleOverviewEventDelete implements ScheduleOverviewEvent {
+  const factory ScheduleOverviewEventDelete({required final String id}) =
+      _$ScheduleOverviewEventDeleteImpl;
 
   String get id;
   @JsonKey(ignore: true)
-  _$$ScheduleEventDeleteImplCopyWith<_$ScheduleEventDeleteImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ScheduleOverviewEventDeleteImplCopyWith<_$ScheduleOverviewEventDeleteImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

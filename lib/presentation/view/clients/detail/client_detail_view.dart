@@ -22,7 +22,9 @@ class ClientDetailView extends StatelessWidget {
 
   final ClientDetailBloc bloc = ClientDetailBloc(
     controller: ClientsController(
-      repository: ClientsFireStoreRepository(),
+      repository: ClientsFireStoreRepository(
+        tenantId: '',
+      ),
     ),
   );
 

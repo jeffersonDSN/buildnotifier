@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../domain/controllers/users_controller.dart';
-import '../../../../domain/entities/user.dart';
+import '../../../../domain/entities/user/user.dart';
 
 part 'users_bloc.freezed.dart';
 part 'users_event.dart';

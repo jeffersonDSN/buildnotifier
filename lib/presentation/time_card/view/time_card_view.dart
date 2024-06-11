@@ -16,7 +16,7 @@ class TimeCardView extends StatelessWidget {
 
   final TimeCardBloc bloc = TimeCardBloc(
     controller: TimeCardController(
-      repository: TimeCardFireStoreRepository(),
+      repository: TimeCardFireStoreRepository(tenantId: ''),
     ),
   );
 

@@ -5,7 +5,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ClientsFireStoreRepository extends FireStoreRepository
     implements AbsIClientsRepository {
-  ClientsFireStoreRepository() : super(collectionName: 'clients');
+  ClientsFireStoreRepository({
+    required super.tenantId,
+  }) : super(collectionName: 'clients');
 
   @override
   Future<List<Client>> getAll() async {

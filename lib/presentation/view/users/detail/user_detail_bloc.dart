@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../domain/controllers/users_controller.dart';
-import '../../../../domain/entities/user.dart';
+import '../../../../domain/entities/user/user.dart';
 
 part 'user_detail_event.dart';
 part 'user_detail_state.dart';
@@ -28,7 +28,7 @@ class UserDetailBloc extends Bloc<UserDetailEvent, UserDetailState> {
                 return controller.getById(id);
               },
               create: () async {
-                return User.empty();
+                return const User();
               },
             );
 

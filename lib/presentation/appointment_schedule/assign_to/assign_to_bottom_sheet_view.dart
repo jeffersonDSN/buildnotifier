@@ -13,7 +13,7 @@ class AssignToBottomSheetView extends StatelessWidget {
 
   final AssignToBottomSheetBloc bloc = AssignToBottomSheetBloc(
     usersController: UsersController(
-      repository: UsersFireStoreRepository(),
+      repository: UsersFireStoreRepository(tenant: ''),
     ),
   );
 
