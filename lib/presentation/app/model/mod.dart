@@ -2,6 +2,8 @@ import 'package:buildnotifier/presentation/app/model/view_type.dart';
 import 'package:buildnotifier/presentation/appointment/overview/appointment_overview.dart';
 import 'package:buildnotifier/presentation/home/view/home_view.dart';
 import 'package:buildnotifier/presentation/schedule/overview/schedule_overview.dart';
+import 'package:buildnotifier/presentation/timecard/overview/timecard_overview.dart';
+import 'package:buildnotifier/presentation/timecard/overview/view/timecard_overview_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -37,7 +39,7 @@ extension OnModel on Mod {
       },
       timecard: (viewType) {
         return viewType.maybeWhen(
-          orElse: () => const ScheduleOverview(),
+          orElse: () => const TimecardOverview(),
           overviewById: (id) => AppointmentOverview(id: id),
         );
       },

@@ -1,5 +1,3 @@
-import 'package:buildnotifier/domain/controllers/time_card_controller.dart';
-import 'package:buildnotifier/infrastructure/repositories/firestore/time_card_firestore_repository.dart';
 import 'package:buildnotifier/presentation/timecard/overview/bloc/timecard_overview_block.dart';
 import 'package:buildnotifier/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
@@ -7,23 +5,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
-class TimecardView extends StatelessWidget {
-  TimecardView({super.key});
+class TimecardOverviewView extends StatelessWidget {
+  final String userId;
+
+  TimecardOverviewView({
+    super.key,
+    required this.userId,
+  });
 
   final DateFormat dayFormat = DateFormat("EEEE");
   final DateFormat dateFormat = DateFormat("MMM dd");
   final DateFormat hourFormat = DateFormat.jm();
 
-  final TimecardOverviewBloc bloc = TimecardOverviewBloc(
-    controller: TimecardController(
-      repository: TimecardFireStoreRepository(tenantId: ''),
-    ),
-  );
-
   @override
   Widget build(BuildContext context) {
+    var bloc = BlocProvider.of<TimecardOverviewBloc>(context);
+
     bloc.add(
-      const TimecardOverviewEvent.load(userID: 'VZHac7Dmst1hk4nBmZqw'),
+      TimecardOverviewEvent.load(
+        userID: userId,
+      ),
     );
 
     return Scaffold(
