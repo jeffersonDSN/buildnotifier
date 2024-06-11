@@ -1,5 +1,5 @@
 import 'package:buildnotifier/domain/entities/crud_type.dart';
-import 'package:buildnotifier/domain/entities/time_card.dart';
+import 'package:buildnotifier/domain/entities/timecard/timecard.dart';
 import 'package:buildnotifier/theme/app_color.dart';
 import 'package:buildnotifier/theme/app_sizes.dart';
 import 'package:flutter/material.dart';

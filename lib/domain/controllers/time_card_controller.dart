@@ -1,4 +1,4 @@
-import 'package:buildnotifier/domain/entities/time_card.dart';
+import 'package:buildnotifier/domain/entities/timecard/timecard.dart';
 import 'package:buildnotifier/domain/repositories/abs_i_time_card_repository.dart';
 
 class TimecardController {

@@ -1,4 +1,4 @@
-import 'package:buildnotifier/domain/entities/time_card.dart';
+import 'package:buildnotifier/domain/entities/timecard/timecard.dart';
 
 abstract interface class AbsITimecardRepository {
   Future<List<Timecard>> getAll();

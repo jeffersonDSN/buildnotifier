@@ -19,7 +19,7 @@ mixin _$ViewType {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() overview,
-    required TResult Function(String id) overviewById,
+    required TResult Function(String id, dynamic parameter) overviewById,
     required TResult Function() create,
     required TResult Function(String id) update,
   }) =>
@@ -27,7 +27,7 @@ mixin _$ViewType {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? overview,
-    TResult? Function(String id)? overviewById,
+    TResult? Function(String id, dynamic parameter)? overviewById,
     TResult? Function()? create,
     TResult? Function(String id)? update,
   }) =>
@@ -35,7 +35,7 @@ mixin _$ViewType {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? overview,
-    TResult Function(String id)? overviewById,
+    TResult Function(String id, dynamic parameter)? overviewById,
     TResult Function()? create,
     TResult Function(String id)? update,
     required TResult orElse(),
@@ -124,7 +124,7 @@ class _$ViewTypeOverviewImpl implements ViewTypeOverview {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() overview,
-    required TResult Function(String id) overviewById,
+    required TResult Function(String id, dynamic parameter) overviewById,
     required TResult Function() create,
     required TResult Function(String id) update,
   }) {
@@ -135,7 +135,7 @@ class _$ViewTypeOverviewImpl implements ViewTypeOverview {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? overview,
-    TResult? Function(String id)? overviewById,
+    TResult? Function(String id, dynamic parameter)? overviewById,
     TResult? Function()? create,
     TResult? Function(String id)? update,
   }) {
@@ -146,7 +146,7 @@ class _$ViewTypeOverviewImpl implements ViewTypeOverview {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? overview,
-    TResult Function(String id)? overviewById,
+    TResult Function(String id, dynamic parameter)? overviewById,
     TResult Function()? create,
     TResult Function(String id)? update,
     required TResult orElse(),
@@ -205,7 +205,7 @@ abstract class _$$ViewTypeOverviewByIdImplCopyWith<$Res> {
           $Res Function(_$ViewTypeOverviewByIdImpl) then) =
       __$$ViewTypeOverviewByIdImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String id});
+  $Res call({String id, dynamic parameter});
 }
 
 /// @nodoc
@@ -220,12 +220,17 @@ class __$$ViewTypeOverviewByIdImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
+    Object? parameter = freezed,
   }) {
     return _then(_$ViewTypeOverviewByIdImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      parameter: freezed == parameter
+          ? _value.parameter
+          : parameter // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -233,14 +238,16 @@ class __$$ViewTypeOverviewByIdImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ViewTypeOverviewByIdImpl implements ViewTypeOverviewById {
-  const _$ViewTypeOverviewByIdImpl({required this.id});
+  const _$ViewTypeOverviewByIdImpl({required this.id, this.parameter});
 
   @override
   final String id;
+  @override
+  final dynamic parameter;
 
   @override
   String toString() {
-    return 'ViewType.overviewById(id: $id)';
+    return 'ViewType.overviewById(id: $id, parameter: $parameter)';
   }
 
   @override
@@ -248,11 +255,13 @@ class _$ViewTypeOverviewByIdImpl implements ViewTypeOverviewById {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ViewTypeOverviewByIdImpl &&
-            (identical(other.id, id) || other.id == id));
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality().equals(other.parameter, parameter));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id);
+  int get hashCode => Object.hash(
+      runtimeType, id, const DeepCollectionEquality().hash(parameter));
 
   @JsonKey(ignore: true)
   @override
@@ -266,35 +275,35 @@ class _$ViewTypeOverviewByIdImpl implements ViewTypeOverviewById {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() overview,
-    required TResult Function(String id) overviewById,
+    required TResult Function(String id, dynamic parameter) overviewById,
     required TResult Function() create,
     required TResult Function(String id) update,
   }) {
-    return overviewById(id);
+    return overviewById(id, parameter);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? overview,
-    TResult? Function(String id)? overviewById,
+    TResult? Function(String id, dynamic parameter)? overviewById,
     TResult? Function()? create,
     TResult? Function(String id)? update,
   }) {
-    return overviewById?.call(id);
+    return overviewById?.call(id, parameter);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? overview,
-    TResult Function(String id)? overviewById,
+    TResult Function(String id, dynamic parameter)? overviewById,
     TResult Function()? create,
     TResult Function(String id)? update,
     required TResult orElse(),
   }) {
     if (overviewById != null) {
-      return overviewById(id);
+      return overviewById(id, parameter);
     }
     return orElse();
   }
@@ -338,10 +347,12 @@ class _$ViewTypeOverviewByIdImpl implements ViewTypeOverviewById {
 }
 
 abstract class ViewTypeOverviewById implements ViewType {
-  const factory ViewTypeOverviewById({required final String id}) =
-      _$ViewTypeOverviewByIdImpl;
+  const factory ViewTypeOverviewById(
+      {required final String id,
+      final dynamic parameter}) = _$ViewTypeOverviewByIdImpl;
 
   String get id;
+  dynamic get parameter;
   @JsonKey(ignore: true)
   _$$ViewTypeOverviewByIdImplCopyWith<_$ViewTypeOverviewByIdImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -386,7 +397,7 @@ class _$ViewTypeCreateImpl implements ViewTypeCreate {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() overview,
-    required TResult Function(String id) overviewById,
+    required TResult Function(String id, dynamic parameter) overviewById,
     required TResult Function() create,
     required TResult Function(String id) update,
   }) {
@@ -397,7 +408,7 @@ class _$ViewTypeCreateImpl implements ViewTypeCreate {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? overview,
-    TResult? Function(String id)? overviewById,
+    TResult? Function(String id, dynamic parameter)? overviewById,
     TResult? Function()? create,
     TResult? Function(String id)? update,
   }) {
@@ -408,7 +419,7 @@ class _$ViewTypeCreateImpl implements ViewTypeCreate {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? overview,
-    TResult Function(String id)? overviewById,
+    TResult Function(String id, dynamic parameter)? overviewById,
     TResult Function()? create,
     TResult Function(String id)? update,
     required TResult orElse(),
@@ -527,7 +538,7 @@ class _$ViewTypeUpdateImpl implements ViewTypeUpdate {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() overview,
-    required TResult Function(String id) overviewById,
+    required TResult Function(String id, dynamic parameter) overviewById,
     required TResult Function() create,
     required TResult Function(String id) update,
   }) {
@@ -538,7 +549,7 @@ class _$ViewTypeUpdateImpl implements ViewTypeUpdate {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? overview,
-    TResult? Function(String id)? overviewById,
+    TResult? Function(String id, dynamic parameter)? overviewById,
     TResult? Function()? create,
     TResult? Function(String id)? update,
   }) {
@@ -549,7 +560,7 @@ class _$ViewTypeUpdateImpl implements ViewTypeUpdate {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? overview,
-    TResult Function(String id)? overviewById,
+    TResult Function(String id, dynamic parameter)? overviewById,
     TResult Function()? create,
     TResult Function(String id)? update,
     required TResult orElse(),

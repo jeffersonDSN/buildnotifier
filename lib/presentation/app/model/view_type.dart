@@ -7,6 +7,7 @@ class ViewType with _$ViewType {
   const factory ViewType.overview() = ViewTypeOverview;
   const factory ViewType.overviewById({
     required String id,
+    dynamic parameter,
   }) = ViewTypeOverviewById;
   const factory ViewType.create() = ViewTypeCreate;
   const factory ViewType.update({

@@ -13,11 +13,22 @@ class HomeView extends IView {
 
   @override
   Widget build(BuildContext context) {
+    var hour = DateTime.now().hour;
+    String greeting = 'Good evening';
+
+    if (hour >= 5 && hour < 12) {
+      greeting = 'Good morning';
+    } else if (hour >= 12 && hour < 18) {
+      greeting = 'Good afternoon';
+    }
+
+    greeting += ', ${appBloc(context).state.asLogged.user.firstName}';
+
     return Scaffold(
       appBar: AppBar(
         title: Image.asset(
           '$assetImage$logo2',
-          height: 48,
+          height: Sizes.size48,
         ),
       ),
       drawer: Drawer(
@@ -39,17 +50,37 @@ class HomeView extends IView {
                 children: [
                   InkWell(
                     child: const ListTile(
-                      leading: Icon(Icons.calendar_month),
+                      leading: Icon(
+                        Icons.calendar_month,
+                        color: AppColor.primaryColorSwatch,
+                      ),
                       title: Text('Schedule'),
                     ),
-                    onTap: () {},
+                    onTap: () {
+                      appBloc(context).add(
+                        const AppEvent.changeView(
+                          mod: Mod.schedule(
+                            type: ViewType.overview(),
+                          ),
+                        ),
+                      );
+                    },
                   ),
-                  InkWell(
-                    onTap: () {},
-                    child: const ListTile(
-                      leading: Icon(Icons.business),
-                      title: Text('timecard'),
+                  ListTile(
+                    leading: const Icon(
+                      Icons.pending_actions_outlined,
+                      color: AppColor.primaryColorSwatch,
                     ),
+                    title: const Text('Timecard'),
+                    onTap: () {
+                      appBloc(context).add(
+                        const AppEvent.changeView(
+                          mod: Mod.timecard(
+                            type: ViewType.overview(),
+                          ),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
@@ -61,10 +92,10 @@ class HomeView extends IView {
         padding: const EdgeInsets.all(Sizes.size16),
         child: ListView(
           children: [
-            const Text(
-              'Good afternoon, Jefferson',
-              style: TextStyle(
-                fontSize: 20,
+            Text(
+              greeting,
+              style: const TextStyle(
+                fontSize: Sizes.size20,
                 fontWeight: FontWeight.bold,
               ),
             ),

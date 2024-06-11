@@ -1,5 +1,5 @@
 import 'package:buildnotifier/domain/controllers/time_card_controller.dart';
-import 'package:buildnotifier/domain/entities/time_card.dart';
+import 'package:buildnotifier/domain/entities/timecard/timecard.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

@@ -3,7 +3,7 @@ import 'package:buildnotifier/domain/entities/crud_type.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:buildnotifier/domain/entities/time_card.dart';
+import 'package:buildnotifier/domain/entities/timecard/timecard.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 

@@ -29,12 +29,18 @@ dev_dependencies:
   build_runner: ^2.4.9
   freezed: ^2.5.2
   json_serializable: ^6.7.1
+  flutter_launcher_icons: ^0.10.0
 
+flutter_icons:
+  android: true
+  ios: true  
+  image_path: "assets/images/icon_app.png"    
 
 flutter:
   uses-material-design: true
   
   assets:
+     - assets/images/icon_app.png
      - assets/images/buildnotifier.png
      - assets/images/buildnotifier (2).png
      - assets/images/buildnotifier_white.png
