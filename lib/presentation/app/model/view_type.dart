@@ -5,6 +5,9 @@ part 'view_type.freezed.dart';
 @freezed
 class ViewType with _$ViewType {
   const factory ViewType.overview() = ViewTypeOverview;
+  const factory ViewType.overviewById({
+    required String id,
+  }) = ViewTypeOverviewById;
   const factory ViewType.create() = ViewTypeCreate;
   const factory ViewType.update({
     required String id,

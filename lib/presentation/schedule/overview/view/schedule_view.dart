@@ -1,5 +1,6 @@
 import 'package:buildnotifier/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifier/presentation/app/model/mod.dart';
+import 'package:buildnotifier/presentation/app/model/view_type.dart';
 import 'package:buildnotifier/presentation/core/const/images_const.dart';
 import 'package:buildnotifier/presentation/appointment/view/appointment_view.dart';
 import 'package:buildnotifier/presentation/core/view/i_view.dart';
@@ -144,72 +145,52 @@ class ScheduleOverviewView extends IView {
                       itemCount: schedules.length,
                       itemBuilder: (context, index) {
                         var schedule = schedules[index];
-                        return InkWell(
-                          child: Card(
-                            child: ListTile(
-                              title: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    '${hourFormat.format(schedule.startDateTime)} - ${hourFormat.format(schedule.endDateTime)}',
-                                    style: const TextStyle(
-                                      fontSize: Sizes.size16,
-                                      color: AppColor.green,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  Text(
-                                    schedule.title,
-                                    style: TextStyle(
-                                      color: AppColor.greyColorSwatch.shade700,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
+                        return ListTile(
+                          title: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                '${hourFormat.format(schedule.startDateTime)} - ${hourFormat.format(schedule.endDateTime)}',
                               ),
-                              subtitle: Padding(
-                                padding: const EdgeInsets.only(
-                                  top: Sizes.size4,
-                                ),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    if (schedule.location.isNotEmpty)
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: [
-                                          Icon(
-                                            Icons.location_on,
-                                            color: AppColor
-                                                .greyColorSwatch.shade700,
-                                          ),
-                                          gapWidth4,
-                                          Expanded(
-                                            child: Text(
-                                              schedule.location,
-                                              overflow: TextOverflow.ellipsis,
-                                              maxLines: 1,
-                                              style: TextStyle(
-                                                color: AppColor
-                                                    .greyColorSwatch.shade700,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
+                              gapWidth16,
+                              Text(
+                                schedule.title,
+                              ),
+                            ],
+                          ),
+                          subtitle: Padding(
+                            padding: const EdgeInsets.only(
+                              top: Sizes.size4,
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                if (schedule.location.isNotEmpty)
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      const Icon(
+                                        Icons.location_on,
+                                        color: AppColor.primaryColorSwatch,
                                       ),
-                                  ],
-                                ),
-                              ),
+                                      gapWidth4,
+                                      Expanded(
+                                        child: Text(
+                                          schedule.location,
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                              ],
                             ),
                           ),
                           onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => AppointmentView(
-                                  id: schedule.id,
+                            appBloc(context).add(
+                              const AppEvent.changeView(
+                                mod: Mod.schedule(
+                                  type: ViewType.overview(),
                                 ),
                               ),
                             );

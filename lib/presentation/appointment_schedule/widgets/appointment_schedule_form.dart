@@ -1,4 +1,4 @@
-import 'package:buildnotifier/domain/entities/appointment.dart';
+import 'package:buildnotifier/domain/entities/appointment/appointment.dart';
 import 'package:buildnotifier/theme/app_color.dart';
 import 'package:buildnotifier/theme/app_sizes.dart';
 import 'package:flutter/material.dart';

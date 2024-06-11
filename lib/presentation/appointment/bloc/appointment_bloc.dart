@@ -1,8 +1,7 @@
+import 'package:buildnotifier/domain/controllers/appointment_controller.dart';
+import 'package:buildnotifier/domain/entities/appointment/appointment.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../../../domain/controllers/schedule_controller.dart';
-import '../../../domain/entities/appointment.dart';
 
 part 'appointment_bloc.freezed.dart';
 part 'appointment_event.dart';
@@ -10,7 +9,7 @@ part 'appointment_state.dart';
 
 class AppointmentBloc extends Bloc<AppointmentEvent, AppointmentState> {
   AppointmentBloc({
-    required ScheduleController controller,
+    required AppointmentController controller,
   }) : super(const AppointmentState.empty()) {
     on<AppointmentEvent>(
       (event, emit) async {

@@ -1,11 +1,10 @@
 import 'dart:ui';
 
+import 'package:buildnotifier/domain/controllers/appointment_controller.dart';
+import 'package:buildnotifier/domain/controllers/location_controller.dart';
+import 'package:buildnotifier/domain/entities/appointment/appointment.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../../../domain/controllers/location_controller.dart';
-import '../../../domain/controllers/schedule_controller.dart';
-import '../../../domain/entities/appointment.dart';
 
 part 'appointment_schedule_bloc.freezed.dart';
 part 'appointment_schedule_event.dart';
@@ -14,18 +13,18 @@ part 'appointment_schedule_state.dart';
 class AppointmentScheduleBloc
     extends Bloc<AppointmentScheduleEvent, AppointmentScheduleState> {
   AppointmentScheduleBloc({
-    required ScheduleController controller,
+    required AppointmentController controller,
     required LocationController locationController,
   }) : super(const AppointmentScheduleState.empty()) {
     on<AppointmentScheduleEvent>(
       (event, emit) {
         event.when(
           load: () {
-            emit(
-              AppointmentScheduleState.loaded(
-                appointment: Appointment.empty(),
-              ),
-            );
+            // emit(
+            //   const AppointmentScheduleState.loaded(
+            //     appointment: ,
+            //   ),
+            // );
           },
           updateTitle: (title) {
             emit(
@@ -93,7 +92,7 @@ class AppointmentScheduleBloc
               state.asLoaded.appointment.location,
             );
 
-            await controller.createSchedule(
+            await controller.create(
               state.asLoaded.appointment.copyWith(
                 latitude: latLng != null ? latLng.latitude : 0,
                 longitude: latLng != null ? latLng.longitude : 0,

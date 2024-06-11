@@ -1,5 +1,5 @@
-import 'package:buildnotifier/domain/controllers/schedule_controller.dart';
-import 'package:buildnotifier/infrastructure/repositories/firestore/schedule_firestore_repository.dart';
+import 'package:buildnotifier/domain/controllers/appointment_controller.dart';
+import 'package:buildnotifier/infrastructure/repositories/firestore/appointment_firestore_repository.dart';
 import 'package:buildnotifier/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -33,8 +33,8 @@ class _AppointmentView extends State<AppointmentView> {
   @override
   Widget build(BuildContext context) {
     var bloc = AppointmentBloc(
-      controller: ScheduleController(
-        repository: ScheduleFirestoreRepository(
+      controller: AppointmentController(
+        repository: AppointmentsFirestoreRepository(
           tenantId: '',
         ),
       ),

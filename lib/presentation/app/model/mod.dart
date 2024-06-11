@@ -1,4 +1,5 @@
 import 'package:buildnotifier/presentation/app/model/view_type.dart';
+import 'package:buildnotifier/presentation/appointment/view/appointment_view.dart';
 import 'package:buildnotifier/presentation/home/view/home_view.dart';
 import 'package:buildnotifier/presentation/schedule/overview/schedule_overview.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,12 @@ extension OnModel on Mod {
   Widget view() {
     return when(
       home: () => const HomeView(),
-      schedule: (viewType) => const ScheduleOverview(),
+      schedule: (viewType) {
+        return viewType.maybeWhen(
+          orElse: () => const ScheduleOverview(),
+          overviewById: (id) => AppointmentView(id: id),
+        );
+      },
     );
   }
 }

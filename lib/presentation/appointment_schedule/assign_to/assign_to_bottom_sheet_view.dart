@@ -1,5 +1,5 @@
 import 'package:buildnotifier/domain/controllers/users_controller.dart';
-import 'package:buildnotifier/domain/entities/appointment.dart';
+import 'package:buildnotifier/domain/entities/appointment/appointment.dart';
 import 'package:buildnotifier/infrastructure/repositories/firestore/users_firestore_repository.dart';
 import 'package:buildnotifier/presentation/appointment_schedule/assign_to/assign_to_bottom_sheet_bloc.dart';
 import 'package:buildnotifier/theme/app_color.dart';

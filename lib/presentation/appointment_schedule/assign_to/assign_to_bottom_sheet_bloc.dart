@@ -1,5 +1,5 @@
 import 'package:buildnotifier/domain/controllers/users_controller.dart';
-import 'package:buildnotifier/domain/entities/appointment.dart';
+import 'package:buildnotifier/domain/entities/appointment/appointment.dart';
 import 'package:buildnotifier/domain/entities/user/user.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

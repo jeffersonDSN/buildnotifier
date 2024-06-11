@@ -1,6 +1,6 @@
 import 'package:buildnotifier/domain/controllers/location_controller.dart';
-import 'package:buildnotifier/domain/controllers/schedule_controller.dart';
-import 'package:buildnotifier/infrastructure/repositories/firestore/schedule_firestore_repository.dart';
+import 'package:buildnotifier/domain/controllers/appointment_controller.dart';
+import 'package:buildnotifier/infrastructure/repositories/firestore/appointment_firestore_repository.dart';
 import 'package:buildnotifier/infrastructure/repositories/http/location_repository.dart';
 import 'package:buildnotifier/presentation/appointment_schedule/assign_to/assign_to_bottom_sheet_view.dart';
 import 'package:buildnotifier/theme/app_sizes.dart';
@@ -14,8 +14,8 @@ class AppointmentScheduleView extends StatelessWidget {
   AppointmentScheduleView({super.key});
 
   final bloc = AppointmentScheduleBloc(
-    controller: ScheduleController(
-      repository: ScheduleFirestoreRepository(
+    controller: AppointmentController(
+      repository: AppointmentsFirestoreRepository(
         tenantId: '',
       ),
     ),

@@ -20,7 +20,6 @@ AppointmentUser _$AppointmentUserFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AppointmentUser {
-  @JsonKey(name: 'userID')
   String get id => throw _privateConstructorUsedError;
   String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
@@ -37,8 +36,7 @@ abstract class $AppointmentUserCopyWith<$Res> {
           AppointmentUser value, $Res Function(AppointmentUser) then) =
       _$AppointmentUserCopyWithImpl<$Res, AppointmentUser>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'userID') String id, String firstName, String lastName});
+  $Res call({String id, String firstName, String lastName});
 }
 
 /// @nodoc
@@ -83,8 +81,7 @@ abstract class _$$AppointmentUserImplCopyWith<$Res>
       __$$AppointmentUserImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'userID') String id, String firstName, String lastName});
+  $Res call({String id, String firstName, String lastName});
 }
 
 /// @nodoc
@@ -123,15 +120,12 @@ class __$$AppointmentUserImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AppointmentUserImpl implements _AppointmentUser {
   const _$AppointmentUserImpl(
-      {@JsonKey(name: 'userID') required this.id,
-      required this.firstName,
-      required this.lastName});
+      {required this.id, required this.firstName, required this.lastName});
 
   factory _$AppointmentUserImpl.fromJson(Map<String, dynamic> json) =>
       _$$AppointmentUserImplFromJson(json);
 
   @override
-  @JsonKey(name: 'userID')
   final String id;
   @override
   final String firstName;
@@ -176,7 +170,7 @@ class _$AppointmentUserImpl implements _AppointmentUser {
 
 abstract class _AppointmentUser implements AppointmentUser {
   const factory _AppointmentUser(
-      {@JsonKey(name: 'userID') required final String id,
+      {required final String id,
       required final String firstName,
       required final String lastName}) = _$AppointmentUserImpl;
 
@@ -184,7 +178,6 @@ abstract class _AppointmentUser implements AppointmentUser {
       _$AppointmentUserImpl.fromJson;
 
   @override
-  @JsonKey(name: 'userID')
   String get id;
   @override
   String get firstName;
@@ -208,7 +201,11 @@ mixin _$Appointment {
   DateTime get startDateTime => throw _privateConstructorUsedError;
   DateTime get endDateTime => throw _privateConstructorUsedError;
   double get latitude => throw _privateConstructorUsedError;
-  double get longitude => throw _privateConstructorUsedError;
+  dynamic get longitude => throw _privateConstructorUsedError;
+  String get projectId => throw _privateConstructorUsedError;
+  String get projectName => throw _privateConstructorUsedError;
+  String get taskId => throw _privateConstructorUsedError;
+  String get taskName => throw _privateConstructorUsedError;
   List<AppointmentUser> get assignTo => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -230,7 +227,11 @@ abstract class $AppointmentCopyWith<$Res> {
       DateTime startDateTime,
       DateTime endDateTime,
       double latitude,
-      double longitude,
+      dynamic longitude,
+      String projectId,
+      String projectName,
+      String taskId,
+      String taskName,
       List<AppointmentUser> assignTo});
 }
 
@@ -253,7 +254,11 @@ class _$AppointmentCopyWithImpl<$Res, $Val extends Appointment>
     Object? startDateTime = null,
     Object? endDateTime = null,
     Object? latitude = null,
-    Object? longitude = null,
+    Object? longitude = freezed,
+    Object? projectId = null,
+    Object? projectName = null,
+    Object? taskId = null,
+    Object? taskName = null,
     Object? assignTo = null,
   }) {
     return _then(_value.copyWith(
@@ -281,10 +286,26 @@ class _$AppointmentCopyWithImpl<$Res, $Val extends Appointment>
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
-      longitude: null == longitude
+      longitude: freezed == longitude
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
-              as double,
+              as dynamic,
+      projectId: null == projectId
+          ? _value.projectId
+          : projectId // ignore: cast_nullable_to_non_nullable
+              as String,
+      projectName: null == projectName
+          ? _value.projectName
+          : projectName // ignore: cast_nullable_to_non_nullable
+              as String,
+      taskId: null == taskId
+          ? _value.taskId
+          : taskId // ignore: cast_nullable_to_non_nullable
+              as String,
+      taskName: null == taskName
+          ? _value.taskName
+          : taskName // ignore: cast_nullable_to_non_nullable
+              as String,
       assignTo: null == assignTo
           ? _value.assignTo
           : assignTo // ignore: cast_nullable_to_non_nullable
@@ -308,7 +329,11 @@ abstract class _$$AppointmentImplCopyWith<$Res>
       DateTime startDateTime,
       DateTime endDateTime,
       double latitude,
-      double longitude,
+      dynamic longitude,
+      String projectId,
+      String projectName,
+      String taskId,
+      String taskName,
       List<AppointmentUser> assignTo});
 }
 
@@ -329,7 +354,11 @@ class __$$AppointmentImplCopyWithImpl<$Res>
     Object? startDateTime = null,
     Object? endDateTime = null,
     Object? latitude = null,
-    Object? longitude = null,
+    Object? longitude = freezed,
+    Object? projectId = null,
+    Object? projectName = null,
+    Object? taskId = null,
+    Object? taskName = null,
     Object? assignTo = null,
   }) {
     return _then(_$AppointmentImpl(
@@ -357,10 +386,23 @@ class __$$AppointmentImplCopyWithImpl<$Res>
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
-      longitude: null == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double,
+      longitude: freezed == longitude ? _value.longitude! : longitude,
+      projectId: null == projectId
+          ? _value.projectId
+          : projectId // ignore: cast_nullable_to_non_nullable
+              as String,
+      projectName: null == projectName
+          ? _value.projectName
+          : projectName // ignore: cast_nullable_to_non_nullable
+              as String,
+      taskId: null == taskId
+          ? _value.taskId
+          : taskId // ignore: cast_nullable_to_non_nullable
+              as String,
+      taskName: null == taskName
+          ? _value.taskName
+          : taskName // ignore: cast_nullable_to_non_nullable
+              as String,
       assignTo: null == assignTo
           ? _value._assignTo
           : assignTo // ignore: cast_nullable_to_non_nullable
@@ -374,13 +416,17 @@ class __$$AppointmentImplCopyWithImpl<$Res>
 class _$AppointmentImpl implements _Appointment {
   const _$AppointmentImpl(
       {this.id = '',
-      required this.title,
-      required this.location,
+      this.title = '',
+      this.location = '',
       required this.startDateTime,
       required this.endDateTime,
-      required this.latitude,
-      required this.longitude,
-      required final List<AppointmentUser> assignTo})
+      this.latitude = 0,
+      this.longitude = 0,
+      this.projectId = '',
+      this.projectName = '',
+      this.taskId = '',
+      this.taskName = '',
+      final List<AppointmentUser> assignTo = const []})
       : _assignTo = assignTo;
 
   factory _$AppointmentImpl.fromJson(Map<String, dynamic> json) =>
@@ -390,19 +436,36 @@ class _$AppointmentImpl implements _Appointment {
   @JsonKey()
   final String id;
   @override
+  @JsonKey()
   final String title;
   @override
+  @JsonKey()
   final String location;
   @override
   final DateTime startDateTime;
   @override
   final DateTime endDateTime;
   @override
+  @JsonKey()
   final double latitude;
   @override
-  final double longitude;
+  @JsonKey()
+  final dynamic longitude;
+  @override
+  @JsonKey()
+  final String projectId;
+  @override
+  @JsonKey()
+  final String projectName;
+  @override
+  @JsonKey()
+  final String taskId;
+  @override
+  @JsonKey()
+  final String taskName;
   final List<AppointmentUser> _assignTo;
   @override
+  @JsonKey()
   List<AppointmentUser> get assignTo {
     if (_assignTo is EqualUnmodifiableListView) return _assignTo;
     // ignore: implicit_dynamic_type
@@ -411,7 +474,7 @@ class _$AppointmentImpl implements _Appointment {
 
   @override
   String toString() {
-    return 'Appointment(id: $id, title: $title, location: $location, startDateTime: $startDateTime, endDateTime: $endDateTime, latitude: $latitude, longitude: $longitude, assignTo: $assignTo)';
+    return 'Appointment(id: $id, title: $title, location: $location, startDateTime: $startDateTime, endDateTime: $endDateTime, latitude: $latitude, longitude: $longitude, projectId: $projectId, projectName: $projectName, taskId: $taskId, taskName: $taskName, assignTo: $assignTo)';
   }
 
   @override
@@ -429,8 +492,14 @@ class _$AppointmentImpl implements _Appointment {
                 other.endDateTime == endDateTime) &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
-            (identical(other.longitude, longitude) ||
-                other.longitude == longitude) &&
+            const DeepCollectionEquality().equals(other.longitude, longitude) &&
+            (identical(other.projectId, projectId) ||
+                other.projectId == projectId) &&
+            (identical(other.projectName, projectName) ||
+                other.projectName == projectName) &&
+            (identical(other.taskId, taskId) || other.taskId == taskId) &&
+            (identical(other.taskName, taskName) ||
+                other.taskName == taskName) &&
             const DeepCollectionEquality().equals(other._assignTo, _assignTo));
   }
 
@@ -444,7 +513,11 @@ class _$AppointmentImpl implements _Appointment {
       startDateTime,
       endDateTime,
       latitude,
-      longitude,
+      const DeepCollectionEquality().hash(longitude),
+      projectId,
+      projectName,
+      taskId,
+      taskName,
       const DeepCollectionEquality().hash(_assignTo));
 
   @JsonKey(ignore: true)
@@ -464,13 +537,17 @@ class _$AppointmentImpl implements _Appointment {
 abstract class _Appointment implements Appointment {
   const factory _Appointment(
       {final String id,
-      required final String title,
-      required final String location,
+      final String title,
+      final String location,
       required final DateTime startDateTime,
       required final DateTime endDateTime,
-      required final double latitude,
-      required final double longitude,
-      required final List<AppointmentUser> assignTo}) = _$AppointmentImpl;
+      final double latitude,
+      final dynamic longitude,
+      final String projectId,
+      final String projectName,
+      final String taskId,
+      final String taskName,
+      final List<AppointmentUser> assignTo}) = _$AppointmentImpl;
 
   factory _Appointment.fromJson(Map<String, dynamic> json) =
       _$AppointmentImpl.fromJson;
@@ -488,7 +565,15 @@ abstract class _Appointment implements Appointment {
   @override
   double get latitude;
   @override
-  double get longitude;
+  dynamic get longitude;
+  @override
+  String get projectId;
+  @override
+  String get projectName;
+  @override
+  String get taskId;
+  @override
+  String get taskName;
   @override
   List<AppointmentUser> get assignTo;
   @override

@@ -14,11 +14,12 @@ class AppTheme {
     listTileTheme: _listTileTheme,
     outlinedButtonTheme: _outlinedButtonThemeData,
     floatingActionButtonTheme: _floatingActionButtonThemeData,
+    scrollbarTheme: _scrollbarThemeData,
   );
 }
 
 AppBarTheme get _appBarTheme => const AppBarTheme(
-      backgroundColor: AppColor.primaryColorSwatch,
+      backgroundColor: AppColor.backgroundColor,
       titleTextStyle: TextStyle(
         color: AppColor.lightColor,
         fontSize: 20,
@@ -55,14 +56,12 @@ CardTheme get _cardTheme => const CardTheme(
 TextTheme get _textTheme => const TextTheme(
       titleMedium: TextStyle(
         fontSize: 16,
-        fontWeight: FontWeight.bold,
       ),
     );
 
 ListTileThemeData get _listTileTheme => const ListTileThemeData(
       titleTextStyle: TextStyle(
         fontSize: 16,
-        fontWeight: FontWeight.bold,
         color: Colors.black,
       ),
       iconColor: Colors.black,
@@ -81,6 +80,13 @@ OutlinedButtonThemeData get _outlinedButtonThemeData => OutlinedButtonThemeData(
 FloatingActionButtonThemeData get _floatingActionButtonThemeData =>
     const FloatingActionButtonThemeData(
       backgroundColor: AppColor.primaryColorSwatch,
+    );
+
+ScrollbarThemeData get _scrollbarThemeData => const ScrollbarThemeData(
+      thumbVisibility: WidgetStatePropertyAll(true),
+      thumbColor: WidgetStatePropertyAll(AppColor.primaryColorSwatch),
+      trackColor: WidgetStatePropertyAll(Colors.grey),
+      trackVisibility: WidgetStatePropertyAll(true),
     );
 
 SystemUiOverlayStyle get loginSystemUiOverlayStyle =>

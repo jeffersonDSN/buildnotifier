@@ -1,8 +1,7 @@
+import 'package:buildnotifier/domain/controllers/appointment_controller.dart';
+import 'package:buildnotifier/domain/entities/appointment/appointment.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../../../../domain/controllers/schedule_controller.dart';
-import '../../../../domain/entities/appointment.dart';
 
 part 'schedule_bloc.freezed.dart';
 part 'schedule_state.dart';
@@ -11,7 +10,7 @@ part 'schedule_event.dart';
 class ScheduleOverviewBloc
     extends Bloc<ScheduleOverviewEvent, ScheduleOverviewState> {
   ScheduleOverviewBloc({
-    required ScheduleController controller,
+    required AppointmentController controller,
   }) : super(const ScheduleOverviewState.empty()) {
     on<ScheduleOverviewEvent>(
       (event, emit) async {
@@ -29,7 +28,7 @@ class ScheduleOverviewBloc
             );
           },
           delete: (id) async {
-            await controller.deleteSchedule(id);
+            await controller.delete(id);
             add(
               ScheduleOverviewEvent.load(
                 selectDay: state.asLoaded.selectDay,

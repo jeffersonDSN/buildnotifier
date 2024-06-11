@@ -19,6 +19,7 @@ mixin _$ViewType {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() overview,
+    required TResult Function(String id) overviewById,
     required TResult Function() create,
     required TResult Function(String id) update,
   }) =>
@@ -26,6 +27,7 @@ mixin _$ViewType {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? overview,
+    TResult? Function(String id)? overviewById,
     TResult? Function()? create,
     TResult? Function(String id)? update,
   }) =>
@@ -33,6 +35,7 @@ mixin _$ViewType {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? overview,
+    TResult Function(String id)? overviewById,
     TResult Function()? create,
     TResult Function(String id)? update,
     required TResult orElse(),
@@ -41,6 +44,7 @@ mixin _$ViewType {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ViewTypeOverview value) overview,
+    required TResult Function(ViewTypeOverviewById value) overviewById,
     required TResult Function(ViewTypeCreate value) create,
     required TResult Function(ViewTypeUpdate value) update,
   }) =>
@@ -48,6 +52,7 @@ mixin _$ViewType {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ViewTypeOverview value)? overview,
+    TResult? Function(ViewTypeOverviewById value)? overviewById,
     TResult? Function(ViewTypeCreate value)? create,
     TResult? Function(ViewTypeUpdate value)? update,
   }) =>
@@ -55,6 +60,7 @@ mixin _$ViewType {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ViewTypeOverview value)? overview,
+    TResult Function(ViewTypeOverviewById value)? overviewById,
     TResult Function(ViewTypeCreate value)? create,
     TResult Function(ViewTypeUpdate value)? update,
     required TResult orElse(),
@@ -118,6 +124,7 @@ class _$ViewTypeOverviewImpl implements ViewTypeOverview {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() overview,
+    required TResult Function(String id) overviewById,
     required TResult Function() create,
     required TResult Function(String id) update,
   }) {
@@ -128,6 +135,7 @@ class _$ViewTypeOverviewImpl implements ViewTypeOverview {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? overview,
+    TResult? Function(String id)? overviewById,
     TResult? Function()? create,
     TResult? Function(String id)? update,
   }) {
@@ -138,6 +146,7 @@ class _$ViewTypeOverviewImpl implements ViewTypeOverview {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? overview,
+    TResult Function(String id)? overviewById,
     TResult Function()? create,
     TResult Function(String id)? update,
     required TResult orElse(),
@@ -152,6 +161,7 @@ class _$ViewTypeOverviewImpl implements ViewTypeOverview {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ViewTypeOverview value) overview,
+    required TResult Function(ViewTypeOverviewById value) overviewById,
     required TResult Function(ViewTypeCreate value) create,
     required TResult Function(ViewTypeUpdate value) update,
   }) {
@@ -162,6 +172,7 @@ class _$ViewTypeOverviewImpl implements ViewTypeOverview {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ViewTypeOverview value)? overview,
+    TResult? Function(ViewTypeOverviewById value)? overviewById,
     TResult? Function(ViewTypeCreate value)? create,
     TResult? Function(ViewTypeUpdate value)? update,
   }) {
@@ -172,6 +183,7 @@ class _$ViewTypeOverviewImpl implements ViewTypeOverview {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ViewTypeOverview value)? overview,
+    TResult Function(ViewTypeOverviewById value)? overviewById,
     TResult Function(ViewTypeCreate value)? create,
     TResult Function(ViewTypeUpdate value)? update,
     required TResult orElse(),
@@ -185,6 +197,154 @@ class _$ViewTypeOverviewImpl implements ViewTypeOverview {
 
 abstract class ViewTypeOverview implements ViewType {
   const factory ViewTypeOverview() = _$ViewTypeOverviewImpl;
+}
+
+/// @nodoc
+abstract class _$$ViewTypeOverviewByIdImplCopyWith<$Res> {
+  factory _$$ViewTypeOverviewByIdImplCopyWith(_$ViewTypeOverviewByIdImpl value,
+          $Res Function(_$ViewTypeOverviewByIdImpl) then) =
+      __$$ViewTypeOverviewByIdImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$$ViewTypeOverviewByIdImplCopyWithImpl<$Res>
+    extends _$ViewTypeCopyWithImpl<$Res, _$ViewTypeOverviewByIdImpl>
+    implements _$$ViewTypeOverviewByIdImplCopyWith<$Res> {
+  __$$ViewTypeOverviewByIdImplCopyWithImpl(_$ViewTypeOverviewByIdImpl _value,
+      $Res Function(_$ViewTypeOverviewByIdImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$ViewTypeOverviewByIdImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ViewTypeOverviewByIdImpl implements ViewTypeOverviewById {
+  const _$ViewTypeOverviewByIdImpl({required this.id});
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'ViewType.overviewById(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ViewTypeOverviewByIdImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ViewTypeOverviewByIdImplCopyWith<_$ViewTypeOverviewByIdImpl>
+      get copyWith =>
+          __$$ViewTypeOverviewByIdImplCopyWithImpl<_$ViewTypeOverviewByIdImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() overview,
+    required TResult Function(String id) overviewById,
+    required TResult Function() create,
+    required TResult Function(String id) update,
+  }) {
+    return overviewById(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? overview,
+    TResult? Function(String id)? overviewById,
+    TResult? Function()? create,
+    TResult? Function(String id)? update,
+  }) {
+    return overviewById?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? overview,
+    TResult Function(String id)? overviewById,
+    TResult Function()? create,
+    TResult Function(String id)? update,
+    required TResult orElse(),
+  }) {
+    if (overviewById != null) {
+      return overviewById(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ViewTypeOverview value) overview,
+    required TResult Function(ViewTypeOverviewById value) overviewById,
+    required TResult Function(ViewTypeCreate value) create,
+    required TResult Function(ViewTypeUpdate value) update,
+  }) {
+    return overviewById(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ViewTypeOverview value)? overview,
+    TResult? Function(ViewTypeOverviewById value)? overviewById,
+    TResult? Function(ViewTypeCreate value)? create,
+    TResult? Function(ViewTypeUpdate value)? update,
+  }) {
+    return overviewById?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ViewTypeOverview value)? overview,
+    TResult Function(ViewTypeOverviewById value)? overviewById,
+    TResult Function(ViewTypeCreate value)? create,
+    TResult Function(ViewTypeUpdate value)? update,
+    required TResult orElse(),
+  }) {
+    if (overviewById != null) {
+      return overviewById(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ViewTypeOverviewById implements ViewType {
+  const factory ViewTypeOverviewById({required final String id}) =
+      _$ViewTypeOverviewByIdImpl;
+
+  String get id;
+  @JsonKey(ignore: true)
+  _$$ViewTypeOverviewByIdImplCopyWith<_$ViewTypeOverviewByIdImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -226,6 +386,7 @@ class _$ViewTypeCreateImpl implements ViewTypeCreate {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() overview,
+    required TResult Function(String id) overviewById,
     required TResult Function() create,
     required TResult Function(String id) update,
   }) {
@@ -236,6 +397,7 @@ class _$ViewTypeCreateImpl implements ViewTypeCreate {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? overview,
+    TResult? Function(String id)? overviewById,
     TResult? Function()? create,
     TResult? Function(String id)? update,
   }) {
@@ -246,6 +408,7 @@ class _$ViewTypeCreateImpl implements ViewTypeCreate {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? overview,
+    TResult Function(String id)? overviewById,
     TResult Function()? create,
     TResult Function(String id)? update,
     required TResult orElse(),
@@ -260,6 +423,7 @@ class _$ViewTypeCreateImpl implements ViewTypeCreate {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ViewTypeOverview value) overview,
+    required TResult Function(ViewTypeOverviewById value) overviewById,
     required TResult Function(ViewTypeCreate value) create,
     required TResult Function(ViewTypeUpdate value) update,
   }) {
@@ -270,6 +434,7 @@ class _$ViewTypeCreateImpl implements ViewTypeCreate {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ViewTypeOverview value)? overview,
+    TResult? Function(ViewTypeOverviewById value)? overviewById,
     TResult? Function(ViewTypeCreate value)? create,
     TResult? Function(ViewTypeUpdate value)? update,
   }) {
@@ -280,6 +445,7 @@ class _$ViewTypeCreateImpl implements ViewTypeCreate {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ViewTypeOverview value)? overview,
+    TResult Function(ViewTypeOverviewById value)? overviewById,
     TResult Function(ViewTypeCreate value)? create,
     TResult Function(ViewTypeUpdate value)? update,
     required TResult orElse(),
@@ -361,6 +527,7 @@ class _$ViewTypeUpdateImpl implements ViewTypeUpdate {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() overview,
+    required TResult Function(String id) overviewById,
     required TResult Function() create,
     required TResult Function(String id) update,
   }) {
@@ -371,6 +538,7 @@ class _$ViewTypeUpdateImpl implements ViewTypeUpdate {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? overview,
+    TResult? Function(String id)? overviewById,
     TResult? Function()? create,
     TResult? Function(String id)? update,
   }) {
@@ -381,6 +549,7 @@ class _$ViewTypeUpdateImpl implements ViewTypeUpdate {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? overview,
+    TResult Function(String id)? overviewById,
     TResult Function()? create,
     TResult Function(String id)? update,
     required TResult orElse(),
@@ -395,6 +564,7 @@ class _$ViewTypeUpdateImpl implements ViewTypeUpdate {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ViewTypeOverview value) overview,
+    required TResult Function(ViewTypeOverviewById value) overviewById,
     required TResult Function(ViewTypeCreate value) create,
     required TResult Function(ViewTypeUpdate value) update,
   }) {
@@ -405,6 +575,7 @@ class _$ViewTypeUpdateImpl implements ViewTypeUpdate {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ViewTypeOverview value)? overview,
+    TResult? Function(ViewTypeOverviewById value)? overviewById,
     TResult? Function(ViewTypeCreate value)? create,
     TResult? Function(ViewTypeUpdate value)? update,
   }) {
@@ -415,6 +586,7 @@ class _$ViewTypeUpdateImpl implements ViewTypeUpdate {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ViewTypeOverview value)? overview,
+    TResult Function(ViewTypeOverviewById value)? overviewById,
     TResult Function(ViewTypeCreate value)? create,
     TResult Function(ViewTypeUpdate value)? update,
     required TResult orElse(),
