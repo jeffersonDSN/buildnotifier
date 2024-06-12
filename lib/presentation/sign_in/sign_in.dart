@@ -17,7 +17,7 @@ class SignIn extends StatelessWidget {
           repository: UsersFireStoreRepository(tenant: ''),
         ),
       ),
-      child: const SignInView(),
+      child: SignInView(),
     );
   }
 }
