@@ -28,21 +28,64 @@ class TimecardsDayDetailsListWidget extends StatelessWidget {
 
         var total = timecard.totalHoursAndMinutes;
 
-        return Expanded(
-          child: SizedBox(
-            height: 75,
-            child: Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    children: [
-                      gapHeight16,
+        return SizedBox(
+          height: 75,
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  children: [
+                    gapHeight16,
+                    Row(
+                      children: [
+                        const SizedBox(
+                          width: Sizes.size112,
+                          child: Text(
+                            'Started: ',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: AppColor.primaryColorSwatch,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          hourFormat.format(timecard.start!),
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: Sizes.size16,
+                          ),
+                        ),
+                      ],
+                    ),
+                    // Row(
+                    //   children: [
+                    //     const Icon(
+                    //       Icons.location_on,
+                    //       color: AppColor.primaryColorSwatch,
+                    //     ),
+                    //     gapHeight4,
+                    //     Text(
+                    //       timecard.startLocation!,
+                    //       maxLines: 1,
+                    //       overflow: TextOverflow.ellipsis,
+                    //       style: const TextStyle(
+                    //         fontSize: Sizes.size12,
+                    //         fontWeight: FontWeight.bold,
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
+                    // const Divider(
+                    //   color: AppColor.primaryColorSwatch,
+                    // ),
+                    gapHeight8,
+                    if (timecard.end != null)
                       Row(
                         children: [
                           const SizedBox(
                             width: Sizes.size112,
                             child: Text(
-                              'Started: ',
+                              'End: ',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: AppColor.primaryColorSwatch,
@@ -50,7 +93,7 @@ class TimecardsDayDetailsListWidget extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            hourFormat.format(timecard.start!),
+                            hourFormat.format(timecard.end!),
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: Sizes.size16,
@@ -58,86 +101,41 @@ class TimecardsDayDetailsListWidget extends StatelessWidget {
                           ),
                         ],
                       ),
-                      // Row(
-                      //   children: [
-                      //     const Icon(
-                      //       Icons.location_on,
-                      //       color: AppColor.primaryColorSwatch,
-                      //     ),
-                      //     gapHeight4,
-                      //     Text(
-                      //       timecard.startLocation!,
-                      //       maxLines: 1,
-                      //       overflow: TextOverflow.ellipsis,
-                      //       style: const TextStyle(
-                      //         fontSize: Sizes.size12,
-                      //         fontWeight: FontWeight.bold,
-                      //       ),
-                      //     ),
-                      //   ],
-                      // ),
-                      // const Divider(
-                      //   color: AppColor.primaryColorSwatch,
-                      // ),
-                      gapHeight8,
-                      if (timecard.end != null)
-                        Row(
-                          children: [
-                            const SizedBox(
-                              width: Sizes.size112,
-                              child: Text(
-                                'End: ',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: AppColor.primaryColorSwatch,
-                                ),
-                              ),
-                            ),
-                            Text(
-                              hourFormat.format(timecard.end!),
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: Sizes.size16,
-                              ),
-                            ),
-                          ],
-                        ),
-                      // if (timecard.end != null)
-                      //   Row(
-                      //     children: [
-                      //       const Icon(
-                      //         Icons.location_on,
-                      //         color: AppColor.primaryColorSwatch,
-                      //       ),
-                      //       gapHeight4,
-                      //       Text(
-                      //         timecard.endLocation!,
-                      //         maxLines: 1,
-                      //         overflow: TextOverflow.ellipsis,
-                      //         style: const TextStyle(
-                      //           fontSize: Sizes.size12,
-                      //           fontWeight: FontWeight.bold,
-                      //         ),
-                      //       ),
-                      //     ],
-                      //   ),
-                      // if (timecard.end != null)
-                      //   const Divider(
-                      //     color: AppColor.primaryColorSwatch,
-                      //   ),
-                    ],
-                  ),
+                    // if (timecard.end != null)
+                    //   Row(
+                    //     children: [
+                    //       const Icon(
+                    //         Icons.location_on,
+                    //         color: AppColor.primaryColorSwatch,
+                    //       ),
+                    //       gapHeight4,
+                    //       Text(
+                    //         timecard.endLocation!,
+                    //         maxLines: 1,
+                    //         overflow: TextOverflow.ellipsis,
+                    //         style: const TextStyle(
+                    //           fontSize: Sizes.size12,
+                    //           fontWeight: FontWeight.bold,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // if (timecard.end != null)
+                    //   const Divider(
+                    //     color: AppColor.primaryColorSwatch,
+                    //   ),
+                  ],
                 ),
-                gapWidth32,
-                Text(
-                  '${total.hours}:${numberFormat.format(total.minutes)}',
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: Sizes.size24,
-                  ),
+              ),
+              gapWidth32,
+              Text(
+                '${numberFormat.format(total.hours)}:${numberFormat.format(total.minutes)}',
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: Sizes.size24,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         );
       },

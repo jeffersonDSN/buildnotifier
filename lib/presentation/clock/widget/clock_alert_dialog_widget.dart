@@ -30,22 +30,24 @@ class ClockAlertDialogWidget extends StatelessWidget {
           children: [
             if (type.isUpdate)
               Container(
-                width: 120,
-                height: 120,
+                width: Sizes.size120,
+                height: Sizes.size120,
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   color: AppColor.primaryColorSwatch,
                 ),
                 child: Center(
                   child: Container(
-                    width: 110,
-                    height: 110,
+                    width: Sizes.size112,
+                    height: Sizes.size112,
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       color: AppColor.lightColor,
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(4.0),
+                      padding: const EdgeInsets.all(
+                        Sizes.size4,
+                      ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -77,7 +79,7 @@ class ClockAlertDialogWidget extends StatelessWidget {
                   'Current time',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: Sizes.size20,
+                    fontSize: Sizes.size16,
                   ),
                 ),
                 StreamBuilder<DateTime>(
@@ -91,7 +93,7 @@ class ClockAlertDialogWidget extends StatelessWidget {
                         hourFormat.format(DateTime.now()),
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: Sizes.size24,
+                          fontSize: Sizes.size20,
                           color: AppColor.primaryColorSwatch,
                         ),
                       );
@@ -101,18 +103,13 @@ class ClockAlertDialogWidget extends StatelessWidget {
                       return const Text('No data available');
                     } else {
                       final currentTime = snapshot.data!;
-                      return Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            hourFormat.format(currentTime),
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: Sizes.size24,
-                              color: AppColor.primaryColorSwatch,
-                            ),
-                          ),
-                        ],
+                      return Text(
+                        hourFormat.format(currentTime),
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: Sizes.size20,
+                          color: AppColor.primaryColorSwatch,
+                        ),
                       );
                     }
                   },

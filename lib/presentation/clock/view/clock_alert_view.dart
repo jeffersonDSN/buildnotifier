@@ -2,6 +2,7 @@ import 'package:buildnotifier/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifier/presentation/clock/bloc/clock_alert_view_bloc.dart';
 import 'package:buildnotifier/presentation/clock/widget/clock_alert_dialog_widget.dart';
 import 'package:buildnotifier/presentation/core/view/i_view.dart';
+import 'package:buildnotifier/theme/app_sizes.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,7 +27,7 @@ class ClockAlertView extends IView {
             'Clock',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 20,
+              fontSize: Sizes.size16,
             ),
           ),
           Divider(),
@@ -38,7 +39,7 @@ class ClockAlertView extends IView {
           return state.when(
             empty: () {
               return const SizedBox(
-                height: 150,
+                height: Sizes.size148,
                 child: Center(
                   child: CircularProgressIndicator(),
                 ),
@@ -46,7 +47,7 @@ class ClockAlertView extends IView {
             },
             loading: () {
               return const SizedBox(
-                height: 150,
+                height: Sizes.size148,
                 child: Center(
                   child: CircularProgressIndicator(),
                 ),

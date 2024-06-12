@@ -24,6 +24,7 @@ class TimecardDayDetailsView extends IView {
   });
 
   final DateFormat dayFormat = DateFormat('EEEE, MMM d yyyy');
+  final NumberFormat numberFormat = NumberFormat('00');
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +53,7 @@ class TimecardDayDetailsView extends IView {
           },
         ),
         title: Text(
-          'Timecard: ${dayFormat.format(day)}',
+          dayFormat.format(day),
         ),
       ),
       body: BlocBuilder<TimecardOverviewBloc, TimecardOverviewState>(
@@ -83,7 +84,7 @@ class TimecardDayDetailsView extends IView {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            '${total.hours}:${total.minutes}',
+                            '${numberFormat.format(total.hours)}:${numberFormat.format(total.minutes)}',
                             style: const TextStyle(
                               fontSize: Sizes.size20,
                               fontWeight: FontWeight.bold,
