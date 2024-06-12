@@ -1,3 +1,4 @@
+import 'package:buildnotifier/domain/entities/period/period.dart';
 import 'package:buildnotifier/domain/entities/timecard/timecard.dart';
 import 'package:buildnotifier/domain/repositories/abs_i_time_card_repository.dart';
 
@@ -14,6 +15,14 @@ class TimecardController {
 
   Future<List<Timecard>> getAllByUserId(String userId) {
     return _repository.getAllByUserId(userId);
+  }
+
+  Future<List<Timecard>> getAllOfPeriod(String userId, Period period) async {
+    return _repository.getAllOfPeriod(userId, period.startDate, period.endDate);
+  }
+
+  Future<List<Timecard>> getAllByUserIdDate(String userId, DateTime date) {
+    return _repository.getAllByUserIdDate(userId, date);
   }
 
   Future<Timecard?> getLastTimecardByUserId(String userId) {

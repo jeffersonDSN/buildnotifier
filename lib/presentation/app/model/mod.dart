@@ -2,7 +2,7 @@ import 'package:buildnotifier/presentation/app/model/view_type.dart';
 import 'package:buildnotifier/presentation/appointment/overview/appointment_overview.dart';
 import 'package:buildnotifier/presentation/home/view/home_view.dart';
 import 'package:buildnotifier/presentation/schedule/overview/schedule_overview.dart';
-import 'package:buildnotifier/presentation/timecard/overview/timecard_day_details.dart';
+import 'package:buildnotifier/presentation/timecard/day_details/timecard_day_details.dart';
 import 'package:buildnotifier/presentation/timecard/overview/timecard_overview.dart';
 import 'package:flutter/material.dart';
 

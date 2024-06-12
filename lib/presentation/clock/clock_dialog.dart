@@ -1,5 +1,5 @@
 import 'package:buildnotifier/domain/controllers/time_card_controller.dart';
-import 'package:buildnotifier/infrastructure/repositories/firestore/time_card_firestore_repository.dart';
+import 'package:buildnotifier/infrastructure/repositories/firestore/timecard_firestore_repository.dart';
 import 'package:buildnotifier/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifier/presentation/clock/bloc/clock_alert_view_bloc.dart';
 import 'package:buildnotifier/presentation/clock/view/clock_alert_view.dart';

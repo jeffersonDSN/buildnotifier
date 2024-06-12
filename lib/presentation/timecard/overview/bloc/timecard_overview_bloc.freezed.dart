@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'timecard_overview_block.dart';
+part of 'timecard_overview_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -16,42 +16,43 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$TimecardOverviewEvent {
-  String get userID => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String userID) load,
+    required TResult Function(Period period) changePeriod,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String userID)? load,
+    TResult? Function(Period period)? changePeriod,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String userID)? load,
+    TResult Function(Period period)? changePeriod,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(TimecardOverviewEventLoad value) load,
+    required TResult Function(TimecardOverviewEventPeriod value) changePeriod,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(TimecardOverviewEventLoad value)? load,
+    TResult? Function(TimecardOverviewEventPeriod value)? changePeriod,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TimecardOverviewEventLoad value)? load,
+    TResult Function(TimecardOverviewEventPeriod value)? changePeriod,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $TimecardOverviewEventCopyWith<TimecardOverviewEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -60,8 +61,6 @@ abstract class $TimecardOverviewEventCopyWith<$Res> {
   factory $TimecardOverviewEventCopyWith(TimecardOverviewEvent value,
           $Res Function(TimecardOverviewEvent) then) =
       _$TimecardOverviewEventCopyWithImpl<$Res, TimecardOverviewEvent>;
-  @useResult
-  $Res call({String userID});
 }
 
 /// @nodoc
@@ -74,29 +73,14 @@ class _$TimecardOverviewEventCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? userID = null,
-  }) {
-    return _then(_value.copyWith(
-      userID: null == userID
-          ? _value.userID
-          : userID // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$TimecardOverviewEventLoadImplCopyWith<$Res>
-    implements $TimecardOverviewEventCopyWith<$Res> {
+abstract class _$$TimecardOverviewEventLoadImplCopyWith<$Res> {
   factory _$$TimecardOverviewEventLoadImplCopyWith(
           _$TimecardOverviewEventLoadImpl value,
           $Res Function(_$TimecardOverviewEventLoadImpl) then) =
       __$$TimecardOverviewEventLoadImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({String userID});
 }
@@ -160,6 +144,7 @@ class _$TimecardOverviewEventLoadImpl implements TimecardOverviewEventLoad {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String userID) load,
+    required TResult Function(Period period) changePeriod,
   }) {
     return load(userID);
   }
@@ -168,6 +153,7 @@ class _$TimecardOverviewEventLoadImpl implements TimecardOverviewEventLoad {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String userID)? load,
+    TResult? Function(Period period)? changePeriod,
   }) {
     return load?.call(userID);
   }
@@ -176,6 +162,7 @@ class _$TimecardOverviewEventLoadImpl implements TimecardOverviewEventLoad {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String userID)? load,
+    TResult Function(Period period)? changePeriod,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -188,6 +175,7 @@ class _$TimecardOverviewEventLoadImpl implements TimecardOverviewEventLoad {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(TimecardOverviewEventLoad value) load,
+    required TResult Function(TimecardOverviewEventPeriod value) changePeriod,
   }) {
     return load(this);
   }
@@ -196,6 +184,7 @@ class _$TimecardOverviewEventLoadImpl implements TimecardOverviewEventLoad {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(TimecardOverviewEventLoad value)? load,
+    TResult? Function(TimecardOverviewEventPeriod value)? changePeriod,
   }) {
     return load?.call(this);
   }
@@ -204,6 +193,7 @@ class _$TimecardOverviewEventLoadImpl implements TimecardOverviewEventLoad {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TimecardOverviewEventLoad value)? load,
+    TResult Function(TimecardOverviewEventPeriod value)? changePeriod,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -217,11 +207,157 @@ abstract class TimecardOverviewEventLoad implements TimecardOverviewEvent {
   const factory TimecardOverviewEventLoad({required final String userID}) =
       _$TimecardOverviewEventLoadImpl;
 
-  @override
   String get userID;
-  @override
   @JsonKey(ignore: true)
   _$$TimecardOverviewEventLoadImplCopyWith<_$TimecardOverviewEventLoadImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$TimecardOverviewEventPeriodImplCopyWith<$Res> {
+  factory _$$TimecardOverviewEventPeriodImplCopyWith(
+          _$TimecardOverviewEventPeriodImpl value,
+          $Res Function(_$TimecardOverviewEventPeriodImpl) then) =
+      __$$TimecardOverviewEventPeriodImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Period period});
+
+  $PeriodCopyWith<$Res> get period;
+}
+
+/// @nodoc
+class __$$TimecardOverviewEventPeriodImplCopyWithImpl<$Res>
+    extends _$TimecardOverviewEventCopyWithImpl<$Res,
+        _$TimecardOverviewEventPeriodImpl>
+    implements _$$TimecardOverviewEventPeriodImplCopyWith<$Res> {
+  __$$TimecardOverviewEventPeriodImplCopyWithImpl(
+      _$TimecardOverviewEventPeriodImpl _value,
+      $Res Function(_$TimecardOverviewEventPeriodImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? period = null,
+  }) {
+    return _then(_$TimecardOverviewEventPeriodImpl(
+      period: null == period
+          ? _value.period
+          : period // ignore: cast_nullable_to_non_nullable
+              as Period,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PeriodCopyWith<$Res> get period {
+    return $PeriodCopyWith<$Res>(_value.period, (value) {
+      return _then(_value.copyWith(period: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$TimecardOverviewEventPeriodImpl implements TimecardOverviewEventPeriod {
+  const _$TimecardOverviewEventPeriodImpl({required this.period});
+
+  @override
+  final Period period;
+
+  @override
+  String toString() {
+    return 'TimecardOverviewEvent.changePeriod(period: $period)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TimecardOverviewEventPeriodImpl &&
+            (identical(other.period, period) || other.period == period));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, period);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TimecardOverviewEventPeriodImplCopyWith<_$TimecardOverviewEventPeriodImpl>
+      get copyWith => __$$TimecardOverviewEventPeriodImplCopyWithImpl<
+          _$TimecardOverviewEventPeriodImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String userID) load,
+    required TResult Function(Period period) changePeriod,
+  }) {
+    return changePeriod(period);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String userID)? load,
+    TResult? Function(Period period)? changePeriod,
+  }) {
+    return changePeriod?.call(period);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String userID)? load,
+    TResult Function(Period period)? changePeriod,
+    required TResult orElse(),
+  }) {
+    if (changePeriod != null) {
+      return changePeriod(period);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TimecardOverviewEventLoad value) load,
+    required TResult Function(TimecardOverviewEventPeriod value) changePeriod,
+  }) {
+    return changePeriod(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TimecardOverviewEventLoad value)? load,
+    TResult? Function(TimecardOverviewEventPeriod value)? changePeriod,
+  }) {
+    return changePeriod?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TimecardOverviewEventLoad value)? load,
+    TResult Function(TimecardOverviewEventPeriod value)? changePeriod,
+    required TResult orElse(),
+  }) {
+    if (changePeriod != null) {
+      return changePeriod(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TimecardOverviewEventPeriod implements TimecardOverviewEvent {
+  const factory TimecardOverviewEventPeriod({required final Period period}) =
+      _$TimecardOverviewEventPeriodImpl;
+
+  Period get period;
+  @JsonKey(ignore: true)
+  _$$TimecardOverviewEventPeriodImplCopyWith<_$TimecardOverviewEventPeriodImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -230,22 +366,34 @@ mixin _$TimecardOverviewState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
-    required TResult Function() loading,
-    required TResult Function(List<Timecard> timecards) loaded,
+    required TResult Function(String userId, Period selectedPeriod,
+            List<Period> periods, List<Timecard> timecards)
+        loading,
+    required TResult Function(String userId, Period selectedPeriod,
+            List<Period> periods, List<Timecard> timecards)
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
-    TResult? Function()? loading,
-    TResult? Function(List<Timecard> timecards)? loaded,
+    TResult? Function(String userId, Period selectedPeriod,
+            List<Period> periods, List<Timecard> timecards)?
+        loading,
+    TResult? Function(String userId, Period selectedPeriod,
+            List<Period> periods, List<Timecard> timecards)?
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
-    TResult Function()? loading,
-    TResult Function(List<Timecard> timecards)? loaded,
+    TResult Function(String userId, Period selectedPeriod, List<Period> periods,
+            List<Timecard> timecards)?
+        loading,
+    TResult Function(String userId, Period selectedPeriod, List<Period> periods,
+            List<Timecard> timecards)?
+        loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -335,8 +483,12 @@ class _$TimecardOverviewStateEmptyImpl implements TimecardOverviewStateEmpty {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
-    required TResult Function() loading,
-    required TResult Function(List<Timecard> timecards) loaded,
+    required TResult Function(String userId, Period selectedPeriod,
+            List<Period> periods, List<Timecard> timecards)
+        loading,
+    required TResult Function(String userId, Period selectedPeriod,
+            List<Period> periods, List<Timecard> timecards)
+        loaded,
   }) {
     return empty();
   }
@@ -345,8 +497,12 @@ class _$TimecardOverviewStateEmptyImpl implements TimecardOverviewStateEmpty {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
-    TResult? Function()? loading,
-    TResult? Function(List<Timecard> timecards)? loaded,
+    TResult? Function(String userId, Period selectedPeriod,
+            List<Period> periods, List<Timecard> timecards)?
+        loading,
+    TResult? Function(String userId, Period selectedPeriod,
+            List<Period> periods, List<Timecard> timecards)?
+        loaded,
   }) {
     return empty?.call();
   }
@@ -355,8 +511,12 @@ class _$TimecardOverviewStateEmptyImpl implements TimecardOverviewStateEmpty {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
-    TResult Function()? loading,
-    TResult Function(List<Timecard> timecards)? loaded,
+    TResult Function(String userId, Period selectedPeriod, List<Period> periods,
+            List<Timecard> timecards)?
+        loading,
+    TResult Function(String userId, Period selectedPeriod, List<Period> periods,
+            List<Timecard> timecards)?
+        loaded,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -410,6 +570,14 @@ abstract class _$$TimecardOverviewStateLoadingImplCopyWith<$Res> {
           _$TimecardOverviewStateLoadingImpl value,
           $Res Function(_$TimecardOverviewStateLoadingImpl) then) =
       __$$TimecardOverviewStateLoadingImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call(
+      {String userId,
+      Period selectedPeriod,
+      List<Period> periods,
+      List<Timecard> timecards});
+
+  $PeriodCopyWith<$Res> get selectedPeriod;
 }
 
 /// @nodoc
@@ -421,59 +589,152 @@ class __$$TimecardOverviewStateLoadingImplCopyWithImpl<$Res>
       _$TimecardOverviewStateLoadingImpl _value,
       $Res Function(_$TimecardOverviewStateLoadingImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userId = null,
+    Object? selectedPeriod = null,
+    Object? periods = null,
+    Object? timecards = null,
+  }) {
+    return _then(_$TimecardOverviewStateLoadingImpl(
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      selectedPeriod: null == selectedPeriod
+          ? _value.selectedPeriod
+          : selectedPeriod // ignore: cast_nullable_to_non_nullable
+              as Period,
+      periods: null == periods
+          ? _value._periods
+          : periods // ignore: cast_nullable_to_non_nullable
+              as List<Period>,
+      timecards: null == timecards
+          ? _value._timecards
+          : timecards // ignore: cast_nullable_to_non_nullable
+              as List<Timecard>,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PeriodCopyWith<$Res> get selectedPeriod {
+    return $PeriodCopyWith<$Res>(_value.selectedPeriod, (value) {
+      return _then(_value.copyWith(selectedPeriod: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$TimecardOverviewStateLoadingImpl
     implements TimecardOverviewStateLoading {
-  const _$TimecardOverviewStateLoadingImpl();
+  const _$TimecardOverviewStateLoadingImpl(
+      {required this.userId,
+      required this.selectedPeriod,
+      required final List<Period> periods,
+      required final List<Timecard> timecards})
+      : _periods = periods,
+        _timecards = timecards;
+
+  @override
+  final String userId;
+  @override
+  final Period selectedPeriod;
+  final List<Period> _periods;
+  @override
+  List<Period> get periods {
+    if (_periods is EqualUnmodifiableListView) return _periods;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_periods);
+  }
+
+  final List<Timecard> _timecards;
+  @override
+  List<Timecard> get timecards {
+    if (_timecards is EqualUnmodifiableListView) return _timecards;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_timecards);
+  }
 
   @override
   String toString() {
-    return 'TimecardOverviewState.loading()';
+    return 'TimecardOverviewState.loading(userId: $userId, selectedPeriod: $selectedPeriod, periods: $periods, timecards: $timecards)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TimecardOverviewStateLoadingImpl);
+            other is _$TimecardOverviewStateLoadingImpl &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.selectedPeriod, selectedPeriod) ||
+                other.selectedPeriod == selectedPeriod) &&
+            const DeepCollectionEquality().equals(other._periods, _periods) &&
+            const DeepCollectionEquality()
+                .equals(other._timecards, _timecards));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType,
+      userId,
+      selectedPeriod,
+      const DeepCollectionEquality().hash(_periods),
+      const DeepCollectionEquality().hash(_timecards));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TimecardOverviewStateLoadingImplCopyWith<
+          _$TimecardOverviewStateLoadingImpl>
+      get copyWith => __$$TimecardOverviewStateLoadingImplCopyWithImpl<
+          _$TimecardOverviewStateLoadingImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
-    required TResult Function() loading,
-    required TResult Function(List<Timecard> timecards) loaded,
+    required TResult Function(String userId, Period selectedPeriod,
+            List<Period> periods, List<Timecard> timecards)
+        loading,
+    required TResult Function(String userId, Period selectedPeriod,
+            List<Period> periods, List<Timecard> timecards)
+        loaded,
   }) {
-    return loading();
+    return loading(userId, selectedPeriod, periods, timecards);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
-    TResult? Function()? loading,
-    TResult? Function(List<Timecard> timecards)? loaded,
+    TResult? Function(String userId, Period selectedPeriod,
+            List<Period> periods, List<Timecard> timecards)?
+        loading,
+    TResult? Function(String userId, Period selectedPeriod,
+            List<Period> periods, List<Timecard> timecards)?
+        loaded,
   }) {
-    return loading?.call();
+    return loading?.call(userId, selectedPeriod, periods, timecards);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
-    TResult Function()? loading,
-    TResult Function(List<Timecard> timecards)? loaded,
+    TResult Function(String userId, Period selectedPeriod, List<Period> periods,
+            List<Timecard> timecards)?
+        loading,
+    TResult Function(String userId, Period selectedPeriod, List<Period> periods,
+            List<Timecard> timecards)?
+        loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
-      return loading();
+      return loading(userId, selectedPeriod, periods, timecards);
     }
     return orElse();
   }
@@ -514,8 +775,21 @@ class _$TimecardOverviewStateLoadingImpl
 }
 
 abstract class TimecardOverviewStateLoading implements TimecardOverviewState {
-  const factory TimecardOverviewStateLoading() =
+  const factory TimecardOverviewStateLoading(
+          {required final String userId,
+          required final Period selectedPeriod,
+          required final List<Period> periods,
+          required final List<Timecard> timecards}) =
       _$TimecardOverviewStateLoadingImpl;
+
+  String get userId;
+  Period get selectedPeriod;
+  List<Period> get periods;
+  List<Timecard> get timecards;
+  @JsonKey(ignore: true)
+  _$$TimecardOverviewStateLoadingImplCopyWith<
+          _$TimecardOverviewStateLoadingImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -525,7 +799,13 @@ abstract class _$$TimecardOverviewStateLoadedImplCopyWith<$Res> {
           $Res Function(_$TimecardOverviewStateLoadedImpl) then) =
       __$$TimecardOverviewStateLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Timecard> timecards});
+  $Res call(
+      {String userId,
+      Period selectedPeriod,
+      List<Period> periods,
+      List<Timecard> timecards});
+
+  $PeriodCopyWith<$Res> get selectedPeriod;
 }
 
 /// @nodoc
@@ -541,14 +821,37 @@ class __$$TimecardOverviewStateLoadedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? userId = null,
+    Object? selectedPeriod = null,
+    Object? periods = null,
     Object? timecards = null,
   }) {
     return _then(_$TimecardOverviewStateLoadedImpl(
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      selectedPeriod: null == selectedPeriod
+          ? _value.selectedPeriod
+          : selectedPeriod // ignore: cast_nullable_to_non_nullable
+              as Period,
+      periods: null == periods
+          ? _value._periods
+          : periods // ignore: cast_nullable_to_non_nullable
+              as List<Period>,
       timecards: null == timecards
           ? _value._timecards
           : timecards // ignore: cast_nullable_to_non_nullable
               as List<Timecard>,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PeriodCopyWith<$Res> get selectedPeriod {
+    return $PeriodCopyWith<$Res>(_value.selectedPeriod, (value) {
+      return _then(_value.copyWith(selectedPeriod: value));
+    });
   }
 }
 
@@ -556,8 +859,24 @@ class __$$TimecardOverviewStateLoadedImplCopyWithImpl<$Res>
 
 class _$TimecardOverviewStateLoadedImpl implements TimecardOverviewStateLoaded {
   const _$TimecardOverviewStateLoadedImpl(
-      {required final List<Timecard> timecards})
-      : _timecards = timecards;
+      {required this.userId,
+      required this.selectedPeriod,
+      required final List<Period> periods,
+      required final List<Timecard> timecards})
+      : _periods = periods,
+        _timecards = timecards;
+
+  @override
+  final String userId;
+  @override
+  final Period selectedPeriod;
+  final List<Period> _periods;
+  @override
+  List<Period> get periods {
+    if (_periods is EqualUnmodifiableListView) return _periods;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_periods);
+  }
 
   final List<Timecard> _timecards;
   @override
@@ -569,7 +888,7 @@ class _$TimecardOverviewStateLoadedImpl implements TimecardOverviewStateLoaded {
 
   @override
   String toString() {
-    return 'TimecardOverviewState.loaded(timecards: $timecards)';
+    return 'TimecardOverviewState.loaded(userId: $userId, selectedPeriod: $selectedPeriod, periods: $periods, timecards: $timecards)';
   }
 
   @override
@@ -577,13 +896,21 @@ class _$TimecardOverviewStateLoadedImpl implements TimecardOverviewStateLoaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TimecardOverviewStateLoadedImpl &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.selectedPeriod, selectedPeriod) ||
+                other.selectedPeriod == selectedPeriod) &&
+            const DeepCollectionEquality().equals(other._periods, _periods) &&
             const DeepCollectionEquality()
                 .equals(other._timecards, _timecards));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_timecards));
+  int get hashCode => Object.hash(
+      runtimeType,
+      userId,
+      selectedPeriod,
+      const DeepCollectionEquality().hash(_periods),
+      const DeepCollectionEquality().hash(_timecards));
 
   @JsonKey(ignore: true)
   @override
@@ -596,32 +923,44 @@ class _$TimecardOverviewStateLoadedImpl implements TimecardOverviewStateLoaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
-    required TResult Function() loading,
-    required TResult Function(List<Timecard> timecards) loaded,
+    required TResult Function(String userId, Period selectedPeriod,
+            List<Period> periods, List<Timecard> timecards)
+        loading,
+    required TResult Function(String userId, Period selectedPeriod,
+            List<Period> periods, List<Timecard> timecards)
+        loaded,
   }) {
-    return loaded(timecards);
+    return loaded(userId, selectedPeriod, periods, timecards);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
-    TResult? Function()? loading,
-    TResult? Function(List<Timecard> timecards)? loaded,
+    TResult? Function(String userId, Period selectedPeriod,
+            List<Period> periods, List<Timecard> timecards)?
+        loading,
+    TResult? Function(String userId, Period selectedPeriod,
+            List<Period> periods, List<Timecard> timecards)?
+        loaded,
   }) {
-    return loaded?.call(timecards);
+    return loaded?.call(userId, selectedPeriod, periods, timecards);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
-    TResult Function()? loading,
-    TResult Function(List<Timecard> timecards)? loaded,
+    TResult Function(String userId, Period selectedPeriod, List<Period> periods,
+            List<Timecard> timecards)?
+        loading,
+    TResult Function(String userId, Period selectedPeriod, List<Period> periods,
+            List<Timecard> timecards)?
+        loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(timecards);
+      return loaded(userId, selectedPeriod, periods, timecards);
     }
     return orElse();
   }
@@ -663,9 +1002,15 @@ class _$TimecardOverviewStateLoadedImpl implements TimecardOverviewStateLoaded {
 
 abstract class TimecardOverviewStateLoaded implements TimecardOverviewState {
   const factory TimecardOverviewStateLoaded(
-          {required final List<Timecard> timecards}) =
+          {required final String userId,
+          required final Period selectedPeriod,
+          required final List<Period> periods,
+          required final List<Timecard> timecards}) =
       _$TimecardOverviewStateLoadedImpl;
 
+  String get userId;
+  Period get selectedPeriod;
+  List<Period> get periods;
   List<Timecard> get timecards;
   @JsonKey(ignore: true)
   _$$TimecardOverviewStateLoadedImplCopyWith<_$TimecardOverviewStateLoadedImpl>

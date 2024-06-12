@@ -3,8 +3,8 @@ import 'package:buildnotifier/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifier/presentation/app/model/mod.dart';
 import 'package:buildnotifier/presentation/app/model/view_type.dart';
 import 'package:buildnotifier/presentation/core/view/i_view.dart';
-import 'package:buildnotifier/presentation/timecard/overview/bloc/timecard_overview_block.dart';
-import 'package:buildnotifier/presentation/timecard/overview/widget/time_cards_day_details_list_widget.dart';
+import 'package:buildnotifier/presentation/timecard/day_details/bloc/timecard_day_details_bloc.dart';
+import 'package:buildnotifier/presentation/timecard/day_details/widget/time_cards_day_details_list_widget.dart';
 import 'package:buildnotifier/theme/app_color.dart';
 
 import 'package:buildnotifier/theme/app_sizes.dart';
@@ -28,11 +28,12 @@ class TimecardDayDetailsView extends IView {
 
   @override
   Widget build(BuildContext context) {
-    var bloc = BlocProvider.of<TimecardOverviewBloc>(context);
+    var bloc = BlocProvider.of<TimecardDayDetailsBloc>(context);
 
     bloc.add(
-      TimecardOverviewEvent.load(
+      TimecardDayDetailsEvent.load(
         userID: userId,
+        date: day,
       ),
     );
 
@@ -56,7 +57,7 @@ class TimecardDayDetailsView extends IView {
           dayFormat.format(day),
         ),
       ),
-      body: BlocBuilder<TimecardOverviewBloc, TimecardOverviewState>(
+      body: BlocBuilder<TimecardDayDetailsBloc, TimecardDayDetailsState>(
         bloc: bloc,
         builder: (context, state) {
           return state.when(
@@ -65,8 +66,7 @@ class TimecardDayDetailsView extends IView {
               child: CircularProgressIndicator(),
             ),
             loaded: (timecards) {
-              var timecardGroupByDay = timecards.getByStart(day);
-              var total = timecardGroupByDay.totalHoursAndMinutes;
+              var total = timecards.totalHoursAndMinutes;
 
               return Column(
                 children: [
@@ -101,7 +101,7 @@ class TimecardDayDetailsView extends IView {
                         Sizes.size16,
                       ),
                       child: TimecardsDayDetailsListWidget(
-                        timecards: timecardGroupByDay,
+                        timecards: timecards,
                       ),
                     ),
                   ),
