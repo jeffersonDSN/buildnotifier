@@ -13,6 +13,8 @@ class HomeView extends IView {
 
   @override
   Widget build(BuildContext context) {
+    var bloc = appBloc(context);
+
     var hour = DateTime.now().hour;
     String greeting = 'Good evening';
 
@@ -22,7 +24,7 @@ class HomeView extends IView {
       greeting = 'Good afternoon';
     }
 
-    greeting += ', ${appBloc(context).state.asLogged.user.firstName}';
+    greeting += ', ${bloc.state.asLogged.user.firstName}';
 
     return Scaffold(
       appBar: AppBar(
@@ -45,19 +47,16 @@ class HomeView extends IView {
               ),
             ),
             Expanded(
-              child: ListView(
-                padding: EdgeInsets.zero,
+              child: Column(
                 children: [
-                  InkWell(
-                    child: const ListTile(
-                      leading: Icon(
-                        Icons.calendar_month,
-                        color: AppColor.primaryColorSwatch,
-                      ),
-                      title: Text('Schedule'),
+                  ListTile(
+                    leading: const Icon(
+                      Icons.calendar_month,
+                      color: AppColor.primaryColorSwatch,
                     ),
+                    title: const Text('Schedule'),
                     onTap: () {
-                      appBloc(context).add(
+                      bloc.add(
                         const AppEvent.changeView(
                           mod: Mod.schedule(
                             type: ViewType.overview(),
@@ -73,12 +72,26 @@ class HomeView extends IView {
                     ),
                     title: const Text('Timecard'),
                     onTap: () {
-                      appBloc(context).add(
+                      bloc.add(
                         const AppEvent.changeView(
                           mod: Mod.timecard(
                             type: ViewType.overview(),
                           ),
                         ),
+                      );
+                    },
+                  ),
+                  const Spacer(),
+                  const Divider(),
+                  ListTile(
+                    leading: const Icon(
+                      Icons.logout,
+                      color: AppColor.primaryColorSwatch,
+                    ),
+                    title: const Text('Sign out'),
+                    onTap: () {
+                      bloc.add(
+                        const AppEvent.signOut(),
                       );
                     },
                   ),
@@ -137,7 +150,7 @@ class HomeView extends IView {
                 ),
                 subtitle: const Text('Monitor your work hours effortlessly'),
                 onTap: () {
-                  appBloc(context).add(
+                  bloc.add(
                     const AppEvent.changeView(
                       mod: Mod.timecard(
                         type: ViewType.overview(),
@@ -161,7 +174,7 @@ class HomeView extends IView {
                 ),
                 subtitle: const Text('View your assigned appointments'),
                 onTap: () {
-                  appBloc(context).add(
+                  bloc.add(
                     const AppEvent.changeView(
                       mod: Mod.schedule(
                         type: ViewType.overview(),

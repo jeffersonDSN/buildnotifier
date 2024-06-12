@@ -15,13 +15,17 @@ class ScheduleOverviewBloc
     on<ScheduleOverviewEvent>(
       (event, emit) async {
         await event.when(
-          load: (selectedDay) async {
+          load: (selectedDay, userId) async {
             emit(ScheduleOverviewState.loading(selectDay: selectedDay));
 
-            var schedule = await controller.getByDay(selectedDay);
+            var schedule = await controller.getByDayAndUser(
+              selectedDay,
+              userId,
+            );
 
             emit(
               ScheduleOverviewState.loaded(
+                userId: userId,
                 selectDay: selectedDay,
                 appointments: schedule,
               ),
@@ -32,6 +36,7 @@ class ScheduleOverviewBloc
             add(
               ScheduleOverviewEvent.load(
                 selectDay: state.asLoaded.selectDay,
+                userId: state.asLoaded.userId,
               ),
             );
           },

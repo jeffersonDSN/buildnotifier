@@ -12,7 +12,12 @@ import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
 
 class ScheduleOverviewView extends IView {
-  const ScheduleOverviewView({super.key});
+  final String userId;
+
+  const ScheduleOverviewView({
+    super.key,
+    required this.userId,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +26,7 @@ class ScheduleOverviewView extends IView {
     bloc.add(
       ScheduleOverviewEvent.load(
         selectDay: DateTime.now(),
+        userId: userId,
       ),
     );
 
@@ -78,6 +84,7 @@ class ScheduleOverviewView extends IView {
                     bloc.add(
                       ScheduleOverviewEvent.load(
                         selectDay: focusedDay,
+                        userId: userId,
                       ),
                     );
                   },
@@ -95,7 +102,7 @@ class ScheduleOverviewView extends IView {
                 ),
               ],
             ),
-            loaded: (selectedDay, schedules) => Column(
+            loaded: (selectedDay, userId, schedules) => Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 TableCalendar(
@@ -126,6 +133,7 @@ class ScheduleOverviewView extends IView {
                     bloc.add(
                       ScheduleOverviewEvent.load(
                         selectDay: focusedDay,
+                        userId: userId,
                       ),
                     );
                   },

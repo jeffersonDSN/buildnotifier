@@ -21,7 +21,7 @@ mixin _$ScheduleOverviewState {
     required TResult Function() empty,
     required TResult Function(DateTime selectDay) loading,
     required TResult Function(
-            DateTime selectDay, List<Appointment> appointments)
+            DateTime selectDay, String userId, List<Appointment> appointments)
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -29,7 +29,8 @@ mixin _$ScheduleOverviewState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function(DateTime selectDay)? loading,
-    TResult? Function(DateTime selectDay, List<Appointment> appointments)?
+    TResult? Function(
+            DateTime selectDay, String userId, List<Appointment> appointments)?
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -37,7 +38,8 @@ mixin _$ScheduleOverviewState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function(DateTime selectDay)? loading,
-    TResult Function(DateTime selectDay, List<Appointment> appointments)?
+    TResult Function(
+            DateTime selectDay, String userId, List<Appointment> appointments)?
         loaded,
     required TResult orElse(),
   }) =>
@@ -130,7 +132,7 @@ class _$ScheduleOverviewStateEmptyImpl implements ScheduleOverviewStateEmpty {
     required TResult Function() empty,
     required TResult Function(DateTime selectDay) loading,
     required TResult Function(
-            DateTime selectDay, List<Appointment> appointments)
+            DateTime selectDay, String userId, List<Appointment> appointments)
         loaded,
   }) {
     return empty();
@@ -141,7 +143,8 @@ class _$ScheduleOverviewStateEmptyImpl implements ScheduleOverviewStateEmpty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function(DateTime selectDay)? loading,
-    TResult? Function(DateTime selectDay, List<Appointment> appointments)?
+    TResult? Function(
+            DateTime selectDay, String userId, List<Appointment> appointments)?
         loaded,
   }) {
     return empty?.call();
@@ -152,7 +155,8 @@ class _$ScheduleOverviewStateEmptyImpl implements ScheduleOverviewStateEmpty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function(DateTime selectDay)? loading,
-    TResult Function(DateTime selectDay, List<Appointment> appointments)?
+    TResult Function(
+            DateTime selectDay, String userId, List<Appointment> appointments)?
         loaded,
     required TResult orElse(),
   }) {
@@ -275,7 +279,7 @@ class _$ScheduleOverviewStateLoadingImpl
     required TResult Function() empty,
     required TResult Function(DateTime selectDay) loading,
     required TResult Function(
-            DateTime selectDay, List<Appointment> appointments)
+            DateTime selectDay, String userId, List<Appointment> appointments)
         loaded,
   }) {
     return loading(selectDay);
@@ -286,7 +290,8 @@ class _$ScheduleOverviewStateLoadingImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function(DateTime selectDay)? loading,
-    TResult? Function(DateTime selectDay, List<Appointment> appointments)?
+    TResult? Function(
+            DateTime selectDay, String userId, List<Appointment> appointments)?
         loaded,
   }) {
     return loading?.call(selectDay);
@@ -297,7 +302,8 @@ class _$ScheduleOverviewStateLoadingImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function(DateTime selectDay)? loading,
-    TResult Function(DateTime selectDay, List<Appointment> appointments)?
+    TResult Function(
+            DateTime selectDay, String userId, List<Appointment> appointments)?
         loaded,
     required TResult orElse(),
   }) {
@@ -360,7 +366,8 @@ abstract class _$$ScheduleOverviewStateLoadedImplCopyWith<$Res> {
           $Res Function(_$ScheduleOverviewStateLoadedImpl) then) =
       __$$ScheduleOverviewStateLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({DateTime selectDay, List<Appointment> appointments});
+  $Res call(
+      {DateTime selectDay, String userId, List<Appointment> appointments});
 }
 
 /// @nodoc
@@ -377,6 +384,7 @@ class __$$ScheduleOverviewStateLoadedImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? selectDay = null,
+    Object? userId = null,
     Object? appointments = null,
   }) {
     return _then(_$ScheduleOverviewStateLoadedImpl(
@@ -384,6 +392,10 @@ class __$$ScheduleOverviewStateLoadedImplCopyWithImpl<$Res>
           ? _value.selectDay
           : selectDay // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
       appointments: null == appointments
           ? _value._appointments
           : appointments // ignore: cast_nullable_to_non_nullable
@@ -396,11 +408,15 @@ class __$$ScheduleOverviewStateLoadedImplCopyWithImpl<$Res>
 
 class _$ScheduleOverviewStateLoadedImpl implements ScheduleOverviewStateLoaded {
   const _$ScheduleOverviewStateLoadedImpl(
-      {required this.selectDay, required final List<Appointment> appointments})
+      {required this.selectDay,
+      required this.userId,
+      required final List<Appointment> appointments})
       : _appointments = appointments;
 
   @override
   final DateTime selectDay;
+  @override
+  final String userId;
   final List<Appointment> _appointments;
   @override
   List<Appointment> get appointments {
@@ -411,7 +427,7 @@ class _$ScheduleOverviewStateLoadedImpl implements ScheduleOverviewStateLoaded {
 
   @override
   String toString() {
-    return 'ScheduleOverviewState.loaded(selectDay: $selectDay, appointments: $appointments)';
+    return 'ScheduleOverviewState.loaded(selectDay: $selectDay, userId: $userId, appointments: $appointments)';
   }
 
   @override
@@ -421,12 +437,13 @@ class _$ScheduleOverviewStateLoadedImpl implements ScheduleOverviewStateLoaded {
             other is _$ScheduleOverviewStateLoadedImpl &&
             (identical(other.selectDay, selectDay) ||
                 other.selectDay == selectDay) &&
+            (identical(other.userId, userId) || other.userId == userId) &&
             const DeepCollectionEquality()
                 .equals(other._appointments, _appointments));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selectDay,
+  int get hashCode => Object.hash(runtimeType, selectDay, userId,
       const DeepCollectionEquality().hash(_appointments));
 
   @JsonKey(ignore: true)
@@ -442,10 +459,10 @@ class _$ScheduleOverviewStateLoadedImpl implements ScheduleOverviewStateLoaded {
     required TResult Function() empty,
     required TResult Function(DateTime selectDay) loading,
     required TResult Function(
-            DateTime selectDay, List<Appointment> appointments)
+            DateTime selectDay, String userId, List<Appointment> appointments)
         loaded,
   }) {
-    return loaded(selectDay, appointments);
+    return loaded(selectDay, userId, appointments);
   }
 
   @override
@@ -453,10 +470,11 @@ class _$ScheduleOverviewStateLoadedImpl implements ScheduleOverviewStateLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function(DateTime selectDay)? loading,
-    TResult? Function(DateTime selectDay, List<Appointment> appointments)?
+    TResult? Function(
+            DateTime selectDay, String userId, List<Appointment> appointments)?
         loaded,
   }) {
-    return loaded?.call(selectDay, appointments);
+    return loaded?.call(selectDay, userId, appointments);
   }
 
   @override
@@ -464,12 +482,13 @@ class _$ScheduleOverviewStateLoadedImpl implements ScheduleOverviewStateLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function(DateTime selectDay)? loading,
-    TResult Function(DateTime selectDay, List<Appointment> appointments)?
+    TResult Function(
+            DateTime selectDay, String userId, List<Appointment> appointments)?
         loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(selectDay, appointments);
+      return loaded(selectDay, userId, appointments);
     }
     return orElse();
   }
@@ -512,10 +531,12 @@ class _$ScheduleOverviewStateLoadedImpl implements ScheduleOverviewStateLoaded {
 abstract class ScheduleOverviewStateLoaded implements ScheduleOverviewState {
   const factory ScheduleOverviewStateLoaded(
           {required final DateTime selectDay,
+          required final String userId,
           required final List<Appointment> appointments}) =
       _$ScheduleOverviewStateLoadedImpl;
 
   DateTime get selectDay;
+  String get userId;
   List<Appointment> get appointments;
   @JsonKey(ignore: true)
   _$$ScheduleOverviewStateLoadedImplCopyWith<_$ScheduleOverviewStateLoadedImpl>
@@ -526,19 +547,19 @@ abstract class ScheduleOverviewStateLoaded implements ScheduleOverviewState {
 mixin _$ScheduleOverviewEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(DateTime selectDay) load,
+    required TResult Function(DateTime selectDay, String userId) load,
     required TResult Function(String id) delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(DateTime selectDay)? load,
+    TResult? Function(DateTime selectDay, String userId)? load,
     TResult? Function(String id)? delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(DateTime selectDay)? load,
+    TResult Function(DateTime selectDay, String userId)? load,
     TResult Function(String id)? delete,
     required TResult orElse(),
   }) =>
@@ -590,7 +611,7 @@ abstract class _$$ScheduleOverviewEventLoadImplCopyWith<$Res> {
           $Res Function(_$ScheduleOverviewEventLoadImpl) then) =
       __$$ScheduleOverviewEventLoadImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({DateTime selectDay});
+  $Res call({DateTime selectDay, String userId});
 }
 
 /// @nodoc
@@ -607,12 +628,17 @@ class __$$ScheduleOverviewEventLoadImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? selectDay = null,
+    Object? userId = null,
   }) {
     return _then(_$ScheduleOverviewEventLoadImpl(
       selectDay: null == selectDay
           ? _value.selectDay
           : selectDay // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -620,14 +646,17 @@ class __$$ScheduleOverviewEventLoadImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ScheduleOverviewEventLoadImpl implements ScheduleOverviewEventLoad {
-  const _$ScheduleOverviewEventLoadImpl({required this.selectDay});
+  const _$ScheduleOverviewEventLoadImpl(
+      {required this.selectDay, required this.userId});
 
   @override
   final DateTime selectDay;
+  @override
+  final String userId;
 
   @override
   String toString() {
-    return 'ScheduleOverviewEvent.load(selectDay: $selectDay)';
+    return 'ScheduleOverviewEvent.load(selectDay: $selectDay, userId: $userId)';
   }
 
   @override
@@ -636,11 +665,12 @@ class _$ScheduleOverviewEventLoadImpl implements ScheduleOverviewEventLoad {
         (other.runtimeType == runtimeType &&
             other is _$ScheduleOverviewEventLoadImpl &&
             (identical(other.selectDay, selectDay) ||
-                other.selectDay == selectDay));
+                other.selectDay == selectDay) &&
+            (identical(other.userId, userId) || other.userId == userId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selectDay);
+  int get hashCode => Object.hash(runtimeType, selectDay, userId);
 
   @JsonKey(ignore: true)
   @override
@@ -652,30 +682,30 @@ class _$ScheduleOverviewEventLoadImpl implements ScheduleOverviewEventLoad {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(DateTime selectDay) load,
+    required TResult Function(DateTime selectDay, String userId) load,
     required TResult Function(String id) delete,
   }) {
-    return load(selectDay);
+    return load(selectDay, userId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(DateTime selectDay)? load,
+    TResult? Function(DateTime selectDay, String userId)? load,
     TResult? Function(String id)? delete,
   }) {
-    return load?.call(selectDay);
+    return load?.call(selectDay, userId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(DateTime selectDay)? load,
+    TResult Function(DateTime selectDay, String userId)? load,
     TResult Function(String id)? delete,
     required TResult orElse(),
   }) {
     if (load != null) {
-      return load(selectDay);
+      return load(selectDay, userId);
     }
     return orElse();
   }
@@ -713,10 +743,12 @@ class _$ScheduleOverviewEventLoadImpl implements ScheduleOverviewEventLoad {
 }
 
 abstract class ScheduleOverviewEventLoad implements ScheduleOverviewEvent {
-  const factory ScheduleOverviewEventLoad({required final DateTime selectDay}) =
-      _$ScheduleOverviewEventLoadImpl;
+  const factory ScheduleOverviewEventLoad(
+      {required final DateTime selectDay,
+      required final String userId}) = _$ScheduleOverviewEventLoadImpl;
 
   DateTime get selectDay;
+  String get userId;
   @JsonKey(ignore: true)
   _$$ScheduleOverviewEventLoadImplCopyWith<_$ScheduleOverviewEventLoadImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -790,7 +822,7 @@ class _$ScheduleOverviewEventDeleteImpl implements ScheduleOverviewEventDelete {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(DateTime selectDay) load,
+    required TResult Function(DateTime selectDay, String userId) load,
     required TResult Function(String id) delete,
   }) {
     return delete(id);
@@ -799,7 +831,7 @@ class _$ScheduleOverviewEventDeleteImpl implements ScheduleOverviewEventDelete {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(DateTime selectDay)? load,
+    TResult? Function(DateTime selectDay, String userId)? load,
     TResult? Function(String id)? delete,
   }) {
     return delete?.call(id);
@@ -808,7 +840,7 @@ class _$ScheduleOverviewEventDeleteImpl implements ScheduleOverviewEventDelete {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(DateTime selectDay)? load,
+    TResult Function(DateTime selectDay, String userId)? load,
     TResult Function(String id)? delete,
     required TResult orElse(),
   }) {

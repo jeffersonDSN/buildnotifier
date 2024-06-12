@@ -4,6 +4,7 @@ part of 'schedule_bloc.dart';
 class ScheduleOverviewEvent with _$ScheduleOverviewEvent {
   const factory ScheduleOverviewEvent.load({
     required DateTime selectDay,
+    required String userId,
   }) = ScheduleOverviewEventLoad;
 
   const factory ScheduleOverviewEvent.delete({

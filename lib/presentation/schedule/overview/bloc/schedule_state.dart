@@ -8,6 +8,7 @@ class ScheduleOverviewState with _$ScheduleOverviewState {
   }) = ScheduleOverviewStateLoading;
   const factory ScheduleOverviewState.loaded({
     required DateTime selectDay,
+    required String userId,
     required List<Appointment> appointments,
   }) = ScheduleOverviewStateLoaded;
 }

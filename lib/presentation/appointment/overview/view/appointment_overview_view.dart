@@ -19,12 +19,6 @@ class AppointmentOverviewView extends IView {
     required this.id,
   });
 
-  final TextEditingController titleController = TextEditingController();
-  final TextEditingController locationController = TextEditingController();
-
-  final DateTime startDateTime = DateTime.now();
-  final DateTime endDateTime = DateTime.now();
-
   final DateFormat dateFormat = DateFormat("MMM dd yyyy").add_jm();
 
   @override
@@ -125,11 +119,11 @@ class AppointmentOverviewView extends IView {
                                   ),
                                   gapHeight4,
                                   Text(
-                                    'Start: ${dateFormat.format(startDateTime)}',
+                                    'Start: ${dateFormat.format(appointment.startDateTime)}',
                                   ),
                                   gapHeight4,
                                   Text(
-                                    'End  : ${dateFormat.format(endDateTime)}',
+                                    'End  : ${dateFormat.format(appointment.endDateTime)}',
                                   ),
                                   gapHeight4,
                                   Row(
@@ -169,13 +163,13 @@ class AppointmentOverviewView extends IView {
                               ),
                             ),
                           ),
-                          const Card(
+                          Card(
                             child: Padding(
-                              padding: EdgeInsets.all(Sizes.size16),
+                              padding: const EdgeInsets.all(Sizes.size16),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
+                                  const Text(
                                     'Project details',
                                     style: TextStyle(
                                       fontSize: Sizes.size20,
@@ -183,11 +177,15 @@ class AppointmentOverviewView extends IView {
                                     ),
                                   ),
                                   gapHeight16,
-                                  Text('Project A'),
+                                  Text('Project: ${appointment.projectName}'),
                                   gapHeight4,
-                                  Text('Task A'),
+                                  Text('Task: ${appointment.taskName}'),
                                   gapHeight4,
-                                  Text('Description'),
+                                  const Text('Description:'),
+                                  Text(
+                                    maxLines: 3,
+                                    appointment.description,
+                                  ),
                                 ],
                               ),
                             ),
