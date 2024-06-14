@@ -150,11 +150,11 @@ class AppointmentOverviewView extends IView {
 
                                             if (Platform.isIOS) {
                                               url = Uri.parse(
-                                                'https://maps.apple.com/?saddr=${appointment.location}',
+                                                'https://maps.apple.com/?daddr=${appointment.location}',
                                               );
                                             } else {
                                               url = Uri.parse(
-                                                'https://www.google.com/maps/search/?api=1&query=${appointment.latitude},${appointment.longitude}',
+                                                'https://www.google.com/maps/dir/?api=1&destination=${appointment.location}',
                                               );
                                             }
 
