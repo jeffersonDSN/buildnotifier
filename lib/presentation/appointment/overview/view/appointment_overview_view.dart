@@ -8,6 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:intl/intl.dart';
+import 'dart:io' show Platform;
 
 import '../bloc/appointment_overview_bloc.dart';
 
@@ -145,14 +146,26 @@ class AppointmentOverviewView extends IView {
                                             'Get Direction',
                                           ),
                                           onPressed: () async {
-                                            final url = Uri.parse(
-                                              'https://www.google.com/maps/search/?api=1&query=${appointment.latitude},${appointment.longitude}',
-                                            );
+                                            if (Platform.isIOS) {
+                                              final url = Uri.parse(
+                                                'https://maps.apple.com/?ll=${appointment.latitude},${appointment.longitude}',
+                                              );
 
-                                            if (await canLaunchUrl(url)) {
-                                              await launchUrl(url);
+                                              if (await canLaunchUrl(url)) {
+                                                await launchUrl(url);
+                                              } else {
+                                                throw 'Não foi possível abrir o Apple Maps';
+                                              }
                                             } else {
-                                              throw 'Can`t open Google Maps';
+                                              final url = Uri.parse(
+                                                'https://www.google.com/maps/search/?api=1&query=${appointment.latitude},${appointment.longitude}',
+                                              );
+
+                                              if (await canLaunchUrl(url)) {
+                                                await launchUrl(url);
+                                              } else {
+                                                throw 'Can`t open Google Maps';
+                                              }
                                             }
                                           },
                                         ),
