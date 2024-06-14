@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1056176794632:android:22832261346d8991a375bd",
         "android_client_info": {
-          "package_name": "com.example.buildnotifier"
+          "package_name": "com.buildnotifier.buildnotifier"
         }
       },
       "oauth_client": [],

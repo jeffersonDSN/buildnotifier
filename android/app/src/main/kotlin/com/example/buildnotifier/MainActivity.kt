@@ -1,4 +1,4 @@
-package com.example.buildnotifier
+package com.buildnotifier.buildnotifier
 
 import io.flutter.embedding.android.FlutterActivity
 
