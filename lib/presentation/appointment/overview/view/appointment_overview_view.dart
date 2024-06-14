@@ -146,26 +146,22 @@ class AppointmentOverviewView extends IView {
                                             'Get Direction',
                                           ),
                                           onPressed: () async {
-                                            if (Platform.isIOS) {
-                                              final url = Uri.parse(
-                                                'https://maps.apple.com/?ll=${appointment.latitude},${appointment.longitude}',
-                                              );
+                                            Uri url;
 
-                                              if (await canLaunchUrl(url)) {
-                                                await launchUrl(url);
-                                              } else {
-                                                throw 'Não foi possível abrir o Apple Maps';
-                                              }
+                                            if (Platform.isIOS) {
+                                              url = Uri.parse(
+                                                'https://maps.apple.com/?saddr=${appointment.location}',
+                                              );
                                             } else {
-                                              final url = Uri.parse(
+                                              url = Uri.parse(
                                                 'https://www.google.com/maps/search/?api=1&query=${appointment.latitude},${appointment.longitude}',
                                               );
+                                            }
 
-                                              if (await canLaunchUrl(url)) {
-                                                await launchUrl(url);
-                                              } else {
-                                                throw 'Can`t open Google Maps';
-                                              }
+                                            if (await canLaunchUrl(url)) {
+                                              await launchUrl(url);
+                                            } else {
+                                              throw 'Can`t open ${Platform.isIOS ? 'Aapple' : 'Google'} Maps';
                                             }
                                           },
                                         ),
