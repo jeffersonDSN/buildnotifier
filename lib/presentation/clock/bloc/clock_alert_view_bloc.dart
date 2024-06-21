@@ -1,11 +1,10 @@
+import 'package:buildnotifier/domain/controllers/location_controller.dart';
 import 'package:buildnotifier/domain/controllers/time_card_controller.dart';
 import 'package:buildnotifier/domain/entities/crud_type.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:buildnotifier/domain/entities/timecard/timecard.dart';
-import 'package:geocoding/geocoding.dart';
-import 'package:geolocator/geolocator.dart';
 
 part 'clock_alert_view_bloc.freezed.dart';
 part 'clock_alert_view_event.dart';
@@ -15,6 +14,7 @@ class ClockAlertViewBloc
     extends Bloc<ClockAlertViewEvent, ClockAlertViewState> {
   ClockAlertViewBloc({
     required TimecardController controller,
+    required LocationController locationController,
   }) : super(const ClockAlertViewState.empty()) {
     on<ClockAlertViewEvent>(
       (event, emit) async {
@@ -43,9 +43,9 @@ class ClockAlertViewBloc
               ),
             );
 
-            var position = await _getLocation();
+            var position = await locationController.getLocation();
 
-            var location = await _getAddressFromLatLng(
+            var location = await locationController.getAddressFromLatLng(
               position!.latitude,
               position.longitude,
             );
@@ -76,50 +76,5 @@ class ClockAlertViewBloc
         );
       },
     );
-  }
-
-  Future<({double latitude, double longitude})?> _getLocation() async {
-    // Verifica se a permissão de localização foi concedida
-    bool isLocationServiceEnabled = await Geolocator.isLocationServiceEnabled();
-    if (!isLocationServiceEnabled) {
-      // Se o serviço de localização não estiver habilitado, você pode solicitar ao usuário que o ative
-      // ou fornecer uma mensagem informando que o aplicativo precisa de localização para funcionar corretamente
-      return Future(() => null);
-    }
-
-    // Verifica se a permissão de localização foi concedida
-    LocationPermission permission = await Geolocator.checkPermission();
-    if (permission == LocationPermission.denied) {
-      // Se a permissão não foi concedida, você pode solicitar ao usuário que a conceda
-      permission = await Geolocator.requestPermission();
-      if (permission == LocationPermission.denied) {
-        // Se a permissão ainda não foi concedida, você pode exibir uma mensagem informando que o aplicativo precisa de permissão de localização
-        return Future(() => null);
-      }
-    }
-
-    // Obter a posição atual do dispositivo
-    Position position = await Geolocator.getCurrentPosition(
-      desiredAccuracy: LocationAccuracy.high,
-    );
-
-    return Future(
-      () => (
-        latitude: position.latitude,
-        longitude: position.longitude,
-      ),
-    );
-  }
-
-  Future<String> _getAddressFromLatLng(
-      double latitude, double longitude) async {
-    List<Placemark> placemarks = await placemarkFromCoordinates(
-      latitude,
-      longitude,
-    );
-
-    Placemark place = placemarks[0];
-
-    return Future(() => '${place.street}, ${place.locality}');
   }
 }

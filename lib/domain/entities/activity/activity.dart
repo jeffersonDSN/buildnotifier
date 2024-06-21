@@ -1,14 +1,18 @@
+import 'package:buildnotifier/domain/entities/timecard/timecard.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'timecard.freezed.dart';
-part 'timecard.g.dart';
+part 'activity.freezed.dart';
+part 'activity.g.dart';
 
 @freezed
-class Timecard with _$Timecard {
-  factory Timecard({
+class Activity with _$Activity {
+  factory Activity({
     @Default('') String id,
     required String userId,
-    DateTime? start,
+    required String appointmentId,
+    String? projectId,
+    String? taskId,
+    required DateTime start,
     double? startLatitude,
     double? startLongitude,
     String? startLocation,
@@ -16,26 +20,18 @@ class Timecard with _$Timecard {
     double? endLatitude,
     double? endLongitude,
     String? endLocation,
-  }) = _Timecard;
+  }) = _Activity;
 
-  factory Timecard.fromJson(Map<String, Object?> json) =>
-      _$TimecardFromJson(json);
+  factory Activity.fromJson(Map<String, Object?> json) =>
+      _$ActivityFromJson(json);
 }
 
-@freezed
-class DailyTotal with _$DailyTotal {
-  factory DailyTotal({
-    required DateTime day,
-    required int totalMinutes,
-  }) = _DailyTotal;
-}
-
-extension OnTimecard on Timecard {
+extension OnActivity on Activity {
   ({int hours, int minutes}) get totalHoursAndMinutes {
     int totalMinutes = 0;
 
     if (end != null) {
-      totalMinutes += end!.difference(start!).inMinutes;
+      totalMinutes += end!.difference(start).inMinutes;
     }
 
     int hours = totalMinutes ~/ 60;
@@ -45,17 +41,13 @@ extension OnTimecard on Timecard {
   }
 }
 
-extension OnLisTimecard on List<Timecard> {
-  List<Map<String, dynamic>> toJson() {
-    return map((timecard) => timecard.toJson()).toList();
-  }
-
+extension OnLisactivity on List<Activity> {
   ({int hours, int minutes}) get totalHoursAndMinutes {
     int totalMinutes = 0;
 
-    forEach((timecard) {
-      if (timecard.end != null) {
-        totalMinutes += timecard.end!.difference(timecard.start!).inMinutes;
+    forEach((activity) {
+      if (activity.end != null) {
+        totalMinutes += activity.end!.difference(activity.start).inMinutes;
       }
     });
 
@@ -68,17 +60,17 @@ extension OnLisTimecard on List<Timecard> {
   List<DailyTotal> get dailyTotal {
     List<DailyTotal> result = [];
 
-    forEach((timecard) {
+    forEach((activity) {
       DateTime startDate = DateTime(
-        timecard.start!.year,
-        timecard.start!.month,
-        timecard.start!.day,
+        activity.start.year,
+        activity.start.month,
+        activity.start.day,
       );
 
       int totalMinutes = 0;
 
-      if (timecard.end != null) {
-        totalMinutes = timecard.end!.difference(timecard.start!).inMinutes;
+      if (activity.end != null) {
+        totalMinutes = activity.end!.difference(activity.start).inMinutes;
       }
 
       var index = result.indexWhere((card) => card.day == startDate);
@@ -101,7 +93,7 @@ extension OnLisTimecard on List<Timecard> {
     return result;
   }
 
-  List<Timecard> getByStart(DateTime value) {
+  List<Activity> getByStart(DateTime value) {
     DateTime day = DateTime(
       value.year,
       value.month,
@@ -109,11 +101,11 @@ extension OnLisTimecard on List<Timecard> {
     );
 
     var result = where(
-      (timecard) {
+      (activity) {
         DateTime startDate = DateTime(
-          timecard.start!.year,
-          timecard.start!.month,
-          timecard.start!.day,
+          activity.start.year,
+          activity.start.month,
+          activity.start.day,
         );
 
         var result = day.difference(startDate).inDays == 0;

@@ -196,7 +196,7 @@ class AppointmentsFirestoreRepository extends FireStoreRepository
     var snapshot = await collection.doc(id).get();
 
     var doc = snapshot.data() as Map<String, dynamic>;
-    var result = doc.map((key, value) {
+    var appointment = doc.map((key, value) {
       if (value is Timestamp) {
         return MapEntry(key, value.toDate().toString());
       } else {
@@ -204,7 +204,7 @@ class AppointmentsFirestoreRepository extends FireStoreRepository
       }
     });
 
-    return Appointment.fromJson({...result, 'id': snapshot.id});
+    return Appointment.fromJson({...appointment, 'id': snapshot.id});
   }
 
   @override
@@ -217,13 +217,11 @@ class AppointmentsFirestoreRepository extends FireStoreRepository
       'latitude': value.latitude,
       'longitude': value.longitude,
       'projectId': value.projectId,
-      'projectName': value.projectName,
       'taskId': value.taskId,
-      'taskName': value.taskName,
       'assignTo': value.assignTo.toJson(),
     };
 
-    await collection.doc(value.id.toString()).update(schedule);
+    await collection.doc(value.id).update(schedule);
     return true;
   }
 
@@ -237,9 +235,7 @@ class AppointmentsFirestoreRepository extends FireStoreRepository
       'latitude': value.latitude,
       'longitude': value.longitude,
       'projectId': value.projectId,
-      'projectName': value.projectName,
       'taskId': value.taskId,
-      'taskName': value.taskName,
       'assignTo': value.assignTo.toJson(),
     };
 

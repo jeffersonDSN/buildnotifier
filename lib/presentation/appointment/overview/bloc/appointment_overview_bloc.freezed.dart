@@ -16,42 +16,53 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AppointmentOverviewEvent {
-  String get id => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id) load,
+    required TResult Function(String userId) startActivity,
+    required TResult Function(String userId) stopActivity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id)? load,
+    TResult? Function(String userId)? startActivity,
+    TResult? Function(String userId)? stopActivity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id)? load,
+    TResult Function(String userId)? startActivity,
+    TResult Function(String userId)? stopActivity,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AppointmentOverviewEventLoad value) load,
+    required TResult Function(AppointmentOverviewEventStartActivity value)
+        startActivity,
+    required TResult Function(AppointmentOverviewEventStopActivity value)
+        stopActivity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AppointmentOverviewEventLoad value)? load,
+    TResult? Function(AppointmentOverviewEventStartActivity value)?
+        startActivity,
+    TResult? Function(AppointmentOverviewEventStopActivity value)? stopActivity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AppointmentOverviewEventLoad value)? load,
+    TResult Function(AppointmentOverviewEventStartActivity value)?
+        startActivity,
+    TResult Function(AppointmentOverviewEventStopActivity value)? stopActivity,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $AppointmentOverviewEventCopyWith<AppointmentOverviewEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -60,8 +71,6 @@ abstract class $AppointmentOverviewEventCopyWith<$Res> {
   factory $AppointmentOverviewEventCopyWith(AppointmentOverviewEvent value,
           $Res Function(AppointmentOverviewEvent) then) =
       _$AppointmentOverviewEventCopyWithImpl<$Res, AppointmentOverviewEvent>;
-  @useResult
-  $Res call({String id});
 }
 
 /// @nodoc
@@ -74,29 +83,14 @@ class _$AppointmentOverviewEventCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$AppointmentOverviewEventLoadImplCopyWith<$Res>
-    implements $AppointmentOverviewEventCopyWith<$Res> {
+abstract class _$$AppointmentOverviewEventLoadImplCopyWith<$Res> {
   factory _$$AppointmentOverviewEventLoadImplCopyWith(
           _$AppointmentOverviewEventLoadImpl value,
           $Res Function(_$AppointmentOverviewEventLoadImpl) then) =
       __$$AppointmentOverviewEventLoadImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({String id});
 }
@@ -162,6 +156,8 @@ class _$AppointmentOverviewEventLoadImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id) load,
+    required TResult Function(String userId) startActivity,
+    required TResult Function(String userId) stopActivity,
   }) {
     return load(id);
   }
@@ -170,6 +166,8 @@ class _$AppointmentOverviewEventLoadImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id)? load,
+    TResult? Function(String userId)? startActivity,
+    TResult? Function(String userId)? stopActivity,
   }) {
     return load?.call(id);
   }
@@ -178,6 +176,8 @@ class _$AppointmentOverviewEventLoadImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id)? load,
+    TResult Function(String userId)? startActivity,
+    TResult Function(String userId)? stopActivity,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -190,6 +190,10 @@ class _$AppointmentOverviewEventLoadImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AppointmentOverviewEventLoad value) load,
+    required TResult Function(AppointmentOverviewEventStartActivity value)
+        startActivity,
+    required TResult Function(AppointmentOverviewEventStopActivity value)
+        stopActivity,
   }) {
     return load(this);
   }
@@ -198,6 +202,9 @@ class _$AppointmentOverviewEventLoadImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AppointmentOverviewEventLoad value)? load,
+    TResult? Function(AppointmentOverviewEventStartActivity value)?
+        startActivity,
+    TResult? Function(AppointmentOverviewEventStopActivity value)? stopActivity,
   }) {
     return load?.call(this);
   }
@@ -206,6 +213,9 @@ class _$AppointmentOverviewEventLoadImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AppointmentOverviewEventLoad value)? load,
+    TResult Function(AppointmentOverviewEventStartActivity value)?
+        startActivity,
+    TResult Function(AppointmentOverviewEventStopActivity value)? stopActivity,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -220,12 +230,316 @@ abstract class AppointmentOverviewEventLoad
   const factory AppointmentOverviewEventLoad({required final String id}) =
       _$AppointmentOverviewEventLoadImpl;
 
-  @override
   String get id;
-  @override
   @JsonKey(ignore: true)
   _$$AppointmentOverviewEventLoadImplCopyWith<
           _$AppointmentOverviewEventLoadImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AppointmentOverviewEventStartActivityImplCopyWith<$Res> {
+  factory _$$AppointmentOverviewEventStartActivityImplCopyWith(
+          _$AppointmentOverviewEventStartActivityImpl value,
+          $Res Function(_$AppointmentOverviewEventStartActivityImpl) then) =
+      __$$AppointmentOverviewEventStartActivityImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String userId});
+}
+
+/// @nodoc
+class __$$AppointmentOverviewEventStartActivityImplCopyWithImpl<$Res>
+    extends _$AppointmentOverviewEventCopyWithImpl<$Res,
+        _$AppointmentOverviewEventStartActivityImpl>
+    implements _$$AppointmentOverviewEventStartActivityImplCopyWith<$Res> {
+  __$$AppointmentOverviewEventStartActivityImplCopyWithImpl(
+      _$AppointmentOverviewEventStartActivityImpl _value,
+      $Res Function(_$AppointmentOverviewEventStartActivityImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userId = null,
+  }) {
+    return _then(_$AppointmentOverviewEventStartActivityImpl(
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AppointmentOverviewEventStartActivityImpl
+    implements AppointmentOverviewEventStartActivity {
+  const _$AppointmentOverviewEventStartActivityImpl({required this.userId});
+
+  @override
+  final String userId;
+
+  @override
+  String toString() {
+    return 'AppointmentOverviewEvent.startActivity(userId: $userId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AppointmentOverviewEventStartActivityImpl &&
+            (identical(other.userId, userId) || other.userId == userId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, userId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AppointmentOverviewEventStartActivityImplCopyWith<
+          _$AppointmentOverviewEventStartActivityImpl>
+      get copyWith => __$$AppointmentOverviewEventStartActivityImplCopyWithImpl<
+          _$AppointmentOverviewEventStartActivityImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id) load,
+    required TResult Function(String userId) startActivity,
+    required TResult Function(String userId) stopActivity,
+  }) {
+    return startActivity(userId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id)? load,
+    TResult? Function(String userId)? startActivity,
+    TResult? Function(String userId)? stopActivity,
+  }) {
+    return startActivity?.call(userId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id)? load,
+    TResult Function(String userId)? startActivity,
+    TResult Function(String userId)? stopActivity,
+    required TResult orElse(),
+  }) {
+    if (startActivity != null) {
+      return startActivity(userId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppointmentOverviewEventLoad value) load,
+    required TResult Function(AppointmentOverviewEventStartActivity value)
+        startActivity,
+    required TResult Function(AppointmentOverviewEventStopActivity value)
+        stopActivity,
+  }) {
+    return startActivity(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AppointmentOverviewEventLoad value)? load,
+    TResult? Function(AppointmentOverviewEventStartActivity value)?
+        startActivity,
+    TResult? Function(AppointmentOverviewEventStopActivity value)? stopActivity,
+  }) {
+    return startActivity?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppointmentOverviewEventLoad value)? load,
+    TResult Function(AppointmentOverviewEventStartActivity value)?
+        startActivity,
+    TResult Function(AppointmentOverviewEventStopActivity value)? stopActivity,
+    required TResult orElse(),
+  }) {
+    if (startActivity != null) {
+      return startActivity(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AppointmentOverviewEventStartActivity
+    implements AppointmentOverviewEvent {
+  const factory AppointmentOverviewEventStartActivity(
+          {required final String userId}) =
+      _$AppointmentOverviewEventStartActivityImpl;
+
+  String get userId;
+  @JsonKey(ignore: true)
+  _$$AppointmentOverviewEventStartActivityImplCopyWith<
+          _$AppointmentOverviewEventStartActivityImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AppointmentOverviewEventStopActivityImplCopyWith<$Res> {
+  factory _$$AppointmentOverviewEventStopActivityImplCopyWith(
+          _$AppointmentOverviewEventStopActivityImpl value,
+          $Res Function(_$AppointmentOverviewEventStopActivityImpl) then) =
+      __$$AppointmentOverviewEventStopActivityImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String userId});
+}
+
+/// @nodoc
+class __$$AppointmentOverviewEventStopActivityImplCopyWithImpl<$Res>
+    extends _$AppointmentOverviewEventCopyWithImpl<$Res,
+        _$AppointmentOverviewEventStopActivityImpl>
+    implements _$$AppointmentOverviewEventStopActivityImplCopyWith<$Res> {
+  __$$AppointmentOverviewEventStopActivityImplCopyWithImpl(
+      _$AppointmentOverviewEventStopActivityImpl _value,
+      $Res Function(_$AppointmentOverviewEventStopActivityImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userId = null,
+  }) {
+    return _then(_$AppointmentOverviewEventStopActivityImpl(
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AppointmentOverviewEventStopActivityImpl
+    implements AppointmentOverviewEventStopActivity {
+  const _$AppointmentOverviewEventStopActivityImpl({required this.userId});
+
+  @override
+  final String userId;
+
+  @override
+  String toString() {
+    return 'AppointmentOverviewEvent.stopActivity(userId: $userId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AppointmentOverviewEventStopActivityImpl &&
+            (identical(other.userId, userId) || other.userId == userId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, userId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AppointmentOverviewEventStopActivityImplCopyWith<
+          _$AppointmentOverviewEventStopActivityImpl>
+      get copyWith => __$$AppointmentOverviewEventStopActivityImplCopyWithImpl<
+          _$AppointmentOverviewEventStopActivityImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id) load,
+    required TResult Function(String userId) startActivity,
+    required TResult Function(String userId) stopActivity,
+  }) {
+    return stopActivity(userId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id)? load,
+    TResult? Function(String userId)? startActivity,
+    TResult? Function(String userId)? stopActivity,
+  }) {
+    return stopActivity?.call(userId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id)? load,
+    TResult Function(String userId)? startActivity,
+    TResult Function(String userId)? stopActivity,
+    required TResult orElse(),
+  }) {
+    if (stopActivity != null) {
+      return stopActivity(userId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppointmentOverviewEventLoad value) load,
+    required TResult Function(AppointmentOverviewEventStartActivity value)
+        startActivity,
+    required TResult Function(AppointmentOverviewEventStopActivity value)
+        stopActivity,
+  }) {
+    return stopActivity(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AppointmentOverviewEventLoad value)? load,
+    TResult? Function(AppointmentOverviewEventStartActivity value)?
+        startActivity,
+    TResult? Function(AppointmentOverviewEventStopActivity value)? stopActivity,
+  }) {
+    return stopActivity?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppointmentOverviewEventLoad value)? load,
+    TResult Function(AppointmentOverviewEventStartActivity value)?
+        startActivity,
+    TResult Function(AppointmentOverviewEventStopActivity value)? stopActivity,
+    required TResult orElse(),
+  }) {
+    if (stopActivity != null) {
+      return stopActivity(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AppointmentOverviewEventStopActivity
+    implements AppointmentOverviewEvent {
+  const factory AppointmentOverviewEventStopActivity(
+          {required final String userId}) =
+      _$AppointmentOverviewEventStopActivityImpl;
+
+  String get userId;
+  @JsonKey(ignore: true)
+  _$$AppointmentOverviewEventStopActivityImplCopyWith<
+          _$AppointmentOverviewEventStopActivityImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -234,22 +548,43 @@ mixin _$AppointmentOverviewState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
-    required TResult Function(String id) loading,
-    required TResult Function(String id, Appointment appointment) loaded,
+    required TResult Function() loading,
+    required TResult Function(
+            Appointment appointment,
+            List<Activity> activities,
+            Project? project,
+            Task? task,
+            bool isStart,
+            bool isStartingOrStoping)
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
-    TResult? Function(String id)? loading,
-    TResult? Function(String id, Appointment appointment)? loaded,
+    TResult? Function()? loading,
+    TResult? Function(
+            Appointment appointment,
+            List<Activity> activities,
+            Project? project,
+            Task? task,
+            bool isStart,
+            bool isStartingOrStoping)?
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
-    TResult Function(String id)? loading,
-    TResult Function(String id, Appointment appointment)? loaded,
+    TResult Function()? loading,
+    TResult Function(
+            Appointment appointment,
+            List<Activity> activities,
+            Project? project,
+            Task? task,
+            bool isStart,
+            bool isStartingOrStoping)?
+        loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -340,8 +675,15 @@ class _$AppointmentOverviewStateEmptyImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
-    required TResult Function(String id) loading,
-    required TResult Function(String id, Appointment appointment) loaded,
+    required TResult Function() loading,
+    required TResult Function(
+            Appointment appointment,
+            List<Activity> activities,
+            Project? project,
+            Task? task,
+            bool isStart,
+            bool isStartingOrStoping)
+        loaded,
   }) {
     return empty();
   }
@@ -350,8 +692,15 @@ class _$AppointmentOverviewStateEmptyImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
-    TResult? Function(String id)? loading,
-    TResult? Function(String id, Appointment appointment)? loaded,
+    TResult? Function()? loading,
+    TResult? Function(
+            Appointment appointment,
+            List<Activity> activities,
+            Project? project,
+            Task? task,
+            bool isStart,
+            bool isStartingOrStoping)?
+        loaded,
   }) {
     return empty?.call();
   }
@@ -360,8 +709,15 @@ class _$AppointmentOverviewStateEmptyImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
-    TResult Function(String id)? loading,
-    TResult Function(String id, Appointment appointment)? loaded,
+    TResult Function()? loading,
+    TResult Function(
+            Appointment appointment,
+            List<Activity> activities,
+            Project? project,
+            Task? task,
+            bool isStart,
+            bool isStartingOrStoping)?
+        loaded,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -417,8 +773,6 @@ abstract class _$$AppointmentOverviewStateLoadingImplCopyWith<$Res> {
           _$AppointmentOverviewStateLoadingImpl value,
           $Res Function(_$AppointmentOverviewStateLoadingImpl) then) =
       __$$AppointmentOverviewStateLoadingImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String id});
 }
 
 /// @nodoc
@@ -430,84 +784,80 @@ class __$$AppointmentOverviewStateLoadingImplCopyWithImpl<$Res>
       _$AppointmentOverviewStateLoadingImpl _value,
       $Res Function(_$AppointmentOverviewStateLoadingImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-  }) {
-    return _then(_$AppointmentOverviewStateLoadingImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$AppointmentOverviewStateLoadingImpl
     implements AppointmentOverviewStateLoading {
-  const _$AppointmentOverviewStateLoadingImpl({required this.id});
-
-  @override
-  final String id;
+  const _$AppointmentOverviewStateLoadingImpl();
 
   @override
   String toString() {
-    return 'AppointmentOverviewState.loading(id: $id)';
+    return 'AppointmentOverviewState.loading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AppointmentOverviewStateLoadingImpl &&
-            (identical(other.id, id) || other.id == id));
+            other is _$AppointmentOverviewStateLoadingImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AppointmentOverviewStateLoadingImplCopyWith<
-          _$AppointmentOverviewStateLoadingImpl>
-      get copyWith => __$$AppointmentOverviewStateLoadingImplCopyWithImpl<
-          _$AppointmentOverviewStateLoadingImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
-    required TResult Function(String id) loading,
-    required TResult Function(String id, Appointment appointment) loaded,
+    required TResult Function() loading,
+    required TResult Function(
+            Appointment appointment,
+            List<Activity> activities,
+            Project? project,
+            Task? task,
+            bool isStart,
+            bool isStartingOrStoping)
+        loaded,
   }) {
-    return loading(id);
+    return loading();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
-    TResult? Function(String id)? loading,
-    TResult? Function(String id, Appointment appointment)? loaded,
+    TResult? Function()? loading,
+    TResult? Function(
+            Appointment appointment,
+            List<Activity> activities,
+            Project? project,
+            Task? task,
+            bool isStart,
+            bool isStartingOrStoping)?
+        loaded,
   }) {
-    return loading?.call(id);
+    return loading?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
-    TResult Function(String id)? loading,
-    TResult Function(String id, Appointment appointment)? loaded,
+    TResult Function()? loading,
+    TResult Function(
+            Appointment appointment,
+            List<Activity> activities,
+            Project? project,
+            Task? task,
+            bool isStart,
+            bool isStartingOrStoping)?
+        loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
-      return loading(id);
+      return loading();
     }
     return orElse();
   }
@@ -549,14 +899,8 @@ class _$AppointmentOverviewStateLoadingImpl
 
 abstract class AppointmentOverviewStateLoading
     implements AppointmentOverviewState {
-  const factory AppointmentOverviewStateLoading({required final String id}) =
+  const factory AppointmentOverviewStateLoading() =
       _$AppointmentOverviewStateLoadingImpl;
-
-  String get id;
-  @JsonKey(ignore: true)
-  _$$AppointmentOverviewStateLoadingImplCopyWith<
-          _$AppointmentOverviewStateLoadingImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -566,9 +910,17 @@ abstract class _$$AppointmentOverviewStateLoadedImplCopyWith<$Res> {
           $Res Function(_$AppointmentOverviewStateLoadedImpl) then) =
       __$$AppointmentOverviewStateLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String id, Appointment appointment});
+  $Res call(
+      {Appointment appointment,
+      List<Activity> activities,
+      Project? project,
+      Task? task,
+      bool isStart,
+      bool isStartingOrStoping});
 
   $AppointmentCopyWith<$Res> get appointment;
+  $ProjectCopyWith<$Res>? get project;
+  $TaskCopyWith<$Res>? get task;
 }
 
 /// @nodoc
@@ -584,18 +936,38 @@ class __$$AppointmentOverviewStateLoadedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? appointment = null,
+    Object? activities = null,
+    Object? project = freezed,
+    Object? task = freezed,
+    Object? isStart = null,
+    Object? isStartingOrStoping = null,
   }) {
     return _then(_$AppointmentOverviewStateLoadedImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       appointment: null == appointment
           ? _value.appointment
           : appointment // ignore: cast_nullable_to_non_nullable
               as Appointment,
+      activities: null == activities
+          ? _value._activities
+          : activities // ignore: cast_nullable_to_non_nullable
+              as List<Activity>,
+      project: freezed == project
+          ? _value.project
+          : project // ignore: cast_nullable_to_non_nullable
+              as Project?,
+      task: freezed == task
+          ? _value.task
+          : task // ignore: cast_nullable_to_non_nullable
+              as Task?,
+      isStart: null == isStart
+          ? _value.isStart
+          : isStart // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isStartingOrStoping: null == isStartingOrStoping
+          ? _value.isStartingOrStoping
+          : isStartingOrStoping // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -606,6 +978,30 @@ class __$$AppointmentOverviewStateLoadedImplCopyWithImpl<$Res>
       return _then(_value.copyWith(appointment: value));
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ProjectCopyWith<$Res>? get project {
+    if (_value.project == null) {
+      return null;
+    }
+
+    return $ProjectCopyWith<$Res>(_value.project!, (value) {
+      return _then(_value.copyWith(project: value));
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TaskCopyWith<$Res>? get task {
+    if (_value.task == null) {
+      return null;
+    }
+
+    return $TaskCopyWith<$Res>(_value.task!, (value) {
+      return _then(_value.copyWith(task: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -613,16 +1009,36 @@ class __$$AppointmentOverviewStateLoadedImplCopyWithImpl<$Res>
 class _$AppointmentOverviewStateLoadedImpl
     implements AppointmentOverviewStateLoaded {
   const _$AppointmentOverviewStateLoadedImpl(
-      {required this.id, required this.appointment});
+      {required this.appointment,
+      required final List<Activity> activities,
+      this.project,
+      this.task,
+      required this.isStart,
+      required this.isStartingOrStoping})
+      : _activities = activities;
 
   @override
-  final String id;
-  @override
   final Appointment appointment;
+  final List<Activity> _activities;
+  @override
+  List<Activity> get activities {
+    if (_activities is EqualUnmodifiableListView) return _activities;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_activities);
+  }
+
+  @override
+  final Project? project;
+  @override
+  final Task? task;
+  @override
+  final bool isStart;
+  @override
+  final bool isStartingOrStoping;
 
   @override
   String toString() {
-    return 'AppointmentOverviewState.loaded(id: $id, appointment: $appointment)';
+    return 'AppointmentOverviewState.loaded(appointment: $appointment, activities: $activities, project: $project, task: $task, isStart: $isStart, isStartingOrStoping: $isStartingOrStoping)';
   }
 
   @override
@@ -630,13 +1046,26 @@ class _$AppointmentOverviewStateLoadedImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppointmentOverviewStateLoadedImpl &&
-            (identical(other.id, id) || other.id == id) &&
             (identical(other.appointment, appointment) ||
-                other.appointment == appointment));
+                other.appointment == appointment) &&
+            const DeepCollectionEquality()
+                .equals(other._activities, _activities) &&
+            (identical(other.project, project) || other.project == project) &&
+            (identical(other.task, task) || other.task == task) &&
+            (identical(other.isStart, isStart) || other.isStart == isStart) &&
+            (identical(other.isStartingOrStoping, isStartingOrStoping) ||
+                other.isStartingOrStoping == isStartingOrStoping));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, appointment);
+  int get hashCode => Object.hash(
+      runtimeType,
+      appointment,
+      const DeepCollectionEquality().hash(_activities),
+      project,
+      task,
+      isStart,
+      isStartingOrStoping);
 
   @JsonKey(ignore: true)
   @override
@@ -650,32 +1079,56 @@ class _$AppointmentOverviewStateLoadedImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
-    required TResult Function(String id) loading,
-    required TResult Function(String id, Appointment appointment) loaded,
+    required TResult Function() loading,
+    required TResult Function(
+            Appointment appointment,
+            List<Activity> activities,
+            Project? project,
+            Task? task,
+            bool isStart,
+            bool isStartingOrStoping)
+        loaded,
   }) {
-    return loaded(id, appointment);
+    return loaded(
+        appointment, activities, project, task, isStart, isStartingOrStoping);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
-    TResult? Function(String id)? loading,
-    TResult? Function(String id, Appointment appointment)? loaded,
+    TResult? Function()? loading,
+    TResult? Function(
+            Appointment appointment,
+            List<Activity> activities,
+            Project? project,
+            Task? task,
+            bool isStart,
+            bool isStartingOrStoping)?
+        loaded,
   }) {
-    return loaded?.call(id, appointment);
+    return loaded?.call(
+        appointment, activities, project, task, isStart, isStartingOrStoping);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
-    TResult Function(String id)? loading,
-    TResult Function(String id, Appointment appointment)? loaded,
+    TResult Function()? loading,
+    TResult Function(
+            Appointment appointment,
+            List<Activity> activities,
+            Project? project,
+            Task? task,
+            bool isStart,
+            bool isStartingOrStoping)?
+        loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(id, appointment);
+      return loaded(
+          appointment, activities, project, task, isStart, isStartingOrStoping);
     }
     return orElse();
   }
@@ -718,11 +1171,20 @@ class _$AppointmentOverviewStateLoadedImpl
 abstract class AppointmentOverviewStateLoaded
     implements AppointmentOverviewState {
   const factory AppointmentOverviewStateLoaded(
-          {required final String id, required final Appointment appointment}) =
+          {required final Appointment appointment,
+          required final List<Activity> activities,
+          final Project? project,
+          final Task? task,
+          required final bool isStart,
+          required final bool isStartingOrStoping}) =
       _$AppointmentOverviewStateLoadedImpl;
 
-  String get id;
   Appointment get appointment;
+  List<Activity> get activities;
+  Project? get project;
+  Task? get task;
+  bool get isStart;
+  bool get isStartingOrStoping;
   @JsonKey(ignore: true)
   _$$AppointmentOverviewStateLoadedImplCopyWith<
           _$AppointmentOverviewStateLoadedImpl>

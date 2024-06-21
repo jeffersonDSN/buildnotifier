@@ -204,9 +204,7 @@ mixin _$Appointment {
   double get latitude => throw _privateConstructorUsedError;
   double get longitude => throw _privateConstructorUsedError;
   String get projectId => throw _privateConstructorUsedError;
-  String get projectName => throw _privateConstructorUsedError;
   String get taskId => throw _privateConstructorUsedError;
-  String get taskName => throw _privateConstructorUsedError;
   List<AppointmentUser> get assignTo => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -231,9 +229,7 @@ abstract class $AppointmentCopyWith<$Res> {
       double latitude,
       double longitude,
       String projectId,
-      String projectName,
       String taskId,
-      String taskName,
       List<AppointmentUser> assignTo});
 }
 
@@ -259,9 +255,7 @@ class _$AppointmentCopyWithImpl<$Res, $Val extends Appointment>
     Object? latitude = null,
     Object? longitude = null,
     Object? projectId = null,
-    Object? projectName = null,
     Object? taskId = null,
-    Object? taskName = null,
     Object? assignTo = null,
   }) {
     return _then(_value.copyWith(
@@ -301,17 +295,9 @@ class _$AppointmentCopyWithImpl<$Res, $Val extends Appointment>
           ? _value.projectId
           : projectId // ignore: cast_nullable_to_non_nullable
               as String,
-      projectName: null == projectName
-          ? _value.projectName
-          : projectName // ignore: cast_nullable_to_non_nullable
-              as String,
       taskId: null == taskId
           ? _value.taskId
           : taskId // ignore: cast_nullable_to_non_nullable
-              as String,
-      taskName: null == taskName
-          ? _value.taskName
-          : taskName // ignore: cast_nullable_to_non_nullable
               as String,
       assignTo: null == assignTo
           ? _value.assignTo
@@ -339,9 +325,7 @@ abstract class _$$AppointmentImplCopyWith<$Res>
       double latitude,
       double longitude,
       String projectId,
-      String projectName,
       String taskId,
-      String taskName,
       List<AppointmentUser> assignTo});
 }
 
@@ -365,9 +349,7 @@ class __$$AppointmentImplCopyWithImpl<$Res>
     Object? latitude = null,
     Object? longitude = null,
     Object? projectId = null,
-    Object? projectName = null,
     Object? taskId = null,
-    Object? taskName = null,
     Object? assignTo = null,
   }) {
     return _then(_$AppointmentImpl(
@@ -407,17 +389,9 @@ class __$$AppointmentImplCopyWithImpl<$Res>
           ? _value.projectId
           : projectId // ignore: cast_nullable_to_non_nullable
               as String,
-      projectName: null == projectName
-          ? _value.projectName
-          : projectName // ignore: cast_nullable_to_non_nullable
-              as String,
       taskId: null == taskId
           ? _value.taskId
           : taskId // ignore: cast_nullable_to_non_nullable
-              as String,
-      taskName: null == taskName
-          ? _value.taskName
-          : taskName // ignore: cast_nullable_to_non_nullable
               as String,
       assignTo: null == assignTo
           ? _value._assignTo
@@ -440,9 +414,7 @@ class _$AppointmentImpl implements _Appointment {
       this.latitude = 0,
       this.longitude = 0,
       this.projectId = '',
-      this.projectName = '',
       this.taskId = '',
-      this.taskName = '',
       final List<AppointmentUser> assignTo = const []})
       : _assignTo = assignTo;
 
@@ -476,13 +448,7 @@ class _$AppointmentImpl implements _Appointment {
   final String projectId;
   @override
   @JsonKey()
-  final String projectName;
-  @override
-  @JsonKey()
   final String taskId;
-  @override
-  @JsonKey()
-  final String taskName;
   final List<AppointmentUser> _assignTo;
   @override
   @JsonKey()
@@ -494,7 +460,7 @@ class _$AppointmentImpl implements _Appointment {
 
   @override
   String toString() {
-    return 'Appointment(id: $id, title: $title, location: $location, startDateTime: $startDateTime, endDateTime: $endDateTime, description: $description, latitude: $latitude, longitude: $longitude, projectId: $projectId, projectName: $projectName, taskId: $taskId, taskName: $taskName, assignTo: $assignTo)';
+    return 'Appointment(id: $id, title: $title, location: $location, startDateTime: $startDateTime, endDateTime: $endDateTime, description: $description, latitude: $latitude, longitude: $longitude, projectId: $projectId, taskId: $taskId, assignTo: $assignTo)';
   }
 
   @override
@@ -518,11 +484,7 @@ class _$AppointmentImpl implements _Appointment {
                 other.longitude == longitude) &&
             (identical(other.projectId, projectId) ||
                 other.projectId == projectId) &&
-            (identical(other.projectName, projectName) ||
-                other.projectName == projectName) &&
             (identical(other.taskId, taskId) || other.taskId == taskId) &&
-            (identical(other.taskName, taskName) ||
-                other.taskName == taskName) &&
             const DeepCollectionEquality().equals(other._assignTo, _assignTo));
   }
 
@@ -539,9 +501,7 @@ class _$AppointmentImpl implements _Appointment {
       latitude,
       longitude,
       projectId,
-      projectName,
       taskId,
-      taskName,
       const DeepCollectionEquality().hash(_assignTo));
 
   @JsonKey(ignore: true)
@@ -569,9 +529,7 @@ abstract class _Appointment implements Appointment {
       final double latitude,
       final double longitude,
       final String projectId,
-      final String projectName,
       final String taskId,
-      final String taskName,
       final List<AppointmentUser> assignTo}) = _$AppointmentImpl;
 
   factory _Appointment.fromJson(Map<String, dynamic> json) =
@@ -596,11 +554,7 @@ abstract class _Appointment implements Appointment {
   @override
   String get projectId;
   @override
-  String get projectName;
-  @override
   String get taskId;
-  @override
-  String get taskName;
   @override
   List<AppointmentUser> get assignTo;
   @override

@@ -1,3 +1,4 @@
+import 'package:buildnotifier/domain/entities/timecard/timecard.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'appointment.freezed.dart';
@@ -33,9 +34,7 @@ class Appointment with _$Appointment {
     @Default(0) double latitude,
     @Default(0) double longitude,
     @Default('') String projectId,
-    @Default('') String projectName,
     @Default('') String taskId,
-    @Default('') String taskName,
     @Default([]) List<AppointmentUser> assignTo,
   }) = _Appointment;
 

@@ -1,5 +1,7 @@
+import 'package:buildnotifier/domain/controllers/location_controller.dart';
 import 'package:buildnotifier/domain/controllers/time_card_controller.dart';
 import 'package:buildnotifier/infrastructure/repositories/firestore/timecard_firestore_repository.dart';
+import 'package:buildnotifier/infrastructure/repositories/http/location_repository.dart';
 import 'package:buildnotifier/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifier/presentation/clock/bloc/clock_alert_view_bloc.dart';
 import 'package:buildnotifier/presentation/clock/view/clock_alert_view.dart';
@@ -19,6 +21,9 @@ class ClockDialog extends IView {
           repository: TimecardFireStoreRepository(
             tenantId: appBloc(context).state.asLogged.user.tenant,
           ),
+        ),
+        locationController: LocationController(
+          repository: LocationRepository(),
         ),
       ),
       child: const ClockAlertView(),
