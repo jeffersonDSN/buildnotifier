@@ -18,19 +18,19 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ClockAlertViewEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String userID) load,
+    required TResult Function(User userID) load,
     required TResult Function(Timecard clock, VoidCallback callback) save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String userID)? load,
+    TResult? Function(User userID)? load,
     TResult? Function(Timecard clock, VoidCallback callback)? save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String userID)? load,
+    TResult Function(User userID)? load,
     TResult Function(Timecard clock, VoidCallback callback)? save,
     required TResult orElse(),
   }) =>
@@ -81,7 +81,7 @@ abstract class _$$ClockAlertViewEventLoadImplCopyWith<$Res> {
           $Res Function(_$ClockAlertViewEventLoadImpl) then) =
       __$$ClockAlertViewEventLoadImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String userID});
+  $Res call({User userID});
 }
 
 /// @nodoc
@@ -97,13 +97,13 @@ class __$$ClockAlertViewEventLoadImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userID = null,
+    Object? userID = freezed,
   }) {
     return _then(_$ClockAlertViewEventLoadImpl(
-      userID: null == userID
+      userID: freezed == userID
           ? _value.userID
           : userID // ignore: cast_nullable_to_non_nullable
-              as String,
+              as User,
     ));
   }
 }
@@ -114,7 +114,7 @@ class _$ClockAlertViewEventLoadImpl implements ClockAlertViewEventLoad {
   const _$ClockAlertViewEventLoadImpl({required this.userID});
 
   @override
-  final String userID;
+  final User userID;
 
   @override
   String toString() {
@@ -126,11 +126,12 @@ class _$ClockAlertViewEventLoadImpl implements ClockAlertViewEventLoad {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClockAlertViewEventLoadImpl &&
-            (identical(other.userID, userID) || other.userID == userID));
+            const DeepCollectionEquality().equals(other.userID, userID));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, userID);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(userID));
 
   @JsonKey(ignore: true)
   @override
@@ -142,7 +143,7 @@ class _$ClockAlertViewEventLoadImpl implements ClockAlertViewEventLoad {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String userID) load,
+    required TResult Function(User userID) load,
     required TResult Function(Timecard clock, VoidCallback callback) save,
   }) {
     return load(userID);
@@ -151,7 +152,7 @@ class _$ClockAlertViewEventLoadImpl implements ClockAlertViewEventLoad {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String userID)? load,
+    TResult? Function(User userID)? load,
     TResult? Function(Timecard clock, VoidCallback callback)? save,
   }) {
     return load?.call(userID);
@@ -160,7 +161,7 @@ class _$ClockAlertViewEventLoadImpl implements ClockAlertViewEventLoad {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String userID)? load,
+    TResult Function(User userID)? load,
     TResult Function(Timecard clock, VoidCallback callback)? save,
     required TResult orElse(),
   }) {
@@ -203,10 +204,10 @@ class _$ClockAlertViewEventLoadImpl implements ClockAlertViewEventLoad {
 }
 
 abstract class ClockAlertViewEventLoad implements ClockAlertViewEvent {
-  const factory ClockAlertViewEventLoad({required final String userID}) =
+  const factory ClockAlertViewEventLoad({required final User userID}) =
       _$ClockAlertViewEventLoadImpl;
 
-  String get userID;
+  User get userID;
   @JsonKey(ignore: true)
   _$$ClockAlertViewEventLoadImplCopyWith<_$ClockAlertViewEventLoadImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -300,7 +301,7 @@ class _$ClockAlertViewEventSaveImpl implements ClockAlertViewEventSave {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String userID) load,
+    required TResult Function(User userID) load,
     required TResult Function(Timecard clock, VoidCallback callback) save,
   }) {
     return save(clock, callback);
@@ -309,7 +310,7 @@ class _$ClockAlertViewEventSaveImpl implements ClockAlertViewEventSave {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String userID)? load,
+    TResult? Function(User userID)? load,
     TResult? Function(Timecard clock, VoidCallback callback)? save,
   }) {
     return save?.call(clock, callback);
@@ -318,7 +319,7 @@ class _$ClockAlertViewEventSaveImpl implements ClockAlertViewEventSave {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String userID)? load,
+    TResult Function(User userID)? load,
     TResult Function(Timecard clock, VoidCallback callback)? save,
     required TResult orElse(),
   }) {

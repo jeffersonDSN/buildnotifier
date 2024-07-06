@@ -16,7 +16,7 @@ class ClockAlertView extends IView {
 
     bloc.add(
       ClockAlertViewEvent.load(
-        userID: appBloc(context).state.asLogged.user.id,
+        userID: appBloc(context).state.asLogged.user,
       ),
     );
 

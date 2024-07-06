@@ -3,7 +3,7 @@ part of 'clock_alert_view_bloc.dart';
 @freezed
 class ClockAlertViewEvent with _$ClockAlertViewEvent {
   const factory ClockAlertViewEvent.load({
-    required String userID,
+    required User userID,
   }) = ClockAlertViewEventLoad;
 
   const factory ClockAlertViewEvent.save({

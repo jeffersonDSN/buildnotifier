@@ -302,7 +302,7 @@ class _FloatingActionMenuButton extends State<FloatingActionMenuButton> {
                               color: AppColor.lightColor,
                             ),
                           )
-                        : Text(isStart ? 'Start task' : 'End task'),
+                        : Text(isStart ? 'Start activity' : 'End activity'),
                     icon: const Icon(
                       Icons.timer,
                     ),

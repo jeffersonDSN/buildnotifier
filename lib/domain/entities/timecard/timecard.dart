@@ -7,7 +7,9 @@ part 'timecard.g.dart';
 class Timecard with _$Timecard {
   factory Timecard({
     @Default('') String id,
-    required String userId,
+    required String employeeId,
+    @Default('') String employeeFirstName,
+    @Default('') String employeeLastName,
     DateTime? start,
     double? startLatitude,
     double? startLongitude,
@@ -46,10 +48,6 @@ extension OnTimecard on Timecard {
 }
 
 extension OnLisTimecard on List<Timecard> {
-  List<Map<String, dynamic>> toJson() {
-    return map((timecard) => timecard.toJson()).toList();
-  }
-
   ({int hours, int minutes}) get totalHoursAndMinutes {
     int totalMinutes = 0;
 

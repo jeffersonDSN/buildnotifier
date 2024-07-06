@@ -1,6 +1,7 @@
 import 'package:buildnotifier/domain/controllers/location_controller.dart';
 import 'package:buildnotifier/domain/controllers/time_card_controller.dart';
 import 'package:buildnotifier/domain/entities/crud_type.dart';
+import 'package:buildnotifier/domain/entities/user/user.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -19,12 +20,15 @@ class ClockAlertViewBloc
     on<ClockAlertViewEvent>(
       (event, emit) async {
         await event.when(
-          load: (userID) async {
+          load: (user) async {
             emit(const ClockAlertViewState.loading());
-            var clock = await controller.getLastTimecardByUserId(userID);
+            var clock = await controller.getLastTimecardByUserId(user.id);
 
-            clock ??= Timecard(userId: userID);
-            clock = clock.end == null ? clock : Timecard(userId: userID);
+            clock ??= Timecard(
+              employeeId: user.id,
+              employeeFirstName: user.firstName,
+              employeeLastName: user.lastName,
+            );
 
             emit(
               ClockAlertViewState.loaded(

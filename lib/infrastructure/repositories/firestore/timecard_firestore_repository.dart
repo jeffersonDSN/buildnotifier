@@ -33,12 +33,12 @@ class TimecardFireStoreRepository extends FireStoreRepository
 
   @override
   Future<List<Timecard>> getAllOfPeriod(
-    String userId,
+    String employeeId,
     DateTime startDate,
     DateTime endDate,
   ) async {
     var querySnapshot = await collection
-        .where('userId', isEqualTo: userId)
+        .where('employeeId', isEqualTo: employeeId)
         .where('start', isGreaterThanOrEqualTo: startDate)
         .where('start', isLessThanOrEqualTo: endDate)
         .get();
@@ -63,14 +63,14 @@ class TimecardFireStoreRepository extends FireStoreRepository
 
   @override
   Future<List<Timecard>> getAllByUserIdDate(
-    String userId,
+    String employeeId,
     DateTime date,
   ) async {
     var startDay = DateTime(date.year, date.month, date.day);
     var endDay = startDay.add(const Duration(hours: 23, minutes: 59));
 
     var querySnapshot = await collection
-        .where('userId', isEqualTo: userId)
+        .where('employeeId', isEqualTo: employeeId)
         .where('start', isGreaterThanOrEqualTo: startDay)
         .where('start', isLessThanOrEqualTo: endDay)
         .orderBy('start', descending: true)
@@ -95,9 +95,9 @@ class TimecardFireStoreRepository extends FireStoreRepository
   }
 
   @override
-  Future<List<Timecard>> getAllByUserId(String userId) async {
+  Future<List<Timecard>> getAllByUserId(String employeeId) async {
     var querySnapshot = await collection
-        .where('userId', isEqualTo: userId)
+        .where('employeeId', isEqualTo: employeeId)
         .orderBy('start', descending: true)
         .get();
 
@@ -120,9 +120,13 @@ class TimecardFireStoreRepository extends FireStoreRepository
   }
 
   @override
-  Future<Timecard?> getLastTimecardByUserId(String userId) async {
+  Future<Timecard?> getLastTimecardByUserId(String employeeId) async {
     var querySnapshot = await collection
-        .where('userId', isEqualTo: userId)
+        .where('employeeId', isEqualTo: employeeId)
+        .where(
+          'start',
+          isGreaterThan: DateTime.now().copyWith(hour: 0, minute: 0),
+        )
         .orderBy('start', descending: true)
         .get();
 
@@ -137,16 +141,20 @@ class TimecardFireStoreRepository extends FireStoreRepository
         }
       });
 
-      return Timecard.fromJson({...result, 'id': snapshot.id});
+      var timacard = Timecard.fromJson({...result, 'id': snapshot.id});
+
+      return timacard.end == null ? timacard : null;
     }
 
-    return Future(() => null);
+    return null;
   }
 
   @override
   Future<bool> post(Timecard clock) async {
     var schedule = {
-      'userId': clock.userId,
+      'employeeId': clock.employeeId,
+      'employeeFirstName': clock.employeeFirstName,
+      'employeeLastName': clock.employeeLastName,
       'start': clock.start,
       'startLatitude': clock.startLatitude,
       'startLongitude': clock.startLongitude,
@@ -164,7 +172,9 @@ class TimecardFireStoreRepository extends FireStoreRepository
   @override
   Future<bool> put(Timecard clock) async {
     var schedule = {
-      'userId': clock.userId,
+      'employeeId': clock.employeeId,
+      'employeeFirstName': clock.employeeFirstName,
+      'employeeLastName': clock.employeeLastName,
       'start': clock.start,
       'startLatitude': clock.startLatitude,
       'startLongitude': clock.startLongitude,
