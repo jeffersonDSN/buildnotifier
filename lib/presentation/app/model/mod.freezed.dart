@@ -21,6 +21,8 @@ mixin _$Mod {
     required TResult Function() home,
     required TResult Function(ViewType type) schedule,
     required TResult Function(ViewType type) timecard,
+    required TResult Function(ViewType type) chat,
+    required TResult Function() menu,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +30,8 @@ mixin _$Mod {
     TResult? Function()? home,
     TResult? Function(ViewType type)? schedule,
     TResult? Function(ViewType type)? timecard,
+    TResult? Function(ViewType type)? chat,
+    TResult? Function()? menu,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +39,8 @@ mixin _$Mod {
     TResult Function()? home,
     TResult Function(ViewType type)? schedule,
     TResult Function(ViewType type)? timecard,
+    TResult Function(ViewType type)? chat,
+    TResult Function()? menu,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +49,8 @@ mixin _$Mod {
     required TResult Function(ModHome value) home,
     required TResult Function(ModSchedule value) schedule,
     required TResult Function(ModTimecard value) timecard,
+    required TResult Function(ModChat value) chat,
+    required TResult Function(ModMenu value) menu,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +58,8 @@ mixin _$Mod {
     TResult? Function(ModHome value)? home,
     TResult? Function(ModSchedule value)? schedule,
     TResult? Function(ModTimecard value)? timecard,
+    TResult? Function(ModChat value)? chat,
+    TResult? Function(ModMenu value)? menu,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +67,8 @@ mixin _$Mod {
     TResult Function(ModHome value)? home,
     TResult Function(ModSchedule value)? schedule,
     TResult Function(ModTimecard value)? timecard,
+    TResult Function(ModChat value)? chat,
+    TResult Function(ModMenu value)? menu,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -119,6 +131,8 @@ class _$ModHomeImpl implements ModHome {
     required TResult Function() home,
     required TResult Function(ViewType type) schedule,
     required TResult Function(ViewType type) timecard,
+    required TResult Function(ViewType type) chat,
+    required TResult Function() menu,
   }) {
     return home();
   }
@@ -129,6 +143,8 @@ class _$ModHomeImpl implements ModHome {
     TResult? Function()? home,
     TResult? Function(ViewType type)? schedule,
     TResult? Function(ViewType type)? timecard,
+    TResult? Function(ViewType type)? chat,
+    TResult? Function()? menu,
   }) {
     return home?.call();
   }
@@ -139,6 +155,8 @@ class _$ModHomeImpl implements ModHome {
     TResult Function()? home,
     TResult Function(ViewType type)? schedule,
     TResult Function(ViewType type)? timecard,
+    TResult Function(ViewType type)? chat,
+    TResult Function()? menu,
     required TResult orElse(),
   }) {
     if (home != null) {
@@ -153,6 +171,8 @@ class _$ModHomeImpl implements ModHome {
     required TResult Function(ModHome value) home,
     required TResult Function(ModSchedule value) schedule,
     required TResult Function(ModTimecard value) timecard,
+    required TResult Function(ModChat value) chat,
+    required TResult Function(ModMenu value) menu,
   }) {
     return home(this);
   }
@@ -163,6 +183,8 @@ class _$ModHomeImpl implements ModHome {
     TResult? Function(ModHome value)? home,
     TResult? Function(ModSchedule value)? schedule,
     TResult? Function(ModTimecard value)? timecard,
+    TResult? Function(ModChat value)? chat,
+    TResult? Function(ModMenu value)? menu,
   }) {
     return home?.call(this);
   }
@@ -173,6 +195,8 @@ class _$ModHomeImpl implements ModHome {
     TResult Function(ModHome value)? home,
     TResult Function(ModSchedule value)? schedule,
     TResult Function(ModTimecard value)? timecard,
+    TResult Function(ModChat value)? chat,
+    TResult Function(ModMenu value)? menu,
     required TResult orElse(),
   }) {
     if (home != null) {
@@ -263,6 +287,8 @@ class _$ModScheduleImpl implements ModSchedule {
     required TResult Function() home,
     required TResult Function(ViewType type) schedule,
     required TResult Function(ViewType type) timecard,
+    required TResult Function(ViewType type) chat,
+    required TResult Function() menu,
   }) {
     return schedule(type);
   }
@@ -273,6 +299,8 @@ class _$ModScheduleImpl implements ModSchedule {
     TResult? Function()? home,
     TResult? Function(ViewType type)? schedule,
     TResult? Function(ViewType type)? timecard,
+    TResult? Function(ViewType type)? chat,
+    TResult? Function()? menu,
   }) {
     return schedule?.call(type);
   }
@@ -283,6 +311,8 @@ class _$ModScheduleImpl implements ModSchedule {
     TResult Function()? home,
     TResult Function(ViewType type)? schedule,
     TResult Function(ViewType type)? timecard,
+    TResult Function(ViewType type)? chat,
+    TResult Function()? menu,
     required TResult orElse(),
   }) {
     if (schedule != null) {
@@ -297,6 +327,8 @@ class _$ModScheduleImpl implements ModSchedule {
     required TResult Function(ModHome value) home,
     required TResult Function(ModSchedule value) schedule,
     required TResult Function(ModTimecard value) timecard,
+    required TResult Function(ModChat value) chat,
+    required TResult Function(ModMenu value) menu,
   }) {
     return schedule(this);
   }
@@ -307,6 +339,8 @@ class _$ModScheduleImpl implements ModSchedule {
     TResult? Function(ModHome value)? home,
     TResult? Function(ModSchedule value)? schedule,
     TResult? Function(ModTimecard value)? timecard,
+    TResult? Function(ModChat value)? chat,
+    TResult? Function(ModMenu value)? menu,
   }) {
     return schedule?.call(this);
   }
@@ -317,6 +351,8 @@ class _$ModScheduleImpl implements ModSchedule {
     TResult Function(ModHome value)? home,
     TResult Function(ModSchedule value)? schedule,
     TResult Function(ModTimecard value)? timecard,
+    TResult Function(ModChat value)? chat,
+    TResult Function(ModMenu value)? menu,
     required TResult orElse(),
   }) {
     if (schedule != null) {
@@ -412,6 +448,8 @@ class _$ModTimecardImpl implements ModTimecard {
     required TResult Function() home,
     required TResult Function(ViewType type) schedule,
     required TResult Function(ViewType type) timecard,
+    required TResult Function(ViewType type) chat,
+    required TResult Function() menu,
   }) {
     return timecard(type);
   }
@@ -422,6 +460,8 @@ class _$ModTimecardImpl implements ModTimecard {
     TResult? Function()? home,
     TResult? Function(ViewType type)? schedule,
     TResult? Function(ViewType type)? timecard,
+    TResult? Function(ViewType type)? chat,
+    TResult? Function()? menu,
   }) {
     return timecard?.call(type);
   }
@@ -432,6 +472,8 @@ class _$ModTimecardImpl implements ModTimecard {
     TResult Function()? home,
     TResult Function(ViewType type)? schedule,
     TResult Function(ViewType type)? timecard,
+    TResult Function(ViewType type)? chat,
+    TResult Function()? menu,
     required TResult orElse(),
   }) {
     if (timecard != null) {
@@ -446,6 +488,8 @@ class _$ModTimecardImpl implements ModTimecard {
     required TResult Function(ModHome value) home,
     required TResult Function(ModSchedule value) schedule,
     required TResult Function(ModTimecard value) timecard,
+    required TResult Function(ModChat value) chat,
+    required TResult Function(ModMenu value) menu,
   }) {
     return timecard(this);
   }
@@ -456,6 +500,8 @@ class _$ModTimecardImpl implements ModTimecard {
     TResult? Function(ModHome value)? home,
     TResult? Function(ModSchedule value)? schedule,
     TResult? Function(ModTimecard value)? timecard,
+    TResult? Function(ModChat value)? chat,
+    TResult? Function(ModMenu value)? menu,
   }) {
     return timecard?.call(this);
   }
@@ -466,6 +512,8 @@ class _$ModTimecardImpl implements ModTimecard {
     TResult Function(ModHome value)? home,
     TResult Function(ModSchedule value)? schedule,
     TResult Function(ModTimecard value)? timecard,
+    TResult Function(ModChat value)? chat,
+    TResult Function(ModMenu value)? menu,
     required TResult orElse(),
   }) {
     if (timecard != null) {
@@ -482,4 +530,285 @@ abstract class ModTimecard implements Mod {
   @JsonKey(ignore: true)
   _$$ModTimecardImplCopyWith<_$ModTimecardImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ModChatImplCopyWith<$Res> {
+  factory _$$ModChatImplCopyWith(
+          _$ModChatImpl value, $Res Function(_$ModChatImpl) then) =
+      __$$ModChatImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ViewType type});
+
+  $ViewTypeCopyWith<$Res> get type;
+}
+
+/// @nodoc
+class __$$ModChatImplCopyWithImpl<$Res>
+    extends _$ModCopyWithImpl<$Res, _$ModChatImpl>
+    implements _$$ModChatImplCopyWith<$Res> {
+  __$$ModChatImplCopyWithImpl(
+      _$ModChatImpl _value, $Res Function(_$ModChatImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+  }) {
+    return _then(_$ModChatImpl(
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ViewType,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ViewTypeCopyWith<$Res> get type {
+    return $ViewTypeCopyWith<$Res>(_value.type, (value) {
+      return _then(_value.copyWith(type: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$ModChatImpl implements ModChat {
+  const _$ModChatImpl({required this.type});
+
+  @override
+  final ViewType type;
+
+  @override
+  String toString() {
+    return 'Mod.chat(type: $type)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ModChatImpl &&
+            (identical(other.type, type) || other.type == type));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, type);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ModChatImplCopyWith<_$ModChatImpl> get copyWith =>
+      __$$ModChatImplCopyWithImpl<_$ModChatImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() home,
+    required TResult Function(ViewType type) schedule,
+    required TResult Function(ViewType type) timecard,
+    required TResult Function(ViewType type) chat,
+    required TResult Function() menu,
+  }) {
+    return chat(type);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? home,
+    TResult? Function(ViewType type)? schedule,
+    TResult? Function(ViewType type)? timecard,
+    TResult? Function(ViewType type)? chat,
+    TResult? Function()? menu,
+  }) {
+    return chat?.call(type);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? home,
+    TResult Function(ViewType type)? schedule,
+    TResult Function(ViewType type)? timecard,
+    TResult Function(ViewType type)? chat,
+    TResult Function()? menu,
+    required TResult orElse(),
+  }) {
+    if (chat != null) {
+      return chat(type);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ModHome value) home,
+    required TResult Function(ModSchedule value) schedule,
+    required TResult Function(ModTimecard value) timecard,
+    required TResult Function(ModChat value) chat,
+    required TResult Function(ModMenu value) menu,
+  }) {
+    return chat(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ModHome value)? home,
+    TResult? Function(ModSchedule value)? schedule,
+    TResult? Function(ModTimecard value)? timecard,
+    TResult? Function(ModChat value)? chat,
+    TResult? Function(ModMenu value)? menu,
+  }) {
+    return chat?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ModHome value)? home,
+    TResult Function(ModSchedule value)? schedule,
+    TResult Function(ModTimecard value)? timecard,
+    TResult Function(ModChat value)? chat,
+    TResult Function(ModMenu value)? menu,
+    required TResult orElse(),
+  }) {
+    if (chat != null) {
+      return chat(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ModChat implements Mod {
+  const factory ModChat({required final ViewType type}) = _$ModChatImpl;
+
+  ViewType get type;
+  @JsonKey(ignore: true)
+  _$$ModChatImplCopyWith<_$ModChatImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ModMenuImplCopyWith<$Res> {
+  factory _$$ModMenuImplCopyWith(
+          _$ModMenuImpl value, $Res Function(_$ModMenuImpl) then) =
+      __$$ModMenuImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ModMenuImplCopyWithImpl<$Res>
+    extends _$ModCopyWithImpl<$Res, _$ModMenuImpl>
+    implements _$$ModMenuImplCopyWith<$Res> {
+  __$$ModMenuImplCopyWithImpl(
+      _$ModMenuImpl _value, $Res Function(_$ModMenuImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ModMenuImpl implements ModMenu {
+  const _$ModMenuImpl();
+
+  @override
+  String toString() {
+    return 'Mod.menu()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ModMenuImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() home,
+    required TResult Function(ViewType type) schedule,
+    required TResult Function(ViewType type) timecard,
+    required TResult Function(ViewType type) chat,
+    required TResult Function() menu,
+  }) {
+    return menu();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? home,
+    TResult? Function(ViewType type)? schedule,
+    TResult? Function(ViewType type)? timecard,
+    TResult? Function(ViewType type)? chat,
+    TResult? Function()? menu,
+  }) {
+    return menu?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? home,
+    TResult Function(ViewType type)? schedule,
+    TResult Function(ViewType type)? timecard,
+    TResult Function(ViewType type)? chat,
+    TResult Function()? menu,
+    required TResult orElse(),
+  }) {
+    if (menu != null) {
+      return menu();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ModHome value) home,
+    required TResult Function(ModSchedule value) schedule,
+    required TResult Function(ModTimecard value) timecard,
+    required TResult Function(ModChat value) chat,
+    required TResult Function(ModMenu value) menu,
+  }) {
+    return menu(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ModHome value)? home,
+    TResult? Function(ModSchedule value)? schedule,
+    TResult? Function(ModTimecard value)? timecard,
+    TResult? Function(ModChat value)? chat,
+    TResult? Function(ModMenu value)? menu,
+  }) {
+    return menu?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ModHome value)? home,
+    TResult Function(ModSchedule value)? schedule,
+    TResult Function(ModTimecard value)? timecard,
+    TResult Function(ModChat value)? chat,
+    TResult Function(ModMenu value)? menu,
+    required TResult orElse(),
+  }) {
+    if (menu != null) {
+      return menu(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ModMenu implements Mod {
+  const factory ModMenu() = _$ModMenuImpl;
 }

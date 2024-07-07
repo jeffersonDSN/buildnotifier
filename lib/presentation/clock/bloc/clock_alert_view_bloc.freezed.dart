@@ -82,6 +82,8 @@ abstract class _$$ClockAlertViewEventLoadImplCopyWith<$Res> {
       __$$ClockAlertViewEventLoadImplCopyWithImpl<$Res>;
   @useResult
   $Res call({User userID});
+
+  $UserCopyWith<$Res> get userID;
 }
 
 /// @nodoc
@@ -97,14 +99,22 @@ class __$$ClockAlertViewEventLoadImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userID = freezed,
+    Object? userID = null,
   }) {
     return _then(_$ClockAlertViewEventLoadImpl(
-      userID: freezed == userID
+      userID: null == userID
           ? _value.userID
           : userID // ignore: cast_nullable_to_non_nullable
               as User,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get userID {
+    return $UserCopyWith<$Res>(_value.userID, (value) {
+      return _then(_value.copyWith(userID: value));
+    });
   }
 }
 
@@ -126,12 +136,11 @@ class _$ClockAlertViewEventLoadImpl implements ClockAlertViewEventLoad {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClockAlertViewEventLoadImpl &&
-            const DeepCollectionEquality().equals(other.userID, userID));
+            (identical(other.userID, userID) || other.userID == userID));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(userID));
+  int get hashCode => Object.hash(runtimeType, userID);
 
   @JsonKey(ignore: true)
   @override

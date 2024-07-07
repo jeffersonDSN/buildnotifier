@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FireStoreRepository {
-  final CollectionReference collection;
+  final CollectionReference<Map<String, dynamic>> collection;
 
   FireStoreRepository({
     required String collectionName,

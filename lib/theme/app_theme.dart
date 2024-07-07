@@ -12,6 +12,7 @@ class AppTheme {
     cardTheme: _cardTheme,
     textTheme: _textTheme,
     listTileTheme: _listTileTheme,
+    filledButtonTheme: _filledButtonThemeData,
     outlinedButtonTheme: _outlinedButtonThemeData,
     floatingActionButtonTheme: _floatingActionButtonThemeData,
     scrollbarTheme: _scrollbarThemeData,
@@ -26,8 +27,8 @@ AppBarTheme get _appBarTheme => const AppBarTheme(
         fontWeight: FontWeight.bold,
       ),
       iconTheme: IconThemeData(
-        color: AppColor.lightColor,
         size: 24,
+        color: AppColor.lightColor,
       ),
     );
 
@@ -38,19 +39,44 @@ ColorScheme get _colorScheme => ColorScheme.fromSeed(
     );
 
 InputDecorationTheme get _inputDecorationTheme => const InputDecorationTheme(
+      isDense: true,
       filled: true,
       fillColor: AppColor.lightColor,
       prefixIconColor: AppColor.primaryColorSwatch,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(
+            Sizes.size4,
+          ),
+        ),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(
+            Sizes.size4,
+          ),
+        ),
+        borderSide: BorderSide(
+          color: AppColor.primaryColorSwatch,
+        ),
+      ),
     );
 
-CardTheme get _cardTheme => const CardTheme(
+CardTheme get _cardTheme => CardTheme(
       color: AppColor.lightColor,
       elevation: 0,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(
-          Radius.circular(Sizes.size24),
+        side: BorderSide(
+          color: AppColor.primaryColorSwatch.withOpacity(
+            .4,
+          ),
+          width: .5,
+        ),
+        borderRadius: BorderRadius.circular(
+          Sizes.size8,
         ),
       ),
+      shadowColor: AppColor.primaryColorSwatch.withOpacity(.1),
     );
 
 TextTheme get _textTheme => const TextTheme(
@@ -67,6 +93,18 @@ ListTileThemeData get _listTileTheme => const ListTileThemeData(
       iconColor: Colors.black,
       selectedColor: Colors.black,
       selectedTileColor: AppColor.backgroundColor,
+    );
+
+FilledButtonThemeData get _filledButtonThemeData => FilledButtonThemeData(
+      style: ButtonStyle(
+        shape: WidgetStatePropertyAll(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(
+              Sizes.size4,
+            ),
+          ),
+        ),
+      ),
     );
 
 OutlinedButtonThemeData get _outlinedButtonThemeData => OutlinedButtonThemeData(
