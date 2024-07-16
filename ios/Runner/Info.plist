@@ -31,7 +31,7 @@
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>We need your location to provide better services.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need your location to provide better services.</string>
+	<string>Your location assists in documenting where you start and finish work.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
