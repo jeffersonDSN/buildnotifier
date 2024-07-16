@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
             delegates: AppLocalizations.localizationsDelegates,
             child: state.when(
               empty: () => const SignIn(),
-              logged: (user, mod) => Lading(),
+              logged: (user, mod) => const Lading(),
             ),
           );
         },

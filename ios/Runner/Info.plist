@@ -51,5 +51,11 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Need camera access to measure the room.</string>
+	<key>ARKit</key>
+	<array>
+		<string>arkit</string>
+	</array>
 </dict>
 </plist>
