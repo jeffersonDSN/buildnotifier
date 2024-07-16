@@ -8,6 +8,8 @@ part 'app_event.dart';
 part 'app_state.dart';
 
 class AppBloc extends Bloc<AppEvent, AppState> {
+  final List<AppState> _stateHistory = [];
+
   AppBloc() : super(const AppState.empty()) {
     on<AppEvent>((event, emit) {
       event.when(
@@ -20,11 +22,21 @@ class AppBloc extends Bloc<AppEvent, AppState> {
           );
         },
         changeView: (mod) {
+          _stateHistory.add(state);
           emit(
             state.asLogged.copyWith(
               mod: mod,
             ),
           );
+        },
+        goBack: () {
+          if (_stateHistory.isNotEmpty) {
+            emit(
+              _stateHistory.removeLast().asLogged.copyWith(
+                  //locale: state.asLogged.locale,
+                  ),
+            );
+          }
         },
         signOut: () {
           emit(

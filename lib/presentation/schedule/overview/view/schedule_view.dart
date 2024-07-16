@@ -38,9 +38,7 @@ class ScheduleOverviewView extends IView {
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
             appBloc(context).add(
-              const AppEvent.changeView(
-                mod: Mod.home(),
-              ),
+              const AppEvent.goBack(),
             );
           },
         ),

@@ -10,5 +10,7 @@ class AppEvent with _$AppEvent {
     required Mod mod,
   }) = AppEventChangeView;
 
+  const factory AppEvent.goBack() = AppEventGoBack;
+
   const factory AppEvent.signOut() = AppEventSignOut;
 }

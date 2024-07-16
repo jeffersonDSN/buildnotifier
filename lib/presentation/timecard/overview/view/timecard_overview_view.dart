@@ -1,6 +1,7 @@
 import 'package:buildnotifier/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifier/presentation/app/model/mod.dart';
 import 'package:buildnotifier/presentation/app/model/view_type.dart';
+import 'package:buildnotifier/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifier/presentation/core/view/i_view.dart';
 import 'package:buildnotifier/presentation/timecard/overview/bloc/timecard_overview_bloc.dart';
 import 'package:buildnotifier/presentation/timecard/overview/widget/time_cards_overview_widget.dart';
@@ -34,13 +35,11 @@ class TimecardOverviewView extends IView {
           ),
           onPressed: () {
             appBloc(context).add(
-              const AppEvent.changeView(
-                mod: Mod.home(),
-              ),
+              const AppEvent.goBack(),
             );
           },
         ),
-        title: const Text('Timecards'),
+        title: Text(context.tr.timecards),
       ),
       body: BlocBuilder<TimecardOverviewBloc, TimecardOverviewState>(
         bloc: bloc,

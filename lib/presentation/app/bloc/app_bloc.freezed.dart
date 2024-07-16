@@ -20,6 +20,7 @@ mixin _$AppEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(User user) signIn,
     required TResult Function(Mod mod) changeView,
+    required TResult Function() goBack,
     required TResult Function() signOut,
   }) =>
       throw _privateConstructorUsedError;
@@ -27,6 +28,7 @@ mixin _$AppEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(User user)? signIn,
     TResult? Function(Mod mod)? changeView,
+    TResult? Function()? goBack,
     TResult? Function()? signOut,
   }) =>
       throw _privateConstructorUsedError;
@@ -34,6 +36,7 @@ mixin _$AppEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? signIn,
     TResult Function(Mod mod)? changeView,
+    TResult Function()? goBack,
     TResult Function()? signOut,
     required TResult orElse(),
   }) =>
@@ -42,6 +45,7 @@ mixin _$AppEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(AppEventSignIn value) signIn,
     required TResult Function(AppEventChangeView value) changeView,
+    required TResult Function(AppEventGoBack value) goBack,
     required TResult Function(AppEventSignOut value) signOut,
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +53,7 @@ mixin _$AppEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AppEventSignIn value)? signIn,
     TResult? Function(AppEventChangeView value)? changeView,
+    TResult? Function(AppEventGoBack value)? goBack,
     TResult? Function(AppEventSignOut value)? signOut,
   }) =>
       throw _privateConstructorUsedError;
@@ -56,6 +61,7 @@ mixin _$AppEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AppEventSignIn value)? signIn,
     TResult Function(AppEventChangeView value)? changeView,
+    TResult Function(AppEventGoBack value)? goBack,
     TResult Function(AppEventSignOut value)? signOut,
     required TResult orElse(),
   }) =>
@@ -156,6 +162,7 @@ class _$AppEventSignInImpl implements AppEventSignIn {
   TResult when<TResult extends Object?>({
     required TResult Function(User user) signIn,
     required TResult Function(Mod mod) changeView,
+    required TResult Function() goBack,
     required TResult Function() signOut,
   }) {
     return signIn(user);
@@ -166,6 +173,7 @@ class _$AppEventSignInImpl implements AppEventSignIn {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(User user)? signIn,
     TResult? Function(Mod mod)? changeView,
+    TResult? Function()? goBack,
     TResult? Function()? signOut,
   }) {
     return signIn?.call(user);
@@ -176,6 +184,7 @@ class _$AppEventSignInImpl implements AppEventSignIn {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? signIn,
     TResult Function(Mod mod)? changeView,
+    TResult Function()? goBack,
     TResult Function()? signOut,
     required TResult orElse(),
   }) {
@@ -190,6 +199,7 @@ class _$AppEventSignInImpl implements AppEventSignIn {
   TResult map<TResult extends Object?>({
     required TResult Function(AppEventSignIn value) signIn,
     required TResult Function(AppEventChangeView value) changeView,
+    required TResult Function(AppEventGoBack value) goBack,
     required TResult Function(AppEventSignOut value) signOut,
   }) {
     return signIn(this);
@@ -200,6 +210,7 @@ class _$AppEventSignInImpl implements AppEventSignIn {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AppEventSignIn value)? signIn,
     TResult? Function(AppEventChangeView value)? changeView,
+    TResult? Function(AppEventGoBack value)? goBack,
     TResult? Function(AppEventSignOut value)? signOut,
   }) {
     return signIn?.call(this);
@@ -210,6 +221,7 @@ class _$AppEventSignInImpl implements AppEventSignIn {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AppEventSignIn value)? signIn,
     TResult Function(AppEventChangeView value)? changeView,
+    TResult Function(AppEventGoBack value)? goBack,
     TResult Function(AppEventSignOut value)? signOut,
     required TResult orElse(),
   }) {
@@ -307,6 +319,7 @@ class _$AppEventChangeViewImpl implements AppEventChangeView {
   TResult when<TResult extends Object?>({
     required TResult Function(User user) signIn,
     required TResult Function(Mod mod) changeView,
+    required TResult Function() goBack,
     required TResult Function() signOut,
   }) {
     return changeView(mod);
@@ -317,6 +330,7 @@ class _$AppEventChangeViewImpl implements AppEventChangeView {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(User user)? signIn,
     TResult? Function(Mod mod)? changeView,
+    TResult? Function()? goBack,
     TResult? Function()? signOut,
   }) {
     return changeView?.call(mod);
@@ -327,6 +341,7 @@ class _$AppEventChangeViewImpl implements AppEventChangeView {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? signIn,
     TResult Function(Mod mod)? changeView,
+    TResult Function()? goBack,
     TResult Function()? signOut,
     required TResult orElse(),
   }) {
@@ -341,6 +356,7 @@ class _$AppEventChangeViewImpl implements AppEventChangeView {
   TResult map<TResult extends Object?>({
     required TResult Function(AppEventSignIn value) signIn,
     required TResult Function(AppEventChangeView value) changeView,
+    required TResult Function(AppEventGoBack value) goBack,
     required TResult Function(AppEventSignOut value) signOut,
   }) {
     return changeView(this);
@@ -351,6 +367,7 @@ class _$AppEventChangeViewImpl implements AppEventChangeView {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AppEventSignIn value)? signIn,
     TResult? Function(AppEventChangeView value)? changeView,
+    TResult? Function(AppEventGoBack value)? goBack,
     TResult? Function(AppEventSignOut value)? signOut,
   }) {
     return changeView?.call(this);
@@ -361,6 +378,7 @@ class _$AppEventChangeViewImpl implements AppEventChangeView {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AppEventSignIn value)? signIn,
     TResult Function(AppEventChangeView value)? changeView,
+    TResult Function(AppEventGoBack value)? goBack,
     TResult Function(AppEventSignOut value)? signOut,
     required TResult orElse(),
   }) {
@@ -379,6 +397,120 @@ abstract class AppEventChangeView implements AppEvent {
   @JsonKey(ignore: true)
   _$$AppEventChangeViewImplCopyWith<_$AppEventChangeViewImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AppEventGoBackImplCopyWith<$Res> {
+  factory _$$AppEventGoBackImplCopyWith(_$AppEventGoBackImpl value,
+          $Res Function(_$AppEventGoBackImpl) then) =
+      __$$AppEventGoBackImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AppEventGoBackImplCopyWithImpl<$Res>
+    extends _$AppEventCopyWithImpl<$Res, _$AppEventGoBackImpl>
+    implements _$$AppEventGoBackImplCopyWith<$Res> {
+  __$$AppEventGoBackImplCopyWithImpl(
+      _$AppEventGoBackImpl _value, $Res Function(_$AppEventGoBackImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AppEventGoBackImpl implements AppEventGoBack {
+  const _$AppEventGoBackImpl();
+
+  @override
+  String toString() {
+    return 'AppEvent.goBack()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AppEventGoBackImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(User user) signIn,
+    required TResult Function(Mod mod) changeView,
+    required TResult Function() goBack,
+    required TResult Function() signOut,
+  }) {
+    return goBack();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(User user)? signIn,
+    TResult? Function(Mod mod)? changeView,
+    TResult? Function()? goBack,
+    TResult? Function()? signOut,
+  }) {
+    return goBack?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? signIn,
+    TResult Function(Mod mod)? changeView,
+    TResult Function()? goBack,
+    TResult Function()? signOut,
+    required TResult orElse(),
+  }) {
+    if (goBack != null) {
+      return goBack();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppEventSignIn value) signIn,
+    required TResult Function(AppEventChangeView value) changeView,
+    required TResult Function(AppEventGoBack value) goBack,
+    required TResult Function(AppEventSignOut value) signOut,
+  }) {
+    return goBack(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AppEventSignIn value)? signIn,
+    TResult? Function(AppEventChangeView value)? changeView,
+    TResult? Function(AppEventGoBack value)? goBack,
+    TResult? Function(AppEventSignOut value)? signOut,
+  }) {
+    return goBack?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppEventSignIn value)? signIn,
+    TResult Function(AppEventChangeView value)? changeView,
+    TResult Function(AppEventGoBack value)? goBack,
+    TResult Function(AppEventSignOut value)? signOut,
+    required TResult orElse(),
+  }) {
+    if (goBack != null) {
+      return goBack(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AppEventGoBack implements AppEvent {
+  const factory AppEventGoBack() = _$AppEventGoBackImpl;
 }
 
 /// @nodoc
@@ -421,6 +553,7 @@ class _$AppEventSignOutImpl implements AppEventSignOut {
   TResult when<TResult extends Object?>({
     required TResult Function(User user) signIn,
     required TResult Function(Mod mod) changeView,
+    required TResult Function() goBack,
     required TResult Function() signOut,
   }) {
     return signOut();
@@ -431,6 +564,7 @@ class _$AppEventSignOutImpl implements AppEventSignOut {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(User user)? signIn,
     TResult? Function(Mod mod)? changeView,
+    TResult? Function()? goBack,
     TResult? Function()? signOut,
   }) {
     return signOut?.call();
@@ -441,6 +575,7 @@ class _$AppEventSignOutImpl implements AppEventSignOut {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? signIn,
     TResult Function(Mod mod)? changeView,
+    TResult Function()? goBack,
     TResult Function()? signOut,
     required TResult orElse(),
   }) {
@@ -455,6 +590,7 @@ class _$AppEventSignOutImpl implements AppEventSignOut {
   TResult map<TResult extends Object?>({
     required TResult Function(AppEventSignIn value) signIn,
     required TResult Function(AppEventChangeView value) changeView,
+    required TResult Function(AppEventGoBack value) goBack,
     required TResult Function(AppEventSignOut value) signOut,
   }) {
     return signOut(this);
@@ -465,6 +601,7 @@ class _$AppEventSignOutImpl implements AppEventSignOut {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AppEventSignIn value)? signIn,
     TResult? Function(AppEventChangeView value)? changeView,
+    TResult? Function(AppEventGoBack value)? goBack,
     TResult? Function(AppEventSignOut value)? signOut,
   }) {
     return signOut?.call(this);
@@ -475,6 +612,7 @@ class _$AppEventSignOutImpl implements AppEventSignOut {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AppEventSignIn value)? signIn,
     TResult Function(AppEventChangeView value)? changeView,
+    TResult Function(AppEventGoBack value)? goBack,
     TResult Function(AppEventSignOut value)? signOut,
     required TResult orElse(),
   }) {
