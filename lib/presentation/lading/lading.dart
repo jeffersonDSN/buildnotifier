@@ -56,7 +56,9 @@ class Lading extends IView {
             case 1:
               bloc.add(
                 const AppEvent.changeView(
-                  mod: Mod.home(),
+                  mod: Mod.schedule(
+                    type: ViewType.overview(),
+                  ),
                 ),
               );
               break;
